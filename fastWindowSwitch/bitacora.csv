@@ -1,0 +1,11 @@
+/home/johnny/proyectos/swissknife/fast_window_switch
+date,command,observations
+Sat Aug  4 16:30:10 -05 2018,sudo apt install wmctrl,herramienta que permite tener información hacerca de el manager window
+Sat Aug  4 17:36:23 -05 2018,sudo apt install xbindkeys,instalar
+Sat Aug  4 17:40:26 -05 2018,xbindkeys --defaults > /home/johnny/.xbindkeysrc,archivo de configuración
+Sat Aug  4 17:41:36 -05 2018,xbindkeys_show,muestra los comandos que hayan sido cargados
+Sat Aug  4 17:43:56 -05 2018,xbindkeys -k,permite ver la asociación de texto de cada combinación seleccionada
+Sat Aug  4 17:46:08 -05 2018,xbindkeys --defaults > xbindkeysrc,creación local de configuraciones
+Sat Aug  4 17:47:21 -05 2018,rm ~/.xbindkeysrc,remover archivo oculto para desde aquí hacer enlace simbólico
+Sat Aug  4 17:48:24 -05 2018,ln -s /home/johnny/proyectos/swissknife/fastWindowSwitch/xbindkeysrc ~/.xbindkeysrc,creación de enlace local al directorio requerido
+Sat Aug  4 17:56:19 -05 2018,xbindkeys_autostart,cuando esté editando el archivo xbindkeysrc y requiera activar los cambios pruebe el comando

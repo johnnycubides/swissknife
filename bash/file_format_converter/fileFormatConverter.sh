@@ -1,5 +1,6 @@
 #!/bin/bash
 #sh fileFormatConverter
+#chmod +x fileFormatConverter.sh
 #Author: Johnny Cubides
 #e-mail: jgcubidesc@gmail.com
 #Mon Jun 25 21:49:48 -05 2018
@@ -15,6 +16,7 @@ then
     printf "\t-l\tformat list\n"
     printf "\t-r\tread the format\n"
     printf "\t-c\tconvert format\n"
+    printf "\t-h\thelps\n"
     printf "Example to use\n"
     printf "fileFormatConverter -c file_in file_out\n"
 elif [ "$1" = "-l" ]

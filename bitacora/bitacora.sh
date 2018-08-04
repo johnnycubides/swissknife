@@ -20,8 +20,12 @@ then
     printf "\t[Parameters]\n"
     printf "\t\t-i\tstart bitacora.csv\n"
     printf "\t\t-v\tview content\n"
+    printf "\t\t-sc\tview content in sc\n"
     printf "\t\t-h,--help\tHelp\n"
     printf "\nRegards Johnny.\n"
+elif [ "$1" = "-sc" ];
+then
+    cat bitacora.csv | psc -L -k -d, | sc
 elif [ "$1" = "-v" ];
 then
     less bitacora.csv
