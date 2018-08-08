@@ -1,0 +1,96 @@
+" cargar desde .vimrc como sigue:
+" source .vimrc_more
+" pegar anterior línea al final del .vimrc
+" se hace así si ud hace uso de bootstrap,
+" ya que bootstrap al ser actualizado borra
+" el contenido hecho por usted
+
+"Plug 'valloric/youcompleteme'
+
+let g:NERDTreeWinSize = 30
+
+" https://github.com/SirVer/ultisnips/issues/401
+"set runtimepath+=~/.vim/my-snippets/UltiSnips "no probado
+
+let g:UltiSnipsListSnippets="<C-j>" "My change
+let g:UltiSnipsSnippetsDir=$HOME.'/.vim/my-snippets/UltiSnips'
+"let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets', $HOME.'/proyectos/swissknife/vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']
+" javascript tab stop
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+
+"title
+set titleold=Terminal
+set titlestring=VIM_\ヽ\(\ヅ\)\ノ_%F
+
+"*********************************************************************************
+"" My config
+"*********************************************************************************
+
+"Funcion LaTeX"
+:function LaTeX_Apuntes()
+:!cp /home/`whoami`/basededatos/LaTeX/apuntes/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/apuntes/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:vsplit src/section1.tex
+:endfunction
+
+"Funcion LaTeX"
+:function LaTeX_Task()
+:!cp /home/`whoami`/basededatos/LaTeX/tareas/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/tareas/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:vsplit src/section1.tex
+:endfunction
+
+"Function LaTeX"
+:function LaTeX_Beamer()
+:set tabstop=2
+:set shiftwidth=2
+:!cp /home/`whoami`/basededatos/LaTeX/beamer/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/beamer/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:NERDTree
+:endfunction
+"Function LaTeX"
+:function LaTeX_InfoIEEE()
+:!cp /home/`whoami`/basededatos/LaTeX/infoIEEE/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/informes/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:endfunction
+"Function LaTeX"
+:function LaTeX_ImagIEEE()
+:   read /home/`whoami`/.vim/misComandos/latex_imagIEEE
+:endfunction
+"Function LaTeX"
+:function LaTeX_ColummBeamer()
+:   read /home/`whoami`/.vim/misComandos/latex_columnBeamer
+:endfunction
+"Function LaTeX"
+:function LaTeX_Tabla()
+:      read /home/`whoami`/.vim/misComandos/latex_table
+:endfunction
+"Function LaTeX"
+:function LaTeX_Vtabla()
+:	!/home/`whoami`/basededatos/LaTeX/extension/tablaLatex.py
+:	read /tmp/tabla.tex
+:endfunction
+"Function LaTeX"
+:function LaTeX_Article()
+:   read /home/`whoami`/.vim/misComandos/guiaArticleLaTeX.tex
+:endfunction
+"Function LaTeX"
+:function MakefileTex2Pdf()
+:   read /home/`whoami`/.vim/misComandos/MakefileTex2Pdf
+:endfunction
+
+" Languaje keyword
+" Keyword spanish
+:function Tes()
+:	!setxkbmap es
+:endfunction
+" keyword english
+:function Tus()
+:	!setxkbmap us
+:endfunction
+
