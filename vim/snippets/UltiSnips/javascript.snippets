@@ -1,112 +1,244 @@
-# Johnny yuidoc
-
-snippet d_module
+#########################
+# Init file
+#########################
+snippet dinit "init file"
 /**
-* ${2:Description}
-*
-* @module ${1}
-*/
+ * @file ${1:"file description"}
+ * @author ${2:Name} <${3:e-mail}>
+ */
+$0
 endsnippet
 
-snippet d_main
+#########################
+# let (local, var global)
+#########################
+snippet dlet "variable local"
 /**
-* Provides more features for the widget module...
-*
-* @module ${2:main}
-* @submodule ${3:submodule}
-* @main ${1:main}
-*/
+ * ${2:brief}
+ * @var {${3:Type}} $1${4:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+let ${1:nameVariable}
 endsnippet
+
+snippet dvar "variable global"
+/**
+ * ${2:brief}
+ * @var {${3:Type}} $1${4:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+var ${1:nameVariable}
+endsnippet
+
+
+snippet dmodule
+/**
+ * ${2:Description}
+ * @module ${1:path/file}
+ */
+endsnippet
+
+snippet dmain
+/**
+ * Provides more features for the widget module...
+ *
+ * @module ${2:main}
+ * @submodule ${3:submodule}
+ * @main ${1:main}
+ */
+endsnippet
+
+##################
+# function
+##################
+snippet anon "anonymous"
+function($1){
+	$0
+}
+endsnippet
+
+snippet => "anonymous"
+($1)=>{
+	$0
+}
+endsnippet
+
+snippet dfun0 "function withowt params"
+/**
+ * ${3:Description of function}
+ * @function $1
+ * @return {${4:Type}} $2 ${5:description return}${6:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+function ${1:name_function}(){
+	$0
+	return ${2:null}
+}
+endsnippet
+
+snippet dfun1 "function with one param"
+/**
+ * ${4:Description of function}
+ * @function $1
+ * @param {${5:Type}} $2 ${6:Description param}
+ * @return {${7:Type}} $3 ${8:description return}${9:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+function ${1:name_function}(${2:param1}){
+	$0
+	return ${3:null}
+}
+endsnippet
+
+snippet dfun2 "function literal doc two param"
+/**
+ * ${5:Description of function}
+ * @function $1
+ * @param {${6:Type}} $2 ${7:Description param}
+ * @param {${8:Type}} $3 ${9:Description param}
+ * @return {${10:Type}} $4 ${11:description return}${12:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object, Function}}
+ */
+function ${1:name_function}(${2:param1}, ${3:param2}){
+	$0
+	return ${4:null}
+}
+endsnippet
+
+snippet dfun3 "function with three params"
+/**
+ * ${6:Description of function}
+ * @function $1
+ * @param {${7:Type}} $2 ${8:Description param}
+ * @param {${9:Type}} $3 ${10:Description param}
+ * @param {${11:Type}} $4 ${12:Description param}
+ * @return {${13:Type}} $5 ${14:description return}${15:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}){
+	$0
+	return ${5:null}
+}
+endsnippet
+
+snippet dfun4 "function with four params"
+/**
+ * ${7:Description of function}
+ * @function $1
+ * @param {${8:Type}} $2 ${9:Description param}
+ * @param {${10:Type}} $3 ${11:Description param}
+ * @param {${12:Type}} $4 ${13:Description param}
+ * @param {${14:Type}} $5 ${15:Description param}
+ * @return {${16:Type}} $6 ${17:description return}${18:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}){
+	$0
+	return ${6:null}
+}
+endsnippet
+
+snippet dfun5 "function with five params"
+/**
+ * ${8:Description of function}
+ * @function $1
+ * @param {${9:Type}} $2 ${10:Description param}
+ * @param {${11:Type}} $3 ${12:Description param}
+ * @param {${13:Type}} $4 ${14:Description param}
+ * @param {${15:Type}} $5 ${16:Description param}
+ * @param {${17:Type}} $6 ${18:Description param}
+ * @return {${19:Type}} $7 ${20:description return}${21:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object}}
+ */
+function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}, ${6:param5}){
+	$0
+	return ${7:null}
+}
+endsnippet
+
+
 ##################
 # function literal
 ##################
-snippet d_funlit0 "function literal doc withowt arguments"
+snippet dfunlit0 "function literal doc withowt arguments"
 /**
-* ${3:Description of function}
-* @function $1
-* @return {${4:Type}} $2 ${5:description return}${6:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${3:Description of function}
+ * @function $1
+ * @return {${4:Type}} $2 ${5:description return}${6:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = () =>{
+	$0
 	return ${2:null}
 }
-$0
 endsnippet
 
-snippet d_funlit1 "function literal doc one param"
+snippet dfunlit1 "function literal doc one param"
 /**
-* ${4:Description of function}
-* @function $1
-* @param {${5:Type}} $2 ${6:Description param}
-* @return {${7:Type}} $3 ${8:description return}${9:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${4:Description of function}
+ * @function $1
+ * @param {${5:Type}} $2 ${6:Description param}
+ * @return {${7:Type}} $3 ${8:description return}${9:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = (${2:param1}) =>{
+	$0
 	return ${3:null}
 }
-$0
 endsnippet
 
-snippet d_funlit2 "function literal doc two param"
+snippet dfunlit2 "function literal doc two param"
 /**
-* ${5:Description of function}
-* @function $1
-* @param {${6:Type}} $2 ${7:Description param}
-* @param {${8:Type}} $3 ${9:Description param}
-* @return {${10:Type}} $4 ${11:description return}${12:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${5:Description of function}
+ * @function $1
+ * @param {${6:Type}} $2 ${7:Description param}
+ * @param {${8:Type}} $3 ${9:Description param}
+ * @return {${10:Type}} $4 ${11:description return}${12:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = (${2:param1}, ${3:param2}) =>{
+	$0
 	return ${4:null}
 }
-$0
 endsnippet
 
-snippet d_funlit3 "function literal doc three param"
+snippet dfunlit3 "function literal doc three param"
 /**
-* ${6:Description of function}
-* @function $1
-* @param {${7:Type}} $2 ${8:Description param}
-* @param {${9:Type}} $3 ${10:Description param}
-* @param {${11:Type}} $4 ${12:Description param}
-* @return {${13:Type}} $5 ${14:description return}${15:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${6:Description of function}
+ * @function $1
+ * @param {${7:Type}} $2 ${8:Description param}
+ * @param {${9:Type}} $3 ${10:Description param}
+ * @param {${11:Type}} $4 ${12:Description param}
+ * @return {${13:Type}} $5 ${14:description return}${15:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}) =>{
+	$0
 	return ${5:null}
 }
-$0
 endsnippet
 
-snippet d_funlit4 "function literal doc three param"
+snippet dfunlit4 "function literal doc three param"
 /**
-* ${7:Description of function}
-* @function $1
-* @param {${8:Type}} $2 ${9:Description param}
-* @param {${10:Type}} $3 ${11:Description param}
-* @param {${12:Type}} $4 ${13:Description param}
-* @param {${14:Type}} $5 ${15:Description param}
-* @return {${16:Type}} $6 ${17:description return}${18:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${7:Description of function}
+ * @function $1
+ * @param {${8:Type}} $2 ${9:Description param}
+ * @param {${10:Type}} $3 ${11:Description param}
+ * @param {${12:Type}} $4 ${13:Description param}
+ * @param {${14:Type}} $5 ${15:Description param}
+ * @return {${16:Type}} $6 ${17:description return}${18:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}) =>{
+	$0
 	return ${6:null}
 }
-$0
 endsnippet
 
-snippet d_funlit5 "function literal doc three param"
+snippet dfunlit5 "function literal doc three param"
 /**
-* ${8:Description of function}
-* @function $1
-* @param {${9:Type}} $2 ${10:Description param}
-* @param {${11:Type}} $3 ${12:Description param}
-* @param {${13:Type}} $4 ${14:Description param}
-* @param {${15:Type}} $5 ${16:Description param}
-* @param {${17:Type}} $6 ${18:Description param}
-* @return {${19:Type}} $7 ${20:description return}${21:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
-*/
+ * ${8:Description of function}
+ * @function $1
+ * @param {${9:Type}} $2 ${10:Description param}
+ * @param {${11:Type}} $3 ${12:Description param}
+ * @param {${13:Type}} $4 ${14:Description param}
+ * @param {${15:Type}} $5 ${16:Description param}
+ * @param {${17:Type}} $6 ${18:Description param}
+ * @return {${19:Type}} $7 ${20:description return}${21:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
+ */
 var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}, ${6:param5}) =>{
+	$0
 	return ${7:null}
 }
-$0
 endsnippet
 
-snippet d_return_type "type of return"
+snippet dreturn_type "type of return"
 * @return {${1:Type}} ${2:Description return}${3:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array}}
 endsnippet

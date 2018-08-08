@@ -1,0 +1,19 @@
+snippet header "cabecera para el documento"
+---
+title: "${1:Título}"
+author: ${2:Johnny Cubides}
+date: `date +"%A %d %B %Y"`
+geometry: ${4:margin=2cm}
+output: ${5:pdf_document}
+---
+$0
+endsnippet
+
+snippet img "Uso de imagenes"
+![${1:Texto Alternativo}](./img/${2:image.png})
+$0
+endsnippet
+
+snippet link "Links"
+[${1:Name_link}](${2:url})$0
+endsnippet
