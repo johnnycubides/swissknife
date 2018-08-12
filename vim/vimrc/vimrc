@@ -47,6 +47,11 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+"plugin that provides Tern-based JavaScript editing support.
+Plug 'ternjs/tern_for_vim'
+Plug 'sickill/vim-monokai'
+Plug 'lmintmate/blue-mood-vim'
+"Plug 'elzr/vim-json'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else

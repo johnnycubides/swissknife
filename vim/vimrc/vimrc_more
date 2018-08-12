@@ -5,8 +5,17 @@
 " ya que bootstrap al ser actualizado borra
 " el contenido hecho por usted
 
-"Plug 'valloric/youcompleteme'
+"color similar al dado en gvim
+set termguicolors
+" identificar linea en la que se encuentra
+set cursorline
 
+"Plug 'valloric/youcompleteme'
+"Poner estos en el package maneger Plug
+"plugin that provides Tern-based JavaScript editing support.
+"Plug 'ternjs/tern_for_vim'
+"Plug 'sickill/vim-monokai'
+"Plug 'lmintmate/blue-mood-vim'
 let g:NERDTreeWinSize = 30
 
 " https://github.com/SirVer/ultisnips/issues/401
@@ -26,6 +35,16 @@ set titlestring=VIM_\ヽ\(\ヅ\)\ノ_%F
 "*********************************************************************************
 "" My config
 "*********************************************************************************
+
+" Config development
+" source%: carga dinámicamente las configuraciones de vim
+:function Code_js()
+hi Comment cterm=italic "Comentarios en cursiva"
+hi String cterm=italic "Todos los String que encuentre en cursiva"
+hi jsVariableDef ctermfg=LightGreen "Definición de variables en verde light"
+hi Folded term=standout ctermfg=9 ctermbg=15 guifg=#7289da guibg=#000000 "color al foldear azul"
+set fdm=syntax "foldear por syntaxis del lenguaje"
+:endfunction
 
 "Funcion LaTeX"
 :function LaTeX_Apuntes()
