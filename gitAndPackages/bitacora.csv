@@ -1,0 +1,32 @@
+/home/johnny/gitPackages
+date,command,observations
+Sun Oct 21 22:25:07 -05 2018,godot,motor para juegos 2D y 3D
+Sun Oct 21 22:25:56 -05 2018,arduino-1.8.6,Aplicación arduino no necesariamente para instalar
+Sun Oct 21 22:27:06 -05 2018,Arduino-Makefile/,permite compilar proyectos arduino sin el uso del IDE arduino
+Sun Oct 21 22:27:32 -05 2018,blockly/,programación gráfica para web y mobil
+Sun Oct 21 22:28:11 -05 2018,chuck-1.4.0.0/,Servidor chuck para programación musical
+Sun Oct 21 22:28:45 -05 2018,circuitjs1/,Excelente simulador de circuirtos para Web
+Sun Oct 21 22:29:30 -05 2018,eclipse/,IDE para programación para java y otros lenguajes
+Sun Oct 21 22:31:46 -05 2018,powerline_fonts/,fuentes para powerline
+Sun Oct 21 22:32:27 -05 2018,Fritzing-Library/,Diferentes modulos fritzing
+Sun Oct 21 22:33:10 -05 2018,gcalcli/,google calendar client desde consola
+Sun Oct 21 22:33:52 -05 2018,jdk_11/,kit de desarrollo java 11
+Sun Oct 21 22:34:17 -05 2018,jdk_8/,kit de desarrollo java 8
+Sun Oct 21 22:34:51 -05 2018,lmms/,Software creador de música
+Sun Oct 21 22:35:29 -05 2018,micropython/,interprete python para diferentes microcontroladores
+Sun Oct 21 22:35:48 -05 2018,miniAudicle-1.3.5.2/,Frontend para ChucK
+Sun Oct 21 22:36:15 -05 2018,ngspice-28,Simulador de circuitos desde el netlist
+Sun Oct 21 22:36:36 -05 2018,powerline,vim powerline
+Sun Oct 21 22:37:02 -05 2018,powerline-shell/,adapatación del powerline para shell
+Sun Oct 21 22:37:36 -05 2018,processing-3.4/,programación gráfica desde java con interfaz similar a arduino
+Sun Oct 21 22:38:05 -05 2018,pygame/,programación de videojuegos con python
+Sun Oct 21 22:39:17 -05 2018,recommonmark/,sphinx: markdown to docs
+Sun Oct 21 22:39:52 -05 2018,reveal.js/,Presentaciones desde navegador html
+Sun Oct 21 22:40:29 -05 2018,sonic-pi/,Lenguaje de programación musical
+Sun Oct 21 22:41:01 -05 2018,sphinx,restructuredtext to docs
+Sun Oct 21 22:41:26 -05 2018,sphinx_rtd_theme/,thema sphinx
+Sun Oct 21 22:44:00 -05 2018,python_avr8/,svn python avr8 clifford
+Sun Oct 21 22:45:10 -05 2018,toolchain_raspberry/,toolchin raspberry pi https://github.com/raspberrypi/tools
+Sun Oct 21 22:45:32 -05 2018,translate-shell/,traductor de google desde consola
+Sun Oct 21 22:45:53 -05 2018,ttymidi/,convertidor serial a midi
+Sun Oct 21 22:47:09 -05 2018,uLua/,port Lua para avr8

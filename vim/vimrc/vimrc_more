@@ -32,6 +32,12 @@ autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtab
 set titleold=Terminal
 set titlestring=VIM_\ヽ\(\ヅ\)\ノ_%F
 
+"***************************************
+"       CSV
+"***************************************
+" definiendo el delimitador
+let g:csv_delim=','
+
 "*********************************************************************************
 "" My config
 "*********************************************************************************
