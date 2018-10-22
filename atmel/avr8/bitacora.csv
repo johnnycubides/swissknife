@@ -1,0 +1,4 @@
+/home/johnny/projects/swissknife/atmel/avr8
+date,command,observations
+Sun Oct 21 19:53:36 -05 2018,avr_c.h,Definiciones de preprocesador para avr8
+Sun Oct 21 19:54:17 -05 2018,flags_syntastic.vim,agregar en vim para que no producir errores en el buscador de dependencias

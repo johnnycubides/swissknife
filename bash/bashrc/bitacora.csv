@@ -1,0 +1,4 @@
+/home/johnny/projects/swissknife/bash/bashrc
+date,command,observations
+Sun Oct 21 19:21:20 -05 2018,rm ~/.bashrc,remover anterior bashrc
+Sun Oct 21 19:22:05 -05 2018,ln -s `pwd`/bashrc ~/.bashrc,Enlace simbólico creado para configuración bash

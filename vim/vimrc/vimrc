@@ -31,6 +31,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -134,6 +135,11 @@ if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
 
+"" Include user's extra bundle
+if filereadable(expand("~/.vim_plugs.vim"))
+  source ~/.vim_plugs.vim
+endif
+
 call plug#end()
 
 " Required:
@@ -221,15 +227,21 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
     if $TERM == 'xterm'
       set term=xterm-256color
+    elseif $TERM == 'xterm-256color'
+      set term=xterm-256color
+    elseif $TERM == 'screen-256color'
+      set term=xterm-256color
+    else
+      echo "no_256_color"
     endif
   endif
-  
+
 endif
 
 
