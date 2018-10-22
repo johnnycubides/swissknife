@@ -1,0 +1,28 @@
+{
+  "segments": [
+    "virtual_env", 
+    "username", 
+    "hostname", 
+    "ssh", 
+    "cwd", 
+    "git", 
+    "hg", 
+    "jobs", 
+    "root"
+  ],
+  "cwd":{
+      "mode":"plain",
+      "max_depth":3
+  },
+  "hostname":{
+      "colorize": false
+  },
+  "vcs":{
+    "show_symbol": true
+  },
+  "time":{
+    "fotmat":"%H:%M"
+  },
+  "mode":"patched",
+  "theme":"default"
+}

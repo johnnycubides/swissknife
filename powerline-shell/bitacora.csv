@@ -1,0 +1,3 @@
+/home/johnny/projects/swissknife/powerline-shell
+date,command,observations
+Sun Oct 21 20:01:34 -05 2018,ln -s /home/johnny/projects/swissknife/powerline-shell/powerline-shell/ ~/.config/,creación de enlace simbólico
