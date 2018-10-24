@@ -33,3 +33,10 @@ Sun Oct 21 22:47:09 -05 2018,uLua/,port Lua para avr8
 Mon Oct 22 11:59:34 -05 2018,yEd,Editor de graficos free pero no opensource
 Mon Oct 22 12:00:03 -05 2018,mkdocs,Constructor de documentación desde markdown
 Mon Oct 22 12:00:34 -05 2018,mkdocs-pdf-export-plugin/,plugin para exportar mkdocs to pdf
+Wed Oct 24 07:23:57 -05 2018,sudo pip3 install gaphor,gestor de paquetes para python3
+Wed Oct 24 07:24:20 -05 2018,sudo pip install gaphor,instalación de editor de grafos UML
+Wed Oct 24 08:40:03 -05 2018,problemas de vista con gaphor,se trata de solucionar con la carga de las siguientes dependencias
+Wed Oct 24 08:40:21 -05 2018,sudo apt install python-zope.deprecation python-zope.event python-zope.proxy python-zope.testing,dependencias zope
+Wed Oct 24 08:40:51 -05 2018,sudo apt install python-zope.component python-zope.interface,librerías de las que depende
+Wed Oct 24 09:06:17 -05 2018,gaphor PROBLEMS,style hand drawing not work
+Wed Oct 24 12:17:47 -05 2018,NO SE PUDO SOLUCIONAR GAPHOR,
