@@ -30,3 +30,6 @@ Sun Oct 21 22:45:10 -05 2018,toolchain_raspberry/,toolchin raspberry pi https://
 Sun Oct 21 22:45:32 -05 2018,translate-shell/,traductor de google desde consola
 Sun Oct 21 22:45:53 -05 2018,ttymidi/,convertidor serial a midi
 Sun Oct 21 22:47:09 -05 2018,uLua/,port Lua para avr8
+Mon Oct 22 11:59:34 -05 2018,yEd,Editor de graficos free pero no opensource
+Mon Oct 22 12:00:03 -05 2018,mkdocs,Constructor de documentación desde markdown
+Mon Oct 22 12:00:34 -05 2018,mkdocs-pdf-export-plugin/,plugin para exportar mkdocs to pdf
