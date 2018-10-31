@@ -21,6 +21,7 @@ then
     printf "\t\t-i\tstart bitacora.csv\n"
     printf "\t\t-v\tview content\n"
     printf "\t\t-sc\tview content in sc\n"
+    printf "\t\t-vim\tview content in vim\n"
     printf "\t\t-h,--help\tHelp\n"
     printf "\nRegards Johnny.\n"
 elif [ "$1" = "-sc" ];
@@ -29,6 +30,9 @@ then
 elif [ "$1" = "-v" ];
 then
     less bitacora.csv
+elif [ "$1" = "-vim" ];
+then
+    vim bitacora.csv
 elif [ "$1" = "-i" ];
 then
     touch bitacora.csv && printf "`pwd`\ndate,command,observations\n" >> bitacora.csv

@@ -18,12 +18,17 @@ read -p "Select value: " select
 
 case "$select" in
     "c")
-        mkdir -p .vim/my-snippets/UltiSnips/
+        mkdir -p -v ~/.vim/my-snippets/UltiSnips/
         ;;
     "1")
         cp $dir/javascript.snippets ~/.vim/my-snippets/UltiSnips/
         printf "Task sussesful `whoami`\n"
         ;;
+    "2")
+        cp $dir/markdown.snippets ~/.vim/my-snippets/UltiSnips/
+        printf "Task sussesful `whoami`\n"
+        ;;
+
     *)
         printf "Did not select valid option\n"
         ;;

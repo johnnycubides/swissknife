@@ -52,6 +52,13 @@ hi Folded term=standout ctermfg=9 ctermbg=15 guifg=#7289da guibg=#000000 "color 
 set fdm=syntax "foldear por syntaxis del lenguaje"
 :endfunction
 
+" JSON
+:function Code_json()
+call Code_js()
+set tabstop=2
+set shiftwidth=2
+:endfunction
+
 "Funcion LaTeX"
 :function LaTeX_Apuntes()
 :!cp /home/`whoami`/basededatos/LaTeX/apuntes/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/apuntes/$proyect/g -i Makefile
