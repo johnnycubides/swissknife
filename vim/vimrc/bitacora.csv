@@ -3,3 +3,4 @@ date,command,observations
 Sun Oct 21 19:30:33 -05 2018,vim_plugs.vim,plugings adicionales a los que trae bootstrap
 Sun Oct 21 19:31:01 -05 2018,vimrc_more,mis configuraciones en el tiempo
 Sun Oct 21 19:31:40 -05 2018,vimrc,el config de bootstrap con pequeños cambios
+Wed Oct 31 08:41:31 -05 2018,pandoc README.md -o README.pdf,generar README en pdf
