@@ -5,6 +5,12 @@
 " ya que bootstrap al ser actualizado borra
 " el contenido hecho por usted
 
+"" Tabs. general
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
 "color similar al dado en gvim
 set termguicolors
 " identificar linea en la que se encuentra
@@ -25,7 +31,7 @@ let g:UltiSnipsListSnippets="<C-j>" "My change
 let g:UltiSnipsSnippetsDir=$HOME.'/.vim/my-snippets/UltiSnips'
 "let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets', $HOME.'/proyectos/swissknife/vim/UltiSnips']
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']
-" javascript tab stop
+" javascript python tab stop
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 
 "title

@@ -6,6 +6,23 @@ geometry: margin=2cm
 output: pdf_document
 ---
 
+# Configuraciones para VIM
+
+Para la configuración de VIM se hizo uso de bootstrap.
+
+Los siguientes archivos tienen las siguientes responsabilidades:
+
+* `.vim_plugs.vim` ← Nuevos plugins instalados fuera de la configuración de bootstrap
+* `.vimrc_more` ← Mis configuraciones cargadas al .vimrc
+* `.vimrc` ← Configuración dada en bootstrap con algún cambio para cargar los 2 archivos anteriores
+
+## Instalación de archivos de configuración de VIM
+
+En éste directorio encontrará el script `vimrc_congig.sh`, ejecute el scriprt como sigue:
+
+```sh
+./vimrc_congig.sh
+```
 
 # Por hacer después cargar los vimrc de configuración #
 
