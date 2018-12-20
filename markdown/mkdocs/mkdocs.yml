@@ -1,0 +1,16 @@
+site_name: Name Site
+site_dir: build
+markdown_extensions:
+  - admonition #https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+
+plugins:
+  - search
+  #- pdf-export
+
+theme:
+  name: 'mkdocs' # 'mkdocs' 'material'
+  highlightjs: false # true/false false para prueba sin internet
+
+nav:
+  #  - Home: index.md
+
