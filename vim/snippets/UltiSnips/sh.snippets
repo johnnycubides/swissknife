@@ -1,0 +1,26 @@
+snippet init_sh "Iniciador de sh"
+#!/bin/bash -e
+#
+# Brief:	${3:brief}
+# Author: ${1:`whoami`}
+# e-mail: ${2: e-mail}
+# date: `date +"%A %d %B %Y"`
+$0
+endsnippet
+
+snippet search_file "Buscar archivo"
+if [[ ! -e ${1:Archivo} ]]; then
+	echo "ERROR: Could not locate $1." 1>&2
+	exit 1 # terminate and indicate error
+fi
+$0
+endsnippet
+
+snippet create_simbolic_link "Crear enlace simbólico"
+if [ ! -L $2 ]; then
+	ln -s ${1:TARGET} ${2:LINK_NAME}
+else
+	echo \`ls -l $2\`" simbolic link exist"
+fi
+$0
+endsnippet
