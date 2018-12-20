@@ -40,3 +40,8 @@ Wed Oct 24 08:40:21 -05 2018,sudo apt install python-zope.deprecation python-zop
 Wed Oct 24 08:40:51 -05 2018,sudo apt install python-zope.component python-zope.interface,librerías de las que depende
 Wed Oct 24 09:06:17 -05 2018,gaphor PROBLEMS,style hand drawing not work
 Wed Oct 24 12:17:47 -05 2018,NO SE PUDO SOLUCIONAR GAPHOR,
+/home/johnny/gitPackages
+date,command,observations
+Tue Dec 18 12:21:00 -05 2018,wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz,instalar compilador xtensa esp32
+Tue Dec 18 12:22:42 -05 2018,mkdir -p esp,creando dir para esp32 compilador
+Tue Dec 18 12:23:07 -05 2018,tar xvf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz -C esp,extrayendo compilador
