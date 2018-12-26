@@ -16,11 +16,84 @@ fi
 $0
 endsnippet
 
+snippet	create_menu	"Crear menú de inicio"
+# Permite guardar información acerca de comandos usados
+if [ "\$1" = "-h" ] || [ "\$1" = "" ] || [ "\$1" = "--help" ];
+then
+    printf "Help for this command ${1:FILE_NAME}\n"
+    printf "\t$1 Command options\n"
+    printf "\t[Commands]\n"
+    printf "\t\t${2:command1}\t${3:brief1}\n"
+    printf "\t\t${4:command2}\t${5:brief2}\n"
+    printf "\t\t${6:command3}\t${7:brief3}\n"
+    printf "\t\t-h,--help\tHelp\n"
+    printf "\nRegards Johnny.\n"
+elif [ "\$1" = "$2" ];
+then
+    echo "pass"
+elif [ "\$1" = "$4" ];
+then
+    echo "pass"
+elif [ "\$1" = "$6" ];
+then
+    echo "pass"
+fi
+$0
+endsnippet
+
+# help expand
+# expand('%:t') # tail name.extension
+# expand('%:p') # full path
+# expand('%:h') # head path
+# expand('%:r') # name less extension
+# expand('%:e') # only extension
+# @%	# relative path
+snippet file_name "Nombre del archivo"
+`echo expand('%:t')`
+endsnippet
+
+snippet read_keyboard "Leer del teclado y almacenar en variable"
+read -p "${1:Text in promt}: " -r ${2:variable}
+$0
+endsnippet
+
+snippet	read_keyboard_s "Leer del teclado de manera oculta y almacenar en variable"
+read -s ${1:variable}
+$0
+endsnippet
+
 snippet create_simbolic_link "Crear enlace simbólico"
 if [ ! -L $2 ]; then
 	ln -s ${1:TARGET} ${2:LINK_NAME}
 else
 	echo \`ls -l $2\`" simbolic link exist"
+fi
+$0
+endsnippet
+
+################
+# CONDITIONALS
+################
+snippet ifs "if string"
+if [ "${1:variable}" = "${2:string}" ];
+then
+	${3:echo \"pass\"}
+fi
+$0
+endsnippet
+
+snippet ifs_or2 "if string OR2"
+if [ "${1:variable}" = "${2:string1}" ] || [ "\$1" = "${3:string2}" ];
+then
+	${3:echo \"pass\"}
+fi
+$0
+endsnippet
+
+snippet ifs_or3 "if string OR3"
+if [ "${1:variable}" = "${2:string1}" ] || [ "\$1" = "${3:string2}" ] || [ "\$1" = "${4:string3}" ];
+then
+	${3:echo \"pass\"}
 fi
 $0
 endsnippet
