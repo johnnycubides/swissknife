@@ -34,7 +34,7 @@ PATH_REVEAL=~/gitPackages/reveal.js
 # Init Reveal
 init_revealjs(){
   # Solicitando nombre para presentación
-  read -p "${YELLOWB}--${NCB} ${CYAN}Nombre de la presentación${NC}\
+  read -p "${MAGENTAB}--${NCB} ${CYAN}Nombre de la presentación${NC}\
  (un solo nombre, ejemplo: un-solo-nombre): " -r name_pres
 
   # sustituyendo caracteres inválidos
@@ -45,7 +45,7 @@ init_revealjs(){
   then
 
     # Solicitando el directorio de almacenamiento de la presentación
-    echo -e "${YELLOWB}--${NCB} ${CYAN}Nombre del directorio que contendrá la presentación${NC}\
+    echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la presentación${NC}\
  (un solo nombre),\n si desea que sea ${CYAN}el mismo nombre de la presentación oprima${NC}\
  ${YELLOW}ENTER${NC},\n sino desea crear ese directorio digite la palabra ${BLUE}none${WHITE}: "
     read -p "Respuesta del usuario: " -r dir_pres
@@ -54,11 +54,11 @@ init_revealjs(){
     dir_pres=${dir_pres//[ *#?]/-}
 
     # Portable o no portable la presentación
-    read -p "${YELLOWB}--${NCB} ${CYAN}¿Requiere hacer la presentación portable?${NC}\
+    read -p "${MAGENTAB}--${NCB} ${CYAN}¿Requiere hacer la presentación portable?${NC}\
  ${GREEN}y${NC}/${RED}n${NC}: " -r port_pres
 
     # Creación de esqueleto para la presentación?
-    read -p "${YELLOWB}--${NCB} ${CYAN}¿Desea un esqueleto para la presentación?${NC}\
+    read -p "${MAGENTAB}--${NCB} ${CYAN}¿Desea un esqueleto para la presentación?${NC}\
  ${GREEN}y${NC}/${RED}n${NC}: " -r tem_pres
 
     # Definición de creación de directorio contendor de la presentación
@@ -109,7 +109,7 @@ init_revealjs(){
 #init mkdocs
 init_mkdocs(){
   # Solicitando el directorio de almacenamiento de la presentación
-  echo -e "${YELLOWB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
  (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
   read -p "Respuesta del usuario: " -r dir_pres
   # sustituyendo caracteres inválidos

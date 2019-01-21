@@ -1,6 +1,14 @@
 #################
 #		REVEALJS
 #################
+# r-init
+# r-init-online
+# r-img
+# r-img-s
+# r-video
+# r-video-s
+# r-slide
+# r-mk-txt
 
 snippet r-init "start presentation with reveal offline"
 <!doctype html>
@@ -134,13 +142,23 @@ snippet r-init-online "start presentation with revealjs online"
 </html>
 endsnippet
 
-snippet r-img "insert image reveal"
-<img data-src="img/${1:image.png}"/>
+snippet r-img "insert image reveal, size automatic"
+<img class="stretch" data-src="${1:img/}${2:image.png}"/>
+$0
+endsnippet
+
+snippet r-img-s "insert image reveal, size manual"
+<img data-src="${1:img/}${2:image.png}" width="${3:100%}" height="${4:auto}"/>
 $0
 endsnippet
 
 snippet r-video "insert video reveal"
-<video data-src="videos/${2:video.mp4}" type="video/mp4"></video>
+<video class="stretch" data-src="${1:videos/}${2:video.mp4}" type="video/mp4"></video>
+$0
+endsnippet
+
+snippet r-video-s "insert video reveal, size manual"
+<video class="stretch" data-src="${1:videos/}${2:video.mp4}" width="${3:100%}" height="${4:auto}" type="video/mp4"></video>
 $0
 endsnippet
 
