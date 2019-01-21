@@ -74,8 +74,10 @@ endsnippet
 ################
 # CONDITIONALS
 ################
+# = : igual
+# != : diferente
 snippet ifs "if string"
-if [ "${1:variable}" = "${2:string}" ];
+if [ "${1:$variable}" = "${2:string}" ];
 then
 	${3:echo \"pass\"}
 fi
@@ -83,7 +85,7 @@ $0
 endsnippet
 
 snippet ifs_or2 "if string OR2"
-if [ "${1:variable}" = "${2:string1}" ] || [ "\$1" = "${3:string2}" ];
+if [ "${1:$variable}" = "${2:string1}" ] || [ "$1" = "${3:string2}" ];
 then
 	${3:echo \"pass\"}
 fi
@@ -91,9 +93,147 @@ $0
 endsnippet
 
 snippet ifs_or3 "if string OR3"
-if [ "${1:variable}" = "${2:string1}" ] || [ "\$1" = "${3:string2}" ] || [ "\$1" = "${4:string3}" ];
+if [ "${1:$variable}" = "${2:string1}" ] || [ "$1" = "${3:string2}" ] || [ "$1" = "${4:string3}" ];
 then
 	${3:echo \"pass\"}
 fi
 $0
 endsnippet
+
+##################
+#		REPLACE STRING
+##################
+
+snippet replace_word "Encontrar y remplazar palabra en string"
+\${${1:variable}/${2:palabra}/${3:sustituto}}$0
+endsnippet
+
+snippet replace_words "Encontrar y remplazar palabra en string (todas conincidencias)"
+\${${1:variable}//${2:palabra}/${3:sustituto}}$0
+endsnippet
+
+snippet replace_words_range "Encontrar y remplazar rango de palabra en string (todas conincidencias)"
+\${${1:variable}//[${2:xyz*}]/${3:sustituto}}$0
+endsnippet
+
+################
+#		COLORS
+################
+
+# COLORS
+# Black        0;30     Dark Gray     1;30
+# Red          0;31     Light Red     1;31
+# Green        0;32     Light Green   1;32
+# Brown/Orange 0;33     Yellow        1;33
+# Blue         0;34     Light Blue    1;34
+# Purple       0;35     Light Purple  1;35
+# Cyan         0;36     Light Cyan    1;36
+# Light Gray   0;37     White         1;37
+# \e o \033
+#BLUE='\e[0;36m'
+#NC='\e[0m'
+
+# TPUT
+# Fuente: https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
+# tput bold – Bold effect
+# tput rev – Display inverse colors
+# tput sgr0 – Reset everything
+# tput setaf {CODE}– Set foreground color, see color {CODE} table below for more information.
+# tput setab {CODE}– Set background color, see color {CODE} table below for more information.
+
+snippet init_colors_prompt "Colors for echo and prompt"
+# foreground
+BLACK=\`tput setaf 0\`
+RED=\`tput setaf 1\`
+GREEN=\`tput setaf 2\`
+YELLOW=\`tput setaf 3\`
+BLUE=\`tput setaf 4\`
+MAGENTA=\`tput setaf 5\`
+CYAN=\`tput setaf 6\`
+WHITE=\`tput setaf 7\`
+NC=\`tput setaf 7\`
+# background
+BLACKB=\`tput setab 0\`
+REDB=\`tput setab 1\`
+GREENB=\`tput setab 2\`
+YELLOWB=\`tput setab 3\`
+BLUEB=\`tput setab 4\`
+MAGENTAB=\`tput setab 5\`
+CYANB=\`tput setab 6\`
+WHITEB=\`tput setab 7\`
+NCB=\`tput setab 0\`
+$0
+endsnippet
+
+################
+## foreground
+################
+
+snippet fg_black "text foreground color black"
+\${BLACK}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_red "text foreground color red"
+\${RED}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_green "text foreground color green"
+\${GREEN}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_yellow "text foreground color yellow"
+\${YELLOW}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_blue "text foreground color blue"
+\${BLUE}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_magenta "text foreground color magenta"
+\${MAGENTA}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_cyan "text foreground color cyan"
+\${CYAN}${1:text}\${NC}$0
+endsnippet
+
+snippet fg_white "text foreground color white"
+\${WHITE}${1:text}\${NC}$0
+endsnippet
+
+################
+## background
+################
+
+snippet bg_black "text background color black"
+\${BLACKB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_red "text background color red"
+\${REDB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_green "text background color green"
+\${GREENB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_yellow "text background color yellow"
+\${YELLOWB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_blue "text background color blue"
+\${BLUEB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_magenta "text background color magenta"
+\${MAGENTAB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_cyan "text background color cyan"
+\${CYANB}${1:text}\${NCB}$0
+endsnippet
+
+snippet bg_white "text background color white"
+\${WHITEB}${1:text}\${NCB}$0
+endsnippet
+
