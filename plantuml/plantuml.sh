@@ -1,6 +1,8 @@
 #!/bin/bash
 path_plantuml=~/gitPackages/plantuml
 path_java=/usr/bin/java
+doc_viewer=evince
+img_viewer=eog
 
 printf "=======================\n"
 printf "PLANTUML  \n"
@@ -16,9 +18,9 @@ then
     printf "How use\n"
     printf "\tplantuml.sh -cv file_in format_out\n"
     printf "Example to use\n"
-    printf "\tplantuml.sh -c file.txt png\n"
-    printf "\tplantuml.sh -cv file.txt eps\n"
-    printf "\tplantuml.sh -v file.txt svg\n\n"
+    printf "\tplantuml.sh -c file.pu png\n"
+    printf "\tplantuml.sh -cv file.pu eps\n"
+    printf "\tplantuml.sh -v file.pu svg\n\n"
 elif [ "$1" = "-c" ] # Crear el grafo
 then
     printf "Creating graph\n"
@@ -27,9 +29,9 @@ elif [ "$1" = "-v" ] #Ver grafo
 then
     if [ "$3" = "eps" ]
     then
-        evince "${2/.txt/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
+        $doc_viewer "${2/.pu/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
     else
-        eog "${2/.txt/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
+        $img_viewer "${2/.pu/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
     fi
 elif [ "$1" = "-cv" ] #Crear grafo y ver
 then
@@ -38,9 +40,9 @@ then
     printf "graph graph\n"
     if [ "$3" = "eps" ]
     then
-        evince "${2/.txt/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
+        $doc_viewer "${2/.pu/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
     else
-        eog "${2/.txt/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
+        $img_viewer "${2/.pu/.$3}"& #Sustitución de subcadenas, debe escogerse el visor por defecto
     fi
 else
     printf "Did not select valid option\n"
