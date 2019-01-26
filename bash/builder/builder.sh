@@ -122,6 +122,7 @@ init_mkdocs(){
     dir_pres=.
   fi
   cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_pres/
+  rm -f $dir_pres/INSTALL.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
 }
 
