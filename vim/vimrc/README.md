@@ -93,5 +93,7 @@ find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} 
 Ahora debe abrir vim a nivel del **tags** para que carge ese tag y muestre
 en el TagBar el contenido referenciado a javascript; el tagbar se puede abrir con **F4**.
 
+## Universal-ctags
 
+### Instalación
 

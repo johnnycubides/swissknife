@@ -6,4 +6,10 @@
 "Así podrá agregar los plugins agregados por usted sin afectar los traidos por
 "bootstarp
 " My Plug List
+"plugin that provides Tern-based JavaScript editing support.
+Plug 'ternjs/tern_for_vim'
+Plug 'sickill/vim-monokai'
+Plug 'lmintmate/blue-mood-vim'
+"Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
+"Plug 'xolox/vim-easytags'
