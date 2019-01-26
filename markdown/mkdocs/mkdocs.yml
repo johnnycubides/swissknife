@@ -11,6 +11,8 @@ theme:
   name: 'mkdocs' # 'mkdocs' 'material'
   highlightjs: false # true/false false para prueba sin internet
 
+extra_css: [extra.css] # Active this (uncomment) if you have external css in docs/extra.css
+
 nav:
   #  - Home: index.md
 
