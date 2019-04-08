@@ -8,7 +8,15 @@
 # r-video
 # r-video-s
 # r-slide
-# r-mk-txt
+# r-md-txt
+# r-p-txt
+# r-f-size
+# r-f-color
+# r-f-align
+# r-slide-2columns
+# r-link-nt
+# r-list-no-ord
+# r-list-ord
 
 snippet r-init "start presentation with reveal offline"
 <!doctype html>
@@ -158,9 +166,11 @@ $0
 endsnippet
 
 snippet r-video-s "insert video reveal, size manual"
-<video class="stretch" data-src="${1:videos/}${2:video.mp4}" width="${3:100%}" height="${4:auto}" type="video/mp4"></video>
+<video ${1: data-autoplay} ${2:loop} ${3:controls} class="stretch" data-src="${4:videos/}${5:video.mp4}" width="${6:100%}" height="${7:auto}" type="video/mp4"></video>
 $0
 endsnippet
+
+
 
 snippet r-slide "insert slide reveal"
 <section> <${1:h4}>${2:Título}</$1>
@@ -168,7 +178,7 @@ snippet r-slide "insert slide reveal"
 </section>
 endsnippet
 
-snippet r-mk-txt "Insert text markdown reveal"
+snippet r-md-txt "Insert text markdown reveal"
 <section data-markdown>
 	<textarea data-template>
 		# ${1:Título}
@@ -177,4 +187,47 @@ snippet r-mk-txt "Insert text markdown reveal"
 </section>
 endsnippet
 
+snippet r-p-txt "Insertar parrafo"
+<p style="text-align: justify; margin-left:10px; font-size:30px;">$0</p>
+endsnippet
 
+snippet r-f-size "Tamaño de las fuente del texto"
+style="font-size:${1:20px};"$0
+endsnippet
+
+snippet r-f-color "Color de las fuentes"
+style="color:${1:blue, red, yellow, green, cyan, pink};"$0
+endsnippet
+
+snippet r-f-align "Alinear texto"
+style="text-align: ${1:justify};"$0
+endsnippet
+
+snippet r-slide-2columns "Slide de dos columnas"
+<section> <${1:h4}>${2:Título}</$1>
+	<div class="container">
+		<div class="col">
+			${3:Elements}
+		</div>
+		<div class="col">
+			${4:Elements}
+		</div>
+	</div>
+</section>$0
+endsnippet
+
+snippet r-link-nt "link in new tab"
+<a target="_blank" rel="noopener noreferrer" href="${1:url}">${2:text}</a>$0
+endsnippet
+
+snippet r-list-no-ord "Crear lista no ordenada"
+<ul type="${1:circle, squarei, disc}">
+	<li>$0</li>
+</ul>
+endsnippet
+
+snippet r-list-ord "Crear lista ordenada"
+<ol type="${1:A,I,i,1}">
+	<li>$0</li>
+</ol>
+endsnippet

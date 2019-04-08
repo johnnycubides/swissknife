@@ -1,0 +1,26 @@
+snippet begin "iniciar un entorno"
+\begin{${1:enviroment}}
+$0
+\end{$1}
+endsnippet
+
+##########################
+#				BEAMER
+##########################
+snippet frame "Iniciar un frame"
+\begin{frame}{${1:Título}}
+$0
+\end{frame}
+endsnippet
+
+snippet b-image "Imagene en beamer"
+\begin{figure}
+\center{}
+\includegraphics[scale=${2:0.2}]{${1:imag/}}
+\end{figure}
+endsnippet
+
+snippet b-href "Palabra con link de referencia"
+\fbox{\textcolor{${3:blue}}{\href{${2:url}}{${1:text}}}}
+$0
+endsnippet

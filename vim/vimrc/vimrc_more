@@ -132,3 +132,11 @@ set shiftwidth=2
 :	!setxkbmap us
 :endfunction
 
+:function Es()
+: set spell spelllang=es
+endfunction
+
+:function En()
+: set spell spelllang=en
+endfunction
+

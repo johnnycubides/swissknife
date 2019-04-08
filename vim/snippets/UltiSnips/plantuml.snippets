@@ -1,0 +1,31 @@
+snippet init "init graph with plantuml"
+@startuml
+title ${1:MyActivity}
+$0
+@enduml
+endsnippet
+
+############
+#	ACTIVITYES
+############
+snippet ac-init "Init activity graph"
+(*) --> $0
+-->(*)
+endsnippet
+
+snippet ac-arrow-lab "Label on Arrows"
+-->[${1:My Label}] \"${2:My Activity}\"
+$0
+endsnippet
+
+snippet --> "Change arrow direction"
+-${1:down right left up}-> $0
+endsnippet
+
+snippet ac-if "Branches"
+if \"${1:condition}\"  then
+-->[${2:Value1}] \"${3:MyActivity}\"
+else
+-->[${4:Value2}] \"${5:MyActivity}\"
+endif
+endsnippet

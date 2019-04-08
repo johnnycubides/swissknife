@@ -1,0 +1,182 @@
+#Iniciar simulaciones
+snippet begin "Inicio de simulacion"
+.control
+	${1}
+.endc
+endsnippet
+
+#Opciones para los postScripts de la salida de variables
+snippet option "Opciones de simulacion"
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	set color0 = rgb:0/0/0
+	set color1 = rgb:f/f/f
+	set color2 = rgb:f/0/0
+	set color3 = rgb:0/0/f
+	set color4 = rgb:0/f/0
+	op
+	display
+endsnippet
+
+#=================================================================
+# Imprime V(t) o f(t) o i(t), éste último en elementos no en nodos
+# el snippet está preparado para imprimir desde 1 v(t) hasta v(7)
+
+# Si se trata de una simulación transitoria f(t)
+snippet tran "Simulación transitoria"
+tran ${1:step} ${2:stop} ${3:start}$0
+endsnippet
+
+# Crear una variable
+snippet let "nueva variable"
+let ${1:name} = ${2:value}
+$0
+endsnippet
+
+# Asignar el valor de una variable a un componente del cir circito.
+snippet alter "Asignar el valor de una variable a un componente del circuito"
+alter ${1:component} ${2:var}
+$0
+endsnippet
+
+########################################
+# Analisis de simulaciones
+########################################
+snippet ana_ac "Análisis AC"
+ac dec ${1:Cantidad de puntos por deca} ${2:fstart} ${3:fstop}
+$0
+endsnippet
+
+snippet plot-bode "Diagrama de bode"
+plot db(${1:node}) ph(${2:node})
+$0
+endsnippet
+
+snippet plotv1 "plot de una variable en voltaje"
+	plot v(${1:n1})
+	hardcopy voltage.ps v($1)
+endsnippet
+
+snippet plotv2 "Plot de 2 v(nodes)"
+	plot v(${1:n1}) v(${2:n2})
+	hardcopy voltage.ps v($1) v($2)
+endsnippet
+
+snippet plotv "Plot de 3 v(nodes)"
+	plot v(${1:n1}) v(${2:n2}) v(${3:n3})
+	hardcopy voltage.ps v($1) v($2) v($3)
+endsnippet
+
+snippet plotv4 "Plot de 4v(nodes)"
+	plot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4})
+	hardcopy voltage.ps v($1) v($2) v($3) v($4)
+endsnippet
+
+snippet plotv5 "Plot de 5 v(nodes)"
+	plot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4}) v(${5:n5})
+	hardcopy voltage.ps v($1) v($2) v($3) v($4) v($5)
+endsnippet
+
+snippet plotv6 "Plot de 6 v(nodes)"
+	plot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4}) v(${5:n5}) v(${6:n6})
+	hardcopy voltage.ps v($1) v($2) v($3) v($4) v($5) v($6)
+endsnippet
+
+#======================================================================
+# Se permite hacer barridos de resistencia para generar varias funciones
+# En la misma grafica, el snippet está preparado para hacer barridos de hasta
+# 7 v dependientes de una entrada de voltaje
+snippet sweeprv2 "Varrido con un parámetro v2"
+	let resistencia = ${1:Inicial del barrido}
+	let condicion = ${2:Stop del barrido}
+	let stepSweep = ${3:pasos Barrido}
+	while resistencia le condicion
+		alter r${4:resistencia a alterar} resistencia
+		run
+		tran ${5:step} ${6:stop} ${7:start}
+		write simulacion.out v(${8:nodoOut})
+		set appendwrite
+		let resistencia = resistencia + stepSweep
+	end
+	plot v(${9:nodoIn}) tran1.v($8) tran2.v($8)
+	hardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8)
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8)
+endsnippet
+
+snippet sweeprv3 "barrido con 3 v(nodes)"
+	let resistencia = ${1:Inicial del barrido}
+	let condicion = ${2:Stop del barrido}
+	let stepSweep = ${3:pasos Barrido}
+	while resistencia le condicion
+		alter r${4:resistencia a alterar} resistencia
+		run
+		tran ${5:step} ${6:stop} ${7:start}
+		write simulacion.out v(${8:nodoOut})
+		set appendwrite
+		let resistencia = resistencia + stepSweep
+	end
+	plot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8)
+	hardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8)
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8)
+endsnippet
+
+snippet sweeprv4 "Barrido con 4 V(nodes)"
+	let resistencia = ${1:Inicial del barrido}
+	let condicion = ${2:Stop del barrido}
+	let stepSweep = ${3:pasos Barrido}
+	while resistencia le condicion
+		alter r${4:resistencia a alterar} resistencia
+		run
+		tran ${5:step} ${6:stop} ${7:start}
+		write simulacion.out v(${8:nodoOut})
+		set appendwrite
+		let resistencia = resistencia + stepSweep
+	end
+	plot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)
+	hardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)
+endsnippet
+
+snippet sweeprv5 "Barrido con 5 v(nodes)"
+	let resistencia = ${1:Inicial del barrido}
+	let condicion = ${2:Stop del barrido}
+	let stepSweep = ${3:pasos Barrido}
+	while resistencia le condicion
+		alter r${4:resistencia a alterar} resistencia
+		run
+		tran ${5:step} ${6:stop} ${7:start}
+		write simulacion.out v(${8:nodoOut})
+		set appendwrite
+		let resistencia = resistencia + stepSweep
+	end
+	plot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8)
+	hardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) trata5.v($8)
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) trata5.v($8)
+endsnippet
+
+snippet sweeprv6 "Barrido con 6 v(nodes)"
+	let resistencia = ${1:Inicial del barrido}
+	let condicion = ${2:Stop del barrido}
+	let stepSweep = ${3:pasos Barrido}
+	while resistencia le condicion
+		alter r${4:resistencia a alterar} resistencia
+		run
+		tran ${5:step} ${6:stop} ${7:start}
+		write simulacion.out v(${8:nodoOut})
+		set appendwrite
+		let resistencia = resistencia + stepSweep
+	end
+	plot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8) tran6.v($8)
+	hardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8) tran6.v($8)
+	set hcopydevtype=postscript
+	set hcopypscolor=1
+	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($) tran6.v($8)
+endsnippet
