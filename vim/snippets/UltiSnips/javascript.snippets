@@ -251,3 +251,27 @@ for ( var ${1:var} in ${2:Object}){
 	$0
 }
 endsnippet
+
+snippet promise "promesas"
+new Promise( (resolve, reject)=>{
+	$0
+})
+endsnippet
+
+snippet create-copy-array "Create copy from old array"
+var ${1:newArray} = ${2:oldArray}.slice()
+$0
+endsnippet
+
+snippet index-array "Search for index"
+${1:array}.indexOf(${2:element})$0
+endsnippet
+
+snippet con "console.log"
+console.log($0)
+endsnippet
+
+snippet array_alphanumeric "Arrays alphanumerics"
+var ${1:array} = {}
+$1[${2:index_alphanumeric}] = $0
+endsnippet
