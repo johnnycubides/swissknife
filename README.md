@@ -1,2 +1,3 @@
 # swissknife
-scripts necesaries for a electronic engineer 
+
+My Linux configurations and scripts
