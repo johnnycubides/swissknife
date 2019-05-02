@@ -124,12 +124,17 @@ set shiftwidth=2
 
 " Languaje keyword
 " Keyword spanish
-:function Tes()
+:function Keyboard_es()
 :	!setxkbmap es
 :endfunction
 " keyword english
-:function Tus()
+:function Keyboard_us()
 :	!setxkbmap us
+:endfunction
+
+" keyword english
+:function Keyboard_latam()
+:	!setxkbmap latam
 :endfunction
 
 :function Es()
