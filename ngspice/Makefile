@@ -48,7 +48,7 @@ circuit-e:
 	vim $(doc).cir
 
 sim-e:
-	vim -O $(doc).cir $(sim)
+	vim -O $(sim) $(doc).cir
 
 ps-rename:
 	mv hc* $(doc).ps
@@ -85,5 +85,5 @@ help:
 	"ps-rename: \n\tDespués de traer el archivo generado por"\
 	"\n\tngspice lo renombra como archivo.ps, para su fácil"\
 	"\n\t vista.\n"\
-	"##########################################################\n"	
+	"##########################################################\n"
 

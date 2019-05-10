@@ -29,5 +29,5 @@ view:
 build:
 	mkdocs build
 
-clear:
+clean:
 	rm -rf build/*
