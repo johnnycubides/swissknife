@@ -1,6 +1,6 @@
-###########
+##########
 # RESUMEN
-###########
+##########
 # init_sh
 # search_file
 # create_menu
@@ -16,14 +16,30 @@
 # replace_words_range
 # del_be_ch_String
 # del_af_ch_String
+#########
+# COLORS
+#########
+# init_colors_prompt
+# fg_[color]
+#	bg_[color]
+# msg-info
+# msg-ok
+# msg-warning
+# msg-error
+################
+# MISCELLANEOUS
+################
+# unzip_in_directory
 
 snippet init_sh "Iniciador de sh"
 #!/bin/bash -e
-#
+#						 ↑
+# debug [-x -v]:[complete, abbreviated]
 # Brief:	${3:brief}
 # Author: ${1:`whoami`}
 # e-mail: ${2: e-mail}
 # date: `date +"%A %d %B %Y"`
+status=$?
 $0
 endsnippet
 
@@ -264,5 +280,33 @@ endsnippet
 
 snippet bg_white "text background color white"
 \${WHITEB}${1:text}\${NCB}$0
+endsnippet
+
+snippet msg-warning "print message warning theme"
+printf "${YELLOW}${1:warning message}${NC}\n"$0
+endsnippet
+
+snippet msg-ok "print message ok theme"
+printf "${GREEN}${1:ok message}${NC}\n"$0
+endsnippet
+
+snippet msg-info "print message info theme"
+printf "${CYAN}${1:info message}${NC}\n"$0
+endsnippet
+
+snippet msg-error "print message error theme"
+printf "${RED}${1:error message}${NC}\n"$0
+endsnippet
+
+###############
+# MISCELLANEOUS
+###############
+
+snippet unzip_in_directory "Decompress in other directory"
+unzip ${1:...path/file.zip} -d ${2:...path/directory/}$0
+endsnippet
+
+snippet unzip_in_directory_no_messages "Decompress in other directory and no messages"
+unzip -p ${1:...path/file.zip} -d ${2:...path/directory/}$0
 endsnippet
 
