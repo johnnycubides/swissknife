@@ -4,19 +4,35 @@ $0
 \end{$1}
 endsnippet
 
+snippet text-color "Aplica color al texto"
+\textcolor{${1:red,blue,yellow,cyan,green,orange}}{$2}$0
+endsnippet
+
 ##########################
 #				BEAMER
 ##########################
-snippet frame "Iniciar un frame"
+snippet b-frame "Iniciar un frame"
 \begin{frame}{${1:Título}}
 $0
 \end{frame}
 endsnippet
 
+snippet b-col-2 "Iniciar dos columnas en beamer"
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	$0
+\end{column}
+\begin{column}{0.5\textwidth}
+	
+\end{column}
+\end{columns}
+endsnippet
+
 snippet b-image "Imagene en beamer"
 \begin{figure}
-\center{}
-\includegraphics[scale=${2:0.2}]{${1:imag/}}
+	\center{}
+	\includegraphics[scale=${2:0.2}]{${1:imag/}}
+	\caption{}\label{fig_}
 \end{figure}
 endsnippet
 

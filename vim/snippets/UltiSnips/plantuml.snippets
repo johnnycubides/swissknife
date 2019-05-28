@@ -5,6 +5,10 @@ $0
 @enduml
 endsnippet
 
+snippet --> "Change arrow direction"
+-${1:down right left up}-> $0
+endsnippet
+
 ############
 #	ACTIVITYES
 ############
@@ -18,14 +22,25 @@ snippet ac-arrow-lab "Label on Arrows"
 $0
 endsnippet
 
-snippet --> "Change arrow direction"
--${1:down right left up}-> $0
-endsnippet
-
 snippet ac-if "Branches"
 if \"${1:condition}\"  then
 -->[${2:Value1}] \"${3:MyActivity}\"
 else
 -->[${4:Value2}] \"${5:MyActivity}\"
 endif
+endsnippet
+
+#########
+#	STATES
+#########
+snippet st-init "Init state graph"
+[*] --> ${1:init-state}
+endsnippet
+
+snippet st-end "End state graph"
+${1:finish-state} --> [*]
+endsnippet
+
+snippet st-def "Declare state"
+${1:this-state} : ${2:Activities}
 endsnippet

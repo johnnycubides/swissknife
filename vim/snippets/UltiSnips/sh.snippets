@@ -11,11 +11,14 @@
 # ifs
 # ifs_or2
 # ifs_or3
+# array_string
+# for_array
 # replace_word
 # replace_words
 # replace_words_range
 # del_be_ch_String
 # del_af_ch_String
+# eval_string
 #########
 # COLORS
 #########
@@ -30,6 +33,7 @@
 # MISCELLANEOUS
 ################
 # unzip_in_directory
+# unzip_in_directory_no_messages
 
 snippet init_sh "Iniciador de sh"
 #!/bin/bash -e
@@ -135,6 +139,26 @@ fi
 $0
 endsnippet
 
+#########
+# ARRAY
+#########
+
+snippet array_string "new array string"
+${1:array}=( "${2:elemento1}" "${3:elemento2}" )
+$0
+endsnippet
+
+#########
+# CYCLES
+#########
+
+snippet for_array "create_for_array"
+for (( ${1:i} = 0; $1 < \${#${2:array}[@]} ; $1++ )); do
+	printf "\${$2[$1]}"
+done
+$0
+endsnippet
+
 ##################
 #	STRING
 ##################
@@ -160,6 +184,9 @@ snippet del_af_ch_String "Elimina todo desde la última aparición del caracter 
 \${${1:variable}%${2:character}*}
 endsnippet
 
+snippet eval_string "evaluate string"
+eval "echo \"hello\""
+endsnippet
 
 ################
 #		COLORS
@@ -310,3 +337,7 @@ snippet unzip_in_directory_no_messages "Decompress in other directory and no mes
 unzip -p ${1:...path/file.zip} -d ${2:...path/directory/}$0
 endsnippet
 
+snippet wget "get file from url and change its name"
+wget -O ${1:name} "${2:url}"
+$0
+endsnippet
