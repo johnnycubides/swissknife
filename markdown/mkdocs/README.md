@@ -32,6 +32,10 @@ sudo python3 setup install (recomendado)
 * https://github.com/shauser/mkdocs-pdf-export-plugin (python3)
 * https://github.com/squidfunk/mkdocs-material.git (python3)
 
+## ¿ Más temas ?
+
+[Temas](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
+
 Atentamente:
 
 Catalejo+ Team
