@@ -1,0 +1,49 @@
+\documentclass[a5paper]{article}
+% \usepackage[papersize={210mm,297mm},tmargin=10mm, 
+% bmargin=15mm,lmargin=10mm, rmargin=10mm]{geometry} %A4 210mm x 297mm
+
+% Lets make the text nice and big
+\usepackage[14pt]{extsizes}
+
+% Make the borders really small
+\usepackage[
+  left=1cm,
+  top=1cm,
+  right=1cm,
+  bottom=1cm,
+  marginparwidth=0mm,
+  marginparsep=0mm]{geometry}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts, latexsym }
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsfonts}
+\usepackage{float}
+%suport language
+\usepackage{listings}
+\usepackage{xcolor}
+%Dont ident
+\setlength\parindent{0pt}
+% Set listings
+\lstset{numbers=left, numberstyle=\scriptsize, numbersep=5pt,
+language=python, frame=single, fontadjust, basicstyle=\scriptsize,
+frameround=tttt, stepnumber=1, keywordstyle=\color{cyan}, showtabs=false,
+tab=\rightarrowfill}
+\renewcommand*\thelstnumber{\oldstylenums{\the\value{lstnumber}}}
+%\lstset{language=sh} 
+%\begin{lstlisting}
+%##########################################
+% Separar palarbras correctamente.
+\hyphenation{co-rres-pon-da}
+
+%\twocolumn
+
+\begin{document}
+%\tableofcontents
+
+\input{../src/content.tex}
+
+\end{document}
