@@ -30,6 +30,60 @@ NCB=`tput setab 0`
 PATH_SWISSKNIFE=~/projects/swissknife
 PATH_MKDOCS=markdown/mkdocs
 PATH_REVEAL=~/gitPackages/reveal.js
+PATH_PLANTUMLSH=plantuml
+PATH_EBOOK=latex/ebook
+
+upload_ebook(){
+  if [[ -e ./Makefile ]]; then
+    if [[ -e ./static/ ]]; then
+      rm -f ./Makefile
+      rm -f ./static
+      ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile ./Makefile
+      ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/static ./static
+    else
+      printf "${YELLOW}Para hacer la actualización de enlaces simbólicos para ebooks debe
+      encontrarse del directorio donde está el Makefile y el directorio static/\n${NC}"
+    fi
+  else
+    printf "${YELLOW}Para hacer la actualización de enlaces simbólicos para ebooks debe
+    encontrarse del directorio donde está el Makefile y el directorio static/\n${NC}"
+  fi
+
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
+init_ebook(){
+  # Solicitando el directorio de almacenamiento de la presentación
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
+ (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
+  read -p "Respuesta del usuario: " -r dir_pres
+  # sustituyendo caracteres inválidos
+  dir_pres=${dir_pres//[ *#?]/-}
+  if [ "$dir_pres" != "" ];  # se creará directorio con el nombre dado por el usuario
+  then
+    dir_pres=./$dir_pres
+    mkdir -pv $dir_pres
+  else                        # se creará la documentación en el directorio actual
+    dir_pres=.
+  fi
+  ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile $dir_pres/
+  ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/static $dir_pres/
+  mkdir -p $dir_pres/build
+  cp -r $PATH_SWISSKNIFE/$PATH_EBOOK/src $dir_pres/
+  if [[ ! -e $dir_pres/.gitignore ]]; then
+    echo "Makefile" >> $dir_pres/.gitignore
+    echo "static/" >> $dir_pres/.gitignore
+  fi
+  # cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_pres/
+  # rm -f $dir_pres/INSTALL.md
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
+# Init plantuml
+init_plantuml(){
+  # makefile
+  echo "Pass"
+}
 
 # Init Reveal
 init_revealjs(){
@@ -135,6 +189,9 @@ then
     printf "\t\t${CYAN}mkdocs${NC}\tConstruir documentación con markdown y mkdocs\n"
     printf "\t\tlatex\tConstruir documentación con LaTeX\n"
     printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
+    printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
+    printf "\t\t${CYAN}ebook${NC}\tConstruir pdf para ebooks con LaTeX\n"
+    printf "\t\t${CYAN}ebook update${NC}\tActualizar enlaces simbólicos\n"
     printf "\t\t-h,--help\tHelp\n"
     printf "\n${GREEN}Regards Johnny.${NC}\n"
 elif [ "$1" = "mkdocs" ];
@@ -142,9 +199,20 @@ then
   init_mkdocs
 elif [ "$1" = "latex" ];
 then
-    echo "pass"
+  echo "pass"
 elif [ "$1" = "reveal" ];
 then
-    init_revealjs
+  init_revealjs
+elif [ "$1" = "plantuml" ];
+then
+  init_plantuml
+elif [ "$1" = "ebook" ];
+then
+  if [ "$2" = "update" ];
+  then
+    upload_ebook
+  else
+    init_ebook
+  fi
 fi
 
