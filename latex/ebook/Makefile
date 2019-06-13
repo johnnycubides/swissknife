@@ -1,5 +1,5 @@
 path = static
-doc = plantilla
+doc = ebook
 
 pdf: $(path)/$(doc).tex
 	pdflatex -output-directory=build/ -shell-escape $(path)/$(doc).tex
