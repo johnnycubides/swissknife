@@ -35,11 +35,11 @@ PATH_EBOOK=latex/ebook
 
 upload_ebook(){
   if [[ -e ./Makefile ]]; then
-    if [[ -e ./static/ ]]; then
+    if [[ -e ./static ]]; then
       rm -f ./Makefile
-      rm -f ./static
-      ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile ./Makefile
-      ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/static ./static
+      rm -rf ./static
+      cp $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile ./
+      cp -r $PATH_SWISSKNIFE/$PATH_EBOOK/static ./
     else
       printf "${YELLOW}Para hacer la actualización de enlaces simbólicos para ebooks debe
       encontrarse del directorio donde está el Makefile y el directorio static/\n${NC}"
@@ -66,14 +66,14 @@ init_ebook(){
   else                        # se creará la documentación en el directorio actual
     dir_pres=.
   fi
-  ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile $dir_pres/
-  ln -sr $PATH_SWISSKNIFE/$PATH_EBOOK/static $dir_pres/
+  cp $PATH_SWISSKNIFE/$PATH_EBOOK/Makefile $dir_pres/
+  cp -r $PATH_SWISSKNIFE/$PATH_EBOOK/static $dir_pres/
   mkdir -p $dir_pres/build
   cp -r $PATH_SWISSKNIFE/$PATH_EBOOK/src $dir_pres/
-  if [[ ! -e $dir_pres/.gitignore ]]; then
-    echo "Makefile" >> $dir_pres/.gitignore
-    echo "static/" >> $dir_pres/.gitignore
-  fi
+  # if [[ ! -e $dir_pres/.gitignore ]]; then
+  #   echo "Makefile" >> $dir_pres/.gitignore
+  #   echo "static/" >> $dir_pres/.gitignore
+  # fi
   # cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_pres/
   # rm -f $dir_pres/INSTALL.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"

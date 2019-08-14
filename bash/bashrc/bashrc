@@ -141,3 +141,8 @@ export NVM_DIR="$HOME/.nvm"
 #alias get_esp32='export PATH="$HOME/esp/xtensa-esp32-elf/bin:$PATH"'
 export PATH="$HOME/gitPackages/esp/xtensa-esp32-elf/bin:$PATH"
 export PATH=$PATH:$HOME/gitPackages/esp/crosstool-NG/builds/xtensa-esp32-elf/bin
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+PATH="$PATH:/home/johnny/.mos/bin"
+PATH="$PATH:/home/johnny/.mos/bin"

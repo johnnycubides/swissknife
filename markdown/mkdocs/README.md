@@ -6,7 +6,7 @@ ser visualizada en HTMl.
   * Para editar y/o agregar más documentación puede hacerlo en el directorio **docs/**.
 
   * El `Makefile` es responsable de las tareas de construcción y visualización de la información.
-    Puede ver ayudas oprimiendo `make`.
+    Puede ver ayudas digitando `make`.
 
   * El proceso de visualización de la información es el siguiente:
 

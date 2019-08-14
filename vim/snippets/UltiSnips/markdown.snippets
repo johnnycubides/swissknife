@@ -3,6 +3,7 @@
 # link
 # note
 # tables3c
+# code
 # h-tree-c
 
 snippet header "cabecera para el documento"
@@ -25,6 +26,14 @@ snippet link "Links"
 [${1:Name_link}](${2:url})$0
 endsnippet
 
+snippet list "create list"
+${1:a. 1. *.} ${2:item}
+endsnippet
+
+snippet sublist "create sublist"
+		${1:a. 1. *.} ${2:item}
+endsnippet
+
 ##############
 # MKDOCS
 ##############
@@ -40,6 +49,12 @@ snippet tables3c "Tabla 3 columnas"
 $0
 endsnippet
 
+snippet	code "Insert code text"
+\`\`\`${1:bash}
+$0
+\`\`\`
+endsnippet
+
 ##############
 # HTML
 ##############
@@ -47,4 +62,3 @@ endsnippet
 snippet h-tree-c "Formato comentario para Tree"
 <b class="COMMIT">$1</b>$0
 endsnippet
-
