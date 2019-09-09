@@ -76,6 +76,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+    alias lls='tree -L 2'
+    alias llls='tree -L 3'
     alias cdu='cd .. && ls'
     alias rm='rm -i'
     alias vi="vim"

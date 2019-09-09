@@ -65,6 +65,13 @@ set tabstop=2
 set shiftwidth=2
 :endfunction
 
+" JAVA
+:function Code_java()
+call Code_js()
+set tabstop=2
+set shiftwidth=2
+:endfunction
+
 "Funcion LaTeX"
 :function LaTeX_Apuntes()
 :!cp /home/`whoami`/basededatos/LaTeX/apuntes/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/apuntes/$proyect/g -i Makefile
