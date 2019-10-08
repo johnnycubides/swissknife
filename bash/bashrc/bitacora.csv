@@ -2,3 +2,5 @@
 date,command,observations
 Sun Oct 21 19:21:20 -05 2018,rm ~/.bashrc,remover anterior bashrc
 Sun Oct 21 19:22:05 -05 2018,ln -s `pwd`/bashrc ~/.bashrc,Enlace simbólico creado para configuración bash
+Thu 26 Sep 2019 04:34:43 PM -05,dircolors -b >> dircolors,Colores para los elementos listados con ls
+Thu 26 Sep 2019 04:47:01 PM -05,rm ~/.bashrc ~/.bash_aliases ~/.dircolors,remover archivos para construir los enlaces simbólicos

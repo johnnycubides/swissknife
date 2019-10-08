@@ -1,0 +1,6 @@
+alias ls='ls --color=auto'
+alias lls='tree -L 2'
+alias llls='tree -L 3'
+alias cdu='cd .. && ls'
+alias rm='rm -i'
+alias vi="vim"

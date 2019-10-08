@@ -75,18 +75,14 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias lls='tree -L 2'
-    alias llls='tree -L 3'
-    alias cdu='cd .. && ls'
-    alias rm='rm -i'
-    alias vi="vim"
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
     #alias grep='grep --color=auto'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
+   # DEBE SER REVISADO JOHNNY 
+   source ~/.dircolors
 fi
 
 # colored GCC warnings and errors
@@ -146,5 +142,7 @@ export PATH=$PATH:$HOME/gitPackages/esp/crosstool-NG/builds/xtensa-esp32-elf/bin
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# rust
 PATH="$PATH:/home/johnny/.mos/bin"
 PATH="$PATH:/home/johnny/.mos/bin"
