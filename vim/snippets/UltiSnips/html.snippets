@@ -5,9 +5,11 @@
 # r-init-online
 # r-img
 # r-img-s
+# r-img-bg
 # r-video
 # r-video-s
 # r-slide
+# r-slide-bg-color
 # r-md-txt
 # r-p-txt
 # r-f-size
@@ -160,6 +162,10 @@ snippet r-img-s "insert image reveal, size manual"
 $0
 endsnippet
 
+snippet r-img-bg "inser image how background"
+<section data-background-image="${1:img/}${2:image.png}">$0</section>
+endsnippet
+
 snippet r-video "insert video reveal"
 <video class="stretch" data-src="${1:videos/}${2:video.mp4}" type="video/mp4"></video>
 $0
@@ -170,10 +176,14 @@ snippet r-video-s "insert video reveal, size manual"
 $0
 endsnippet
 
-
-
 snippet r-slide "insert slide reveal"
 <section> <${1:h4}>${2:Título}</$1>
+	$0
+</section>
+endsnippet
+
+snippet r-slide-bg-color "insert background color"
+<section data-background-color="#ff0000"><${1:h4}>${2:Título}</$1>
 	$0
 </section>
 endsnippet

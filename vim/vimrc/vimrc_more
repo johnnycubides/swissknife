@@ -50,7 +50,7 @@ let g:csv_delim=','
 
 " Config development
 " source%: carga dinámicamente las configuraciones de vim
-:function Code_js()
+:function Code()
 hi Comment cterm=italic "Comentarios en cursiva"
 hi String cterm=italic "Todos los String que encuentre en cursiva"
 hi jsVariableDef ctermfg=LightGreen "Definición de variables en verde light"
@@ -58,16 +58,25 @@ hi Folded term=standout ctermfg=9 ctermbg=15 guifg=#7289da guibg=#000000 "color 
 set fdm=syntax "foldear por syntaxis del lenguaje"
 :endfunction
 
+" LUA
+
+" JSON
+:function Code_js()
+call Code()
+set tabstop=2
+set shiftwidth=2
+:endfunction
+
 " JSON
 :function Code_json()
-call Code_js()
+call Code()
 set tabstop=2
 set shiftwidth=2
 :endfunction
 
 " JAVA
 :function Code_java()
-call Code_js()
+call Code()
 set tabstop=2
 set shiftwidth=2
 :endfunction

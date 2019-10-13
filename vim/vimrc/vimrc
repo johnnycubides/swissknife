@@ -243,6 +243,12 @@ else
   else
     if $TERM == 'xterm'
       set term=xterm-256color
+    elseif $TERM == 'xterm-256color'
+      set term=xterm-256color
+    elseif $TERM == 'screen-256color'
+      set term=xterm-256color
+    else
+      echo "no_256_color"
     endif
   endif
   
