@@ -64,4 +64,6 @@
 # 7   = reverse field (exchange foreground and background color)
 # 8   = concealed (invisible)
 
-LS_COLORS=$LS_COLORS:'di=1;94:*.png=0;95:*.tar=0;91:*.zip=0;91:' ; export LS_COLORS
+# LS_COLORS=$LS_COLORS:'di=1;94:*.png=0;95:*.tar=0;91:*.zip=0;91:*.gz=0;91:' ; export LS_COLORS
+# export LS_COLORS
+eval `dircolors ~/gitPackages/dircolors-solarized/dircolors.256dark`
