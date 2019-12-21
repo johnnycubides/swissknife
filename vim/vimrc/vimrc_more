@@ -60,7 +60,7 @@ set fdm=syntax "foldear por syntaxis del lenguaje"
 
 " LUA
 
-" JSON
+" JS
 :function Code_js()
 call Code()
 set tabstop=2
@@ -76,6 +76,13 @@ set shiftwidth=2
 
 " JAVA
 :function Code_java()
+call Code()
+set tabstop=2
+set shiftwidth=2
+:endfunction
+
+" C
+:function Code_c()
 call Code()
 set tabstop=2
 set shiftwidth=2
