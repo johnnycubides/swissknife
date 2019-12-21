@@ -1,5 +1,7 @@
 # header
 # img
+# img-html
+# img-grav
 # link
 # note
 # tables3c
@@ -19,6 +21,15 @@ endsnippet
 
 snippet img "Uso de imagenes"
 ![${1:Texto Alternativo}](./img/${2:image.png})
+$0
+endsnippet
+
+snippet img-html "uso de imagenes html"
+<img src="${1:image.png}" alt="$1" style="width:100%;">
+endsnippet
+
+snippet img-grav "Uso de imagenes"
+![${1:Texto Alternativo}](img/${2:image.png}?resize=200,200)
 $0
 endsnippet
 
