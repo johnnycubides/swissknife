@@ -1,0 +1,66 @@
+#*** Declaraciones ***#
+snippet declaration "declaracion de variables"
+${1:let var con}
+endsnippet
+
+snippet let "create variable"
+let ${1:nameVar}: type$0
+endsnippet
+
+snippet var "create variable"
+var ${1:nameVar}: type$0
+endsnippet
+
+snippet con "create variable"
+const ${1:nameVar}: type$0
+endsnippet
+
+#*** tipos ***#
+snippet type "tipos posibles"
+${1:number string boolean Array Tuple Any Void} $0
+endsnippet
+
+#*** NUMEROS ***#
+snippet number "tipo numérico"
+number = ${1:dec hex bin oct}
+endsnippet
+
+snippet dec "Número decimal"
+${1:0}
+endsnippet
+
+snippet hex "Número decimal"
+0x${1:0}
+endsnippet
+
+snippet bin "Número binario"
+0b${1:0}
+endsnippet
+
+snippet oct "Número octal"
+0o${1:0}
+endsnippet
+
+#*** Cadenas ***#
+snippet string "Creación de cadenas"
+string = "${1:}"
+endsnippet
+
+#*** Boleano ***#
+snippet boolean "Creación de booleano"
+boolean = ${1:true false}
+endsnippet
+
+#*** Arreglos ***#
+snippet Array "Arreglos<>"
+Array< type$0> = [${1:element1, elemnet2, ...}]
+endsnippet
+
+# snippet Array "Arreglos<>"
+# ${1:type}$2[] = [${1:element1, elemnet2, ...}]
+# endsnippet
+
+#*** Tupla ***#
+snippet Tuple "Crear tuplas"
+[ type$2, type$4] = [$5, $6]
+endsnippet
