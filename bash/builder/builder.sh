@@ -184,14 +184,13 @@ init_mkdocs(){
 if [ "$1" = "-h" ] || [ "$1" = "" ] || [ "$1" = "--help" ];
 then
     printf "Help for this command builder.sh\n"
-    printf "\t${CYAN}builder.sh${NC} Command options\n"
-    printf "\t[Commands]\n"
+    printf "\t${GREEN}builder.sh${NC} [${CYAN}Commands${NC}] [${YELLOW}Options${NC}]\n"
     printf "\t\t${CYAN}mkdocs${NC}\tConstruir documentación con markdown y mkdocs\n"
     printf "\t\tlatex\tConstruir documentación con LaTeX\n"
     printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
     printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
-    printf "\t\t${CYAN}ebook${NC}\tConstruir pdf para ebooks con LaTeX\n"
-    printf "\t\t${CYAN}ebook update${NC}\tActualizar enlaces simbólicos\n"
+    printf "\t\t${CYAN}latex ${YELLOW}ebook${NC}\tConstruir pdf para ebooks con LaTeX\n"
+    printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
     printf "\t\t-h,--help\tHelp\n"
     printf "\n${GREEN}Regards Johnny.${NC}\n"
 elif [ "$1" = "mkdocs" ];
@@ -199,20 +198,20 @@ then
   init_mkdocs
 elif [ "$1" = "latex" ];
 then
-  echo "pass"
+  if [ "$2" = "ebook" ];
+  then
+    if [ "$3" = "update" ];
+    then
+      upload_ebook
+    else
+      init_ebook
+    fi
+  fi
 elif [ "$1" = "reveal" ];
 then
   init_revealjs
 elif [ "$1" = "plantuml" ];
 then
   init_plantuml
-elif [ "$1" = "ebook" ];
-then
-  if [ "$2" = "update" ];
-  then
-    upload_ebook
-  else
-    init_ebook
-  fi
 fi
 
