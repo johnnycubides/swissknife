@@ -1,0 +1,34 @@
+site_name: Manual de usuario GNU/Linux
+site_dir: build
+markdown_extensions:
+  - admonition #https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+
+# use_directory_urls: false
+plugins:
+  - search
+#  - pdf-export:
+#      combined: true
+
+theme:
+  name: 'mkdocs' # 'mkdocs' 'material'
+  highlightjs: false # true/false false para prueba sin internet
+  hljs_languages:
+    - javascript
+    - python
+    - lua
+    - c
+    - c++
+    - bash
+
+
+extra_css: [extra.css] # Active this (uncomment) if you have external css in docs/extra.css
+
+nav:
+  - Home: index.md
+  - Vim:
+    - index: vim/index.md
+    - markdown: vim/markdown.md
+  - Debian:
+    - packages: debian/install.md
+
+
