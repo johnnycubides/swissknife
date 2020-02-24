@@ -1,0 +1,80 @@
+\documentclass{IEEEtran}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}%modifica las ñ y las tíldes para no colocar el cod ascii.
+%\usepackage[T1]{fontenc} 
+%\usepackage{calligra} coloca una letra bien bonita.
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry}
+\usepackage[dvips]{graphicx}
+%\usepackage[dvips,final]{epsfig}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[spanish]{babel}
+\usepackage[x11names,table,xcdraw]{xcolor}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}%Funciones especiales para matematicas
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+\makeatletter
+\def\contentsname{Indice}
+\def\listfigurename{Lista de Figuras}
+\def\listtablename{Lista de Tablas}
+\def\refname{Referencias}
+\def\indexname{Indice de Términos}
+\def\figurename{Fig.}
+\def\tablename{Tabla}
+\@IEEEcompsocconfonly{\def\figurename{Figura}\def\tablename{Tabla}}
+\def\partname{Parte}
+\def\appendixname{Apéndice}
+\def\abstractname{Resumen}
+\def\IEEEkeywordsname{Palabras Claves}
+\def\IEEEproofname{Demostración}
+\makeatother
+\ifCLASSOPTIONcompsoc
+\else
+\fi
+\ifCLASSINFOpdf
+\else
+\fi
+\providecommand{\PSforPDF}[1]{#1}
+%---------------------------
+\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
+pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={black},citecolor={black},pagecolor={black},
+urlcolor={black},
+pdftitle={a ver que sale aqui},%<!CHANGE!
+pdfsubject={Typesetting},%<!CHANGE!
+pdfauthor={Michael D. Shell},%<!CHANGE!
+pdfkeywords={Computer Society, IEEEtran, journal, LaTeX, paper,
+             template}}%<^!CHANGE!
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+%-------------aquí comienza el documento
+
+\title{Informe\\..}
+
+\author{
+    Apellidos ~Nombre,~\IEEEmembership{Código:~000000,}
+    %Apellidos ~Nombre,~\IEEEmembership{Código:~111111,} 
+    %Apellidos ~Nombre ~Julian,~\IEEEmembership{Código:~222222,}
+}
+
+\markboth{Informe de Laboratorio \#, Curso, dia mes~Año}%
+{B \MakeLowercase{\textit{et al.}}: IEEE.cls para Journals}
+
+
+\begin{document}
+\maketitle
+
+\IEEEpeerreviewmaketitle
+\IEEEtitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+\input{src/abstract.tex}
+\input{src/introduccion.tex}
+\input{src/marcoTeorico.tex}
+\input{src/procedimiento.tex}
+\input{src/simulacionesYResultados.tex}
+\input{src/analisis.tex}
+\input{src/conclusiones.tex}
+\input{src/bibliografia.tex}
+\end{document}

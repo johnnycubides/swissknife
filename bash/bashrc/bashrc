@@ -150,3 +150,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mos "mongoose"
 PATH="$PATH:/home/johnny/.mos/bin"
 PATH="$PATH:/home/johnny/.mos/bin"
+# export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/u-boot/ubootBuild/u-boot-test-2020/gcc-arm-none-eabi-4_7-2013q1/bin
+export PATH=$PATH:/opt/gcc-arm-compile/gcc-arm-none-eabi-6-2017-q2-update/bin/
+export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/compiler/gcc-linaro-4.9-2015.05-1-rc1-x86_64_arm-linux-gnueabi/bin/
+

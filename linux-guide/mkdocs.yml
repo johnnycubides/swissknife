@@ -11,7 +11,7 @@ plugins:
 
 theme:
   name: 'mkdocs' # 'mkdocs' 'material'
-  highlightjs: false # true/false false para prueba sin internet
+  highlightjs: true # true/false false para prueba sin internet
   hljs_languages:
     - javascript
     - python
@@ -25,10 +25,22 @@ extra_css: [extra.css] # Active this (uncomment) if you have external css in doc
 
 nav:
   - Home: index.md
-  - Vim:
-    - index: vim/index.md
-    - markdown: vim/markdown.md
+  - Desarrollo:
+    - Python: dev/python/docs.md
+    - Vim:
+      - index: vim/index.md
+      - markdown: vim/markdown.md
+    - git: git/git.md
   - Debian:
     - packages: debian/install.md
+    - tools:
+      - dmesg: debian/tools/dmesg.md
+      - createi_image: debian/tools/copyAndPasteImage.md
+  - Aplicaciones:
+    - Compiladores de texto:
+      - LaTex: apps/latex.md
+  - Juegos:
+    - AssaultCube: games/assaultCube.md
+    - ReatroArch: games/retroarch.md
 
 

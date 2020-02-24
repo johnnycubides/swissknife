@@ -1,3 +1,20 @@
+# t-b -> bold text
+# bib-i bibliography
+# bibi bibliography item
+snippet t-b "bold text"
+\textbf{$1}$0
+endsnippet
+
+snippet bib-i "Init bibliography"
+\begin{thebibliography}{${1:numero de entradas}}
+$0
+\end{thebibliography}
+endsnippet
+
+snippet bibi "bibliography item"
+\bibitem{${1:id}} $0
+endsnippet
+
 snippet begin "iniciar un entorno"
 \begin{${1:enviroment}}
 $0

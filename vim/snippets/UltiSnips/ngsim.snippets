@@ -1,3 +1,11 @@
+# Menu
+# begin		-> Iniciar simulaciones
+# option	-> si requiere agregar opciones para vista
+# tran		-> transitoria
+# dc			-> simulación dc
+# printi	-> imprimir valor de corriente de un elemento
+# printv	-> imprimir valor de voltaje
+
 #Iniciar simulaciones
 snippet begin "Inicio de simulacion"
 .control
@@ -27,10 +35,14 @@ snippet tran "Simulación transitoria"
 tran ${1:step} ${2:stop} ${3:start}$0
 endsnippet
 
+# Si se trata de una simulación transitoria f(t)
+snippet dc "Simulación DC"
+dc ${1:srcname} ${2:vstart} ${3:vstop} ${4:vincr}$0
+endsnippet
+
 # Crear una variable
 snippet let "nueva variable"
-let ${1:name} = ${2:value}
-$0
+let ${1:name} = ${2:value}$0
 endsnippet
 
 # Asignar el valor de una variable a un componente del cir circito.
@@ -53,8 +65,8 @@ $0
 endsnippet
 
 snippet plotv1 "plot de una variable en voltaje"
-	plot v(${1:n1})
-	hardcopy voltage.ps v($1)
+plot v(${1:n1})
+hardcopy voltage.ps v($1)
 endsnippet
 
 snippet plotv2 "Plot de 2 v(nodes)"
@@ -179,4 +191,12 @@ snippet sweeprv6 "Barrido con 6 v(nodes)"
 	set hcopydevtype=postscript
 	set hcopypscolor=1
 	hardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($) tran6.v($8)
+endsnippet
+
+snippet printi "Imprimir corriente"
+	print i(${1:Obj, Fuente})
+endsnippet
+
+snippet printi "Imprimir voltaje"
+	print v(${1:Obj, Fuente})
 endsnippet
