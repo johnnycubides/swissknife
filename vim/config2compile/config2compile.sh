@@ -1,0 +1,15 @@
+./configure --with-features=huge \
+--enable-multibyte \
+--prefix=/usr/local \
+--enable-fontset \
+--enable-xim \
+--enable-gui=auto \
+--enable-luainterp=dynamic \
+--with-python3-command=python3 \
+--enable-python3interp=yes \
+--with-python3-config-dir=$(python3.7-config --configdir) \
+--enable-rubyinterp=dynamic \
+--enable-perlinterp \
+--enable-cscope \
+--with-x \
+--with-compiledby=johnnycubides

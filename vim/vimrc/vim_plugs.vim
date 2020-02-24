@@ -15,4 +15,4 @@ Plug 'chrisbra/csv.vim'
 "Plug 'xolox/vim-easytags'
 Plug 'Quramy/tsuquyomi'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'rafi/awesome-vim-colorschemes'
+"Plug 'rafi/awesome-vim-colorschemes' "sin poder probar!!!
