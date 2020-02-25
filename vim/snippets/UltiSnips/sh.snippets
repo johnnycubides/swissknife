@@ -59,23 +59,23 @@ snippet	create_menu	"Crear menú de inicio"
 # Permite guardar información acerca de comandos usados
 if [ "\$1" = "-h" ] || [ "\$1" = "" ] || [ "\$1" = "--help" ];
 then
-    printf "Help for this command ${1:FILE_NAME}\n"
-    printf "\t$1 Command options\n"
-    printf "\t[Commands]\n"
-    printf "\t\t${2:command1}\t${3:brief1}\n"
-    printf "\t\t${4:command2}\t${5:brief2}\n"
-    printf "\t\t${6:command3}\t${7:brief3}\n"
-    printf "\t\t-h,--help\tHelp\n"
-    printf "\nRegards Johnny.\n"
+	printf "Help for this command ${1:FILE_NAME}\n"
+	printf "\t$1 Command options\n"
+	printf "\t[Commands]\n"
+	printf "\t\t${2:command1}\t${3:brief1}\n"
+	printf "\t\t${4:command2}\t${5:brief2}\n"
+	printf "\t\t${6:command3}\t${7:brief3}\n"
+	printf "\t\t-h,--help\tHelp\n"
+	printf "\nRegards Johnny.\n"
 elif [ "\$1" = "$2" ];
 then
-    echo "pass"
+	echo "pass"
 elif [ "\$1" = "$4" ];
 then
-    echo "pass"
+	echo "pass"
 elif [ "\$1" = "$6" ];
 then
-    echo "pass"
+	echo "pass"
 fi
 $0
 endsnippet

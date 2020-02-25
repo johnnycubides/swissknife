@@ -1,6 +1,6 @@
 # Compilar VIM 8.2
 
-1. Clonar archivos fuentes de VIM
+1. Clonar archivos fuentes de VIM (8.2)
 
 2. Configurar vim
 
