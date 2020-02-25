@@ -32,6 +32,7 @@ PATH_MKDOCS=markdown/mkdocs
 PATH_REVEAL=~/gitPackages/reveal.js
 PATH_PLANTUMLSH=plantuml
 PATH_EBOOK=latex/ebook
+PATH_ARTICLE=latex/article
 
 upload_ebook(){
   if [[ -e ./Makefile ]]; then
@@ -49,6 +50,33 @@ upload_ebook(){
     encontrarse del directorio donde está el Makefile y el directorio static/\n${NC}"
   fi
 
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
+init_article(){
+  # Solicitando el directorio de almacenamiento del artículo
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
+ (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
+  read -p "Respuesta del usuario: " -r dir_art
+  # sustituyendo caracteres inválidos
+  dir_art=${dir_art//[ *#?]/-}
+  if [ "$dir_art" != "" ];  # se creará directorio con el nombre dado por el usuario
+  then
+    dir_art=./$dir_art
+    mkdir -pv $dir_art
+  else                        # se creará la documentación en el directorio actual
+    dir_art=.
+  fi
+  cp $PATH_SWISSKNIFE/$PATH_ARTICLE/Makefile $dir_art/
+  cp $PATH_SWISSKNIFE/$PATH_ARTICLE/article.tex $dir_art/
+  mkdir -p $dir_art/build
+  cp -r $PATH_SWISSKNIFE/$PATH_ARTICLE/src $dir_art/
+  # if [[ ! -e $dir_art/.gitignore ]]; then
+  #   echo "Makefile" >> $dir_art/.gitignore
+  #   echo "static/" >> $dir_art/.gitignore
+  # fi
+  # cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_art/
+  # rm -f $dir_art/INSTALL.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
 }
 
@@ -183,16 +211,16 @@ init_mkdocs(){
 # Permite guardar información acerca de comandos usados
 if [ "$1" = "-h" ] || [ "$1" = "" ] || [ "$1" = "--help" ];
 then
-    printf "Help for this command builder.sh\n"
-    printf "\t${GREEN}builder.sh${NC} [${CYAN}Commands${NC}] [${YELLOW}Options${NC}]\n"
-    printf "\t\t${CYAN}mkdocs${NC}\tConstruir documentación con markdown y mkdocs\n"
-    printf "\t\tlatex\tConstruir documentación con LaTeX\n"
-    printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
-    printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
-    printf "\t\t${CYAN}latex ${YELLOW}ebook${NC}\tConstruir pdf para ebooks con LaTeX\n"
-    printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
-    printf "\t\t-h,--help\tHelp\n"
-    printf "\n${GREEN}Regards Johnny.${NC}\n"
+  printf "Help for this command builder.sh\n"
+  printf "\t${GREEN}builder.sh${NC} [${CYAN}Commands${NC}] [${YELLOW}Options${NC}]\n"
+  printf "\t\t${CYAN}mkdocs${NC}\tConstruir documentación con markdown y mkdocs\n"
+  printf "\t\tlatex\tConstruir documentación con LaTeX\n"
+  printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
+  printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
+  printf "\t\t${CYAN}latex ${YELLOW}ebook, article${NC}\tConstruir documentos con LaTeX\n"
+  printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
+  printf "\t\t-h,--help\tHelp\n"
+  printf "\n${GREEN}Regards Johnny.${NC}\n"
 elif [ "$1" = "mkdocs" ];
 then
   init_mkdocs
@@ -206,6 +234,9 @@ then
     else
       init_ebook
     fi
+  elif [ "$2" = "article" ];
+  then
+    init_article
   fi
 elif [ "$1" = "reveal" ];
 then
