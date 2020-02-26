@@ -21,8 +21,40 @@ $0
 \end{$1}
 endsnippet
 
-snippet text-color "Aplica color al texto"
-\textcolor{${1:red,blue,yellow,cyan,green,orange}}{$2}$0
+snippet t-c "Aplica color al texto"
+\textcolor{${1:red,blue,yellow,cyan,green,orange,violet,purple}}{$2}$0
+endsnippet
+
+snippet img "Insert image"
+\begin{figure}
+	\center{}
+	\includegraphics[width=${2:9cm}]{${1:imag/}}
+	\caption{$3}\label{fig_$4}
+\end{figure}
+$0
+endsnippet
+
+snippet img-svg "Insert svg image"
+%\usepackage{svg} %insertar en el preambulo
+\begin{figure}
+	\center{}
+	\includesvg[width=${2:9cm}]{${1:imag/}}
+	\caption{$3}\label{fig_$4}
+\end{figure}
+$0
+endsnippet
+
+snippet code "insert code"
+% \usepackage{listings}
+\begin{lstlisting}[language=${1:Python, C, Lua, Octave, Javascript}, tabsize=${2:2}, caption=${3:}, label=code_${4:}]
+$5
+\end{lstlisting}
+$0
+endsnippet
+
+snippet insert-pdf "Insert page pdf"
+%\usepackage{pdfpages} % agregar en el preambulo del tex
+\includepdf[pages={${1:1,2,3}}, ${2:angle=0}]{${3:src/file.pdf}}$0
 endsnippet
 
 ##########################
