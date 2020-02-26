@@ -36,6 +36,7 @@ nav:
     - tools:
       - dmesg: debian/tools/dmesg.md
       - createi_image: debian/tools/copyAndPasteImage.md
+      - Misceláneos: debian/tools/miscellaneous.md
   - Aplicaciones:
     - Compiladores de texto:
       - LaTex: apps/latex.md
