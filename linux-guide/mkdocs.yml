@@ -35,6 +35,7 @@ nav:
     - packages: debian/install.md
     - tools:
       - dmesg: debian/tools/dmesg.md
+      - network_Tools: debian/tools/networkTools.md
       - createi_image: debian/tools/copyAndPasteImage.md
       - Misceláneos: debian/tools/miscellaneous.md
   - Aplicaciones:
