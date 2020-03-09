@@ -28,8 +28,14 @@ snippet img-html "uso de imagenes html"
 <img src="${1:image.png}" alt="$1" style="width:100%;">
 endsnippet
 
-snippet img-grav "Uso de imagenes"
+snippet img-grav "Uso de imagenes grav"
 ![${1:Texto Alternativo}](img/${2:image.png}?resize=200,200)
+$0
+endsnippet
+
+# require markdown-extension - attr_list
+snippet img-mkdocs "Uso de imagenes mkdocs"
+![${1:Texto Alternativo}](img/${2:image.png}{: styke="$3"}
 $0
 endsnippet
 
