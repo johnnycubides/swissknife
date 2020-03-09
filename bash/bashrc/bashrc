@@ -152,5 +152,8 @@ PATH="$PATH:/home/johnny/.mos/bin"
 PATH="$PATH:/home/johnny/.mos/bin"
 # export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/u-boot/ubootBuild/u-boot-test-2020/gcc-arm-none-eabi-4_7-2013q1/bin
 export PATH=$PATH:/opt/gcc-arm-compile/gcc-arm-none-eabi-6-2017-q2-update/bin/
+# éste compilador no se sabe si funciona correctamente
 export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/compiler/gcc-linaro-4.9-2015.05-1-rc1-x86_64_arm-linux-gnueabi/bin/
+# El de buildroot funciona ok pero es versión 8 :( algo superior) hay que hacer pruebas!
+export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/fileSystem/buildroot/build/buildroot-2019.11.1/output/host/usr/bin/
 
