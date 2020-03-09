@@ -2,6 +2,7 @@ site_name: Name Site
 site_dir: build
 markdown_extensions:
   - admonition #https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+  - attr_list
 
 # use_directory_urls: false
 plugins:
