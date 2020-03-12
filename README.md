@@ -10,6 +10,12 @@ cd ~/projects/
 git clone https://github.com/johnnycubides/swissknife.git
 ```
 
+# Observaciones
+
+* Instalar tmux
+* powerline-shell
+* tree
+
 Regards
 
 Johnny Cubides
