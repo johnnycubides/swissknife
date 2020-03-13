@@ -37,7 +37,7 @@ serial:
 lib2search:
 ifeq ($(LIB),)
 	@echo "please add l=<lib to search>"
-	@echo "example: make lib2search l=dht"
+	@echo "example: make lib2search l=TSL2591"
 else
 	arduino-cli lib search $(LIB)
 endif
@@ -45,7 +45,7 @@ endif
 lib2install:
 ifeq ($(LIB),)
 	@echo "please add l=<lib to search>"
-	@echo "example: make lib2install l=dht"
+	@echo "example: make lib2install l=\"Adafruit\\ TSL2591\\ Library\""
 else
 	arduino-cli lib install $(LIB)
 endif
