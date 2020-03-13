@@ -7,7 +7,7 @@
 # date: jueves 12 marzo 2020
 status=$?
 
-DESTINATION=~/gitPackage/bin
+DESTINATION=~/gitPackages/bin
 
 mkdir -p $DESTINATION
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=$DESTINATION sh
