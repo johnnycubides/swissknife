@@ -33,6 +33,7 @@ PATH_REVEAL=~/gitPackages/reveal.js
 PATH_PLANTUMLSH=plantuml
 PATH_EBOOK=latex/ebook
 PATH_ARTICLE=latex/article
+PATH_IEEE=latex/infoIEEE
 
 upload_ebook(){
   if [[ -e ./Makefile ]]; then
@@ -79,6 +80,39 @@ init_article(){
   # rm -f $dir_art/INSTALL.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
 }
+
+init_ieee(){
+  # Solicitando el directorio de almacenamiento del artículo
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
+ (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
+  read -p "Respuesta del usuario: " -r dir_ieee
+  # sustituyendo caracteres inválidos
+  dir_ieee=${dir_ieee//[ *#?]/-}
+  if [ "$dir_ieee" != "" ];  # se creará directorio con el nombre dado por el usuario
+  then
+    dir_ieee=./$dir_ieee
+    mkdir -pv $dir_ieee
+  else                        # se creará la documentación en el directorio actual
+    dir_ieee=.
+  fi
+  cp $PATH_SWISSKNIFE/$PATH_IEEE/Makefile $dir_ieee/
+  if [ "$dir_ieee" != "." ];
+  then
+    cp $PATH_SWISSKNIFE/$PATH_IEEE/infoIEEE.tex $dir_ieee/$dir_ieee.tex
+  else
+    cp $PATH_SWISSKNIFE/$PATH_IEEE/infoIEEE.tex $dir_ieee/
+  fi
+  mkdir -p $dir_ieee/build
+  cp -r $PATH_SWISSKNIFE/$PATH_IEEE/src $dir_ieee/
+  # if [[ ! -e $dir_ieee/.gitignore ]]; then
+  #   echo "Makefile" >> $dir_ieee/.gitignore
+  #   echo "static/" >> $dir_ieee/.gitignore
+  # fi
+  # cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_ieee/
+  # rm -f $dir_ieee/INSTALL.md
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
 
 init_ebook(){
   # Solicitando el directorio de almacenamiento de la presentación
@@ -217,7 +251,7 @@ then
   printf "\t\tlatex\tConstruir documentación con LaTeX\n"
   printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
   printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
-  printf "\t\t${CYAN}latex ${YELLOW}ebook, article${NC}\tConstruir documentos con LaTeX\n"
+  printf "\t\t${CYAN}latex ${YELLOW}ebook, article, ieee${NC}\tConstruir documentos con LaTeX\n"
   printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
   printf "\t\t-h,--help\tHelp\n"
   printf "\n${GREEN}Regards Johnny.${NC}\n"
@@ -234,6 +268,9 @@ then
     else
       init_ebook
     fi
+  elif [ "$2" = "ieee" ];
+  then
+    init_ieee
   elif [ "$2" = "article" ];
   then
     init_article
