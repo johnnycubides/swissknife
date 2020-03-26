@@ -27,7 +27,8 @@ let g:NERDTreeWinSize = 30
 " https://github.com/SirVer/ultisnips/issues/401
 "set runtimepath+=~/.vim/my-snippets/UltiSnips "no probado
 
-let g:UltiSnipsListSnippets="<C-j>" "My change
+" let g:UltiSnipsListSnippets="<C-j>" "My change
+let g:UltiSnipsListSnippets="<C-l>" "My change
 let g:UltiSnipsSnippetsDir=$HOME.'/.vim/my-snippets/UltiSnips'
 "let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets', $HOME.'/proyectos/swissknife/vim/UltiSnips']
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']

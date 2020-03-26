@@ -1,0 +1,97 @@
+snippet d-init "documentación de archivo"
+/**
+ * @file `echo expand('%:t')`
+ * @brief ${1:resumen del archivo}
+ * @author $2
+ * contact $3
+ * @date `date +"%A %d %B %Y"`
+ **/
+
+#ifndef ${4:FILE}_H
+#define $4_H
+#endif /* ifndef $4_H */
+endsnippet
+
+snippet d-def "Definiciones de preprocesador"
+#define ${1:nameDef} ${2:value} /*!< ${3:Detailed description} */
+endsnippet
+
+snippet var "var"
+${1:int float char} ${2:nameVar}; /*!< ${3:Detailed description} */
+endsnippet
+
+snippet uint "var entera sin signo"
+${1:uint8_t uint16_t uint32_t} ${2:nameVar}; /*!< ${3:Detailed description} */
+endsnippet
+
+snippet struct "struture"
+struct ${1:nameStruct}
+	$0
+};
+endsnippet
+
+snippet d-struct "struture"
+/**
+ *	${2:Brief}
+ */
+struct ${1:nameStruct}
+{
+	$0
+};
+endsnippet
+
+# FUNCIONES DOCUMENTADAS #
+snippet d-fun0 "def var sin parametros"
+/**
+ * @brief ${3:Breve descripción de la función}
+ * @return ${4:¿qué retorna la función?}
+ **/
+${2:void bool int float other} ${1:nameFuntion}(void);
+$0
+endsnippet
+
+snippet d-fun1 "def var sin parametros"
+/**
+ * @brief ${5:Breve descripción de la función}
+ * @param ${6:Caracteristicas del parámetro}
+ * @return ${7:¿qué retorna la función?}
+ **/
+${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam});
+$0
+endsnippet
+
+snippet d-fun2 "def var sin parametros"
+/**
+ * @brief ${7:Breve descripción de la función}
+ * @param ${8:Caracteristicas del parámetro}
+ * @param ${9:Caracteristicas del parámetro}
+ * @return ${10:¿qué retorna la función?}
+ **/
+${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam});
+$0
+endsnippet
+
+snippet d-fun3 "def var sin parametros"
+/**
+ * @brief ${9:Breve descripción de la función}
+ * @param ${10:Caracteristicas del parámetro}
+ * @param ${11:Caracteristicas del parámetro}
+ * @param ${12:Caracteristicas del parámetro}
+ * @return ${13:¿qué retorna la función?}
+ **/
+${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam});
+$0
+endsnippet
+
+snippet d-fun4 "def var sin parametros"
+/**
+ * @brief ${11:Breve descripción de la función}
+ * @param ${12:Caracteristicas del parámetro}
+ * @param ${13:Caracteristicas del parámetro}
+ * @param ${14:Caracteristicas del parámetro}
+ * @param ${15:Caracteristicas del parámetro}
+ * @return ${16:¿qué retorna la función?}
+ **/
+${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam}, ${9:type} ${10:nameParam});
+$0
+endsnippet
