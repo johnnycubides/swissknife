@@ -3,4 +3,6 @@ alias lls='tree -L 2'
 alias llls='tree -L 3'
 alias cdu='cd .. && ls'
 alias rm='rm -i'
+# alias rm='trash'
+# alias rm='mv -t /tmp/'
 alias vi="vim"
