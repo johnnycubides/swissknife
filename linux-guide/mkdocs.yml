@@ -26,13 +26,17 @@ extra_css: [extra.css] # Active this (uncomment) if you have external css in doc
 nav:
   - Home: index.md
   - Desarrollo:
+    - Markdown: 
+      - index: dev/markdown/index.md
+      - html: dev/markdown/html.md
     - Python: dev/python/docs.md
     - Vim:
       - index: vim/index.md
       - markdown: vim/markdown.md
+      - vifm: vim/vifm.md
     - git: git/git.md
   - Debian:
-    - packages: debian/install.md
+    - packages: debian/package.md
     - tools:
       - dmesg: debian/tools/dmesg.md
       - network_Tools: debian/tools/networkTools.md
@@ -41,6 +45,12 @@ nav:
   - Aplicaciones:
     - Compiladores de texto:
       - LaTex: apps/latex.md
+      - Mkdocs: apps/mkdocs.md
+    - Presentaciones:
+      - Sozi: apps/sozi.md
+    - Graphics:
+      - Inkscape: apps/inkscape.md
+      - Drawio: apps/drawio.md
   - Juegos:
     - AssaultCube: games/assaultCube.md
     - ReatroArch: games/retroarch.md
