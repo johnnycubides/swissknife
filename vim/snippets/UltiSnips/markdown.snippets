@@ -29,13 +29,13 @@ snippet img-html "uso de imagenes html"
 endsnippet
 
 snippet img-grav "Uso de imagenes grav"
-![${1:Texto Alternativo}](img/${2:image.png}?resize=200,200)
+![${1:Texto Alternativo}](img/${2:image.png})?resize=200,200)
 $0
 endsnippet
 
 # require markdown-extension - attr_list
 snippet img-mkdocs "Uso de imagenes mkdocs"
-![${1:Texto Alternativo}](img/${2:image.png}{: styke="$3"}
+![${1:Texto Alternativo}](img/${2:image.png}){: style="${3:width:100%; margin-left: auto; margin-right: auto; display: block}"}
 $0
 endsnippet
 
@@ -86,4 +86,12 @@ endsnippet
 # img-pandoc
 snippet img-pandoc "image in pandoc"
 ![${1:imageName}](./img/${2:img.png}){ width=${3:width}}$0
+endsnippet
+
+snippet label "etiqueta html, p, br, kdb"
+<${1:kbd, p}>$2</$1>$0
+endsnippet
+
+snippet t-a "align text"
+<div align="${1:center left right}">$2</div>$0
 endsnippet

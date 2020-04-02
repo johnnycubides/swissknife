@@ -47,8 +47,9 @@ status=$?
 $0
 endsnippet
 
+# https://linuxize.com/post/bash-check-if-file-exists/
 snippet search_file "Buscar archivo"
-if [[ ! -e ${1:Archivo} ]]; then
+if [[ ! -${2:L d f x e} ${1:Archivo} ]]; then
 	echo "ERROR: Could not locate $1." 1>&2
 	exit 1 # terminate and indicate error
 fi
