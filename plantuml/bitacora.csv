@@ -1,4 +1,0 @@
-/home/johnny/projects/swissknife/plantuml
-date,command,observations
-Wed Oct 24 09:21:26 -05 2018,sudo ln -s /home/johnny/projects/swissknife/plantuml/plantuml.sh /usr/local/bin/,creando enlace simbólico para plantUML
-Wed Oct 24 09:21:49 -05 2018,http://plantuml.com/,pagina oficial
