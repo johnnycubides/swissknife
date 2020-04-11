@@ -29,7 +29,7 @@ sudo apt install plantuml
 Esta opción le da sugerencias para el uso de plantuml
 
 ```bash
-ln -sr plantuml.sh /usr/local/bin/plantuml.sh
+sudo ln -sr plantuml.sh /usr/local/bin/plantuml.sh
 ```
 
 ## 4. Plantuml con VIM

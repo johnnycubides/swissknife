@@ -49,9 +49,10 @@ if [[ ! -e $PATH_DEST/$APP ]]; then
   if [ $? == 0 ];
   then
     echo -e "A\n" | unzip $PATH_TMP/$APP_ZIP -d $PATH_DEST/
-    $PATH_JAVA -jar $PATH_DEST/$APP -v
+    $PATH_JAVA -jar $PATH_DEST/$APP -version
+    printf "${CYAN}Instalación terminada\n${NC}"
   else
-    printf "${RED} $APP_ZIP no pudo ser comprobado\n"
+    printf "${RED}$APP_ZIP no pudo ser comprobado\n${NC}"
   fi 
 else
   read -p "${CYAN}Ya existe una version de $APP desea sustituirla?: y/n ${NC}" -r variable
@@ -67,16 +68,18 @@ else
     if [ $? == 0 ];
     then
       echo -e "A\n" | unzip $PATH_TMP/$APP_ZIP -d $PATH_DEST/
-      $PATH_JAVA -jar $PATH_DEST/$APP -v
+      $PATH_JAVA -jar $PATH_DEST/$APP -version
       read -p "${CYAN}¿Desea borrar la versión anterior? y/n: ${NC}" -r variable
       if [ "$variable" = "y" ];
       then
         printf "${YELLOW}Borrando la versión anterior\n${NC}"
         rm -f $PATH_DEST/$APP.old
       fi
+      printf "${CYAN}Instalación terminada\n${NC}"
     else
-      printf "${RED} $APP_ZIP no pudo ser comprobado\n"
+      printf "${RED}$APP_ZIP no pudo ser comprobado\n${NC}"
     fi
   fi 
 fi
 
+printf "${CYAN}Saludos Johnny!!!\n${NC}"

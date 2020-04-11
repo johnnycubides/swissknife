@@ -1,2 +1,3 @@
 /home/johnny/projects/swissknife/bash/installs/plantuml
 date,command,observations
+Sat 11 Apr 2020 05:22:08 PM -05,sudo ln -sr plantuml.sh /usr/local/bin/plantuml.sh,instalando enlace simbólico de plantuml.sh
