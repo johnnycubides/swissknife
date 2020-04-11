@@ -8,6 +8,7 @@
 # read_keyboard
 # read_keyboard_s
 # create_simbolic_link
+# $?
 # ifs
 # ifs_or2
 # ifs_or3
@@ -116,6 +117,15 @@ endsnippet
 ################
 # = : igual
 # != : diferente
+
+snippet	$? "test status error"
+if [ $? == ${1:0} ];
+then
+	${2:echo "pass"}
+fi
+$0
+endsnippet
+
 snippet ifs "if string"
 if [ "${1:$variable}" = "${2:string}" ];
 then
