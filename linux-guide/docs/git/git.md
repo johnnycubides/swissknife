@@ -2,7 +2,7 @@
 
 ## Hacer pull
 
-###Veridicación de branches actualizados
+###Verificación de branches actualizados
 
 [Fuente](https://stackoverflow.com/questions/3258243/check-if-pull-needed-in-git)
 
@@ -39,5 +39,20 @@ git clone -b nameBranch --single-branch url_git_repo
 
 ```bash
 git submodule add https://github.com/johnnycubides/imx23-olinuxino.git
+```
+
+## Creando un branch huérfano
+
+En un repositorio ya creado, para iniciar un branch huérfano vea el
+siguiente ejemplo:
+
+```bash
+git checkout --orphan new_branch_orphan
+git rm -rf .
+mkdir new_branch_orphan
+touch new_branch_orphan/README.md
+git add new_branch_orphan/
+git commit -m "init branch"
+git push origin new_branch_orphan
 ```
 

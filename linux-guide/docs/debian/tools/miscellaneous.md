@@ -12,3 +12,7 @@ Donde:
 * Si `X=1` Limpia PageCache
 * Si `X=2` Limpia dentries e inodes
 * Si `X=3` Limpia PageCache, dentries e inodes
+
+|Comando|Observación|Observación|
+|:-------------:|:-------------:|:-----:|
+|cat /etc/os-release|Ver las caracteristicas de la distribución usada en el equipo||

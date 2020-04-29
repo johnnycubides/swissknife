@@ -16,8 +16,8 @@ theme:
     - javascript
     - python
     - lua
-    - c
-    - c++
+    # - c
+    # - c++
     - bash
 
 

@@ -1,3 +1,6 @@
 # RestroArch
 
 Instalación...
+
+* antimicro
+* recalbox
