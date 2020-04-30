@@ -2,6 +2,7 @@ site_name: Manual de usuario GNU/Linux
 site_dir: build
 markdown_extensions:
   - admonition #https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+  - attr_list
 
 # use_directory_urls: false
 plugins:
@@ -30,6 +31,8 @@ nav:
       - index: dev/markdown/index.md
       - html: dev/markdown/html.md
     - Python: dev/python/docs.md
+    - Flutter:
+      - configuración: dev/flutter/init.md
     - Vim:
       - index: vim/index.md
       - markdown: vim/markdown.md

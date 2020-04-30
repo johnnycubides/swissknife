@@ -42,3 +42,16 @@ Luego puede ejecutar los ejemplos:
 % Uso de el comando
 \newCommandName{}
 ```
+### Insertar documentos pdf
+
+Debe agregar en el preambulo:
+```bash
+\usepackage{pdfpages}
+```
+
+Donde quiera insertar puede hacer uso de la siguiente línde de ejemplo:
+
+```
+\includepdf[pages={1}, angle=90]{path/file.pdf}
+
+```
