@@ -20,3 +20,22 @@ help nvim-from-vim
 ```
 
 Finalemente ejecutar `./nvimrc_config.sh`
+
+## COC instalación
+
+En *vimrc*
+
+```bash
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+```
+
+Descargar e instalar plug `:PlugInstall`
+
+### Plugings para coc
+
+[coc-snippets](https://github.com/neoclide/coc-snippets)
+[coc-flutter](https://github.com/iamcco/coc-flutter)
+
+coc-snippets `:CocInstall coc-snippets`
+coc-flutter `:CocInstall coc-flutter`
+
