@@ -156,4 +156,7 @@ export PATH=$PATH:/opt/gcc-arm-compile/gcc-arm-none-eabi-6-2017-q2-update/bin/
 export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/compiler/gcc-linaro-4.9-2015.05-1-rc1-x86_64_arm-linux-gnueabi/bin/
 # El de buildroot funciona ok pero es versión 8 :( algo superior) hay que hacer pruebas!
 export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx233/fileSystem/buildroot/build/buildroot-2019.11.1/output/host/usr/bin/
-
+# compiler of omega2+
+export PATH=$PATH:/home/johnny/projects/omega-openwrt/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/
+# Flutter PATH 
+export PATH=$PATH:$HOME/gitPackages/flutter/bin
