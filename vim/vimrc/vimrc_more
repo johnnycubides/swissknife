@@ -59,34 +59,35 @@ hi Folded term=standout ctermfg=9 ctermbg=15 guifg=#7289da guibg=#000000 "color 
 set fdm=syntax "foldear por syntaxis del lenguaje"
 :endfunction
 
+function CodeTab2()
+set tabstop=2
+set shiftwidth=2
+endfunction
+
 " LUA
 
 " JS
 :function Code_js()
 call Code()
-set tabstop=2
-set shiftwidth=2
+call CodeTab2()
 :endfunction
 
 " JSON
 :function Code_json()
 call Code()
-set tabstop=2
-set shiftwidth=2
+call CodeTab2()
 :endfunction
 
 " JAVA
 :function Code_java()
 call Code()
-set tabstop=2
-set shiftwidth=2
+call CodeTab2()
 :endfunction
 
 " C
 :function Code_c()
 call Code()
-set tabstop=2
-set shiftwidth=2
+call CodeTab2()
 :endfunction
 
 "Funcion LaTeX"
@@ -168,4 +169,13 @@ endfunction
 :function En()
 : set spell spelllang=en
 endfunction
+
+" Prueba para cargar configuraciones locales
+function VimLocalExist()
+if filereadable("./.pro.vim")
+  source ./.pro.vim
+endif
+endfunction
+
+call VimLocalExist()
 

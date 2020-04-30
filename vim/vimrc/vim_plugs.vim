@@ -7,12 +7,18 @@
 "bootstarp
 " My Plug List
 "plugin that provides Tern-based JavaScript editing support.
-Plug 'ternjs/tern_for_vim'
-Plug 'sickill/vim-monokai'
-Plug 'lmintmate/blue-mood-vim'
+Plug 'ternjs/tern_for_vim' "provides Tern-based JavaScript editing support
+Plug 'sickill/vim-monokai' "tema
+Plug 'lmintmate/blue-mood-vim' "tema basado en ecmas
 "Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
 "Plug 'xolox/vim-easytags'
-Plug 'Quramy/tsuquyomi'
+Plug 'Quramy/tsuquyomi' "Make your Vim a TypeScript IDE
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "Plug 'rafi/awesome-vim-colorschemes' "sin poder probar!!!
+
+"Flutter support for vim
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}

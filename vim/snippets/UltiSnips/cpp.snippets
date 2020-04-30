@@ -12,15 +12,25 @@ snippet d-init "documentación de archivo"
 #endif /* ifndef $4_H */
 endsnippet
 
+snippet c2cpp "Compatibilidad de C en C++ compiladores"
+#ifdef __cplusplus
+extern "C" {
+#endif
+$0
+#ifdef __cplusplus
+}
+#endif
+endsnippet
+
 snippet d-def "Definiciones de preprocesador"
 #define ${1:nameDef} ${2:value} /*!< ${3:Detailed description} */
 endsnippet
 
-snippet var "var"
+snippet d-var "var"
 ${1:int float char} ${2:nameVar}; /*!< ${3:Detailed description} */
 endsnippet
 
-snippet uint "var entera sin signo"
+snippet d-uint "var entera sin signo"
 ${1:uint8_t uint16_t uint32_t} ${2:nameVar}; /*!< ${3:Detailed description} */
 endsnippet
 
@@ -40,6 +50,23 @@ struct ${1:nameStruct}
 };
 endsnippet
 
+snippet	d-enum "enumeradores"
+/**
+ *	${2:Brief}
+ */
+enum ${1:nameEnum}
+{
+	$3
+}
+$0
+endsnippet
+
+snippet d-enum-item "items de enumeradores"
+${1:nameItem = 0}, /*!< ${2:Detailed description} */
+$0
+endsnippet
+
+
 # FUNCIONES DOCUMENTADAS #
 snippet d-fun0 "def var sin parametros"
 /**
@@ -53,7 +80,7 @@ endsnippet
 snippet d-fun1 "def var sin parametros"
 /**
  * @brief ${5:Breve descripción de la función}
- * @param ${6:Caracteristicas del parámetro}
+ * @param $4 ${6:Caracteristicas del parámetro}
  * @return ${7:¿qué retorna la función?}
  **/
 ${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam});
@@ -63,8 +90,8 @@ endsnippet
 snippet d-fun2 "def var sin parametros"
 /**
  * @brief ${7:Breve descripción de la función}
- * @param ${8:Caracteristicas del parámetro}
- * @param ${9:Caracteristicas del parámetro}
+ * @param $4 ${8:Caracteristicas del parámetro}
+ * @param $6 ${9:Caracteristicas del parámetro}
  * @return ${10:¿qué retorna la función?}
  **/
 ${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam});
@@ -74,9 +101,9 @@ endsnippet
 snippet d-fun3 "def var sin parametros"
 /**
  * @brief ${9:Breve descripción de la función}
- * @param ${10:Caracteristicas del parámetro}
- * @param ${11:Caracteristicas del parámetro}
- * @param ${12:Caracteristicas del parámetro}
+ * @param $4 ${10:Caracteristicas del parámetro}
+ * @param $6 ${11:Caracteristicas del parámetro}
+ * @param $8 ${12:Caracteristicas del parámetro}
  * @return ${13:¿qué retorna la función?}
  **/
 ${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam});
@@ -86,10 +113,10 @@ endsnippet
 snippet d-fun4 "def var sin parametros"
 /**
  * @brief ${11:Breve descripción de la función}
- * @param ${12:Caracteristicas del parámetro}
- * @param ${13:Caracteristicas del parámetro}
- * @param ${14:Caracteristicas del parámetro}
- * @param ${15:Caracteristicas del parámetro}
+ * @param $4 ${12:Caracteristicas del parámetro}
+ * @param $6 ${13:Caracteristicas del parámetro}
+ * @param $8 ${14:Caracteristicas del parámetro}
+ * @param $10 ${15:Caracteristicas del parámetro}
  * @return ${16:¿qué retorna la función?}
  **/
 ${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam}, ${9:type} ${10:nameParam});

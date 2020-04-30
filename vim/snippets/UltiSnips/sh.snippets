@@ -1,9 +1,9 @@
 ##########
 # RESUMEN
 ##########
-# init_sh
+# init-sh
 # search_file
-# create_menu
+# menu-create
 # file_name
 # read_keyboard
 # read_keyboard_s
@@ -23,7 +23,7 @@
 #########
 # COLORS
 #########
-# init_colors_prompt
+# init-colors-prompt
 # fg_[color]
 #	bg_[color]
 # msg-info
@@ -36,7 +36,7 @@
 # unzip_in_directory
 # unzip_in_directory_no_messages
 
-snippet init_sh "Iniciador de sh"
+snippet init-sh "Iniciador de sh"
 #!/bin/bash -e
 #						 ↑
 # debug [-x -v]:[complete, abbreviated]
@@ -57,7 +57,7 @@ fi
 $0
 endsnippet
 
-snippet	create_menu	"Crear menú de inicio"
+snippet	menu-create	"Crear menú de inicio"
 # Permite guardar información acerca de comandos usados
 if [ "\$1" = "-h" ] || [ "\$1" = "" ] || [ "\$1" = "--help" ];
 then
@@ -224,7 +224,7 @@ endsnippet
 # tput setaf {CODE}– Set foreground color, see color {CODE} table below for more information.
 # tput setab {CODE}– Set background color, see color {CODE} table below for more information.
 
-snippet init_colors_prompt "Colors for echo and prompt"
+snippet init-colors-prompt "Colors for echo and prompt"
 # foreground
 BLACK=\`tput setaf 0\`
 RED=\`tput setaf 1\`
