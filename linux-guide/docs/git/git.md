@@ -41,6 +41,16 @@ git clone -b nameBranch --single-branch url_git_repo
 git submodule add https://github.com/johnnycubides/imx23-olinuxino.git
 ```
 
+### Renombrando path de submódulo
+
+[stackoverflow](https://stackoverflow.com/questions/4526910/rename-a-git-submodule)
+
+* Update .gitmodules
+* mv oldpath newpath
+* git rm oldpath
+* git add newpath
+* git submodule sync
+
 ## Creando un branch huérfano
 
 En un repositorio ya creado, para iniciar un branch huérfano vea el
