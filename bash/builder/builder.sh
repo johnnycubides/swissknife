@@ -70,7 +70,8 @@ init_ngspice(){
     dir_ngspice=.
   fi
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/Makefile $dir_ngspice/
-  sed '1,2 s/circuit_name_sch/'$project_ngspice'/g' $dir_ngspice/Makefile
+  sed '1,2 s/circuit_name_sch/'$project_ngspice'/g' $PATH_SWISSKNIFE/$PATH_NGSPICE/Makefile > $dir_ngspice/Makefile
+  cp $PATH_SWISSKNIFE/$PATH_NGSPICE/untitled.sch $dir_ngspice/$project_ngspice.sch
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/src_model_spice.md $dir_ngspice/
   echo "# Proyecto $dir_ngspice simulado con ngspice" > $dir_ngspice/README.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
