@@ -34,6 +34,7 @@ PATH_PLANTUMLSH=plantuml
 PATH_EBOOK=latex/ebook
 PATH_ARTICLE=latex/article
 PATH_IEEE=latex/infoIEEE
+PATH_NGSPICE=ngspice
 
 upload_ebook(){
   if [[ -e ./Makefile ]]; then
@@ -51,6 +52,27 @@ upload_ebook(){
     encontrarse del directorio donde está el Makefile y el directorio static/\n${NC}"
   fi
 
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
+init_ngspice(){
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la simulación${NC}\
+ (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
+  read -p "Respuesta del usuario: " -r dir_ngspice
+  # sustituyendo caracteres inválidos
+  project_ngspice=${dir_ngspice//[ *#?]/-}
+  dir_ngspice=$project_ngspice
+  if [ "$dir_ngspice" != "" ];  # se creará directorio con el nombre dado por el usuario
+  then
+    dir_ngspice=./$dir_ngspice
+    mkdir -pv $dir_ngspice
+  else                        # se creará la documentación en el directorio actual
+    dir_ngspice=.
+  fi
+  cp $PATH_SWISSKNIFE/$PATH_NGSPICE/Makefile $dir_ngspice/
+  sed '1,2 s/circuit_name_sch/'$project_ngspice'/g' $dir_ngspice/Makefile
+  cp $PATH_SWISSKNIFE/$PATH_NGSPICE/src_model_spice.md $dir_ngspice/
+  echo "# Proyecto $dir_ngspice simulado con ngspice" > $dir_ngspice/README.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
 }
 
@@ -253,6 +275,7 @@ then
   printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
   printf "\t\t${CYAN}latex ${YELLOW}ebook, article, ieee${NC}\tConstruir documentos con LaTeX\n"
   printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
+  printf "\t\t${CYAN}ngspice${NC}\tIniciar simulación con ngspice\n"
   printf "\t\t-h,--help\tHelp\n"
   printf "\n${GREEN}Regards Johnny.${NC}\n"
 elif [ "$1" = "mkdocs" ];
@@ -278,6 +301,9 @@ then
 elif [ "$1" = "reveal" ];
 then
   init_revealjs
+elif [ "$1" = "ngspice" ];
+then
+  init_ngspice
 elif [ "$1" = "plantuml" ];
 then
   init_plantuml

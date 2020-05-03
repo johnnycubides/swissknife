@@ -1,3 +1,6 @@
+# Referencia para crear snippets
+# https://developpaper.com/vim-code-snippet-plug-in-ultisnips-usage-tutorial/
+#
 ##########
 # RESUMEN
 ##########
@@ -20,6 +23,11 @@
 # del_be_ch_String
 # del_af_ch_String
 # eval_string
+#########
+# FILES
+#########
+# rp_words_all_in_f
+# rp_words_range_in_f
 #########
 # COLORS
 #########
@@ -197,6 +205,19 @@ endsnippet
 
 snippet eval_string "evaluate string"
 eval "echo \"hello\""
+endsnippet
+
+#########
+# FILES
+#########
+# https://www.journaldev.com/28984/linux-sed-command-examples
+# rp_words_all_in_f
+snippet rp_words_all_in_f "remplazar palabras en un archivo"
+sed 's/${1:word2replace}/${2:newword}/g' ${3:filename}
+endsnippet
+# rp_words_range_in_f
+snippet rp_words_range_in_f "remplazar palabras en un rago de archivo"
+sed '${4:1},${5:2} s/${1:word2replace}/${2:newword}/g' ${3:filename}
 endsnippet
 
 ################
