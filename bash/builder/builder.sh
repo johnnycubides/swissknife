@@ -70,6 +70,7 @@ init_ngspice(){
     dir_ngspice=.
   fi
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/Makefile $dir_ngspice/
+  mkdir -p $dir_ngspice/local-lib
   sed '1,2 s/circuit_name_sch/'$project_ngspice'/g' $PATH_SWISSKNIFE/$PATH_NGSPICE/Makefile > $dir_ngspice/Makefile
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/untitled.sch $dir_ngspice/$project_ngspice.sch
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/src_model_spice.md $dir_ngspice/

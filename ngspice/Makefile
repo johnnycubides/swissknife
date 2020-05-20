@@ -1,6 +1,11 @@
 doc = circuit_name_sch
 sim = $(doc).ngsim
 
+s: schema
+ss: sim-op
+e: sim-e
+g: circuit-g
+
 schema:
 	gschem $(doc).sch &
 
