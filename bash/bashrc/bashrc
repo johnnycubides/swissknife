@@ -160,3 +160,19 @@ export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx23
 export PATH=$PATH:/home/johnny/projects/omega-openwrt/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/
 # Flutter PATH 
 export PATH=$PATH:$HOME/gitPackages/flutter/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/johnny/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/johnny/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/johnny/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/johnny/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+# conda activate fpga
