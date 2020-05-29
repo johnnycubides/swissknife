@@ -22,3 +22,21 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" vim-markdown-composer for nvim and vim
+" si no compila ejecute el comando manualmente en el directorio de instalación
+" .../plugged/vim-markdown-compose
+" cargo build --release
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+" vim-markdownr
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
