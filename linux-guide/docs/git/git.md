@@ -25,6 +25,16 @@ El siguiente comando le dirá si la rama que está rastreando está: [adelante, 
 git status -uno
 ```
 
+## Creando branch
+
+[Referencia en español](https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar)
+
+Estando en el branch padre basta con hacer lo siguiente:
+
+```bash
+git checkout -b newbranch
+```
+
 ## Clonando un único branch
 
 ```bash
