@@ -41,3 +41,5 @@ coc-snippets `:CocInstall coc-snippets`
 
 coc-flutter `:CocInstall coc-flutter`
 
+coc-rust `CocInstall coc-rls`
+
