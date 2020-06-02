@@ -1,28 +1,36 @@
-b=9600
-# b=115200
+# b=9600
+b=115200
 s=/dev/ttyUSB0
 # s=/dev/ttyACM0
 l=
-SRC=
+SRC=test.ino
 BAUDRATE=$(b)
 DEVICE=$(s)
 LIB=$(l)
-# TARGET[uno, nano, ]
-TARGET=nano
+# TARGET[uno, nano, esp8266]
+TARGET=
 
 ifeq ($(TARGET),uno)
 ARDUINO-TARGET=arduino:avr:uno
 else ifeq ($(TARGET),nano)
 ARDUINO-TARGET=arduino:avr:nano
 else
-ARDUINO-TARGET=arduino:avr:uno
+ARDUINO-TARGET=esp8266:esp8266:generic
 endif
 
 build:
 	arduino-cli compile --fqbn $(ARDUINO-TARGET) $(SRC)
 
 flash:
+ifeq ($(TARGET), uno)
 	arduino-cli upload -p $(DEVICE) --fqbn $(ARDUINO-TARGET) $(SRC)
+else ifeq ($(TARGET), nano)
+	arduino-cli upload -p $(DEVICE) --fqbn $(ARDUINO-TARGET) $(SRC)
+else ifeq ($(TARGET), esp8266)
+	esptool.py --port $(DEVICE) write_flash 0x00000 test.ino*bin
+else
+	@echo "El programador no está en la lista"
+endif
 
 clear:
 ifeq ($(SRC), )
