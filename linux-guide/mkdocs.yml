@@ -30,7 +30,9 @@ nav:
     - Markdown: 
       - index: dev/markdown/index.md
       - html: dev/markdown/html.md
-    - Python: dev/python/docs.md
+    - Python: 
+      - dev/python/docs.md
+      - dev/python/install.md
     - Flutter:
       - configuración: dev/flutter/init.md
     - Vim:
@@ -41,6 +43,7 @@ nav:
   - Debian:
     - packages: debian/package.md
     - tools:
+      - parches: debian/tools/patches.md
       - dmesg: debian/tools/dmesg.md
       - network_Tools: debian/tools/networkTools.md
       - createi_image: debian/tools/copyAndPasteImage.md
