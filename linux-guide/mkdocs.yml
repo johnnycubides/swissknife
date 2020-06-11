@@ -50,7 +50,9 @@ nav:
       - Misceláneos: debian/tools/miscellaneous.md
   - Aplicaciones:
     - Compiladores de texto:
-      - LaTex: apps/latex.md
+      - LaTex:
+        - apps/latex/latex.md
+        - apps/latex/symbols.md
       - Mkdocs: apps/mkdocs.md
     - Presentaciones:
       - Sozi: apps/sozi.md
