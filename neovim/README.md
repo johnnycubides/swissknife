@@ -9,6 +9,7 @@ cd ~/gitPackages
 git clone -b master --single-branch https://github.com/neovim/neovim.git
 cd neovim/
 make CMAKE_BUILD_TYPE=RelWithDebInfo
+make install
 ```
 
 
@@ -43,3 +44,19 @@ coc-flutter `:CocInstall coc-flutter`
 
 coc-rust `CocInstall coc-rls`
 
+## Problemas
+
+### Snippets coc no funciona generando el siguiente error
+
+```bash
+[coc.nvim] Unable to load global extension at /home/johnny/.config/coc/extensions/node_modules/coc-snippets: package.json not found 
+```
+
+**Posible solución**:
+
+Probablemente deba iniciar con npm ese módulo, ejemplo:
+
+```bash
+cd ~/.config/coc/extensions
+npm install
+```
