@@ -34,6 +34,7 @@ PATH_PLANTUMLSH=plantuml
 PATH_EBOOK=latex/ebook
 PATH_ARTICLE=latex/article
 PATH_IEEE=latex/infoIEEE
+PATH_BEAMER=latex/beamer
 PATH_NGSPICE=ngspice
 
 upload_ebook(){
@@ -75,6 +76,33 @@ init_ngspice(){
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/untitled.sch $dir_ngspice/$project_ngspice.sch
   cp $PATH_SWISSKNIFE/$PATH_NGSPICE/src_model_spice.md $dir_ngspice/
   echo "# Proyecto $dir_ngspice simulado con ngspice" > $dir_ngspice/README.md
+  echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
+}
+
+init_beamer(){
+  # Solicitando el directorio de almacenamiento del beamer
+  echo -e "${MAGENTAB}--${NCB} ${CYAN}Nombre del directorio que contendrá la documentación${NC}\
+ (un solo nombre),\n sino desea crear ese directorio oprima ${YELLOW}ENTER${NC}: "
+  read -p "Respuesta del usuario: " -r dir_beamer
+  # sustituyendo caracteres inválidos
+  dir_beamer=${dir_art//[ *#?]/-}
+  if [ "$dir_beamer" != "" ];  # se creará directorio con el nombre dado por el usuario
+  then
+    dir_beamer=./$dir_art
+    mkdir -pv $dir_beamer
+  else                        # se creará la documentación en el directorio actual
+    dir_beamer=.
+  fi
+  cp $PATH_SWISSKNIFE/$PATH_BEAMER/Makefile $dir_beamer/
+  cp $PATH_SWISSKNIFE/$PATH_BEAMER/template.tex $dir_beamer/
+  mkdir -p $dir_beamer/build
+  # cp -r $PATH_SWISSKNIFE/$PATH_BEAMER/src $dir_beamer/
+  # if [[ ! -e $dir_beamer/.gitignore ]]; then
+  #   echo "Makefile" >> $dir_beamer/.gitignore
+  #   echo "static/" >> $dir_beamer/.gitignore
+  # fi
+  # cp -rv $PATH_SWISSKNIFE/$PATH_MKDOCS/* $dir_beamer/
+  # rm -f $dir_beamer/INSTALL.md
   echo -e "${GREEN}Task done!!! \nSaludos Johnny${NC}"
 }
 
@@ -275,7 +303,7 @@ then
   printf "\t\tlatex\tConstruir documentación con LaTeX\n"
   printf "\t\t${CYAN}reveal${NC}\tConstruir presentaciones con reveal\n"
   printf "\t\t${NC}plantuml${NC}\tConstruir diagramas UML con plantuml\n"
-  printf "\t\t${CYAN}latex ${YELLOW}ebook, article, ieee${NC}\tConstruir documentos con LaTeX\n"
+  printf "\t\t${CYAN}latex ${YELLOW}ebook, article, ieee, beamer${NC}\tConstruir documentos con LaTeX\n"
   printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
   printf "\t\t${CYAN}ngspice${NC}\tIniciar simulación con ngspice\n"
   printf "\t\t-h,--help\tHelp\n"
@@ -299,6 +327,9 @@ then
   elif [ "$2" = "article" ];
   then
     init_article
+  elif [ "$2" = "beamer" ];
+  then
+    init_beamer
   fi
 elif [ "$1" = "reveal" ];
 then
