@@ -7,4 +7,8 @@ El script permite la instalación del compilador local closure
 
 Tener presente que el compilador a instalar requiere el openjdk (java) para su funcionamiento
 
+## Comando de descarga e instalación
 
+```bash
+curl https://raw.githubusercontent.com/johnnycubides/swissknife/master/bash/installs/clousure-compiler/closure-compiler.sh | sh
+```

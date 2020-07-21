@@ -174,5 +174,6 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# Default evr conda
 # conda activate fpga
+conda activate base

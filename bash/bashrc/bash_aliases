@@ -7,3 +7,4 @@ alias rm='rm -i'
 # alias rm='mv -t /tmp/'
 alias vi="vim"
 alias v="nvim"
+alias sw='setxkbmap us; setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_switch us,es'
