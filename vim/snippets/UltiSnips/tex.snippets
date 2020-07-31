@@ -61,6 +61,13 @@ snippet insert-pdf "Insert page pdf"
 \includepdf[pages={${1:1,2,3}}, ${2:angle=0}]{${3:src/file.pdf}}$0
 endsnippet
 
+#				Alineacion del texto
+snippet align "Alinear texto"
+\begin{${1:flushright flushleft center}}
+$0
+\end{$1}
+endsnippet
+
 ##########################
 #				BEAMER
 ##########################
