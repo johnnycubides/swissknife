@@ -1,3 +1,4 @@
+# Neovim configuración
 
 Se requiere instalar go para la vim-go
 
