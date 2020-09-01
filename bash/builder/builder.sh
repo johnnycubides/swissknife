@@ -249,7 +249,7 @@ init_revealjs(){
       mkdir -p $dir_pres/reveal.js
       cp -rv $PATH_REVEAL/css $dir_pres/reveal.js/css
       cp -rv $PATH_REVEAL/js $dir_pres/reveal.js/js
-      cp -rv $PATH_REVEAL/lib $dir_pres/reveal.js/lib
+      cp -rv $PATH_REVEAL/dist $dir_pres/reveal.js/dist
       cp -rv $PATH_REVEAL/plugin $dir_pres/reveal.js/plugin
     else
       if [ ! -L $dir_pres/reveal.js ]; then
