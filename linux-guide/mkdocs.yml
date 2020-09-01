@@ -39,7 +39,10 @@ nav:
       - index: vim/index.md
       - markdown: vim/markdown.md
       - vifm: vim/vifm.md
+      - neovim: vim/neovim.md
     - git: git/git.md
+    - nodejs:
+      - Instalación: dev/nodejs/install.md
   - Debian:
     - packages: debian/package.md
     - tools:
