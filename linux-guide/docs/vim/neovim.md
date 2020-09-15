@@ -47,6 +47,8 @@ coc-rust `CocInstall coc-rls`
 
 ## Problemas
 
+Para detectar problemas puede uar **:checkhealth** para detectar errores
+
 ### Snippets coc no funciona generando el siguiente error
 
 ```bash
@@ -60,4 +62,10 @@ Probablemente deba iniciar con npm ese módulo, ejemplo:
 ```bash
 cd ~/.config/coc/extensions
 npm install
+```
+
+### python neovim no instalado
+
+```bash
+pip3 install neovim
 ```

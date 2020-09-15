@@ -59,6 +59,7 @@ nav:
       - Mkdocs: apps/mkdocs.md
     - Presentaciones:
       - Sozi: apps/sozi.md
+      - Revealjs: apps/revealjs.md
     - Graphics:
       - Inkscape: apps/inkscape.md
       - Drawio: apps/drawio.md
