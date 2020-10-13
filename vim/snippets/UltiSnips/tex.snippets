@@ -32,7 +32,7 @@ endsnippet
 snippet img "Insert image"
 \begin{figure}
 	\center{}
-	\includegraphics[width=${2:9cm}]{${1:imag/}}
+	\includegraphics[width=${2:9cm}]{${1:img/}}
 	\caption{$3}\label{fig_$4}
 \end{figure}
 $0
@@ -42,16 +42,56 @@ snippet img-svg "Insert svg image"
 %\usepackage{svg} %insertar en el preambulo
 \begin{figure}
 	\center{}
-	\includesvg[width=${2:9cm}]{${1:imag/}}
+	\includesvg[width=${2:9cm}]{${1:img/}}
 	\caption{$3}\label{fig_$4}
 \end{figure}
 $0
 endsnippet
 
-snippet code "insert code"
+snippet code-def "Definir propiedades de código"
+% Insert all in preambule
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+$0
+endsnippet
+
+snippet code "insertar codigo y modificar listing"
 % \usepackage{listings}
-\begin{lstlisting}[language=${1:Python, C, Lua, Octave, Javascript}, tabsize=${2:2}, caption=${3:}, label=code_${4:}]
-$5
+\begin{lstlisting}
+$0
+\end{lstlisting}
+endsnippet
+
+snippet code-e "insertar codigo y modificar listing"
+% \usepackage{listings}, in beamer? then \begin{frame}[fragile]...
+\begin{lstlisting}[upquote=true, language=${1:Python, C, Lua, Octave, Javascript}, tabsize=${2:2}, caption=${3:}, label=code_${4:}, basicstyle=${5:\small \tiny}, ${6:columns=fullflexible}]
+$7
 \end{lstlisting}
 $0
 endsnippet
@@ -91,7 +131,7 @@ endsnippet
 snippet b-image "Imagene en beamer"
 \begin{figure}
 	\center{}
-	\includegraphics[scale=${2:0.2}]{${1:imag/}}
+	\includegraphics[scale=${2:0.2}]{${1:img/}}
 	\caption{}\label{fig_}
 \end{figure}
 endsnippet

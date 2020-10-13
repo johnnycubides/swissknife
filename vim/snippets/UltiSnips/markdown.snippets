@@ -2,6 +2,7 @@
 # img
 # img-html
 # img-grav
+# video-html
 # link
 # note
 # tables3c
@@ -31,6 +32,14 @@ endsnippet
 snippet img-grav "Uso de imagenes grav"
 ![${1:Texto Alternativo}](img/${2:image.png})?resize=200,200)
 $0
+endsnippet
+
+# https://www.w3schools.com/tags/tag_video.asp
+# https://www.w3schools.com/tags/tag_source.asp
+snippet video-html "insert video html"
+<video style="max-width: 100%; height: auto;" controls autoplay loop>
+	<source src="${1:video}" type="video/${2:mp4 ogg}">
+</video> 
 endsnippet
 
 # require markdown-extension - attr_list
