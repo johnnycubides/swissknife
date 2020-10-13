@@ -1,6 +1,15 @@
 # Herramientas misceláneas
 
-### Limpiar memoria RAM
+## Liberar SWAP
+
+Para liberar memoria de intercambio SWAP, ejecute el siguiente
+comando como super usuario.
+
+```bash
+swapoff -a && swapon -a
+```
+
+## Limpiar RAM
 
 ```bash
 sudo -i
@@ -13,21 +22,19 @@ Donde:
 * Si `X=2` Limpia dentries e inodes
 * Si `X=3` Limpia PageCache, dentries e inodes
 
-|Comando|Observación|Observación|
-|:-------------:|:-------------:|:-----:|
-|cat /etc/os-release|Ver las caracteristicas de la distribución usada en el equipo||
+## Info distribución
 
-### Fuentes y tipografías
+|Comando|Observación|
+|:-------------:|:-------------:|
+|cat /etc/os-release|Ver las caracteristicas de la distribución usada en el equipo|
+
+## Fuentes y tipografías
 
 [Instalación de nuevas tipografías](https://www.sololinux.es/instalar-nuevas-fuentes-en-linux/)
 
-Localización
+* `sudo fc-cache -fv` : recargar fuentes en cache
+* `cd /usr/share/fonts/`: lugar donde se instalan las fuentes 
 
-```
-cd /usr/share/fonts/
-```
+## Referencias
 
-Recargar fuentes
-```bash
-sudo fc-cache -fv
-```
+[Limpiar memoria RAM y SWAP](https://www.tecmint.com/clear-ram-memory-cache-buffer-and-swap-space-on-linux/)

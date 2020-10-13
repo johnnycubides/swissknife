@@ -45,6 +45,22 @@ coc-flutter `:CocInstall coc-flutter`
 
 coc-rust `CocInstall coc-rls`
 
+## Comandos útiles
+
+### Spell
+
+[nvim spell check](https://jdhao.github.io/2019/04/29/nvim_spell_check/)
+
+* `^x, s` en modo insertar genera una lista de sugerencias
+* `z=` genera una lista de sugerencias
+* `]s`
+
+### Ubicarse en la pantalla
+
+* `zz` en la mitad
+* `zt` arriba
+* `zb` abajo
+
 ## Problemas
 
 Para detectar problemas puede uar **:checkhealth** para detectar errores
