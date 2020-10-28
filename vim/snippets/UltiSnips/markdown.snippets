@@ -2,6 +2,7 @@
 # img
 # img-html
 # img-grav
+# img-html-url
 # video-html
 # link
 # note
@@ -31,6 +32,13 @@ endsnippet
 
 snippet img-grav "Uso de imagenes grav"
 ![${1:Texto Alternativo}](img/${2:image.png})?resize=200,200)
+$0
+endsnippet
+
+snippet img-html-url "Imagen html con url" 
+<a href="${2:url}">
+<img src="${1:img.png}" alt="$1" style="width:20%;">
+</a>
 $0
 endsnippet
 
