@@ -43,6 +43,8 @@ nav:
     - git: git/git.md
     - nodejs:
       - Instalación: dev/nodejs/install.md
+    - conda:
+      - activar-conda: dev/conda/conda-activate.md
   - Debian:
     - packages: debian/package.md
     - tools:
@@ -56,7 +58,9 @@ nav:
       - LaTex:
         - apps/latex/latex.md
         - apps/latex/symbols.md
-      - Mkdocs: apps/mkdocs.md
+      - Mkdocs: 
+        - introducción: apps/mkdocs/index.md
+        - iconos: apps/mkdocs/icons.md
     - Presentaciones:
       - Sozi: apps/sozi.md
       - Revealjs: apps/revealjs.md

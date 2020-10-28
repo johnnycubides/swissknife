@@ -36,6 +36,6 @@ sudo python3 setup install
 ```bash
 cd mkdocs-material
 git pull origin master
-sudo python3 setup install
+sudo python3 setup.py install
 ```
 
