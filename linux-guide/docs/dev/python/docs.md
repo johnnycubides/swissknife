@@ -1,4 +1,4 @@
-# Abrir documentace
+# Abrir documentación
 
 ## pdocs
 

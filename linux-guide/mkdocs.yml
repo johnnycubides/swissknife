@@ -6,12 +6,12 @@ markdown_extensions:
 
 # use_directory_urls: false
 plugins:
-  - search
-#  - pdf-export:
-#      combined: true
+    - search
+    # - pdf-export:
+    #     combined: true
 
 theme:
-  name: 'mkdocs' # 'mkdocs' 'material'
+  name: 'material' # 'mkdocs' 'material'
   highlightjs: true # true/false false para prueba sin internet
   hljs_languages:
     - javascript
@@ -67,6 +67,11 @@ nav:
     - Graphics:
       - Inkscape: apps/inkscape.md
       - Drawio: apps/drawio.md
+    - stream:
+      - obs:
+        - apps/stream/obs/obs-compile.md
+        - apps/stream/obs/obs-droidcam.md
+        - apps/stream/obs/obs-stream-virtual-cam.md
   - Juegos:
     - AssaultCube: games/assaultCube.md
     - ReatroArch: games/retroarch.md
