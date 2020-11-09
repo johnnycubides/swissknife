@@ -61,6 +61,8 @@ nav:
       - Mkdocs: 
         - introducción: apps/mkdocs/index.md
         - iconos: apps/mkdocs/icons.md
+      - Office:
+        - abiword: apps/abiword.md
     - Presentaciones:
       - Sozi: apps/sozi.md
       - Revealjs: apps/revealjs.md
