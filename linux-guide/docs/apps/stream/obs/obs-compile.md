@@ -51,6 +51,11 @@ sudo apt install \
    libxss-dev
 
 ```
+**Observacion**: algunas de las anteriores dependencia requiere fuentes non-free,\
+las cuales deben ser agregadas en `/etc/apt/sources.list`; para generar los sources
+puede consultar en
+[source list generador](https://debgen.simplylinux.ch/)
+Seguramente le pediran instalar las siguientes dependencias `curl wget apt-transport-https dirmngr`
 
 ```bash
 cd ~/gitPackages/
@@ -62,6 +67,6 @@ make -j4
 sudo checkinstall --default --pkgname=obs-studio --fstrans=no --backup=no --pkgversion="$(date +%Y%m%d)-git" --deldoc=yes
 ```
 
-!!! Info "Si en el último paso no permite la instalación por un tema referente a libobs ejecute sudo apt purge libobs y vuelva a ejecutar el último comando"
+!!! Info "Si en el último paso no permite la instalación por un tema referente a libobs ejecute sudo apt purge libobs (libobs0) y vuelva a ejecutar el último comando"
     
 

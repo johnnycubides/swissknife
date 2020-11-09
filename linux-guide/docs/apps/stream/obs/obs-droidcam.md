@@ -16,6 +16,8 @@ cd ~/gitPackages/dev47apps/
 De la página oficial descarga la versión para linux y descomprime en el directorio
 que creaste
 
+[pagina oficial](http://dev47apps.com/obs/)
+
 Ejecuta el siguiente comando
 
 ```bash

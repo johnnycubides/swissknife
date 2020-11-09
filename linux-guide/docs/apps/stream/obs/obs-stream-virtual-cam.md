@@ -9,6 +9,41 @@ make && sudo make install
 sudo depmod -a
 ```
 
+### Observaciones
+
+Si sale el siguiente error: 
+
+```bash
+sudo make && sudo make install
+Building v4l2-loopback driver...
+make -C /lib/modules/`uname -r`/build M=/home/carolina/gitPackages/v4l2loopback modules
+make[1]: Entering directory '/usr/lib/modules/5.8.0-1-amd64/build'
+make[1]: *** No rule to make target 'modules'.  Stop.
+make[1]: Leaving directory '/usr/lib/modules/5.8.0-1-amd64/build'
+make: *** [Makefile:44: v4l2loopback.ko] Error 2
+```
+
+Instale nuevamente los linux-header:
+
+```bash
+sudo apt install linux-headers-$(uname -r)
+```
+
+Si no es capaz de instalarse as'i, entonces debera reinstalar la imagen de linux, ejemplo:
+
+```bash
+sudo apt install linux-image-5.9.0-1-amd64
+sudo apt-get install --reinstall linux-headers-5.9.0-1-amd64
+```
+
+En este caso debe reiniciar el sistema.
+
+Puedes remover las imagenes linux viejas con el siguiente comandoÑ
+
+```bash
+sudo apt --purge autoremove
+```
+
 ### Comandos útiles
 
 * `v4l2-ctl --list-devices`
