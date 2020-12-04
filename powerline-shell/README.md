@@ -10,7 +10,7 @@ Clonar repositorio
 cd gitPackages/
 git clone https://github.com/b-ryan/powerline-shell.git
 cd powerline-shell
-sudo python3 setup.py install
+sudo python3 setup.py install --record files.txt
 ```
 
 Configurando
