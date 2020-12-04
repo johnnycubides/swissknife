@@ -40,3 +40,12 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " vim-markdownr
 " Plug 'godlygeek/tabular'
 " Plug 'plasticboy/vim-markdown'
+
+" PERSONALIZAZCIÓN
+if has('nvim')
+  set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  let &packpath = &runtimepath
+  source ~/.vimrc_more
+else
+  source ~/.vimrc_more
+endif
