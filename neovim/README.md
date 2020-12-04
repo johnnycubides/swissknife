@@ -10,6 +10,16 @@ Dependencias
 sudo apt install make cmake build-essential automake libtool-bin gettext
 ```
 
+Dependencias python
+
+[pynvim github](https://github.com/neovim/pynvim)
+
+```bash
+sudo apt install python python3 pip pip3
+pip2 install --upgrade pynvim
+pip3 install --upgrade pynvim
+```
+
 ```bash
 sudo apt install go
 cd ~/gitPackages
@@ -19,6 +29,8 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
+**Observación**: si se tiene instalado ninja, ejecute primero
+`make distclean` y después, ejecute las acciones de compilación
 
 ## Configuación
 
@@ -67,3 +79,7 @@ Probablemente deba iniciar con npm ese módulo, ejemplo:
 cd ~/.config/coc/extensions
 npm install
 ```
+
+### 
+
+
