@@ -74,6 +74,8 @@ nav:
         - apps/stream/obs/obs-compile.md
         - apps/stream/obs/obs-droidcam.md
         - apps/stream/obs/obs-stream-virtual-cam.md
+    - Accesorios:
+        - goldendict: apps/accessories/goldendict.md
   - Juegos:
     - AssaultCube: games/assaultCube.md
     - ReatroArch: games/retroarch.md
