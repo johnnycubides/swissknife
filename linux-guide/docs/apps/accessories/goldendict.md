@@ -1,16 +1,26 @@
 # Goldendict
 
+## Comandos de uso
+
+|Comando|Descripción|
+|:-------------:|:-------------:|
+|^CC| El texto seleccionado será traducido|
+|Alt+s| Escuchar traducción de palabra|
+
+
+
 ## Instalación
 
 ```bash
-sudo apt install goldendict
+sudo apt install goldendict translate-shell mpg123
 ```
 
 ## Ajustes
 
 ### Usando el traductor de google
 
-En la barra de menú buscar: **Edit -> Sources -> Programs** y agregar un nuevo programa
+Abre la aplicación **goldendict** y em la barra de menú buscar: 
+**Edit -> Dictionaries -> Sources -> Programs** y agregar un nuevo programa
 
 #### Traducción de Ingles a Español
 
@@ -42,15 +52,11 @@ trans -e google -s es -t en -show-original y -show-original-phonetics n -show-tr
 
 Dependencia: mpg123
 
-```bash
-sudo apt install mpg123
-```
-
 Adicionar la siguiente información al programa adicionado:
 
 * Enable: check
 * Type: Audio
-* Name:
+* Name: Pronunciación
 * Command Line:
 
 ```bash
