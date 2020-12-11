@@ -38,6 +38,7 @@ nav:
     - Vim:
       - index: vim/index.md
       - markdown: vim/markdown.md
+      - LaTeX: vim/latex.md
       - vifm: vim/vifm.md
       - neovim: vim/neovim.md
     - git: git/git.md

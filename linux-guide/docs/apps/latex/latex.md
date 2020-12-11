@@ -44,14 +44,15 @@ Luego puede ejecutar los ejemplos:
 ```
 ### Insertar documentos pdf
 
-Debe agregar en el preambulo:
+Debe agregar en el preámbulo:
 ```bash
 \usepackage{pdfpages}
 ```
 
-Donde quiera insertar puede hacer uso de la siguiente línde de ejemplo:
+Donde quiera insertar puede hacer uso de la siguiente línea de ejemplo:
 
 ```
 \includepdf[pages={1}, angle=90]{path/file.pdf}
 
 ```
+
