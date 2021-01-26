@@ -1,5 +1,13 @@
 # Ayuda para manejar GIT
 
+## Configuración de GIT
+
+[Referencia de la configuración](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+
+* `git config --global core.editor nvim`
+* `git config --global user.name "John Doe"`
+* `git config --global user.email johndoe@example.com`
+
 ## Hacer pull
 
 ###Verificación de branches actualizados

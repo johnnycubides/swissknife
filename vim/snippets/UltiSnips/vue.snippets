@@ -1,0 +1,29 @@
+# HTML TEMPLATE snippet div "html div" b
+# div
+
+# HTML TEMPLATE
+snippet element "html element" b
+<$1>
+	$2
+</$1>$0
+endsnippet
+
+snippet template_js "Init template js" b
+<template>
+  ${1:<div>
+  </div>}
+</template>
+
+<script lang='ts'>
+import { Component, Prop, Vue } from 'vue-property-decorator'
+
+@Component
+export default class Menu extends Vue {
+  @Prop() private msg!: string;
+}
+</script>
+
+<style scoped>
+
+</style>
+endsnippet
