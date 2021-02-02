@@ -31,7 +31,8 @@ NCB=`tput setab 0`
 mapping(){
     OUTPUT=""
     # for get ID exec xsetwacom --list devices
-    ID="11"
+    #ID="11"
+    DEVICENAME="HUION Huion Tablet_HS64 stylus"
     if [ "$1" = "1" ];
     then
         OUTPUT="LVDS-1"
@@ -43,7 +44,7 @@ mapping(){
 tableta digitalizadora${NC}\n"
         return 0;
     fi
-    xsetwacom --set 11 MapToOutput $OUTPUT
+    xsetwacom --set "$DEVICENAME" MapToOutput $OUTPUT
     if [[ $? == 0 ]]; then
         printf "${GREEN} Se ha configurado la tableta para escribir en ${OUTPUT}${NC}\n"
     fi
@@ -54,7 +55,7 @@ help(){
     printf "\t wacom.sh <x> \t<x> -> es el número de la pantalla\n"
     printf "\twacom.sh Command options\n"
     printf "\t[Commands]\n"
-    printf "\t\tcommand1\tbrief1\n"
+    printf "\t\tlist\tlistar dispositivos de entrada\n"
     printf "\t\tcommand2\tbrief2\n"
     printf "\t\tcommand3\tbrief3\n"
     printf "\t\t-h,--help\tHelp\n"
@@ -81,9 +82,9 @@ then
 elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "3" ];
 then
     mapping $1
-elif [ "$1" = "command2" ];
+elif [ "$1" = "list" ];
 then
-    echo "pass"
+    xsetwacom --list devices
 elif [ "$1" = "command3" ];
 then
     echo "pass"
