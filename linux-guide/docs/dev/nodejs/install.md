@@ -20,8 +20,21 @@ source ~/.bashrc
 command -v nvm
 ```
 
-### Instalación de nodeJS
+### Instalación y actualización de nodeJS
 
 ```bash
 nvm install node
 ```
+
+### Comandos
+
+|Comando|Descripción|
+|:-------------:|:-------------:|
+|nvm install --lts|Instalar una versión LTS|
+|nvm use x.x.x|Intercambiar entre versiones de node|
+|nvm use node|Usar la última version instalada de node|
+|nvm ls|listar las versiones instaladas de node|
+|nvm current|revisar la versión de node que está en uso|
+|nvm uninstall x.x.x|Desinstalar una versión de node|
+|||
+

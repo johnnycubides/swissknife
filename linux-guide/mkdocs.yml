@@ -54,6 +54,9 @@ nav:
       - network_Tools: debian/tools/networkTools.md
       - createi_image: debian/tools/copyAndPasteImage.md
       - Misceláneos: debian/tools/miscellaneous.md
+      - Compresión: debian/tools/compress.md
+      - Permisos de hadware: debian/tools/devices-permission.md
+    - bash: debian/bash/index.md 
   - Aplicaciones:
     - Compiladores de texto:
       - LaTex:
@@ -70,6 +73,10 @@ nav:
     - Graphics:
       - Inkscape: apps/inkscape.md
       - Drawio: apps/drawio.md
+    - Video:
+        - Kdenlive: apps/video/kdenlive.md
+    - Audio:
+        - Audacity: apps/audio/audacity.md
     - stream:
       - obs:
         - apps/stream/obs/obs-compile.md
