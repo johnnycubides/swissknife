@@ -62,3 +62,20 @@ Adicionar la siguiente información al programa adicionado:
 ```bash
 bash -c "p=$(echo "%GDWORD%" |sed 's/ /+/g'); wget -q -U Mozilla -O - translate.google.com.vn/translate_tts?ie=UTF-8\&q=$p\&tl=en\&client=tw-ob | mpg123 -"
 ```
+
+### Pronunciación desde crow
+
+[Link del proyecto crow (releases)](https://github.com/crow-translate/crow-translate/releases)
+
+Adicionar la siguiente información al programa adicionado:
+
+* Enable: check
+* Type: Audio
+* Name: Crow pron
+* Command Line:
+
+```bash
+crow -s en -e yandex -u “%GDWORD%”
+```
+
+motores posibles: google, yandex, bing
