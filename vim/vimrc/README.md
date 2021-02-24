@@ -8,13 +8,16 @@ output: pdf_document
 
 # Configuraciones para VIM
 
-Para la configuración de VIM se hizo uso de bootstrap.
+Para la configuración de VIM se hizo uso de 
+[vim bootstrap](https://vim-bootstrap.com/)
 
-Los siguientes archivos tienen las siguientes responsabilidades:
+Los siguientes tienen las siguientes responsabilidades:
 
 * `.vim_plugs.vim` ← Nuevos plugins instalados fuera de la configuración de bootstrap
 * `.vimrc_more` ← Mis configuraciones cargadas al .vimrc
 * `.vimrc` ← Configuración dada en bootstrap con algún cambio para cargar los 2 archivos anteriores
+
+**Nota**: los archivos `.vim_plugs.vim y .vimrc_more` son también usados por **neovim**.
 
 ## Instalación de archivos de configuración de VIM
 

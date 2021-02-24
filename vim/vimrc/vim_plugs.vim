@@ -3,7 +3,7 @@
 " if filereadable(expand("~/.vim_plugs.vim"))
 "  source ~/.vim_plugs.vim
 " endif
-"Así podrá agregar los plugins agregados por usted sin afectar los traidos por
+"Así podrá insertar los plugins agregados por usted sin afectar los traidos por
 "bootstarp
 " My Plug List
 "plugin that provides Tern-based JavaScript editing support.
