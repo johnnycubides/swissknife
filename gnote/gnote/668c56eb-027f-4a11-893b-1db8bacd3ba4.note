@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Jupyter Labs</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Jupyter Labs
+
+
+conda create --name jupyte
+
+<link:url>https://jupyter.org/install.html</link:url>
+
+conda install -c conda-forge jupyterlab
+<link:url>https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/</link:url>
+conda install --yes numpy sympy
+
+<link:url>https://github.com/Calysto/octave_kernel</link:url>
+Octave
+conda install octave_kernel
+conda install -c conda-forge octave_kernel
+	</note-content>
+</text><last-change-date>2020-06-15T17:30:26.491451Z</last-change-date><last-metadata-change-date>2020-06-15T17:30:26.492368Z</last-metadata-change-date><create-date>2020-06-15T16:02:33.480402Z</create-date><cursor-position>43</cursor-position><selection-bound-position>75</selection-bound-position><width>0</width><height>0</height></note>
+

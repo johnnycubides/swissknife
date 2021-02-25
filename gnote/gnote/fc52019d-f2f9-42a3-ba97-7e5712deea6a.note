@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>kanboard</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">kanboard
+
+DEPENDENCIAS
+
+apt install php-sqlite3 php-zip
+
+apt install php7.4-sqlite3 php7.4-gd php7.4-mbstring php7.4-json php7.4-xml
+
+INSTALACION
+
+wget <link:url>https://github.com/kanboard/kanboard/archive/v1.2.18.tar.gz</link:url>
+mv kanboard-1.2.18/ kanboard
+chown -R www-data:www-data kanboard
+
+En <link:url>/etc/apache2/sites-enabled/</link:url>
+ Crear el archivo kanboard.conf y agregar el siguiente contenido
+
+&lt;VirtualHost *:80&gt;
+        # The ServerName directive sets the request scheme, hostname and port that
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request's Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        ServerName kanboard.catalejoplus.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot <link:url>/var/www/kanboard</link:url>
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with &quot;a2disconf&quot;.
+        #Include conf-available/serve-cgi-bin.conf
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =kanboard.catalejoplus.com
+RewriteRule ^ <link:url>https://%{SERVER_NAME}%{REQUEST_URI</link:url>} [END,NE,R=permanent]
+&lt;/VirtualHost&gt;
+
+Acontinuacion ejecutar el comando certbot --apache
+y de alli seleccionar kanboard. para dar los certificados correspondientes
+
+
+En <link:url>/etc/apache2/apache2.conf</link:url> agregar la siguiente configuracion para dar permisos
+
+&lt;Directory <link:url>/var/www/kanboard</link:url>&gt;
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+&lt;/Directory&gt;
+
+Reiniciar apache2 servicio
+service apache2 restart
+
+<highlight> Your Kanboard instance is not configured to install plugins from the user interface.</highlight>
+
+1:Rename&amp;Check $(Kanboarddir)/config.default.php to config.php, and set parameter <underline>PLUGIN_INSTALLER to true</underline>
+2:Check Permission $(kanboarddir)/plugins dir (need allow write www-user)
+3:Need php-zip extension
+
+read more:<link:url>https://docs.kanboard.org/en/latest/admin_guide/plugins.html</link:url>
+
+mv config.default.php config.php
+
+ldap config
+
+// LDAP server hostname
+define('LDAP_SERVER', 'ldap.catalejoplus.com');
+
+// LDAP server port (389 by default)
+define('LDAP_PORT', 389);
+
+// By default, require certificate to be verified for ldaps:// style URL. Set to false to skip the verification
+define('LDAP_SSL_VERIFY', true);
+
+// Enable LDAP START_TLS
+define('LDAP_START_TLS', false);
+
+// By default Kanboard lowercase the ldap username to avoid duplicate users (the database is case sensitive)
+// Set to true if you want to preserve the case
+define('LDAP_USERNAME_CASE_SENSITIVE', false);
+
+// LDAP bind type: &quot;anonymous&quot;, &quot;user&quot; or &quot;proxy&quot;
+define('LDAP_BIND_TYPE', 'anonymous');
+
+// LDAP username to use with proxy mode
+// LDAP username pattern to use with user mode
+define('LDAP_USERNAME', null);
+
+// LDAP password to use for proxy mode
+define('LDAP_PASSWORD', null);
+
+// LDAP DN for users
+// Example for ActiveDirectory: CN=Users,DC=kanboard,DC=local
+// Example for OpenLDAP: ou=People,dc=example,dc=com
+define('LDAP_USER_BASE_DN', 'dc=users,dc=catalejoplus,dc=com');
+
+// LDAP pattern to use when searching for a user account
+// Example for ActiveDirectory: '(&amp;(objectClass=user)(sAMAccountName=%s))'
+// Example for OpenLDAP: 'uid=%s'
+define('LDAP_USER_FILTER', 'uid=%s');
+
+// LDAP attribute for user avatar image: thumbnailPhoto or jpegPhoto
+define('LDAP_USER_ATTRIBUTE_PHOTO', 'jpegPhoto');
+
+
+</note-content>
+</text><last-change-date>2021-01-22T00:07:19.825162Z</last-change-date><last-metadata-change-date>2021-01-22T00:07:19.826068Z</last-metadata-change-date><create-date>2021-01-21T14:45:42.325372Z</create-date><cursor-position>4145</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

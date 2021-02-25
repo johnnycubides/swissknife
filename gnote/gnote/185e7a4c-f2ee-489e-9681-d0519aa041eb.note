@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>wacom tabletas digitalizadoras</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">wacom tabletas digitalizadoras
+
+pip install -U wxPython
+pip3 install PySetWacom
+sudo apt install gir1.2-appindicator3-0.1
+
+<link:url>https://askubuntu.com/questions/500141/huion-h610-tablet</link:url>
+wget <link:url>https://github.com/DIGImend/digimend-kernel-drivers/releases/download/v10/digimend-dkms_10_all.deb</link:url>
+
+correcto
+<link:url>https://askubuntu.com/questions/547990/how-to-configure-wacom-tablet-area-on-ubuntu-14-04</link:url>
+
+sudo dpkg -i digimend-dkms_10_all.deb
+restart
+xrandr
+xsetwacom --set 11 MapToOutput DVI-0
+xsetwacom --set 11 MapToOutput HDMI-1
+xsetwacom --set 11 MapToOutput LVDS-1
+xsetwacom --set 11 Rotate &quot;half&quot;
+xsetwacom --set 11 Moed [Relative Absolute]?
+
+<link:url>https://askubuntu.com/questions/729564/wacom-button-and-mouse-button-setting</link:url>
+
+configurar botones:
+<link:url>https://joshuawoehlke.com/wacom-intuos-and-xsetwacom-on-ubuntu-18-04/</link:url>
+</note-content>
+</text><last-change-date>2021-01-23T13:02:15.567408Z</last-change-date><last-metadata-change-date>2021-01-23T13:02:15.568192Z</last-metadata-change-date><create-date>2021-01-22T00:47:40.534608Z</create-date><cursor-position>0</cursor-position><selection-bound-position>3</selection-bound-position><width>0</width><height>0</height></note>
+

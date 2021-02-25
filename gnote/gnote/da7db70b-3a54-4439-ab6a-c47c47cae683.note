@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>nvim neovim</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">nvim neovim
+
+COC
+
+TEST COMAND
+:verbose set completeopt
+
+RESULT
+completeopt=menuone,longest,preview                                                                                                                                                                        
+        Last set from <link:url>~/.config/nvim/plugged/jedi-vim/plugin/jedi.vim</link:url> line 36
+
+JEDI
+
+TEST COMAND
+:verbose JediDebugInfo
+
+</note-content>
+</text><last-change-date>2020-12-03T13:34:6.997639Z</last-change-date><last-metadata-change-date>2020-12-03T13:34:6.998254Z</last-metadata-change-date><create-date>2020-12-03T13:29:30.479485Z</create-date><cursor-position>388</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

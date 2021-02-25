@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>git gitignore</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">git gitignore
+
+**/*.ext ignorar recusivamente</note-content>
+</text><last-change-date>2020-12-01T19:39:34.764580Z</last-change-date><last-metadata-change-date>2020-12-01T19:39:34.764926Z</last-metadata-change-date><create-date>2020-12-01T19:37:29.459153Z</create-date><cursor-position>45</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

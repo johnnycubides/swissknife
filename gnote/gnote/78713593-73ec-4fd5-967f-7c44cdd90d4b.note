@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>arduino esp8266</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">arduino esp8266
+
+git submodule update --init --recursive -j 8
+
+arduino-cli core update-index -v
+
+arduino-cli core search arduino
+
+<link:url>https://raw.githubusercontent.com/xanthium-enterprises/Serial-Port-Programming-on-Linux/master/USB2SERIAL_Read/Reciever%20(PC%20Side)/SerialPort_read.c</link:url></note-content>
+</text><last-change-date>2020-06-02T02:59:37.642711Z</last-change-date><last-metadata-change-date>2020-06-02T02:59:37.643880Z</last-metadata-change-date><create-date>2020-06-01T23:38:48.650307Z</create-date><cursor-position>281</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

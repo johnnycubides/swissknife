@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>pencil mockup</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">pencil mockup
+
+<highlight>ERROR:</highlight>
+pencil                                                                                                                                                                          
+Hardware acceleration disabled for Linux.                                                                                                                                                         
+                                                                                                                                                                                                  
+(pencil:5130): Pango-ERROR **: 08:35:13.085: Harfbuzz version too old (1.2.7)                                                                                                                     
+                                                                                                                                                                                                  
+Trace/breakpoint trap
+
+<highlight>SOLVE:</highlight>
+<link:url>https://github.com/evolus/pencil/issues/581</link:url>
+Descargar e instalar la ultima version de pencil
+
+<highlight>ERROR:</highlight>
+pencil
+[21962:1229/085253.532395:FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that <link:url>/opt/pencil-3.1.0.ga/chrome-sandbox</link:url> is owned by root and has mode 4755.
+Trace/breakpoint trap
+
+SOLVE:
+<link:url>https://medium.com/@authmane512/solve-the-suid-sandbox-helper-binary-was-found-but-is-not-configured-correctly-3-solutions-4f1425a9a76c</link:url>
+sudo chown root:root chrome-sandbox
+sudo chmod 4755 chrome-sandbox
+
+<highlight>EJECUTAR PENCIL PARA VERSION DEVELOPMET</highlight>
+
+git clone <link:url>https://github.com/evolus/pencil.git</link:url>
+npm install
+npm install
+npm audit fix --force
+cd node_modules/electron/dist/
+sudo chown root:root chrome-sandbox
+sudo chmod 4755 chrome-sandbox
+volver al directorio raíz del proyecto pencil
+npm start
+</note-content>
+</text><last-change-date>2021-02-01T23:45:7.229108Z</last-change-date><last-metadata-change-date>2021-02-01T23:45:7.229108Z</last-metadata-change-date><create-date>2020-12-29T13:51:51.909075Z</create-date><cursor-position>0</cursor-position><selection-bound-position>6</selection-bound-position><width>0</width><height>0</height></note>
+

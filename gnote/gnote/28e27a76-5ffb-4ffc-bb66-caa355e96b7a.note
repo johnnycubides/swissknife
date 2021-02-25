@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>links pruebas</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">links pruebas
+
+simulador de ciruitos
+<link:url>https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0Av+304+256+304+208+0+0+40+3.3+0+0+0.5%0Ar+352+160+416+160+0+220%0A162+464+208+464+256+1+2.1024259+1+0+0+0.01%0Aw+304+208+304+160+0%0Aw+304+160+352+160+0%0Aw+416+160+464+160+0%0Aw+464+160+464+208+0%0Aw+304+256+304+288+0%0Aw+304+288+416+288+0%0Ax+489+238+528+241+4+20+LED%0Ax+178+235+276+238+4+20+NodeMCU%0Ax+320+214+355+217+4+15+3.3V%0Ax+336+121+449+124+4+20+Resistencia%0Ax+318+256+353+259+4+15+GND%0Ax+276+213+293+216+4+20+\p%0Ax+279+260+288+263+4+25+-%0Ax+330+136+450+139+4+10+Rojo,\sRojo,\sCafe,\sDorado%0A</link:url>
+
+Ejercicio 1
+<link:url>https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0Av+304+256+304+208+0+0+40+3.3+0+0+0.5%0Ar+352+160+416+160+0+220%0A162+464+208+464+256+1+2.1024259+1+0+0+0.01%0Aw+304+208+304+160+0%0Aw+304+160+352+160+0%0Aw+416+160+464+160+0%0Aw+464+160+464+208+0%0Aw+304+256+304+288+0%0Ax+489+238+528+241+4+20+LED%0Ax+178+235+276+238+4+20+NodeMCU%0Ax+320+214+355+217+4+15+3.3V%0Ax+336+121+449+124+4+20+Resistencia%0Ax+318+256+353+259+4+15+GND%0Ax+276+213+293+216+4+20+%5Cp%0Ax+279+260+288+263+4+25+-%0Ax+330+136+450+139+4+10+Rojo,%5CsRojo,%5CsCafe,%5CsDorado%0Aw+464+256+464+288+0%0Aw+304+288+464+288+0%0A</link:url>
+
+Ejercicio 2
+<link:url>https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0Av+304+256+304+208+0+0+40+3.3+0+0+0.5%0Ar+352+160+416+160+0+220%0A162+464+208+464+256+1+2.1024259+1+0+0+0.01%0Aw+304+208+304+160+0%0Aw+304+160+352+160+0%0Aw+416+160+464+160+0%0Aw+464+160+464+208+0%0Aw+304+256+304+288+0%0Aw+304+288+416+288+0%0Ax+489+238+528+241+4+20+LED%0Ax+178+235+276+238+4+20+NodeMCU%0Ax+320+214+355+217+4+15+3.3V%0Ax+336+121+449+124+4+20+Resistencia%0Ax+318+256+353+259+4+15+GND%0Ax+276+213+293+216+4+20+\p%0Ax+279+260+288+263+4+25+-%0Ax+330+136+450+139+4+10+Rojo,\sRojo,\sCafe,\sDorado%0A</link:url>
+
+Montaje 1
+
+<link:url>https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0Av+304+256+304+208+0+0+40+3.3+0+0+0.5%0Ar+352+160+416+160+0+220%0A162+464+208+464+256+1+2.1024259+1+0+0+0.01%0Aw+304+208+304+160+0%0Aw+304+160+352+160+0%0Aw+416+160+464+160+0%0Aw+464+160+464+208+0%0Aw+304+256+30</link:url>4+288+0%0Aw+304+288+416+288+0%0Ax+489+238+528+241+4+20+LED%0Ax+178+235+276+238+4+20+NodeMCU%0Ax+320+214+355+217+4+15+3.3V%0Ax+336+121+449+124+4+20+Resistencia%0Ax+318+256+353+259+4+15+GND%0Ax+276+213+293+216+4+20+\p%0Ax+279+260+288+263+4+25+-%0Ax+330+136+450+139+4+10+Rojo,\sRojo,\sCafe,\sDorado%0A
+
+Montaje 2
+
+<link:url>https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0Av+304+256+304+208+0+0+40+3.3+0+0+0.5%0Ar+352+160+416+160+0+220%0A162+464+208+464+256+1+2.1024259+1+0+0+0.01%0Aw+304+208+304+160+0%0Aw+304+160+352+160+0%0Aw+416+160+464+160+0%0Aw+464+160+464+208+0%0Aw+304+256+30</link:url>4+288+0%0Ax+489+238+528+241+4+20+LED%0Ax+178+235+276+238+4+20+NodeMCU%0Ax+320+214+355+217+4+15+3.3V%0Ax+336+121+449+124+4+20+Resistencia%0Ax+318+256+353+259+4+15+GND%0Ax+276+213+293+216+4+20+\p%0Ax+279+260+288+263+4+25+-%0Ax+330+136+450+139+4+10+Rojo,\sRojo,\sCafe,\sDorado%0Aw+464+256+464+288+0%0Aw+304+288+464+288+0%0A
+
+</note-content>
+</text><last-change-date>2020-08-04T15:17:16.293211Z</last-change-date><last-metadata-change-date>2020-08-04T15:17:16.294890Z</last-metadata-change-date><create-date>2020-08-04T14:59:51.917929Z</create-date><cursor-position>2509</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

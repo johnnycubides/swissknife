@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Custom CSS Nextcloud</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Custom CSS Nextcloud
+
+Dark
+
+.jsxc_chatmessage, #jsxc_dialog * {
+    color: #ffffff;
+}
+
+.jsxc_window textarea.jsxc_textinput:focus, .jsxc_window textarea.jsxc_textinput:hover {
+    background-color: #31363b !important;
+}
+
+.jsxc_window textarea.jsxc_textinput:hover {
+    background-color: 
+    #31363b !important;
+}
+
+.jsxc_window textarea.jsxc_textinput {
+    background-color: #31363b !important;
+}
+
+Tema referente
+<link:url>https://raw.githubusercontent.com/dracula/telegram/master/screenshot.png</link:url>
+
+.jsxc-message-area{
+    background: #282a36;
+}
+
+.jsxc-out{
+background-color: #44475b;
+color: #f8f8f2;
+}
+
+.jsxc-timestamp{
+color: #7ac9dd;
+}
+
+.jsxc-in{
+background-color: #6171a6;
+color: #f8f8f2;
+}
+
+.jsxc-send-area{
+background-color: #805cb3;
+}
+
+.jsxc-message-input{
+background: #805cb3;
+}
+
+.jsxc-message-input::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.jsxc-mam-load-more span {
+    background-color: #805cb3;
+}
+
+.jsxc-mam-load-more span:hover {
+background-color: #44475b;
+}
+
+.jsxc-contact-list-wrapper{
+background: #44475b;
+}
+
+.jsxc-bar--window{
+    background-color: #805cb3;
+    color: #c0dff1;
+}
+
+.jsxc-received .jsxc-timestamp::after {
+    color: yellow;
+    content: &quot;✓&quot;;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.jsxc-roster-item{
+color: #f8f8f2;
+}
+
+.jsxc-roster-item:hover {
+    background-color: #805cb3;
+}
+
+#jsxc-roster &gt; .jsxc-bottom{
+background: #36394d
+}
+
+#jsxc-roster &gt; .jsxc-bottom:hover{
+background: #805cb3
+}</note-content>
+</text><last-change-date>2020-04-10T19:27:58.332808Z</last-change-date><last-metadata-change-date>2020-04-10T19:27:58.335778Z</last-metadata-change-date><create-date>2020-04-10T15:54:20.108564Z</create-date><cursor-position>400</cursor-position><selection-bound-position>487</selection-bound-position><width>0</width><height>0</height></note>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>nodemcu firmware manual</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">nodemcu firmware manual
+
+ esptool.py write_flash -fm dio -fs 32m -ff 40m 0xc3500 bin/0xc3500-0x1f400.im
+</note-content>
+</text><last-change-date>2020-07-19T06:49:6.248232Z</last-change-date><last-metadata-change-date>2020-07-19T06:49:6.249152Z</last-metadata-change-date><create-date>2020-07-19T06:48:38.078994Z</create-date><cursor-position>104</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

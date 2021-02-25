@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Nextcloud 18 to 20</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Nextcloud 18 to 20
+
+No es posible hacer una actualizaci
+
+sudo apt install php-gm
+sudo apt install php-bcmath
+
+De las actiones realizadas para actualizar las versiones se detectó lo siguiente:
+
+<list><list-item dir="ltr">No se pude pasar de versiones de manera arbitraria; no se puede pasar de la 18 a la 20 sin pasar por la 19
+</list-item><list-item dir="ltr">No fue posible hacer la actualización de manera manual
+</list-item><list-item dir="ltr">La mejor solución es realizar el cambio desde la interfaz web de usuario del administrador, en nuestro caso desde catalejo user.</list-item></list>
+
+
+</note-content>
+</text><last-change-date>2021-01-15T02:10:49.702743Z</last-change-date><last-metadata-change-date>2021-01-15T02:10:49.703452Z</last-metadata-change-date><create-date>2021-01-14T15:38:57.002636Z</create-date><cursor-position>491</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

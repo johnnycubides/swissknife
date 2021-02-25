@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Vim revisión de plugins</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Vim revisión de plugins
+
+<list><list-item dir="ltr">tpope/vim-fugitive operaciones git <link:url>https://github.com/tpope/vim-fugitive</link:url>
+</list-item><list-item dir="ltr">vim-airline/vim-airline status/tabline  <link:url>https://github.com/vim-airline/vim-airline</link:url>
+</list-item><list-item dir="ltr">airblade/vim-gitgutter a git diff in the 'gutter' <link:url>https://github.com/airblade/vim-gitgutter</link:url>
+</list-item><list-item dir="ltr">vim-scripts/CSApprox colorscheme <link:url>https://github.com/vim-scripts/CSApprox</link:url>
+</list-item><list-item dir="ltr">w0rp/ale ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) <link:url>https://github.com/dense-analysis/ale</link:url>
+</list-item><list-item dir="ltr">ludwig/split-manpage.vim is a plugin for opening man pages inside another Vim window <link:url>https://github.com/ludwig/split-manpage.vim</link:url></list-item></list></note-content>
+</text><last-change-date>2020-04-12T13:46:23.698779Z</last-change-date><last-metadata-change-date>2020-04-12T13:46:23.700338Z</last-metadata-change-date><create-date>2020-04-12T13:11:28.349219Z</create-date><cursor-position>632</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

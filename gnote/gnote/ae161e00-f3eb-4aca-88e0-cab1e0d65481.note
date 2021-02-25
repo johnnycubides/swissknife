@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Apuntes de C</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Apuntes de C
+
+<link:url>https://es.cppreference.com/w/c/types/integer</link:url>
+
+Punteros char como argumentos de funciones que requieren devuelto su contenido modificado
+<link:url>https://stackoverflow.com/questions/14331411/passing-char-pointer-in-c</link:url>
+
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#define STACK_SIZE 10 /*!&lt; Tamaño de pila de mediciones */
+
+struct MeasurementStack
+{
+  uint8_t stamp[STACK_SIZE]; /*!&lt; Registro de sucesos en las mediciones */
+  float relativeMoisture[STACK_SIZE]; /*!&lt; Registro de la humedad relativa */
+  float relativeTempearature[STACK_SIZE]; /*!&lt; Registro de la temperatura relativa */
+  float soilMoisture[STACK_SIZE]; /*!&lt; Registro de la humedad del suelo */
+  float soilTemperature[STACK_SIZE]; /*!&lt; Registro de la temperatura del suelo */
+  int32_t light[STACK_SIZE]; /*!&lt; Registro de valores de iluminación */
+};
+
+struct MeasurementStack measurementStack;
+struct MeasurementStack *pMeasurementStack = &amp;measurementStack;
+
+int getMeasurement2Stack(struct MeasurementStack *pMeasurements){
+    pMeasurements-&gt;stamp[0] = 100;
+    return 1;
+}
+
+void writeMiembro(uint8_t data[]){
+    data[0] = 101;
+}
+
+int main()
+{
+    printf(&quot;Hello World\n&quot;);
+    //getMeasurement2Stack(pMeasurementStack);
+    writeMiembro(pMeasurementStack-&gt;stamp);
+    printf(&quot;1 %d\n&quot;, measurementStack.stamp[0]);
+    printf(&quot;2 %d\n&quot;, pMeasurementStack-&gt;stamp[0]);
+    int8_t* pStamp = &amp;pMeasurementStack-&gt;stamp[0];
+    *pStamp = 13;
+    //pStamp = 14;
+    //printf(&quot;3 %d\n&quot;, *pStamp);
+    printf(&quot;4 %d\n&quot;, &amp;pStamp);
+    printf(&quot;5 %d\n&quot;, &amp;measurementStack);
+    printf(&quot;6 %d\n&quot;, pStamp);
+    printf(&quot;7 %d\n&quot;, measurementStack.stamp[0]);
+    printf(&quot;8 %d\n&quot;, pMeasurementStack-&gt;stamp[0]);
+    printf(&quot;10 %d\n&quot;, *pStamp);
+    return 0;
+}
+
+
+</note-content>
+</text><last-change-date>2020-04-21T22:57:46.904991Z</last-change-date><last-metadata-change-date>2020-04-21T22:57:46.905760Z</last-metadata-change-date><create-date>2020-04-13T02:32:17.183969Z</create-date><cursor-position>59</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

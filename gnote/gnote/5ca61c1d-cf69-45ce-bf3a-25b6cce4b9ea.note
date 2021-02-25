@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Comandos utiles para pasar a documentación</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Comandos utiles para pasar a documentación
+
+unzip file -d destino (cambiando destino)
+unzip -t file (prueba)
+echo -e &quot;A\n&quot; | unzip file (evita tener que interactuar con las opciones, en éste caso es replazar todo los archivos coincidencias destino)
+
+
+</note-content>
+</text><last-change-date>2020-04-11T21:46:13.079463Z</last-change-date><last-metadata-change-date>2020-04-11T21:46:13.079782Z</last-metadata-change-date><create-date>2020-04-11T21:43:54.855898Z</create-date><cursor-position>249</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

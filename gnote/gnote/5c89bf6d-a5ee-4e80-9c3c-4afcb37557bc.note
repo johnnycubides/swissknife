@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>chuck-onion</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">chuck-onion
+
+<highlight>clonando...</highlight>
+git clone -b master --single-branch <link:url>https://github.com/ccrma/chuck</link:url> chuck-onion
+
+<highlight>Error de termio</highlight>
+error: aggregate 'termio g_save' has incomplete type and cannot be defined
+
+<highlight>Enviando compilado</highlight>
+scp chuck <link:url>root@192.168.3.1:/tmp/run/mountd/mmcblk0p1/</link:url>
+
+wifi test
+UNE_HFC_EA1F
+XQIDC9HE
+
+Soluciones wifi
+<link:url>https://docs.onion.io/omega2-docs/connecting-to-wifi-networks-command-line.html</link:url>
+<link:url>https://docs.onion.io/omega2-docs/first-time-setup-command-line.html</link:url>
+<link:url>https://docs.onion.io/omega2-docs/manual-firmware-installation.html</link:url>
+<link:url>https://docs.onion.io/omega2-docs/usb-storage.html#usb-storage</link:url>
+<link:url>http://repo.onioniot.com/omega2/images/</link:url>
+
+
+ifconfig ra0 up
+
+
+COMANDOS
+<list><list-item dir="ltr"> opkg update actualiza lista de paquetes precompilados
+</list-item><list-item dir="ltr">oupgrade actualiza firmware de tarjeta omega2+
+</list-item><list-item dir="ltr"/></list></note-content>
+</text><last-change-date>2020-04-26T21:46:26.656887Z</last-change-date><last-metadata-change-date>2020-04-26T21:46:26.657959Z</last-metadata-change-date><create-date>2020-04-23T00:23:19.753165Z</create-date><cursor-position>640</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

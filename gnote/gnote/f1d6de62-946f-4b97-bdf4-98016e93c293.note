@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>lepto-eda</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">lepton-eda
+
+<link:url>https://github.com/lepton-eda/lepton-eda</link:url>
+
+git clone <link:url>https://github.com/lepton-eda/lepton-eda.git</link:url>
+sudo apt install guile-3.0-dev gettext flex gawk groff libstroke0-dev doxygen graphviz
+
+./autogen.sh
+./configure GUILE=/usr/bin/guile-3.0 --prefix=$HOME/lepton --enable-doxygen # o sin doxygen
+make
+make install
+</note-content>
+</text><last-change-date>2020-11-20T15:48:13.548054Z</last-change-date><last-metadata-change-date>2020-11-20T15:48:13.549051Z</last-metadata-change-date><create-date>2020-11-20T15:26:46.676831Z</create-date><cursor-position>0</cursor-position><selection-bound-position>10</selection-bound-position><width>0</width><height>0</height></note>
+

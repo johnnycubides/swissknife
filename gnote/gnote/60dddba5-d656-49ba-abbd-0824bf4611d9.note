@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>git ssh</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">git ssh
+
+Creando llave
+
+ssh-keygen -t rsa -b 4096 -C &quot;<link:url>jgcubidesc@gmail.com</link:url>&quot;
+Enter file in which to save the key (/home/johnny/.ssh/id_rsa): git
+
+Iniciar el agente ssh
+eval &quot;$(ssh-agent -s)&quot;
+
+Agregar la llave al agente
+ssh-add <link:url>~/.ssh/git</link:url>
+
+Quitar llaves a traves de -D o borrar la llave del directorio
+
+Agregar la llave publica a github
+cat git.pub
+
+Verificar login a través de ssh
+ssh -T <link:url>git@github.com</link:url>
+ssh -T <link:url>git@gitlab.com</link:url>
+ssh -T <link:url>git@bitbucket.com</link:url>
+
+Cambiando la url de un repositorio local
+<link:url>https://docs.github.com/es/github/using-git/changing-a-remotes-url</link:url>
+
+De dos tipos https o git (ssh)
+
+Ver url del repositorio local
+git remote -v 
+
+Cambiar la url
+git remote set-url origin &lt;url&gt;
+
+Ejemplo
+git remote set-url origin <link:url>https://github.com/johnnycubides/circuit-simulators-opensource.git</link:url> (ssh to https)
+git remote set-url origin <link:url>git@github.com:johnnycubides/circuit-simulators-opensource.git</link:url> (https to ssh)
+
+<highlight>Warning: Permanently added the RSA host key for IP address '140.82.113.4' to the list of known hosts</highlight>
+Descartar
+
+como usar el agente ssh
+<link:url>https://www.ssh.com/ssh/agent</link:url>
+<link:url>http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/</link:url>
+
+User agent key permanent
+<link:url>https://stackoverflow.com/questions/3466626/how-to-permanently-add-a-private-key-with-ssh-add-on-ubuntu</link:url>
+vim <link:url>~/.ssh/config</link:url>
+Host github.com
+    User git
+    IdentityFile <link:url>~/.ssh/githubKey</link:url>
+
+
+
+</note-content>
+</text><last-change-date>2021-02-18T17:29:44.208281Z</last-change-date><last-metadata-change-date>2021-02-18T17:29:44.208899Z</last-metadata-change-date><create-date>2021-02-18T16:21:57.146909Z</create-date><cursor-position>218</cursor-position><selection-bound-position>236</selection-bound-position><width>0</width><height>0</height></note>
+

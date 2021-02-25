@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>xorunal and xournal++</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">xorunal and xournal++
+
+Aplicacion mobile
+
+<link:url>https://gitlab.com/TheOneWithTheBraid/xournalpp_mobile</link:url>
+
+Aplicacion desktop
+
+<link:url>https://github.com/xournalpp/xournalpp/releases</link:url>
+
+sudo apt install libportaudiocpp0
+sudo dpkg -i xournalpp-1.0.20-hotfix-hotfix-Debian-buster-x86_64.deb
+
+</note-content>
+</text><last-change-date>2021-01-24T15:04:14.611445Z</last-change-date><last-metadata-change-date>2021-01-24T15:04:14.612367Z</last-metadata-change-date><create-date>2021-01-24T14:51:58.271630Z</create-date><cursor-position>270</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

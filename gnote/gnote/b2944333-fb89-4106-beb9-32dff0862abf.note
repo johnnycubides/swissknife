@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>JACK pulse audio</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">JACK pulse audio
+
+<link:url>https://stackoverflow.com/questions/61036703/recording-headset-output-mic-input-for-karaoke</link:url>
+
+cat <link:url>/etc/security/limits.d/audio.conf.disabled</link:url>
+# If you want to enable/disable realtime permissions, run
+dpkg-reconfigure -p high jackd2
+
+restart pulseaudio
+pulseaudio --check
+pulseaudio -k
+pulseaudio -D
+
+pactl load-module module-null-sink sink_name=Source
+pactl load-module module-virtual-source source_name=VirtualMic master=Source.monitor
+
+
+pactl load-module module-null-sink sink_name=Virtual1 sink_properties=&quot;device.description='Chrome\ Splitter'&quot;
+pactl load-module module-null-sink sink_name=Virtual2 sink_properties=&quot;device.description='Chrome\ and\ Mic\ Combiner'&quot;
+pactl load-module module-loopback
+pactl load-module module-loopback
+#pactl load-module module-loopback
+
+pactl load-module module-null-sink sink_name=Source
+pactl load-module module-virtual-source source_name=VirtualMic master=Source.monitor</note-content>
+</text><last-change-date>2020-10-24T12:29:50.017915Z</last-change-date><last-metadata-change-date>2020-10-24T12:29:50.018434Z</last-metadata-change-date><create-date>2020-09-25T17:33:15.975349Z</create-date><cursor-position>925</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

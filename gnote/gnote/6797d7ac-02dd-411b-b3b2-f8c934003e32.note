@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>lepton-eda</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">lepton-eda
+
+
+sudo apt install guile-2.0-dev
+./configure
+
+
+REFERENCIAS
+<link:url>https://www.gnu.org/software/guile/</link:url>
+<link:url>https://github.com/lepton-eda/lepton-eda</link:url></note-content>
+</text><last-change-date>2020-06-23T19:56:30.752337Z</last-change-date><last-metadata-change-date>2020-06-23T19:56:30.752953Z</last-metadata-change-date><create-date>2020-06-23T19:23:10.663959Z</create-date><cursor-position>146</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

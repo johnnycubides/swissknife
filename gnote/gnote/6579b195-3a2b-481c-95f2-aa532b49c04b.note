@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>tara a realizar en directorio projects</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">tara a realizar en directorio projects
+
+<list><list-item dir="ltr">roms/ crear el repositorio adecuado
+</list-item><list-item dir="ltr">catalejo-kdenlive crear repositorio para almacenar informacion bitbucket
+</list-item><list-item dir="ltr">unal/ requiere revisión completa
+</list-item><list-item dir="ltr">catalejo-love-tutorial/ requiere repositorio en gitlab
+</list-item><list-item dir="ltr">catalejo_presenatciones/ requiere ser reorganizado
+</list-item><list-item dir="ltr">droidstamp/ requiere organizado y borrado directorios innecesarios
+</list-item><list-item dir="ltr">emulator/ requiere posiblemente un repositorio de bitbucket
+</list-item><list-item dir="ltr">catalejo-fritzing/ ok, pero revisar el README.md (actualizar)
+</list-item><list-item dir="ltr">catalejo-beaer-themes/ debe ser revisado y si no se está usando debe ser BORRADO
+</list-item><list-item dir="ltr">typORM/ requiere ser revisado ya que es potencial para nuestro backend de proyectos catalejo
+</list-item><list-item dir="ltr">catalejo-metodologies/ requiere ser revisado y observa qué se puede actualizar
+</list-item><list-item dir="ltr">own-ebook/ requiere ser actualizado ya que dejó de funcionar con latex
+</list-item><list-item dir="ltr">music_and_programation_course/ requiere ser revisada las actualizaciones hechas para ser subidas
+</list-item><list-item dir="ltr">transversal-tools-catalejo-team/ debe ser revisado para archivar o para reajustar y usar
+</list-item><list-item dir="ltr">cocos2djs/ requiere ser revisado para agregar a las herramientas de programación de vídeo juegos, aún está sin repositorio git
+</list-item><list-item dir="ltr">ChibiOS_18.2.1/ se requiere revisar el contenido y reajustar a un repositorio de git, si el contenido es redundante borrar
+</list-item><list-item dir="ltr">abayaku_methodologies/ revisar actualizaciones, subir e integrar en un git
+</list-item><list-item dir="ltr">videos_youtube_catalejo/ requiere ser revisado y puesto en el lugar requerido para alamcenar , no tiene git</list-item></list>
+
+
+
+</note-content>
+</text><last-change-date>2020-04-27T16:28:42.153563Z</last-change-date><last-metadata-change-date>2020-04-27T16:28:42.153754Z</last-metadata-change-date><create-date>2020-04-27T16:01:23.462109Z</create-date><cursor-position>1017</cursor-position><selection-bound-position>1020</selection-bound-position><width>0</width><height>0</height></note>
+

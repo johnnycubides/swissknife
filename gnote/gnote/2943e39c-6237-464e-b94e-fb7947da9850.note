@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>5 Abril</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">5 Abril
+
+<highlight>con respecto a la raspberry</highlight>
+
+Sun Oct 21 14:08:45 -05 2018,Copying a zipped image to the SD card,Se subirá a memoria SD la imagen raspberry pi sin necesida de descomprimir la imagen directamente
+Sun Oct 21 14:33:53 -05 2018,unzip -p <link:url>~/Downloads/2018-10-09-raspbian-stretch.zip</link:url> | sudo dd of=/dev/mmcblk0 bs=4M conv=fsync status=progress,Copiando imagen en SD
+
+APLICAR PATCH CON GIT
+<link:url>https://www.thegeekstuff.com/2014/03/git-patch-create-and-apply/</link:url>
+
+crear patch:
+ git diff &gt; chuck-arm.patch
+
+Aplicar patch
+git apply file.patch
+
+enviar compilado a la omega
+
+Omega genera un error, sin embargo se resuelve como se menciona acá
+<link:url>https://forum.openwrt.org/t/compile-error-19-07/44423/2</link:url>
+
+ejemplo para cross compilación con omega2+
+<link:url>https://github.com/OnionIoT/c-cross-compile-example</link:url>
+
+<link:url>/home/johnny/projects/omega-openwrt/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/include</link:url>
+
+sh xCompile.sh -buildroot <link:url>~/projects/omega-openwrt</link:url>
+
+glob.h
+wget <link:url>https://raw.githubusercontent.com/kraj/uClibc/master/include/glob.h</link:url>
+
+in core ↑↑↑
+
+glob.h no existe GLOB_TILDE
+termio.h no existe, existe termios.h
+
+Error loading shared library libsndfile.so.1: No such file or directory (needed by ./chuck)
+
+</note-content>
+</text><last-change-date>2020-04-06T16:46:51.857667Z</last-change-date><last-metadata-change-date>2020-04-06T16:46:51.858422Z</last-metadata-change-date><create-date>2020-04-05T14:57:59.320878Z</create-date><cursor-position>292</cursor-position><selection-bound-position>294</selection-bound-position><width>0</width><height>0</height></note>
+

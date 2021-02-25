@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>dhcpclient</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">dhcpclient
+
+<link:url>https://www.cyberciti.biz/faq/howto-linux-renew-dhcp-client-ip-address/</link:url>
+
+sudo dhclient -r eth0
+sudo dhclient eth0
+
+sudo dhclient -v -r eth0
+sudo dhclient -v eth0</note-content>
+</text><last-change-date>2020-10-28T23:18:30.734619Z</last-change-date><last-metadata-change-date>2020-10-28T23:18:30.735219Z</last-metadata-change-date><create-date>2020-10-28T23:17:27.072884Z</create-date><cursor-position>83</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

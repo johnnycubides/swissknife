@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>rust riscv</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">rust riscv
+
+<link:url>https://craigjb.com/2020/01/22/ecp5/</link:url>
+
+
+/* MEMORY */
+/* { */
+/*   RAM : ORIGIN = 0x00000000, LENGTH = 8K */
+/* } */
+
+/* REGION_ALIAS(&quot;REGION_TEXT&quot;, RAM); */
+/* REGION_ALIAS(&quot;REGION_RODATA&quot;, RAM); */
+/* REGION_ALIAS(&quot;REGION_DATA&quot;, RAM); */
+/* REGION_ALIAS(&quot;REGION_BSS&quot;, RAM); */
+/* REGION_ALIAS(&quot;REGION_HEAP&quot;, RAM); */
+/* REGION_ALIAS(&quot;REGION_STACK&quot;, RAM); */
+
+litex_term <link:url>/dev/ttyUSB0</link:url> --kernel blink.bin
+riscv32-unknown-elf-objcopy -O binary blink.out  blink.bin
+riscv32-unknown-elf-objdump -d blink.out
+riscv32-unknown-elf-as -o blink.out main.asm</note-content>
+</text><last-change-date>2020-05-28T19:41:21.055254Z</last-change-date><last-metadata-change-date>2020-05-28T19:41:21.056161Z</last-metadata-change-date><create-date>2020-05-19T03:24:40.751261Z</create-date><cursor-position>371</cursor-position><selection-bound-position>376</selection-bound-position><width>0</width><height>0</height></note>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>bluetooth</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">bluetooth
+
+<link:url>https://askubuntu.com/questions/1231074/ubuntu-20-04-bluetooth-not-working</link:url>
+
+ERROR
+bluemanager no conecta los controladores (usb)
+sudo rmmod btusb
+sleep 1
+sudo modprobe btusb
+
+ERROR
+pavucontrol establishing connection to pulse audio, please wait 
+
+pulseaudio -k
+pulseaudio -D
+</note-content>
+</text><last-change-date>2021-01-23T13:16:48.623455Z</last-change-date><last-metadata-change-date>2021-01-23T13:16:48.623692Z</last-metadata-change-date><create-date>2021-01-23T12:55:32.867628Z</create-date><cursor-position>165</cursor-position><selection-bound-position>184</selection-bound-position><width>0</width><height>0</height></note>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>zephyr litex</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">zephyr litex
+
+meet.google.com/ioo-wbsf-rth clase
+
+west build -p auto -b litex_vexriscv samples/hello_world
+west build -p auto -b qemu_riscv32 samples/hello_world
+
+sudo apt install  git cmake gperf \
+  ccache dfu-util device-tree-compiler wget \
+  xz-utils file \
+  make gcc gcc-multilib g++-multilib libsdl2-dev
+
+<highlight>COMANDOS</highlight>
+
+west build -b nucleo_f401re samples/hello_world
+
+cmake -DBOARD=litex_vexriscv -DEXTRA_CFLAGS=-march=nocona ../
+
+cmake -DBOARD=litex_vexriscv -DEXTRA_CFLAGS=-march=rv32i -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=~/miniconda3/envs/fpga/bin/riscv32-elf- ../
+
+cmake -DBOARD=litex_vexriscv -DEXTRA_CFLAGS=-march=rv32i -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=~/miniconda3/envs/fpga/bin/riscv32-unknown-elf- ../
+
+cmake -DBOARD=litex_vexriscv -- -DEXTRA_CFLAGS=-march=rv32i -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=~/miniconda3/envs/fpga/bin/riscv32-elf- ../
+
+export <link:internal>ZEPHYR</link:internal>_TOOLCHAIN_VARIANT=<link:internal>zephyr</link:internal>
+export <link:internal>ZEPHYR</link:internal>_SDK_INSTALL_DIR=~/<link:internal>zephyr</link:internal>-sdk-0.11.3
+export <link:internal>ZEPHYR</link:internal>_BASE=~/zephyrproject/<link:internal>zephyr</link:internal>
+
+cmake -B build -DBOARD=litex_vexriscv ./
+
+<highlight>CROSS_COMPILE</highlight>
+
+CMAKE_MAKE_PROGRAM
+unset <link:internal>ZEPHYR</link:internal>_SDK_INSTALL_DIR
+export <link:internal>ZEPHYR</link:internal>_BASE=~/zephyrproject/<link:internal>zephyr</link:internal>
+export <link:internal>ZEPHYR</link:internal>_TOOLCHAIN_VARIANT=cross-compile
+export CROSS_COMPILE=~/miniconda3/envs/fpga/bin/riscv32-elf-
+export CROSS_COMPILE=~/miniconda3/envs/fpga/bin/riscv32-unknown-elf-
+
+cmake -B blinkyBuild -GNinja -DBOARD=litex_vexriscv -DCMAKE_REQUIRED_FLAGS=-Wl,-dT=/dev/null samples/basic/blinky
+cmake -B build -GNinja -DBOARD=litex_vexriscv -DCMAKE_REQUIRED_FLAGS=-Wl,-dT=/dev/null samples/hello_world
+
+cmake -B build -GNinja -DBOARD=litex_vexriscv -DCMAKE_REQUIRED_FLAGS=-std=gnu99,-c,-MD,-MP,-Os,-march=rv32i,-mabi=ilp32,-D__vexriscv__,-g3,-fomit-frame-pointer,-Wall,-fno-builtin,-nostdinc samples/hello_world
+
+cmake -B build -GNinja -DBOARD=litex_vexriscv -DCMAKE_REQUIRED_FLAGS= -std=gnu99 -c -MD -MP -Os -march=rv32i -mabi=ilp32 -g3 -fomit-frame-pointer -Wall -fno-builtin -nostdinc samples/hello_world
+
+cmake -B build -DBOARD=litex_vexriscv -DEXTRA_CFLAGS=-std=gnu99 -c -MD -MP -Os -march=rv32i -mabi=ilp32 -g3 -fomit-frame-pointer -Wall -fno-builtin -nostdinc samples/hello_world/
+
+<bold><highlight>BAD TEST</highlight></bold>
+
+cmake -B build -DBOARD=litex_vexriscv -- -DEXTRA_CFLAGS=-std=gnu99 -c -MD -MP -Os -march=rv32i -mabi=ilp32 -g3 -fomit-frame-pointer -Wall -fno-builtin -nostdinc samples/hello_world/
+cmake -B build -GNinja -DBOARD=litex_vexriscv -- -DEXTRA_CFLAGS=-std=gnu99 -c -MD -MP -Os -march=rv32i -mabi=ilp32 -g3 -fomit-frame-pointer -Wall -fno-builtin -nostdinc samples/hello_world/
+
+<highlight>REFERENCIAS</highlight>
+
+<link:url>https://www.osdforum.org/documents/zephyr-micropython.pdf</link:url>
+
+
+</note-content>
+</text><last-change-date>2020-11-05T14:50:30.514042Z</last-change-date><last-metadata-change-date>2020-11-05T14:50:30.514878Z</last-metadata-change-date><create-date>2020-09-15T03:05:32.714400Z</create-date><cursor-position>181</cursor-position><selection-bound-position>184</selection-bound-position><width>0</width><height>0</height></note>
+

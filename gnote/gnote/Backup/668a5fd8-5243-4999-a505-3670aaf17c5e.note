@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>v4l2loopback</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">v4l2loopback
+
+<link:url>https://github.com/umlaeute/v4l2loopback</link:url>
+<link:url>https://github.com/umlaeute/v4l2loopback/wiki</link:url>
+
+sudo modprobe v4l2loopback exclusive_caps=1
+
+v4l2-ctl --list-devices
+
+xrandr | grep ' connected'
+
+rm -rf ./.config/<link:internal>Webcamoid</link:internal>/
+
+<link:url>https://www.youtube.com/watch?v=6AZRiW3hHrw</link:url>
+<link:url>https://stackoverflow.com/questions/36986037/screen-capture-recorder-to-record-2nd-monitor-ffmpeg-win-7</link:url>
+<link:url>https://www.reddit.com/r/linux/comments/8n3ylp/screen_recording_in_x11_with_ffmpeg/</link:url>
+<link:url>https://vlab.ncep.noaa.gov/web/oclo/internal-default-jobsheet-display-page/-/asset_publisher/xLjC16El6sCv/content/recording-your-desktop-with-ffmpeg</link:url>
+<link:url>https://unix.stackexchange.com/questions/73622/how-to-get-near-perfect-screen-recording-quality</link:url>
+<link:url>https://trac.ffmpeg.org/wiki/Capture/Desktop</link:url>
+</note-content>
+</text><last-change-date>2020-09-26T12:27:56.735560Z</last-change-date><last-metadata-change-date>2020-09-26T12:27:56.736653Z</last-metadata-change-date><create-date>2020-09-26T03:05:49.826427Z</create-date><cursor-position>751</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

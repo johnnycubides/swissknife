@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>zpehyr gdb</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">zpehyr gdb
+
+west build -p auto -b qemu_riscv32 samples/hello_world
+west build -p auto -b qemu_x86 samples/hello_world
+west build -p auto -b qemu_x86_64 samples/hello_world
+west build -t run
+
+
+<link:url>/home/johnny/zephyrproject/zephyr/build</link:url>
+ninja debugserver
+
+
+cd <link:url>/home/johnny/zephyrproject/zephyr/build/zephyr</link:url>
+gdbgui --gdb <link:url>~/zephyr-sdk-0.11.3/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gdb</link:url> --gdb-args='-ex &quot;target remote localhost:1234&quot; ./<link:internal>zephyr</link:internal>.elf'
+ddd --debugger &quot;~/<link:internal>zephyr</link:internal>-sdk-0.11.3/riscv64-<link:internal>zephyr</link:internal>-elf/bin/riscv64-<link:internal>zephyr</link:internal>-elf-gdb -ex 'target remote localhost:1234' ./<link:internal>zephyr</link:internal>/<link:internal>zephyr</link:internal>.elf&quot;
+
+referencias
+<link:url>https://github.com/zephyrproject-rtos/sdk-ng/issues/123</link:url>
+<link:url>https://docs.zephyrproject.org/1.9.0/application/application.html?highlight=ddd</link:url>
+<link:url>https://docs.zephyrproject.org/1.13.0/west/flash-debug.html</link:url>
+<link:url>https://stackoverflow.com/questions/55189463/how-to-debug-cross-compiled-qemu-program-with-gdb</link:url>
+</note-content>
+</text><last-change-date>2020-09-24T15:27:58.552224Z</last-change-date><last-metadata-change-date>2020-09-24T15:27:58.553021Z</last-metadata-change-date><create-date>2020-09-24T03:28:35.677610Z</create-date><cursor-position>211</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

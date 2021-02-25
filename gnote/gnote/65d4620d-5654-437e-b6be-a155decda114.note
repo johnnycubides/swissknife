@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Ejemplo de uso de riscv-elf-gdb</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Ejemplo de uso de riscv-elf-gdb
+
+si N -&gt; pasos a delante
+i r -&gt; ver los registros
+
+jump *0x40000160
+b *0x40000160
+
+riscv32-elf-nm -a firmware.elf | grep leds
+riscv32-elf-readelf -s firmware.elf | grep leds
+riscv32-elf-objdump -S firmware.elf | grep leds
+riscv32-elf-objdump -x firmware.elf | grep leds
+
+
+load <link:url>/home/johnny/projects/litex-and-softcore-projects/cl-5a-75e-project-example/johnny-project/rust-firmware/target/riscv32imac-unknown-none-elf/release/rust-firmware</link:url>
+
+
+rust
+Loading section .text, size 0x2c8 lma 0x0
+Loading section .rodata, size 0x30 lma 0x2c8
+Start address 0x00000000, load size 760
+Transfer rate: 371 KB/sec, 380 bytes/write.
+
+
+test con fgpa
+
+litex_server --uart --uart-port <link:url>/dev/ttyUSB0</link:url>
+
+./src/openocd -c 'interface dummy' \
+              -c 'adapter_khz 1' \
+              -c 'jtag newtap lx cpu -irlen 4' \
+              -c 'target create lx.cpu0 vexriscv -endian little -chain-position lx.cpu -dbgbase 0xF00F0000' \
+              -c 'vexriscv cpuConfigFile cpu0.yaml' \
+              -c 'vexriscv networkProtocol etherbone' \
+              -c 'init' \
+              -c 'reset halt'
+
+riscv32-elf-gdb -ex 'target remote localhost:3333' ./build/software/bios/bios.elf</note-content>
+</text><last-change-date>2020-05-31T23:07:20.521256Z</last-change-date><last-metadata-change-date>2020-05-31T23:07:20.521625Z</last-metadata-change-date><create-date>2020-05-31T19:43:28.853710Z</create-date><cursor-position>331</cursor-position><selection-bound-position>336</selection-bound-position><width>0</width><height>0</height></note>
+

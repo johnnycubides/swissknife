@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>openocd in omega</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">openocd in omega
+
+
+scripts/feeds update -a
+
+scripts/feeds install openocd
+
+v feeds/packages/utils/openocd/Makefile
+
+
+</note-content>
+</text><last-change-date>2020-05-16T16:16:8.549673Z</last-change-date><last-metadata-change-date>2020-05-16T16:16:8.550449Z</last-metadata-change-date><create-date>2020-05-16T16:12:37.968515Z</create-date><cursor-position>75</cursor-position><selection-bound-position>114</selection-bound-position><width>0</width><height>0</height></note>
+

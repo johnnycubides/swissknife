@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Compilando gdb</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Compilando gdb
+
+<link:url>https://github.com/litex-hub/litex-conda-packages/blob/master/gdb/build.sh</link:url>
+
+../configure \
+  --target=riscv32-elf \
+  --prefix=$PREFIX \
+ \
+  --enable-expat \
+  --with-expat=$PREFIX \
+  --with-mpfr=$PREFIX \
+  --enable-tui \
+ \
+  --disable-itcl \
+  --disable-tk \
+  --disable-tcl \
+  --disable-winsup \
+  --disable-gdbtk \
+  --disable-libgui \
+  --disable-rda \
+  --disable-sid \
+  --disable-sim \
+  --disable-riscv32sim \
+  --with-sysroot \
+  --disable-newlib \
+  --disable-libgloss \
+  --disable-gas \
+  --disable-ld \
+  --disable-binutils \
+  --disable-gprof \
+ \
+  --disable-shared \
+  --enable-static
+
+make -j8
+sudo make install</note-content>
+</text><last-change-date>2020-05-31T14:12:30.865474Z</last-change-date><last-metadata-change-date>2020-05-31T14:12:30.866284Z</last-metadata-change-date><create-date>2020-05-31T13:52:19.163901Z</create-date><cursor-position>35</cursor-position><selection-bound-position>40</selection-bound-position><width>0</width><height>0</height></note>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>clear</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">clear
+
+export PATH=$PATH:/home/johnny/projects/unal/litex-and-softcore-projects/litex-buildenv-projects-ecp5/build/conda/bin
+
+./conda install nextpnr-ecp5
+
+</note-content>
+</text><last-change-date>2020-05-13T01:16:52.316303Z</last-change-date><last-metadata-change-date>2020-05-13T01:16:52.316937Z</last-metadata-change-date><create-date>2020-04-28T13:35:26.358295Z</create-date><cursor-position>52</cursor-position><selection-bound-position>57</selection-bound-position><width>0</width><height>0</height></note>
+
