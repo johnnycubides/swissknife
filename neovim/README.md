@@ -63,6 +63,8 @@ coc-flutter `:CocInstall coc-flutter`
 
 coc-rust `CocInstall coc-rls`
 
+coc-python `CocInstall coc-pyright`
+
 ## Problemas
 
 ### Snippets coc no funciona generando el siguiente error

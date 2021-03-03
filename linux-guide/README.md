@@ -1,7 +1,7 @@
 # Guia para el uso de ésta documentación
 
 La documentación presentada a continuación está escrita en MarkDown y puede
-ser visualizada en HTMl.
+ser visualizada en HTML.
 
   * Para editar y/o agregar más documentación puede hacerlo en el directorio **docs/**.
 
