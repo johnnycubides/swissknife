@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>xkeyboard</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">xkeyboard
-
-<link:url>https://unix.stackexchange.com/questions/45447/other-than-alt-shift-to-switch-keyboard-layout-any-other-xorg-key-combination</link:url>
-XKBOPTIONS=&quot;grp:switch,grp_led:scroll,grp:ctrl_shift_toggle&quot;
-setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_switch us,es</note-content>
-</text><last-change-date>2020-06-14T01:40:20.121068Z</last-change-date><last-metadata-change-date>2020-06-14T01:40:20.121515Z</last-metadata-change-date><create-date>2020-06-12T20:53:41.072099Z</create-date><cursor-position>263</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
-

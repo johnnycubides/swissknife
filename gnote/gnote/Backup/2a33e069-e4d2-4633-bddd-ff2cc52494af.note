@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>obs droidcam</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">obs droidcam
-
-<link:url>http://dev47apps.com/obs/</link:url>
-
-trasnimtir por virtualcam
-sudo modprobe <link:internal>v4l2loopback</link:internal> devices=1 video_nr=10 card_label=&quot;OBS Cam&quot; exclusive_caps=1</note-content>
-</text><last-change-date>2020-10-29T03:42:17.399320Z</last-change-date><last-metadata-change-date>2020-10-29T03:42:17.399460Z</last-metadata-change-date><create-date>2020-10-28T14:37:39.470102Z</create-date><cursor-position>12</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
-

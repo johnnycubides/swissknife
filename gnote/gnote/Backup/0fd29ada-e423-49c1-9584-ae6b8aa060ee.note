@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>memoria swap cache</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">memoria swap cache
-
-swapoff -a &amp;&amp; swapon -a
-
-<link:url>https://www.tecmint.com/clear-ram-memory-cache-buffer-and-swap-space-on-linux/</link:url></note-content>
-</text><last-change-date>2020-10-05T22:18:23.361340Z</last-change-date><last-metadata-change-date>2020-10-05T22:18:23.362096Z</last-metadata-change-date><create-date>2020-09-30T07:25:40.899064Z</create-date><cursor-position>123</cursor-position><selection-bound-position>123</selection-bound-position><width>0</width><height>0</height></note>
-

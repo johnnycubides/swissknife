@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>adb</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">adb
-
-adb shell &quot;while true; do screenrecord --output-format=h264 -; done&quot; | ffplay -framerate 60 -probesize 32 -sync video -</note-content>
-</text><last-change-date>2020-07-28T14:37:52.806290Z</last-change-date><last-metadata-change-date>2020-07-28T14:37:52.806543Z</last-metadata-change-date><create-date>2020-07-28T14:37:43.732177Z</create-date><cursor-position>5</cursor-position><selection-bound-position>124</selection-bound-position><width>0</width><height>0</height></note>
-

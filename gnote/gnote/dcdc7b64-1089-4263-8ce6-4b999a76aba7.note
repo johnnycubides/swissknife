@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>flash dd</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">flash dd
-
-sudo dd bs=4M if=recalbox-rpi3.img of=/dev/sdb conv=fsync status=progress
-</note-content>
-</text><last-change-date>2020-08-02T16:25:15.537125Z</last-change-date><last-metadata-change-date>2020-08-02T16:25:15.538189Z</last-metadata-change-date><create-date>2020-08-02T16:24:39.895644Z</create-date><cursor-position>84</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
-
