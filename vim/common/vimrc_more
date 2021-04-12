@@ -1,0 +1,199 @@
+" cargar desde .vimrc como sigue:
+" source .vimrc_more
+" pegar anterior línea al final del .vimrc
+" se hace así si ud hace uso de bootstrap,
+" ya que bootstrap al ser actualizado borra
+" el contenido hecho por usted
+
+"" Tabs. general
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+"color similar al dado en gvim
+set termguicolors
+" identificar linea en la que se encuentra
+set cursorline
+" Usar numero de linea relativa
+set rnu
+
+"Plug 'valloric/youcompleteme'
+"Poner estos en el package maneger Plug
+"plugin that provides Tern-based JavaScript editing support.
+"Plug 'ternjs/tern_for_vim'
+"Plug 'sickill/vim-monokai'
+"Plug 'lmintmate/blue-mood-vim'
+let g:NERDTreeWinSize = 30
+
+" https://github.com/SirVer/ultisnips/issues/401
+"set runtimepath+=~/.vim/my-snippets/UltiSnips "no probado
+
+" let g:UltiSnipsListSnippets="<C-j>" "My change
+let g:UltiSnipsListSnippets="<C-l>" "My change
+let g:UltiSnipsSnippetsDir=$HOME.'/.vim/my-snippets/UltiSnips'
+"let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets', $HOME.'/proyectos/swissknife/vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']
+" javascript python tab stop
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+
+"title
+set titleold=Terminal
+set titlestring=VIM_\ヽ\(\ヅ\)\ノ_%F
+
+"***************************************
+"       CSV
+"***************************************
+" definiendo el delimitador
+let g:csv_delim=','
+
+"*********************************************************************************
+"" My config
+"*********************************************************************************
+
+" Config development
+" source%: carga dinámicamente las configuraciones de vim
+:function Code()
+hi Comment cterm=italic "Comentarios en cursiva"
+hi String cterm=italic "Todos los String que encuentre en cursiva"
+hi jsVariableDef ctermfg=LightGreen "Definición de variables en verde light"
+hi Folded term=standout ctermfg=9 ctermbg=15 guifg=#7289da guibg=#000000 "color al foldear azul"
+set fdm=syntax "foldear por syntaxis del lenguaje"
+:endfunction
+
+function CodeTab2()
+set tabstop=2
+set shiftwidth=2
+endfunction
+
+" LUA
+
+" JS
+:function Code_js()
+call Code()
+call CodeTab2()
+:endfunction
+
+" JSON
+:function Code_json()
+call Code()
+call CodeTab2()
+:endfunction
+
+" JAVA
+:function Code_java()
+call Code()
+call CodeTab2()
+:endfunction
+
+" C
+:function Code_c()
+call Code()
+call CodeTab2()
+:endfunction
+
+"Funcion LaTeX"
+:function LaTeX_Apuntes()
+:!cp /home/`whoami`/basededatos/LaTeX/apuntes/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/apuntes/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:vsplit src/section1.tex
+:endfunction
+
+"Funcion LaTeX"
+:function LaTeX_Task()
+:!cp /home/`whoami`/basededatos/LaTeX/tareas/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/tareas/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:vsplit src/section1.tex
+:endfunction
+
+"Function LaTeX"
+:function LaTeX_Beamer()
+:set tabstop=2
+:set shiftwidth=2
+:!cp /home/`whoami`/basededatos/LaTeX/beamer/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/beamer/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:NERDTree
+:endfunction
+"Function LaTeX"
+:function LaTeX_InfoIEEE()
+:!cp /home/`whoami`/basededatos/LaTeX/infoIEEE/Makefile ./; read -p "nombre proyecto: " -r proyect; sed 1,2s/informes/$proyect/g -i Makefile
+:!make init
+:e *.tex
+:endfunction
+"Function LaTeX"
+:function LaTeX_ImagIEEE()
+:   read /home/`whoami`/.vim/misComandos/latex_imagIEEE
+:endfunction
+"Function LaTeX"
+:function LaTeX_ColummBeamer()
+:   read /home/`whoami`/.vim/misComandos/latex_columnBeamer
+:endfunction
+"Function LaTeX"
+:function LaTeX_Tabla()
+:      read /home/`whoami`/.vim/misComandos/latex_table
+:endfunction
+"Function LaTeX"
+:function LaTeX_Vtabla()
+:	!/home/`whoami`/basededatos/LaTeX/extension/tablaLatex.py
+:	read /tmp/tabla.tex
+:endfunction
+"Function LaTeX"
+:function LaTeX_Article()
+:   read /home/`whoami`/.vim/misComandos/guiaArticleLaTeX.tex
+:endfunction
+"Function LaTeX"
+:function MakefileTex2Pdf()
+:   read /home/`whoami`/.vim/misComandos/MakefileTex2Pdf
+:endfunction
+
+" Languaje keyword
+" Keyword spanish
+:function Keyboard_es()
+:	!setxkbmap es
+:endfunction
+" keyword english
+:function Keyboard_us()
+:	!setxkbmap us
+:endfunction
+
+" keyword english
+:function Keyboard_latam()
+:	!setxkbmap latam
+:endfunction
+
+:function Es()
+: set spell spelllang=es
+endfunction
+
+:function En()
+: set spell spelllang=en
+endfunction
+
+" Clipboard
+" apt install xclip
+" https://github.com/neovim/neovim/issues/583
+" function! ClipboardYank()
+"   call system('xclip -i -selection clipboard', @@)
+" endfunction
+" function! ClipboardPaste()
+"   let @@ = system('xclip -o -selection clipboard')
+" endfunction
+
+" if has('nvim')
+    " vnoremap <silent> YY:call ClipboardYank()<cr>
+    " vnoremap <silent> d d:call ClipboardYank()<cr>
+    " nnoremap <silent> p :call ClipboardPaste()<cr>p
+" endif
+
+" Prueba para cargar configuraciones locales
+function VimLocalExist()
+if filereadable("./.pro.vim")
+  source ./.pro.vim
+endif
+endfunction
+
+call VimLocalExist()
+

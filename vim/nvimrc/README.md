@@ -2,6 +2,13 @@
 
 Se requiere instalar go para la vim-go
 
+## Descripción de archivos
+
+* `./coc-settings.json` archivo de configuración de CoC
+* `./generate.vim` archivo generado con vim bootstrap, para una nueva versión, verificar Compatibilidad
+* `./plugs_nvim.vim` mis configuraciones de nvim sugetas 
+* `./sh-config-nvimrc.sh` script de configuración de nvim, de pide sea instalado.
+
 ## Instalación
 
 Dependencias
@@ -82,6 +89,8 @@ cd ~/.config/coc/extensions
 npm install
 ```
 
-### 
+### No siver el clipboard
+
+Instala clipboard con `sudo apt install xclip`
 
 
