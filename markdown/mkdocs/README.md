@@ -14,14 +14,14 @@ ser visualizada en HTMl.
 
     2.  Abra el navegador y entre a la siguiente dirección web `localhost:8000`.
 
-# Instalación de MkDocs
+## Instalación de MkDocs
 
-## En Linux
+### En Linux
 
 ```bash
 pip install mkdocs
 ```
-## repositorios git
+#### repositorios git
 
 ```bash
 sudo python setup install
@@ -31,10 +31,18 @@ sudo python3 setup install (recomendado)
 * https://github.com/mkdocs/mkdocs.git (no especifica)
 * https://github.com/shauser/mkdocs-pdf-export-plugin (python3)
 * https://github.com/squidfunk/mkdocs-material.git (python3)
+* https://github.com/apenwarr/mkdocs-exclude.git
 
 ## ¿ Más temas ?
 
 [Temas](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
+
+## Recomendaciones
+
+Haz uso de un optimizador de imagenes para disminuir el tamaño de estas
+y mejorar el rendimiento, por ejemplo:
+
+[TinyPNG](https://tinypng.com/)
 
 Atentamente:
 

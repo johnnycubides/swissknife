@@ -1,3 +1,5 @@
+c?=mkdocs.ylm
+
 help:
 	@printf "########################\n"\
 	"#        MKDOCS        #\n"\
@@ -16,9 +18,14 @@ help:
 	"\tclear:\tBorra contenido en el directorio build/\n\n"\
 	"Atentos saludos:\n"\
 	"\tEquipo Catalejo+\n"
+	"\t\tmake build\n"
+	"\t\tmake build c=file.ylm\n"
+	"\t\tmake serve\n"
+	"\t\tmake serve c=file.ylm\n"
+
 
 serve:
-	mkdocs serve
+	mkdocs serve -f $(c)
 
 view:
 	x-www-browser localhost:8000
@@ -27,7 +34,7 @@ view:
 	"y luego refresque el navegador (F5).\n"
 
 build:
-	mkdocs build
+	mkdocs build -c -f $(c)
 
 clean:
 	rm -rf build/*

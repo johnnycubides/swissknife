@@ -7,8 +7,16 @@ markdown_extensions:
 # use_directory_urls: false
 plugins:
   - search
-#  - pdf-export:
-#      combined: true
+  # - pdf-export:
+  #    combined: true
+  # - exclude:
+  #   glob:
+  #     - exclude/this/path/*
+  #     - "*.tmp"
+  #     - "*.pdf"
+  #     - "*.gz"
+  #   regex:
+  #     - '.*\.(tmp|bin|tar)$'
 
 lang: es
 
