@@ -47,18 +47,20 @@ snippet r-init "start presentation with reveal offline"
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
-  <style>
-    .container{
-        display: flex;
-    }
-    .col{
-        flex: 1;
-    }
-  </style>
-  <body>
+	<style>
+		.container{
+			display: flex;
+		}
+		.col{
+			flex: 1;
+		}
+	</style>
+	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- LA PRESENTACIÓN EMPIEZA AQUI -->
 				$0
+				<!-- LA PRESENTACIÓN TERMINA ACA -->
 			</div>
 		</div>
 
@@ -70,9 +72,9 @@ snippet r-init "start presentation with reveal offline"
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-        transition: '${3:convex}', // none/fade/slide/convex/concave/zoom
-        autoPlayMedia: ${4:null},  //null, true, false
-        controls:true,
+		transition: '${3:convex}', // none/fade/slide/convex/concave/zoom
+		autoPlayMedia: ${4:null},  //null, true, false
+		controls:true,
 				dependencies: [
 					{ src: 'reveal.js/plugin/markdown/marked.js' },
 					{ src: 'reveal.js/plugin/markdown/markdown.js' },
@@ -81,9 +83,9 @@ snippet r-init "start presentation with reveal offline"
 				]
 			});
 			Reveal.configure({
-        slideNumber: "c/t", // "h.v" "h/v" "c" "c/t"
-        showSlideNumber: "all" // "all" "speaker" "print"
-      });
+		slideNumber: "c/t", // "h.v" "h/v" "c" "c/t"
+		showSlideNumber: "all" // "all" "speaker" "print"
+		});
 		</script>
 	</body>
 </html>
@@ -98,58 +100,60 @@ snippet r-init-online "start presentation with revealjs online"
 
 		<title>${1:Reveal.js}</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/reveal.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/theme/${2:black}.css"> <!--themes: beige, black, blood, langue, moom, night, serif, simple, sky, solarized, white -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/theme/${2:black}.css"> <!--themes: beige, black, blood, langue, moom, night, serif, simple, sky, solarized, white -->
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
-  <style>
-    .container{
-        display: flex;
-    }
-    .col{
-        flex: 1;
-    }
-  </style>
-  <body>
+	<style>
+		.container{
+			display: flex;
+		}
+		.col{
+			flex: 1;
+		}
+	</style>
+	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- LA PRESENTACIÓN EMPIEZA AQUI -->
 				$0
+				<!-- LA PRESENTACIÓN TERMINA ACA -->
 			</div>
 		</div>
 
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/lib/js/head.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/js/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/lib/js/head.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/js/reveal.js"></script>
 
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-        transition: '${3:convex}', // none/fade/slide/convex/concave/zoom
-        autoPlayMedia: ${4:null},  //null, true, false
-        controls:true,
+		transition: '${3:convex}', // none/fade/slide/convex/concave/zoom
+		autoPlayMedia: ${4:null},  //null, true, false
+		controls:true,
 				dependencies: [
-					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/marked.js' },
-					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/markdown.js' },
-					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/notes/notes.js', async: true },
-					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/markdown/marked.js' },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/markdown/markdown.js' },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/notes/notes.js', async: true },
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 			Reveal.configure({
-        slideNumber: "c/t", // true "h.v" "h/v" "c" "c/t"
-        showSlideNumber: "all" // "all" "speaker" "print"
-      });
+		slideNumber: "c/t", // true "h.v" "h/v" "c" "c/t"
+		showSlideNumber: "all" // "all" "speaker" "print"
+		});
 		</script>
 	</body>
 </html>

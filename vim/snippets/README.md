@@ -14,6 +14,17 @@ de snippets.
 * Inicie una palabra que esté en el snippet y luego oprima **^+j** (control + j)
 * Edite un snipet ejecutando el comando **UltiSnipsEdit**
 
+## Crear nuevos snippets
+
+```vim
+snipet disparador "comentario" b
+acciones a ejecutar
+endsnippet
+```
+La **b** se pone en el caso de que se requiere que sea una línea
+en blanco donde empieza, si el snipet se ejecuta en cualquier lugar, quite el **b**
+del snipet creado.
+
 ## Configuración en el vimrc ##
 
 ### Instale el plugin ###

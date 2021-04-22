@@ -29,6 +29,11 @@
 # rp_words_all_in_f
 # rp_words_range_in_f
 #########
+# SCRIPTS FILES
+#########
+# get_dir_script
+# get_dir_ln_script
+#########
 # COLORS
 #########
 # init-colors-prompt
@@ -218,6 +223,16 @@ endsnippet
 # rp_words_range_in_f
 snippet rp_words_range_in_f "remplazar palabras en un rago de archivo"
 sed '${4:1},${5:2} s/${1:word2replace}/${2:newword}/g' ${3:filename}
+endsnippet
+
+#########
+# SCRIPTS FILES
+#########
+snippet get_dir_script "Obtener el path de este script a ejecutar"
+${1:SCRIPTPATH}=$(dirname "\$0")$0
+endsnippet
+snippet get_dir_ln_script "Obtener el path del objeto al que apuntan este enlace simbólico"
+${1:SCRIPTPATH}=$( dirname "$(readlink -f -- "\$0")" )
 endsnippet
 
 ################
