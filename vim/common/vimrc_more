@@ -188,12 +188,32 @@ endfunction
     " nnoremap <silent> p :call ClipboardPaste()<cr>p
 " endif
 
+" Cambio de color_scheme_user
+let g:color_scheme_user = 1 " user var
+function ToggleColorScheme()
+if g:color_scheme_user == 1
+    :colorscheme morning
+    let g:color_scheme_user = 2
+elseif g:color_scheme_user == 2
+    :colorscheme monokai
+    let g:color_scheme_user = 3
+elseif g:color_scheme_user == 3
+    :colorscheme molokai
+    let g:color_scheme_user = 0
+else
+    :colorscheme murphy
+    let g:color_scheme_user = 1
+endif
+endfunction
+nnoremap <silent> <F11> :call ToggleColorScheme()<CR>
+
 " Prueba para cargar configuraciones locales
 function VimLocalExist()
 if filereadable("./.pro.vim")
   source ./.pro.vim
+elseif filereadable("./pro.vim")
+  source ./pro.vim
 endif
 endfunction
 
 call VimLocalExist()
-
