@@ -38,12 +38,16 @@ nnoremap <silent> <F6> :call ToggleCopenCclose()<CR>
 nnoremap <silent> <F7> :ALEDetail<CR>
 " nnoremap <silent> <F6> :call ToggleCopenCclose()<CR>
 " nnoremap <silent> <F8> :make s<CR>
-nnoremap <silent> <F8> :call ToggleColorScheme()<CR>
 " unmap <F9>
 " unmap! <F9>
 " nnoremap <F9> :call ToggleCopenCclose()<CR>
-nnoremap <silent> <F10> :bd<CR>
 " nnoremap <silent> <F9> :bd<CR>
+nnoremap <silent> <F10> :bd<CR>
+nnoremap <silent> <F11> :call ToggleColorScheme()<CR>
+
+" More functions
+let mapleader=','
+noremap <leader>j :ALENext<CR>
 
 let g:coc = 1
 function ToggleCopenCclose()
@@ -56,17 +60,25 @@ let g:coc = 1
 endif 
 endfunction
 
+" Cambio de color_scheme_user
 let g:color_scheme_user = 1 " user var
 function ToggleColorScheme()
 if g:color_scheme_user == 1
     :colorscheme morning
+    let g:color_scheme_user = 2
+elseif g:color_scheme_user == 2
+    :colorscheme monokai
+    let g:color_scheme_user = 3
+elseif g:color_scheme_user == 3
+    :colorscheme molokai
     let g:color_scheme_user = 0
 else
-    :colorscheme molokai
+    :colorscheme murphy
     let g:color_scheme_user = 1
 endif
 endfunction
 
+" Menu de funciones presentado con F1 como ayuda
 function MyMenuFuntions()
   let out = "Menu de Funciones:\n"
   let out .= " F1: Ver éste menú\n F2: Ubicación de archivo cargado en el buffer\n F3: Abrir NERDTree\n F4: TagBar\n"
@@ -77,6 +89,8 @@ function MyMenuFuntions()
   " let out .= " F9: Close buffer\n"
   let out .= " F9: Toggle colorscheme\n"
   let out .= " F10: Close buffer\n"
+  let out .= " F11: Toggle colorscheme\n"
+  let out .= " ,j: ALENext\n ,k: ALEPrevious\n"
   return out
 endfunction
 
