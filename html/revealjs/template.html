@@ -1,65 +1,61 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="es">
 
-    <title>Template</title>
+	<head>
+		<meta charset="utf-8">
 
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme"> <!--themes: beige, black, blood, langue, moom, night, serif, simple, sky, solarized, white -->
+		<title>reveal.js – The HTML Presentation Framework</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-  </head>
-  <style>
-    .container{
-        display: flex;
-    }
-    .col{
-        flex: 1;
-    }
-  </style>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section> <h4>Template</h4>
-          <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gnu_meditate_levitate.png/220px-Gnu_meditate_levitate.png" width="70%" height="auto"/>
-        </section>
-      </div>
-    </div>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <script src="reveal.js/lib/js/head.min.js"></script>
-    <script src="reveal.js/js/reveal.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        transition: 'convex', // none/fade/slide/convex/concave/zoom
-        autoPlayMedia: null,  //null, true, false
-        controls:true,
-        dependencies: [
-          { src: 'reveal.js/plugin/markdown/marked.js' },
-          { src: 'reveal.js/plugin/markdown/markdown.js' },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true },
-          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
-      });
-      Reveal.configure({
-        slideNumber: "c/t", // "h.v" "h/v" "c" "c/t"
-        showSlideNumber: "all" // "all" "speaker" "print"
-      });
-    </script>
-  </body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+			</div>
+
+		</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+        // OPCIONES DE CONFIGURACIÓN: https://revealjs.com/config/
+        slideNumber: true, // mostrar número de página
+				controls: true, // Mostrar fechas de control
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
 </html>
