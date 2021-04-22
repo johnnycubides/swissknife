@@ -37,6 +37,10 @@ PATH_IEEE=latex/infoIEEE
 PATH_BEAMER=latex/beamer
 PATH_NGSPICE=ngspice
 
+# Obtener el path de este script
+# activar la siguiente línea al llamar desde un enlace simbólicos
+BUILDER_SH_PAHT=$( dirname "$(readlink -f -- "$0")" )
+
 upload_ebook(){
   if [[ -e ./Makefile ]]; then
     if [[ -e ./static ]]; then
@@ -306,6 +310,7 @@ then
   printf "\t\t${CYAN}latex ${YELLOW}ebook, article, ieee, beamer${NC}\tConstruir documentos con LaTeX\n"
   printf "\t\t${CYAN}latex ${YELLOW}ebook update${NC}\tActualizar enlaces simbólicos\n"
   printf "\t\t${CYAN}ngspice${NC}\tIniciar simulación con ngspice\n"
+  printf "\t\t${CYAN}nvim${NC}\tConfigurar nvim para iniciar un projecto con un lenguaje\n"
   printf "\t\t-h,--help\tHelp\n"
   printf "\n${GREEN}Regards Johnny.${NC}\n"
 elif [ "$1" = "mkdocs" ];
@@ -340,5 +345,9 @@ then
 elif [ "$1" = "plantuml" ];
 then
   init_plantuml
+elif [ "$1" = "nvim" ];
+then
+  source $BUILDER_SH_PAHT/scripts/vim-pro.sh
+  init_provim
 fi
 
