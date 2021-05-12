@@ -188,7 +188,9 @@ endfunction
     " nnoremap <silent> p :call ClipboardPaste()<cr>p
 " endif
 
+
 " Cambio de color_scheme_user
+"Color de los números de línea
 let g:color_scheme_user = 1 " user var
 function ToggleColorScheme()
 if g:color_scheme_user == 1
@@ -200,12 +202,30 @@ elseif g:color_scheme_user == 2
 elseif g:color_scheme_user == 3
     :colorscheme molokai
     let g:color_scheme_user = 0
+    :highlight LineNr guifg=LightGreen
 else
     :colorscheme murphy
     let g:color_scheme_user = 1
 endif
 endfunction
 nnoremap <silent> <F11> :call ToggleColorScheme()<CR>
+" https://dev.to/iggredible/basic-vim-mapping-5ahj
+"     COMMANDS                    MODES ~
+" :map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
+" :nmap  :nnoremap :nunmap    Normal
+" :vmap  :vnoremap :vunmap    Visual and Select
+" :smap  :snoremap :sunmap    Select
+" :xmap  :xnoremap :xunmap    Visual
+" :omap  :onoremap :ounmap    Operator-pending
+" :map!  :noremap! :unmap!    Insert and Command-line
+" :imap  :inoremap :iunmap    Insert
+" :lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
+" :cmap  :cnoremap :cunmap    Command-line
+" :tmap  :tnoremap :tunmap    Terminal-Job
+"
+" KEY BOARD SHORT CUTS
+nmap <A-j> <PageDown>
+nmap <A-k> <PageUp>
 
 " Prueba para cargar configuraciones locales
 function VimLocalExist()
