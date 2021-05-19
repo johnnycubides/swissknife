@@ -194,15 +194,15 @@ endfunction
 let g:color_scheme_user = 1 " user var
 function ToggleColorScheme()
 if g:color_scheme_user == 1
-    :colorscheme morning
+    :colorscheme molokai
     let g:color_scheme_user = 2
+    :highlight LineNr guifg=LightGreen
 elseif g:color_scheme_user == 2
     :colorscheme monokai
     let g:color_scheme_user = 3
 elseif g:color_scheme_user == 3
-    :colorscheme molokai
-    let g:color_scheme_user = 0
-    :highlight LineNr guifg=LightGreen
+    :colorscheme morning
+    let g:color_scheme_user = 4
 else
     :colorscheme murphy
     let g:color_scheme_user = 1
@@ -210,6 +210,7 @@ endif
 endfunction
 nnoremap <silent> <F11> :call ToggleColorScheme()<CR>
 " https://dev.to/iggredible/basic-vim-mapping-5ahj
+" http://www.sromero.org/wiki/linux/aplicaciones/manual_vim
 "     COMMANDS                    MODES ~
 " :map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
 " :nmap  :nnoremap :nunmap    Normal
