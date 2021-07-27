@@ -82,4 +82,10 @@ else
   fi 
 fi
 
+if [[ ! -L /usr/local/bin/plantuml.sh ]]; then
+    sudo ln -sr plantuml.sh /usr/local/bin/plantuml.sh
+else
+    printf "${YELLOW}ya existe el enlace simbólico a plantuml.sh\n${NC}"
+fi
+
 printf "${CYAN}Saludos Johnny!!!\n${NC}"

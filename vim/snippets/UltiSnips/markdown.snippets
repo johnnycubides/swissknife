@@ -8,7 +8,7 @@
 # note
 # tables3c
 # code
-# h-tree-c
+# tree-c-html
 ############
 # REVEAL MD
 ############
@@ -16,6 +16,11 @@
 # r-img-s
 # r-img-bg
 # r-slide-2columns
+############
+# HUGO MD
+############
+# h-youtube
+# h-img
 
 snippet header "cabecera para el documento"
 ---
@@ -99,8 +104,8 @@ endsnippet
 ##############
 # HTML
 ##############
-# h-tree-c
-snippet h-tree-c "Formato comentario para Tree"
+# tree-c-html
+snippet tree-c-html "Formato comentario para Tree"
 <b class="COMMIT">$1</b>$0
 endsnippet
 
@@ -155,4 +160,19 @@ snippet r-slide-2columns "Slide de dos columnas"
 		</div>
 	</div>
 </section>$0
+endsnippet
+
+############
+# HUGO MD
+############
+# shortcodes https://gohugo.io/content-management/shortcodes
+
+snippet h-youtube "Insertar vídeo de youtube"
+{{< youtube id="${1:blMAa8wEhME}" title="${2:Titulo del vídeo}"}}
+$0
+endsnippet
+
+snippet h-img "Insertar images"
+{{< figure src="${1:./imagen.png}" title="${2:Título de la imagen}"}}
+$0
 endsnippet

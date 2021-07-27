@@ -12,13 +12,19 @@ endsnippet
 ############
 #	ACTIVITYES
 ############
+# https://plantuml.com/es/activity-diagram-beta
+
 snippet ac-init "Init activity graph"
 (*) --> $0
 -->(*)
 endsnippet
 
+# snippet ac-arrow-lab "Label on Arrows"
+# ->[${1:My Label}] \"${2:My Activity}\"
+# $0
+# endsnippet
 snippet ac-arrow-lab "Label on Arrows"
--->[${1:My Label}] \"${2:My Activity}\"
+-> ${1:My Label};
 $0
 endsnippet
 
@@ -28,6 +34,20 @@ if \"${1:condition}\"  then
 else
 -->[${4:Value2}] \"${5:MyActivity}\"
 endif
+endsnippet
+
+snippet ac-note-oneline "Notes"
+${1:floating} note ${2:left right}: ${3}
+endsnippet
+
+snippet ac-note-several "Notes"
+${1:floating} note ${2:left right}:
+	${3:This note is on several
+	//lines// and can
+	contain <b>HTML</b>
+	====
+	* Calling the method ""foo()"" is prohibited}
+end note
 endsnippet
 
 #########

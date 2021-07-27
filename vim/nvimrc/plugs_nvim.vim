@@ -23,6 +23,12 @@ Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" PlantUML services
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+au FileType plantuml let g:plantuml_previewer#plantuml_jar_path = $HOME..'/gitPackages/plantuml/plantuml.jar'
+
 " vim-markdown-composer for nvim and vim
 " si no compila ejecute el comando manualmente en el directorio de instalación
 " .../plugged/vim-markdown-compose

@@ -160,3 +160,10 @@ export PATH=$PATH:/home/johnny/projects/droidstamp/dev/droidstamp/software/imx23
 export PATH=$PATH:/home/johnny/projects/omega-openwrt/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/
 # Flutter PATH 
 export PATH=$PATH:$HOME/gitPackages/flutter/bin
+
+# esp-ifd versión 4 
+# source ~/gitPackages/esp-idf/export.sh
+
+# jekyll geme
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
