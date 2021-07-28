@@ -1,8 +1,12 @@
 # Instalación de powerrshell-online
 
+## referencia:
+
+[referencia no probada](https://colaboratorio.net/jimmy/terminal/2019/como-instalar-powerline-en-ubuntu/)
+
 Dependencies
 
-sudo apt install python3-setuptools
+sudo apt install python3-setuptools fonts-powerline
 
 Clonar repositorio
 
@@ -19,6 +23,7 @@ Configurando
 ln -s `pwd`/powerline-shell/ ~/.config/
 ```
 
-Requerimiento final
-
+## ojo sin revisi'on
 Requiere agregar el bashrc adaptado... instrucciones incompletas OJO
+sudo apt install python3-pipe
+pip install powerline-shell
