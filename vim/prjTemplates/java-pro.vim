@@ -16,32 +16,7 @@
 
 " project
 let includeFiles = ""
-let includeFiles .= "-I ./include "
-let includeFiles .= "-L ./src "
-" mongosee os
-let includeFiles .= "-I ./deps/modules/mongoose-os/include " 
-let includeFiles .= "-I ./deps/i2c/include "
-let includeFiles .= "-I ./deps/modules/mongoose-os/src/test/data/golden "
-let includeFiles .= "-I ./deps/modules/mongoose-os/src/frozen "
-let includeFiles .= "-I ./deps/mongoose/include "
-let includeFiles .= "-I ./build/gen "
-let includeFiles .= "-I ./deps/arduino-adafruit-tsl2591/include "
-let includeFiles .= "-I ./deps/arduino-adafruit-stemma-soil "
-let includeFiles .= "-I ./deps/arduino-compat/include "
-let includeFiles .= "-I ./deps/arduino-wire/include "
-let includeFiles .= "-I ./deps/arduino-adafruit-stemma-soil/include "
-let includeFiles .= "-I ./deps/wifi/include "
-let includeFiles .= "-L ./deps/wifi/src "
-let includeFiles .= "-I ./deps/mqtt/include "
-let includeFiles .= "-I ./deps/nanopb/include "
 let includeFiles .= ""
-let includeFiles .= ""
-let includeFiles .= ""
-
-let g:ale_cpp_clang_options = "-std=c++14 -Wall " . includeFiles
-let g:ale_cpp_gcc_options = "-std=c11 -Wall " . includeFiles
-let g:ale_c_clang_options = "-std=c14 -Wall " . includeFiles
-let g:ale_c_gcc_options = "-std=c11 -Wall " . includeFiles
 
 "************************************************************************
 "" Keyboards short cut

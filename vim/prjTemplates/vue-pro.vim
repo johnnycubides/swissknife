@@ -16,17 +16,7 @@
 
 " project
 " let includeFiles = ""
-" let includeFiles .= "-I ./include "
-" let includeFiles .= "-L ./src "
-" let includeFiles .= "-I ./deps/nanopb/include "
 " let includeFiles .= ""
-" let includeFiles .= ""
-" let includeFiles .= ""
-
-" let g:ale_cpp_clang_options = "-std=c++14 -Wall " . includeFiles
-" let g:ale_cpp_gcc_options = "-std=c11 -Wall " . includeFiles
-" let g:ale_c_clang_options = "-std=c14 -Wall " . includeFiles
-" let g:ale_c_gcc_options = "-std=c11 -Wall " . includeFiles
 
 "************************************************************************
 "" Keyboards short cut
