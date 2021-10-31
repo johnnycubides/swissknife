@@ -11,7 +11,9 @@ echo "Instalación del bashrc"
 if [[ -e ~/.bashrc ]]; then
   mv ~/.bashrc ~/.bashrc_old
 fi
-ln -s `pwd`/bashrc ~/.bashrc
+#ln -s `pwd`/bashrc ~/.bashrc
+ln -s `pwd`/bashrc_acer_swift ~/.bashrc
+
 
 echo "Instalación de reglas para alias"
 if [[ -e ~/.bash_aliases ]]; then
