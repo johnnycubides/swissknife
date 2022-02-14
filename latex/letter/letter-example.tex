@@ -1,0 +1,97 @@
+%% Inicio del archivo `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% Este trabajo puede ser distribuido o modificado bajo las 
+% condiciones de la LaTeX Project Public License V1.3c, 
+% disponible en http://www.latex-project.org/lppl/.
+%
+% Traducción al Español por Fausto M. Lagos (piratax007@protonmail.ch), 2016.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % posibles opciones de tamaño de fuente ('10pt', '11pt' and '12pt'), papel ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') y familia de fuentes ('sans' and 'roman')
+
+% temas moderncv
+\moderncvstyle{casual}                             % Los estilos disponibles son 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % las opciones de color son 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % descomentar al inicio de la línea para definir la fuente por defecto; use '\sfdefault' para sans serif por defecto, '\rmdefault' para roman, o cualquier otro nombre de fuente instalada en sus sistema
+%\nopagenumbers{}                                  % descomente para eliminar el numerado automático de las páginas en cartas de más de una página
+
+% Codificación de carácteres
+\usepackage[utf8]{inputenc}                        % Si no esta usando xelatex o lualatex, remplace por la codificación que este usando
+%\usepackage{CJKutf8}                              % descomente si necesita usar CJK para escribir su carta en Chino, Japones or Koreano
+\usepackage[spanish, english]{babel}			   % comentar si su carta esta escrita en un idioma diferente del Español
+
+% Configuración de márgenes
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % descomente si quiere modificar el ancho de columna para la fecha
+%\setlength{\makecvtitlenamewidth}{10cm}           % para el estilo 'classic', si quiere forzar el ancho del nombre. la longitud es normalmente calculada para evitar sobrelapamientos con su información personal; descomente esta línea bajo su propio riesgo
+
+% Información personal
+\name{Johnny}{Cubides}
+\title{Requisito para actividades de Robótica}                               % opcional, remover o comentar si no quiere que aparezca su título personal
+%\address{dirección}{código postal}{país}% opcional, remover o comentar si no quiere que aparezca sus datos de ubicación; el código postal y país son argumentos que puede omitirse o pasarse vacíos
+\phone[mobile]{310 693 1954}		                   % opcional, remover o comentar si no quiere incluir su número de móvil
+%\phone[fixed]{3115483925}       		           % opcional, remover o comentar si no quiere incluir su número de teléfono fijo
+%\phone[fax]{+3~(456)~789~012}                      % opcional, remover o comentar si no quiere incluir su número de fax
+\email{johnnycubides@catalejoplus.com}                               % opcional, remover o comentar si no quiere incluir su dirección de email
+\homepage{www.catalejoplus.com}                         % opcional, remover o comentar si no quiere incluir su dirección web
+%\extrainfo{información adicional}                  % opcional, remover o comentar si no quiere información adicional
+\rhead{\includegraphics[scale=0.2]{imag/catalejo.png}}
+% \photo[64pt][0.4pt]{imag/catalejo.png}                        % opcional, remover o comentar si no quiere incluir su fotografía o logosímbolo; '64pt' es la algura de la imágen, 0.4pt es el grosor del cuadro al rededor de la imágen (indique 0pt para no utilizar recuadro), 'imágen' es la ubicación y nombre del archivo de imágen a incluir
+%\photo{\includegraphics[width=0.3\textwidth]{imag/catalejo.png}}
+\quote{Some quote}                                 % opcional, remover o comentar si no quiere una frase o cita
+
+% para mostrar etiquetas numéricas en la bibliografía (por defecto no se muestran etiquecas); descomente las siguientes líneas solo si usa referencias bibliográficas en su carta
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]} % Considere reemplazar la línea 44 con esta
+
+% bibliografía con múltiples entradas
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            contenido
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       carta       ---------------------------------------------------------
+% Datos del destinatario
+\recipient{Señor\\Milton Acero}{Coordinador de Deportes\\Colegio Gimnasio El Lago}
+\date{Febrero 11 de 2019}
+\opening{Cordial saludo}
+\closing{Atentamente,}
+\enclosure[Anexos]{Documento del Kit básco, Documento de instalación de LuaBot y LibreCAD}          % opcional, remover o comentar si no incluye anexos 
+\makelettertitle{}
+
+Para el desarrollo de las actividades referentes a las Lúdicas de robótica solicito la instalación de las
+siguientes aplicaciones en la sala de computadores:
+
+\begin{itemize}
+  \item \textit{LuaBot V2}
+  \item \textit{LibreCAD}
+\end{itemize}
+
+La aplicación \textit{LuaBot V2} es desarrollada por nosotros (Universidad Nacional-Catalejo) con el propósito
+de programar de manera intuitiva el hardware responsable del control de mecanismos como es el caso de un robot,
+tiene la ventaja de tener licencia opensource que indica que no se debe pagar por su uso. La herramienta \textit{LibreCAD}
+es un producto también opensource desarrollado por la \textit{Comunidad LibreCAD} su propósito es la creación de
+piezas en 2D que en nuestro caso permitirá desarrollar mecanismos sencillos de rápido prototipado con cortadoras láser.
+Es importante poder instalar éstas herramientas en sala ya que el mismo formato de robótica requiere de éstos recursos.
+En el anexo adjunto el correspondiente documento para la instalación de éstas aplicaciones por parte del encargado de sala de computo.
+
+También presento adjunto el kit esencial (básico) de robótica discriminando cada elemento; éste kit permitirá al estudiante
+con la ayuda de los programas instalados tener las suficientes bases para iniciar un proyecto de robótica básico. Éste kit está
+pensado con un propósito general, en el momento que el estudiante decida hacer su propio proyecto es posible que requiera más módulos
+de electrónica o robótica y deba adquirirlos por su cuenta, sin embargo, éste kit está diseñado para varias sesiones.
+
+Como le comenté en nuestra entrevista, cuento con una plataforma web para alojar los proyecto realizados bajo nuestro acompañamiento
+(como catalejoplus.com); para permitir que los estudiantes hagan la divulgación de sus avances y proyectos en nuestra plataforma y en la
+página web del Colegio Gimnasio El Lago, se requiere que los padres de familia permitan la publicación de imágenes, vídeos o cualquier medio
+que registre a los estudiantes desarrollando tales avances o proyectos. Sugiero entonces generar un \textit{formulario de autorización de uso de imagen}
+por parte del colegio indicando el propósito antes mencionado para que los padres de familia de los estudiantes lo firmen estando al tanto
+de las actividades a desarrollar en las Lúdicas de Robótica, así, ni el Colegio ni Catalejo (representado por mí) tendrán alguna dificultad por el
+desarrollo de las mismas.
+
+\makeletterclosing{}
+
+\end{document}

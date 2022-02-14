@@ -2,6 +2,22 @@
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']
 let g:UltiSnipsListSnippets="<c-l>"
 
+" Add support for markdown files in tagbar.
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '/home/johnny/.config/nvim/plugged/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
 "" Tabs. general
 set tabstop=2
 set softtabstop=2
