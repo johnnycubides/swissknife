@@ -4,6 +4,7 @@
 # img-grav
 # img-html-url
 # video-html
+# audio-html
 # link
 # note
 # tables3c
@@ -54,11 +55,20 @@ snippet img-html-url "Imagen html con url"
 $0
 endsnippet
 
+snippet audio-html "insert audio html"
+<audio controls ${1:autoplay loop}>
+	<source src="${3:audio.mp3/.ogg}" type="audio/${2:ogg mpeg}">
+	Your browser does not support the audio element.
+</audio>
+$0
+endsnippet
+
+
 # https://www.w3schools.com/tags/tag_video.asp
 # https://www.w3schools.com/tags/tag_source.asp
 snippet video-html "insert video html"
-<video style="max-width: 100%; height: auto;" controls autoplay loop>
-	<source src="${1:video}" type="video/${2:mp4 ogg}">
+<video style="max-width: 100%; height: auto;" controls ${1:autoplay loop}>
+	<source src="${2:video}" type="video/${3:mp4 ogg}">
 </video> 
 endsnippet
 

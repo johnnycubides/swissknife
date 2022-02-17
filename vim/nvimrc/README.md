@@ -15,6 +15,7 @@ Dependencias
 
 ```bash
 sudo apt install make cmake build-essential automake libtool-bin gettext
+sudo apt-get install gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl
 ```
 
 Dependencias python

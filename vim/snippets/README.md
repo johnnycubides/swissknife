@@ -6,6 +6,7 @@ de snippets.
 
 ## scripts ##
 
+* **symlink_snippets.sh**: permite crear enlaces simbolicos de los Snippets creados en el directorio de **.vim**.
 * **cp_snippets2here.sh**: permite hacer la copia de los Snippets creados en el directorio de **.vim**.
 * **snippets_send.sh**: permite enviar una copia de varios o de todos los archivos al directorio **.vim**.
 
