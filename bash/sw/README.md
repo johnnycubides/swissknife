@@ -38,6 +38,14 @@ siguiente comando:
 man xkeyboard-config
 ```
 
+### Referencias
+
+[Lista de opciones xkeyboard](https://unix.stackexchange.com/questions/45447/other-than-alt-shift-to-switch-keyboard-layout-any-other-xorg-key-combination)
+
+[Guia de XKB](https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450)
+
+[debian keyboard](https://wiki.debian.org/Keyboard)
+
 ## Configuración con reset indeseado (no funciona bien) 
 
 Se trata de un pequeño script para habilitar el cambio de configuración de teclado
