@@ -22,6 +22,10 @@
 ############
 # h-youtube
 # h-img
+############
+# LIASCRIPT
+############
+# lia-youtube 
 
 snippet header "cabecera para el documento"
 ---
@@ -184,5 +188,13 @@ endsnippet
 
 snippet h-img "Insertar images"
 {{< figure src="${1:./imagen.png}" title="${2:Título de la imagen}"}}
+$0
+endsnippet
+
+############
+# LIASCRIPT
+############
+snippet lia-youtube "Insert youtube vide"
+!?[${1:Título vídeo}](${2:Enlace vídeo})
 $0
 endsnippet
