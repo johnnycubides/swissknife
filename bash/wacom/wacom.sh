@@ -75,7 +75,7 @@ select_monitor(){
     read -a strarr <<< "$MONITORS"
 
     printf "Este script le ayudará a detectar una pantalla para configurar la escritura con su tableta digitalizadora.\n"
-    printf "Por favor  conecte el dispositivo al puerto USB para iniciar procedimiento"
+    printf "Por favor  conecte el dispositivo al puerto USB para iniciar procedimiento.\n"
     printf "Del siguiente menú escoja la opción de salida para configurar la pantalla:\n"
     # Print each value of the array by using loop
     for (( n=0; n < ${#strarr[*]}; n++))
