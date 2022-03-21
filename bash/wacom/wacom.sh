@@ -28,25 +28,75 @@ CYANB=`tput setab 6`
 WHITEB=`tput setab 7`
 NCB=`tput setab 0`
 
+MONITORS='' #Lista de monitores
+
+# El siguiente código es tomado y adapatdo de
+# https://stackoverflow.com/questions/10500521/linux-retrieve-monitor-names
+get_monitors(){
+    while read -r output hex conn; do
+        [[ -z "$conn" ]] && conn=${output%%-*}
+        MONITORS="$MONITORS$output "
+        # echo "$output" >> $DIR/monitors
+    done < <(xrandr --prop | awk '
+        !/^[ \t]/ {
+            if (output && hex) print output, conn
+            output=$1
+            hex=""
+        }
+        /ConnectorType:/ {conn=$2}
+        /[:.]/ && h {
+            sub(/.*000000fc00/, "", hex)
+            hex = substr(hex, 0, 26) "0a"
+            sub(/0a.*/, "", hex)
+            h=0
+        }
+        h {sub(/[ \t]+/, ""); hex = hex $0}
+        /EDID.*:/ {h=1}
+        END {if (output && hex) print output, conn}
+        ' | sort
+    )
+}
+
+select_monitor(){
+    # TMP=$(xrandr --listmonitors)
+    # mkdir -p /tmp/wacom
+    # xrandr --listmonitors >> /tmp/wacom/monitors
+    # $TMP=`cat /tmp/wacom/monitors`
+
+    # TMP=$(cat $DIR/monitors | tr '\n' ' ')
+
+    # TMP="$TMP"
+    # TMP="${TMP//'\r'/=}"
+    # TMP=${TMP//+/_}
+    # readarray -d + -t starray <<< "$TMP" 
+    # IFS=$'\n'
+    IFS=' '
+
+    read -a strarr <<< "$MONITORS"
+
+    printf "Este script le ayudará a detectar una pantalla para configurar la escritura con su tableta digitalizadora.\n"
+    printf "Por favor  conecte el dispositivo al puerto USB para iniciar procedimiento"
+    printf "Del siguiente menú escoja la opción de salida para configurar la pantalla:\n"
+    # Print each value of the array by using loop
+    for (( n=0; n < ${#strarr[*]}; n++))
+    do
+        echo "      $n -> ${strarr[n]}"
+    done
+    read -p "Seleccione una opción: " -r temp
+    mapping ${strarr[temp]}
+}    
+
 mapping(){
-    OUTPUT=""
+    OUTPUT=$1
     # for get ID exec xsetwacom --list devices
     #ID="11"
     DEVICENAME="HUION Huion Tablet_HS64 stylus"
-    if [ "$1" = "1" ];
-    then
-        OUTPUT="LVDS-1"
-    elif [ "$1" = "2" ];
-    then
-        OUTPUT="HDMI-1"
-    else
-        printf " ${RED} No seleccionó una pantalla para configurar la \
-tableta digitalizadora${NC}\n"
-        return 0;
-    fi
+
     xsetwacom --set "$DEVICENAME" MapToOutput $OUTPUT
     if [[ $? == 0 ]]; then
         printf "${GREEN} Se ha configurado la tableta para escribir en ${OUTPUT}${NC}\n"
+    else
+        printf "${RED} No fue posible configurar la tableta digitalizadora${NC}\n"
     fi
 }
 
@@ -62,35 +112,8 @@ help(){
     printf "\nRegards Johnny.\n"
 }
 
-# Permite guardar información acerca de comandos usados
-if [ "$1" = "" ];
-then
-    printf "Del siguiente menú escoja la opción de salida para configurar la pantalla:
-    1 -> LVDS-1
-    2 -> HDMI-1
-    h -> Ayuda\n"
-    read -p "Seleccione una opción: " -r temp
-    if [ "$temp" = "h" ] || [ "$temp" = "" ];
-    then
-        help
-    else
-        mapping $temp
-    fi 
-elif [ "$1" = "-h" ] || [ "$1" = "--help" ];
-then
-    help
-elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "3" ];
-then
-    mapping $1
-elif [ "$1" = "list" ];
-then
-    xsetwacom --list devices
-elif [ "$1" = "command3" ];
-then
-    echo "pass"
-else
-    printf "${RED}Opción no establecida${NC}\n"
-    help
-fi
-
+get_monitors
+# echo $MONITORS
+select_monitor
+printf "\nRegards Johnny.\n"
 
