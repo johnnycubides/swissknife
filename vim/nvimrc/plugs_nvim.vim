@@ -15,6 +15,10 @@ Plug 'chrisbra/csv.vim'
 "Plug 'xolox/vim-easytags'
 Plug 'Quramy/tsuquyomi' "Make your Vim a TypeScript IDE
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" CONFIG markdown-previewer.vim
+let g:mkdp_auto_start = 0
+" Ejecutar comando Composer...
+
 "Plug 'rafi/awesome-vim-colorschemes' "sin poder probar!!!
 
 "Flutter support for vim
@@ -43,9 +47,14 @@ function! BuildComposer(info)
   endif
 endfunction
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+" CONFIG vim-markdown-composer
+let g:markdown_composer_autostart = 0
+" Ejecutar comando Markdown...
+
 " vim-markdownr
 " Plug 'godlygeek/tabular'
 " Plug 'plasticboy/vim-markdown'
+"
 
 " PERSONALIZAZCIÓN
 if has('nvim')
