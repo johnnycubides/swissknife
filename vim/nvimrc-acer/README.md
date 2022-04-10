@@ -1,5 +1,7 @@
 # VIM CONFIG
 
+Esta es una configuración temporal usada en portaril acer
+
 ## Prerequirementes
 
 ```sh
