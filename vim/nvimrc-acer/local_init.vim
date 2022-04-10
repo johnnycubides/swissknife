@@ -36,7 +36,11 @@ highlight LineNr guifg=LightGreen
 " Nerdtree size
 let g:NERDTreeWinSize = 30
 
+" CONFIG markdown-previewer.vim
+let g:mkdp_auto_start = 0
+
 " https://github.com/neovim/neovim/wiki/FAQ
+" Cambio de color del cursor
 set termguicolors 
 hi Cursor guifg=green guibg=green
 hi Cursor2 guifg=red guibg=red
