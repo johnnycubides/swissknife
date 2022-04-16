@@ -46,6 +46,14 @@ hi Cursor guifg=green guibg=green
 hi Cursor2 guifg=red guibg=red
 set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
 
+:function Es()
+: set spell spelllang=es
+endfunction
+
+:function En()
+: set spell spelllang=en
+endfunction
+
 "title
 set titleold=Terminal
 set titlestring=VIM_\ヽ\(\ヅ\)\ノ_%F
