@@ -1,12 +1,21 @@
-# t-b -> bold text
+## MENU ##
+# tb -> bold text
+# ti -> italic text
+# link -> href
 # bib-i bibliography
 # bibi bibliography item
-snippet t-b "bold text"
+# insert-pdf
+
+snippet tb "bold text"
 \textbf{$1}$0
 endsnippet
 
-snippet t-i "italic text"
+snippet ti "italic text"
 \textit{$1}$0
+endsnippet
+
+snippet	link "href"
+~\href{${1:enlace}}{${2:titulo}} $0
 endsnippet
 
 snippet bib-i "Init bibliography"
@@ -30,7 +39,7 @@ snippet t-c "Aplica color al texto"
 endsnippet
 
 snippet img "Insert image"
-\begin{figure}
+\begin{figure}[H]
 	\center{}
 	\includegraphics[width=${2:9cm}]{${1:img/}}
 	\caption{$3}\label{fig_$4}
@@ -97,7 +106,7 @@ $0
 endsnippet
 
 snippet insert-pdf "Insert page pdf"
-%\usepackage{pdfpages} % agregar en el preambulo del tex
+% \usepackage{pdfpages} % agregar en el preambulo del tex
 \includepdf[pages={${1:1,2,3}}, ${2:angle=0}]{${3:src/file.pdf}}$0
 endsnippet
 
