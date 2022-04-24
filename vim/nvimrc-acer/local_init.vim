@@ -46,6 +46,9 @@ hi Cursor guifg=green guibg=green
 hi Cursor2 guifg=red guibg=red
 set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
 
+" Problema con c <C-J> ambigüedad path ~/.config/nvim/plugged/c.vim:483
+let g:C_Ctrl_j = 'off'
+
 :function Es()
 : set spell spelllang=es
 endfunction
