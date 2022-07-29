@@ -1,4 +1,4 @@
-c?=mkdocs.ylm
+c?=mkdocs.yml
 
 help:
 	@printf "########################\n"\
