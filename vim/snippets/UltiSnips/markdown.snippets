@@ -10,6 +10,24 @@
 # tables3c
 # code
 # tree-c-html
+#
+############
+# MKDOCS material
+############
+# pdf-mkd
+# video-mkd
+# img-mkd
+#
+##############
+# HTML
+##############
+# tree-c-html
+#
+##############
+# PANDOC
+##############
+# img-pandoc
+#
 ############
 # REVEAL MD
 ############
@@ -17,15 +35,18 @@
 # r-img-s
 # r-img-bg
 # r-slide-2columns
+#
 ############
 # HUGO MD
 ############
 # h-youtube
 # h-img
+#
 ############
 # LIASCRIPT
 ############
 # lia-youtube 
+#
 
 snippet header "cabecera para el documento"
 ---
@@ -39,7 +60,7 @@ $0
 endsnippet
 
 snippet img "Uso de imagenes"
-![${1:Texto Alternativo}](./img/${2:image.png})
+![${1:Texto Alternativo}](img/${2:image.png})
 $0
 endsnippet
 
@@ -60,7 +81,7 @@ $0
 endsnippet
 
 snippet audio-html "insert audio html"
-<audio controls ${1:autoplay loop}>
+<audio controls ${1:autoplay loop} style="width: 100%">
 	<source src="${3:audio.mp3/.ogg}" type="audio/${2:ogg mpeg}">
 	Your browser does not support the audio element.
 </audio>
@@ -74,12 +95,6 @@ snippet video-html "insert video html"
 <video style="max-width: 100%; height: auto;" controls ${1:autoplay loop}>
 	<source src="${2:video}" type="video/${3:mp4 ogg}">
 </video> 
-endsnippet
-
-# require markdown-extension - attr_list
-snippet img-mkdocs "Uso de imagenes mkdocs"
-![${1:Texto Alternativo}](img/${2:image.png}){: style="${3:width:100%; margin-left: auto; margin-right: auto; display: block}"}
-$0
 endsnippet
 
 snippet link "Links"
@@ -115,6 +130,34 @@ $0
 \`\`\`
 endsnippet
 
+# require markdown-extension - attr_list
+snippet img-mkd "Uso de imagenes mkdocs"
+![${1:Texto Alternativo}](img/${2:image.png}){: style="${3:width:100%; margin-left: auto; margin-right: auto; display: block}"}
+$0
+endsnippet
+
+snippet video-mkd "Insert video object in mkdocs-material"
+<video style="max-width: 100%; height: auto; border: 2px solid gray;" poster="" controls autoplay loop>
+	<source src="../${1:path/file.pdf}" type="video/mp4">
+</video> 
+endsnippet
+
+snippet pdf-mkd "Insert pdf object in mkdocs"
+<!-- Debe insertar un ../ extra en el path si el archivo no es un index.md, el cual ya se ha incorporado en el path del data -->
+<object
+	width="100%"
+	height="600"
+	type="application/pdf"
+	data="../${1:path/file.pdf}">
+</object>
+endsnippet
+
+snippet pdf-emb-mkd "Insert pdf object in mkdocs"
+<!-- Alternaita al object -->
+<!-- Debe insertar un ../ extra en el path para que funcione, el cual ya se ha incorporado en el path del data -->
+<embed src="../${1:path/file.pdf}" type="application/pdf" width="100%" height="600">
+endsnippet
+
 ##############
 # HTML
 ##############
@@ -123,20 +166,20 @@ snippet tree-c-html "Formato comentario para Tree"
 <b class="COMMIT">$1</b>$0
 endsnippet
 
-##############
-# HTML
-##############
-# img-pandoc
-snippet img-pandoc "image in pandoc"
-![${1:imageName}](./img/${2:img.png}){ width=${3:width}}$0
-endsnippet
-
 snippet label "etiqueta html, p, br, kdb"
 <${1:kbd, p}>$2</$1>$0
 endsnippet
 
 snippet t-a "align text"
 <div align="${1:center left right}">$2</div>$0
+endsnippet
+
+##############
+# PANDOC
+##############
+# img-pandoc
+snippet img-pandoc "image in pandoc"
+![${1:imageName}](./img/${2:img.png}){ width=${3:width}}$0
 endsnippet
 
 ############
