@@ -34,7 +34,7 @@ set rnu
 highlight LineNr guifg=LightGreen
 
 " Nerdtree size
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 40
 
 " CONFIG markdown-previewer.vim
 let g:mkdp_auto_start = 0
