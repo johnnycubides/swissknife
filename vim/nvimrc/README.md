@@ -23,7 +23,7 @@ Dependencias python
 [pynvim github](https://github.com/neovim/pynvim)
 
 ```bash
-sudo apt install python python3 pip pip3
+sudo apt install python python3 pip python3-pip
 pip2 install --upgrade pynvim
 pip3 install --upgrade pynvim
 ```
