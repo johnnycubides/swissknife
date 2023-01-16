@@ -21,6 +21,8 @@ sudo apt-get install git exuberant-ctags ncurses-term curl
 En este test funcionó correctamente la instalación manual, es decir, sin
 hacer uso de los precompilados de Debian.
 
+**Observación**: puede requerir dependencias de instalación como go.
+
 ```bash
 cd ~/gitPackages/
 git clone -b master --single-branch https://github.com/neovim/neovim.git
@@ -34,6 +36,11 @@ sudo make install
 ```sh
 ./sh-config-nvimrc.sh
 ```
+
+## Comando útiles
+
+* checkhealth provider: puede obervar si existe algún servicio que pueda estar fallando.
+
 ## REFERENCIES
 
 [Uso de supertab](https://atareao.es/tutorial/vim/snippets-en-vim/)
