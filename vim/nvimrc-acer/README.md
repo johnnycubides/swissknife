@@ -1,11 +1,32 @@
 # VIM CONFIG
 
+Date: Enero 16, 2023
+S.O: Debian 12
+Linux: 6.1.0-1
+Python 3.11
+Neovim Version: v0.9.0-dev-712
 Esta es una configuración temporal usada en portaril acer
 
 ## Prerequirementes
 
+Se requiere instalar estos paquetes desde los paquetes precompilados
+de la distribución debian.
+
 ```sh
 sudo apt-get install git exuberant-ctags ncurses-term curl
+```
+
+## Instalación de NEOVIM
+
+En este test funcionó correctamente la instalación manual, es decir, sin
+hacer uso de los precompilados de Debian.
+
+```bash
+cd ~/gitPackages/
+git clone -b master --single-branch https://github.com/neovim/neovim.git
+cd neonvim/
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 ```
 
 ## Instalación de esta configuración
@@ -13,7 +34,6 @@ sudo apt-get install git exuberant-ctags ncurses-term curl
 ```sh
 ./sh-config-nvimrc.sh
 ```
-
 ## REFERENCIES
 
 [Uso de supertab](https://atareao.es/tutorial/vim/snippets-en-vim/)
