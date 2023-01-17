@@ -120,6 +120,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+"Activar ayudas de comando usados definidos por usuarios
+source ~/.config/nvim/commandHelp.vim
+
 " Local projects.vim config
 function VimLocalExist()
 if filereadable("./.pro.vim")
