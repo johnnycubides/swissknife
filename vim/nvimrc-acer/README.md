@@ -37,6 +37,12 @@ sudo make install
 ./sh-config-nvimrc.sh
 ```
 
+## COC Instalación y plugins
+
+```bash
+CocInstall coc-lua
+```
+
 ## Comando útiles
 
 * checkhealth provider: puede obervar si existe algún servicio que pueda estar fallando.
