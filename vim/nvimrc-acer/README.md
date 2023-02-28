@@ -16,6 +16,10 @@ de la distribución debian.
 sudo apt-get install git exuberant-ctags ncurses-term curl
 ```
 
+```bash
+pip3 install pynvim
+```
+
 ## Instalación de NEOVIM
 
 En este test funcionó correctamente la instalación manual, es decir, sin
