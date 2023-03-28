@@ -8,4 +8,5 @@ alias rm='rm -i'
 alias vi="vim"
 alias v="nvim"
 alias g="gitui"
+alias p="gnome-screenshot -i"
 alias sw='setxkbmap us; setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_switch us,es'
