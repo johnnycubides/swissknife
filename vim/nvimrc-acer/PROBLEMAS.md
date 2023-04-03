@@ -1,9 +1,18 @@
 # Problemas
 
-
+PROBLEMA
 Please download Exuberant Ctags from ctags.sourceforge.net and install it in a directory in your $PATH or set g:tagbar_ctags_bin.
 
+SOLUCIÓN:
 sudo apt-get install exuberant-ctags ncurses-term
+
+ACTUALIZACIÓN SOLUCIÓN
+sudo apt install universal-ctags
+u-ctags es compatible con tagbar
+
+PROBLEMA
+Problemas con el tagbar, es mejor revisar las opciones recomendadas en la documentación de tagbar en:
+https://github.com/preservim/tagbar/wiki#typescript
 
 PROBLEMA
 Lua Inspact problemas asociados

@@ -64,3 +64,16 @@ endsnippet
 snippet Tuple "Crear tuplas"
 [ type$2, type$4] = [$5, $6]
 endsnippet
+
+#** enum **#
+snippet enum "enum"
+/** @enum {type} */
+const ${1:Name} = {
+	enumMember$0
+};
+endsnippet
+
+snippet enumMember " enum member, ej, Name = 1, Saludo = 'Hola'"
+${1:Name} = ${2:0, 1 or String},
+endsnippet
+

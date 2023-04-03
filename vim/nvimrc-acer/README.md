@@ -12,8 +12,9 @@ Esta es una configuración temporal usada en portaril acer
 Se requiere instalar estos paquetes desde los paquetes precompilados
 de la distribución debian.
 
+Ojo, no instalar exuberant-ctags hasta no probar universal-ctags
 ```sh
-sudo apt-get install git exuberant-ctags ncurses-term curl
+sudo apt-get install git exuberant-ctags??? ncurses-term curl
 ```
 
 ```bash

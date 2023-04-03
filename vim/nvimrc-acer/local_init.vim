@@ -120,6 +120,26 @@ endfunction
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Jan 25, 2023 configuración temporal de VUE según esta configuración
+"[vim-vue-plugin] Hey, it seems that you just upgraded. Please use `g:vim_vue_plugin_config` to replace previous configs                                                                                                                                                  
+" [vim-vue-plugin] For details, please check README.md ## Configuration or https://github.com/leafOfTree/vim-vue-plugin
+" https://github.com/leafOfTree/vim-vue-plugin#configuration
+" START
+let g:vim_vue_plugin_config = { 
+      \'syntax': {
+      \   'template': ['html'],
+      \   'script': ['typescript'],
+      \   'style': ['css'],
+      \},
+      \'full_syntax': [],
+      \'initial_indent': [],
+      \'attribute': 0,
+      \'keyword': 0,
+      \'foldexpr': 0,
+      \'debug': 0,
+      \}
+" END
+
 "Activar ayudas de comando usados definidos por usuarios
 source ~/.config/nvim/commandHelp.vim
 
@@ -134,25 +154,5 @@ elseif filereadable("./pro.vim")
   source ./pro.vim
 endif
 endfunction
-
-" Jan 25, 2023 configuración temporal de VUE según esta configuración
-"[vim-vue-plugin] Hey, it seems that you just upgraded. Please use `g:vim_vue_plugin_config` to replace previous configs                                                                                                                                                  
-" [vim-vue-plugin] For details, please check README.md ## Configuration or https://github.com/leafOfTree/vim-vue-plugin
-" https://github.com/leafOfTree/vim-vue-plugin#configuration
-" START
-let g:vim_vue_plugin_config = { 
-      \'syntax': {
-      \   'template': ['html'],
-      \   'script': ['javascript'],
-      \   'style': ['css'],
-      \},
-      \'full_syntax': [],
-      \'initial_indent': [],
-      \'attribute': 0,
-      \'keyword': 0,
-      \'foldexpr': 0,
-      \'debug': 0,
-      \}
-" END
 
 call VimLocalExist()
