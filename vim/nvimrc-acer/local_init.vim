@@ -142,6 +142,8 @@ let g:vim_vue_plugin_config = {
 
 "Activar ayudas de comando usados definidos por usuarios
 source ~/.config/nvim/commandHelp.vim
+source ~/.config/nvim/myMenu.vim
+nnoremap <F1> :popup MENU<CR>
 
 function Code()
   setlocal tabstop=2 shiftwidth=2
