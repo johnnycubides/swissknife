@@ -1,3 +1,20 @@
+<!-- vim-markdown-toc Marked -->
+
+* [VIM CONFIG](#vim-config)
+    * [Prerequirementes](#prerequirementes)
+    * [Instalación de NEOVIM](#instalación-de-neovim)
+    * [Instalación de esta configuración](#instalación-de-esta-configuración)
+    * [COC Instalación y plugins](#coc-instalación-y-plugins)
+            * [Servidor de lenguaje lua](#servidor-de-lenguaje-lua)
+            * [Servidor clangd](#servidor-clangd)
+            * [Servidor de lenguaje Rust](#servidor-de-lenguaje-rust)
+            * [Fast Vue Language Support](#fast-vue-language-support)
+    * [Comando útiles](#comando-útiles)
+    * [REFERENCIES](#referencies)
+    * [VIMCOMPLETESME](#vimcompletesme)
+
+<!-- vim-markdown-toc -->
+
 # VIM CONFIG
 
 Date: Enero 16, 2023
@@ -14,7 +31,7 @@ de la distribución debian.
 
 Ojo, no instalar exuberant-ctags hasta no probar universal-ctags
 ```sh
-sudo apt-get install git exuberant-ctags??? ncurses-term curl
+sudo apt-get install git universal-ctags ncurses-term curl
 ```
 
 ```bash
@@ -44,8 +61,51 @@ sudo make install
 
 ## COC Instalación y plugins
 
+- ✓ coc-lua Updated to v2.0.5
+- ✓ coc-rls Current version 1.1.6 is up to date.
+- ✓ coc-clangd Current version 0.28.0 is up to date.
+- ✓ @yaegassy/coc-volar Current version 0.32.1 is up to date.
+- ✓ @yaegassy/coc-volar-tools Current version 0.3.3 is up to date.
+
+#### Servidor de lenguaje lua
+
+```vim
+:CocInstall coc-lua
+```
+
+#### Servidor clangd
+
+```vim
+:PlugInstall
+:CocInstall coc-clangd
+:CocInfo
+```
+Observación: Se requiere el **clangd** instalado; hay un comando Coc para instalar el propio Servidor
+pero no es recomendable por la estabilidad al cambiar de contextos en vim. el comando es: `:CocCommand clangd.install `
+
+Esta es la versión de clang usada en esta documentación:
+
 ```bash
-CocInstall coc-lua
+Debian clangd version 14.0.6-2
+Features: linux+grpc
+Platform: x86_64-pc-linux-gnu
+```
+
+#### Servidor de lenguaje Rust
+
+```bash
+:CocInstall coc-rls
+```
+
+#### Fast Vue Language Support
+
+Como el generator.vim es creado con bootstrap de vim pueda que genere conflictos
+entre los plugins instalados en el generator.vim y Coc, estar pendiente de los resultados.
+Se requiere explorar los comandos `CocCommand volar.*`
+
+```bash
+:CocInstall @yaegassy/coc-volar
+:CocInstall @yaegassy/coc-volar-tools
 ```
 
 ## Comando útiles

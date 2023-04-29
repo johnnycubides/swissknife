@@ -21,6 +21,7 @@ function CommandHelp()
   let txt .= "\t%s/palabra/nueva_palabra/g \t-> sustituir de manera general, otro ej: 1,2s/palabra/nueva_palabra/g\n"
   let txt .= "\tm-letra, '-letra, marks \t-> marcar una línea con una letra, ir a la línea marcada por la letra, ver marcas\n"
   let txt .= "\tnum-j, num-k, num-h, num-l \t-> subir o bajar num filas o columnas\n"
+  let txt .= "\tm (in nerdtree) \t-> menú de opciones de nerdtree \n"
   let txt .= "\t\n"
   let txt .= "\t\n"
   return txt
