@@ -5,10 +5,10 @@
     * [Instalación de NEOVIM](#instalación-de-neovim)
     * [Instalación de esta configuración](#instalación-de-esta-configuración)
     * [COC Instalación y plugins](#coc-instalación-y-plugins)
-            * [Servidor de lenguaje lua](#servidor-de-lenguaje-lua)
-            * [Servidor clangd](#servidor-clangd)
-            * [Servidor de lenguaje Rust](#servidor-de-lenguaje-rust)
-            * [Fast Vue Language Support](#fast-vue-language-support)
+        * [Servidor de lenguaje lua](#servidor-de-lenguaje-lua)
+        * [Servidor clangd](#servidor-clangd)
+        * [Servidor de lenguaje Rust](#servidor-de-lenguaje-rust)
+        * [Fast Vue Language Support](#fast-vue-language-support)
     * [Comando útiles](#comando-útiles)
     * [REFERENCIES](#referencies)
     * [VIMCOMPLETESME](#vimcompletesme)
@@ -67,13 +67,13 @@ sudo make install
 - ✓ @yaegassy/coc-volar Current version 0.32.1 is up to date.
 - ✓ @yaegassy/coc-volar-tools Current version 0.3.3 is up to date.
 
-#### Servidor de lenguaje lua
+### Servidor de lenguaje lua
 
 ```vim
 :CocInstall coc-lua
 ```
 
-#### Servidor clangd
+### Servidor clangd
 
 ```vim
 :PlugInstall
@@ -91,13 +91,13 @@ Features: linux+grpc
 Platform: x86_64-pc-linux-gnu
 ```
 
-#### Servidor de lenguaje Rust
+### Servidor de lenguaje Rust
 
 ```bash
 :CocInstall coc-rls
 ```
 
-#### Fast Vue Language Support
+### Fast Vue Language Support
 
 Como el generator.vim es creado con bootstrap de vim pueda que genere conflictos
 entre los plugins instalados en el generator.vim y Coc, estar pendiente de los resultados.
