@@ -15,6 +15,7 @@
 :menu 80.110 MENU.ALE :popup ALE<CR>
 :menu 80.120 MENU.HELP :popup HELP<CR>
 :menu 80.130 MENU.MD :popup MD<CR>
+:menu 80.140 MENU.VUE :popup VUE<CR>
 "     :popup ALE
 :menu 110.110 ALE.GO2Definition :ALEGoToDefinition<CR>
 :menu 110.120 ALE.FindReferences :ALEFindReferences<CR>
@@ -26,5 +27,6 @@
 " :popup MD
 :menu 130.110 MD.GenerateTOC :GenTocMarked<CR>
 :menu 130.120 MD.MarkdownPreview :MarkdownPreview<CR>
-
+" :popup VUE
+:menu 140.110 VUE.VolarUpdateProject :CocCommand volar.action.reloadProject<CR>
 
