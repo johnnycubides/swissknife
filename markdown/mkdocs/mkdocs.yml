@@ -18,8 +18,6 @@ plugins:
   #   regex:
   #     - '.*\.(tmp|bin|tar)$'
 
-lang: es
-
 theme:
   name: 'mkdocs' # 'mkdocs' 'material'
   highlightjs: false # true/false false para prueba sin internet

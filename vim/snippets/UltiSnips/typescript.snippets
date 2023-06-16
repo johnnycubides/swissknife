@@ -77,3 +77,13 @@ snippet enumMember " enum member, ej, Name = 1, Saludo = 'Hola'"
 ${1:Name} = ${2:0, 1 or String},
 endsnippet
 
+#*** Functions ***
+snippet fun "Functions"
+/**
+ * @function $1
+ * Brief ...
+ */
+function ${1:name} (${2:arguments...}) {
+	$0
+}
+endsnippet
