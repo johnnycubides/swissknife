@@ -1,6 +1,19 @@
+# JSDoc reference: https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
+# JSDoc Getting Started: https://jsdoc.app/about-getting-started.html
+
+# MENU
+# declaration let var const
+# let
+# type
+# Array
+# Tuple
+# enum
+# enumMember
+# fun
+
 #*** Declaraciones ***#
 snippet declaration "declaracion de variables"
-${1:let var con}
+${1:let var const}
 endsnippet
 
 snippet let "create variable"
@@ -81,7 +94,7 @@ endsnippet
 snippet fun "Functions"
 /**
  * @function $1
- * Brief ...
+ * ${3:Brief ...}
  */
 function ${1:name} (${2:arguments...}) {
 	$0
