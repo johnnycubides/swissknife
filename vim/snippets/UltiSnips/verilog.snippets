@@ -1,0 +1,65 @@
+snippet module "Declare module"
+module ${1:name_module} (
+// Inputs and output ports
+	${2:input-outpus}
+);
+
+// Declaración de señales [reg, wire]
+
+// Descripción del comportamiento
+
+$1
+endmodule
+endsnippet
+
+snippet tb "Declarar un modulo tb"
+module ${1:testbech};
+
+	// STIMULUS
+  /* reg a = 0, b = 0; */
+  /* initial */
+  /* begin */
+  /*    # 17 a = 1, b = 1; */
+  /*    # 11 a = 1, b = 0; */
+  /*    # 29 a = 1, b = 1; */
+  /*    # 11 a = 1, b = 0; */
+  /*    # 100 $finish(); // [stop(), $finish()] */
+  /* end */
+
+  /* reg [2:0] inputs; */
+  /* /1* inputs[0] inputs[1] inputs[2] *1/ */
+  /* integer i; */
+  /* initial */
+  /* begin */
+  /*   for (i=0; i<8; i=i+1) */
+  /*   begin */
+  /*     inputs = i; */
+  /*     #1; */
+  /*   end */
+  /* end */
+
+  // CLOCK STIMULUS
+  /* Make a regular pulsing clock. */
+  /* reg clk = 0; */
+  /* always #5 clk = !clk; */
+
+  /* // RESULT FOR DEVICE/DESIGN UNDER TEST */
+  /* wire [7:0] value; */
+  /* // DEVICE/DESIGN UNDER TEST */
+  /* module_name dut (a, b, value); */
+
+  /* // MONITOR */
+  /* initial */
+  /*   $monitor("Time: %t, a = %d, b = %d => out = %d", */
+  /*     $time, a, b, value); */
+
+	// WAVES IN VCD TO OPEN IN GTKWAVE
+  initial
+  begin
+    $dumpfile("top.vcd");
+    $dumpvars(0, $1);
+  end
+
+
+endmodule
+endsnippet
