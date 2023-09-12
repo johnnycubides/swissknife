@@ -145,6 +145,31 @@ source ~/.config/nvim/commandHelp.vim
 source ~/.config/nvim/myMenu.vim
 nnoremap <F1> :popup MENU<CR>
 
+"### ÁREA DE MIS FUNCIONES ###
+"## FUNCIÓN PARA AJUSTAR COMENTARIOS##
+" Esta función también está acompañada del autocmd para ajustar algunos
+" comandos en el momento de abrir un tipo de archivo
+" ## START ##
+function CommentstringChange(...)
+  " a: representa las entradas por argumentos
+  if a:1 == 0
+    echo "Configurando comentarios con // %s"
+    set commentstring=//\ %s
+  elseif a:1 == 1
+    echo "Configurando comentarios con /*\ %s\ */"
+    set commentstring=/*\ %s\ */
+  else
+    echo "Los posibles formatos de configuración son:"
+    echo "arg 0 -> // %s"
+    echo "arg 1 -> /* %s */"
+    echo "\nSi desea otros formatos puede agregarlos con set commentstring, ejemplo:"
+    echo "set commentstring=//\ %s"
+  endif
+endfunction
+" Auto configuración del commentstring
+autocmd FileType verilog setlocal commentstring=//\ %s
+" ## END ##
+
 function Code()
   setlocal tabstop=2 shiftwidth=2
 endfunction
