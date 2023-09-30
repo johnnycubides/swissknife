@@ -9,6 +9,7 @@
         * [Servidor clangd](#servidor-clangd)
         * [Servidor de lenguaje Rust](#servidor-de-lenguaje-rust)
         * [Fast Vue Language Support](#fast-vue-language-support)
+    * [USER-Commands](#user-commands)
     * [Comando útiles](#comando-útiles)
     * [REFERENCIES](#referencies)
     * [VIMCOMPLETESME](#vimcompletesme)
@@ -106,6 +107,21 @@ Se requiere explorar los comandos `CocCommand volar.*`
 ```bash
 :CocInstall @yaegassy/coc-volar
 :CocInstall @yaegassy/coc-volar-tools
+```
+
+## USER-Commands
+
+Sirve para construir comandos para hacer llamados de funciones:
+:h user-commands
+
+```bash
+function MyFunction(argument)
+    echo a:argument
+endfunction
+
+command! -nargs=1 Myfunc call MyFunction(<args>)
+
+:Myfunc "hello"
 ```
 
 ## Comando útiles
