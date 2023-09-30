@@ -36,8 +36,21 @@ sudo apt-get install git universal-ctags ncurses-term curl
 ```
 
 ```bash
-pip3 install pynvim
+pip3 install pynvim     # Opción principal
 ```
+
+**Observación**:
+START 2023-09-28
+En python3.11 se requiere una configuración
+de variables de entorno, si el anterior comando no funcionan intentar
+la siguiente recomendación [pip3](https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)
+
+```bash
+ pip3 install pynvim --break-system-packages
+```
+
+El anterior comando es temporal y requiere revisión.
+END 2023-09-28
 
 ## Instalación de NEOVIM
 
