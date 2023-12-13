@@ -9,6 +9,7 @@
         * [Servidor clangd](#servidor-clangd)
         * [Servidor de lenguaje Rust](#servidor-de-lenguaje-rust)
         * [Fast Vue Language Support](#fast-vue-language-support)
+        * [Grammary corrector](#grammary-corrector)
     * [USER-Commands](#user-commands)
     * [Comando útiles](#comando-útiles)
     * [REFERENCIES](#referencies)
@@ -121,6 +122,15 @@ Se requiere explorar los comandos `CocCommand volar.*`
 :CocInstall @yaegassy/coc-volar
 :CocInstall @yaegassy/coc-volar-tools
 ```
+
+### Grammary corrector
+
+
+```bash
+CocInstall coc-ltex
+```
+
+Documentación de uso: https://valentjn.github.io/ltex/supported-languages.html
 
 ## USER-Commands
 
