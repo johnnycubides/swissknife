@@ -16,6 +16,7 @@
 # ifs_or2
 # ifs_or3
 # array_string
+# tupla
 # for_array
 # replace_word
 # replace_words
@@ -161,6 +162,23 @@ then
 	${5:echo "pass"}
 fi
 $0
+endsnippet
+
+#########
+# TUPLA
+#########
+snippet tupla "Create new tupla array"
+declare -a ${1:tuplas}=(
+	"${2:string1} ${3:string2}"
+)
+$0
+endsnippet
+
+snippet tupla_for "Rercorrer una tupla"
+for ${1:elemento} in "${$1s[@]}"; do
+	read -a starr <<< "\$$1"
+	echo \${starr[0]} \${starr[1]}
+done
 endsnippet
 
 #########

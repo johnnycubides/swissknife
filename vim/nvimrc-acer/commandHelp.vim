@@ -2,7 +2,8 @@ function CommandHelp()
   let txt = "\n"
   let txt .= "\t^f, ^b \t\t-> Adelante o atrás página completamente\n"
   let txt .= "\t^d, ^u \t\t-> Adelante o atrás media página\n"
-  let txt .= "\tf[char], F[char], ; \t\t-> buscar letra hacia adelante o hacia atrás y ";" para next\n"
+  let txt .= "\tf[char], F[char], ; \t\t-> buscar letra hacia adelante o hacia atrás y \";\" para next o \",\" para back\n"
+  let txt .= "\tt[char], T[char], ; \t\t-> buscar letra hacia adelante o hacia atrás y \";\" para next o \",\" para back\n"
   let txt .= "\t/text n, N \t-> buscar texto en el documento y rastrear coincidencias\n"
   let txt .= "\t% \t\t-> ir al inicio o final de un ambito tipo {} () otros.\n"
   let txt .= "\t0 $ \t\t-> Ir al inicio o final de una línea\n"
@@ -23,6 +24,7 @@ function CommandHelp()
   let txt .= "\t[num]j, [num]k, [num]h, [num]l \t-> subir o bajar num filas o columnas\n"
   let txt .= "\tda[char], di[char], dw\t-> delete[around, inside, word] \n"
   let txt .= "\tca[char], ci[char], dw\t-> change[around, inside, word] \n"
+  let txt .= "\tif *, then cw and n or N and .\t-> Podrá modifcar las siguientes coincidencias\n"
   let txt .= "\tm (in nerdtree) \t-> menú de opciones de nerdtree \n"
   let txt .= "\t\n"
   return txt

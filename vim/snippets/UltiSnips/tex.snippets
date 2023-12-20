@@ -57,6 +57,50 @@ snippet img-svg "Insert svg image"
 $0
 endsnippet
 
+# graphics guide: https://linorg.usp.br/CTAN/macros/latex/required/graphics/grfguide.pdf
+snippet img-pdf "Insert pdf image"
+%\usepackage{graphics} %insertar en el preambulo
+% options: width=<width>, height=<height or page=<page number>
+\begin{figure}[H]
+	\center{}
+	\includegraphics[width=${2:15cm}]{${1:img/}}
+	\caption{$3}\label{fig_$4}
+\end{figure}
+$0
+endsnippet
+
+snippet img-multi "Insert multiples images"
+% Inser in preambule
+% \usepackage{subcaption} %% dont use subcaption with subfigure package
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graph1}
+		\caption{$y=x$}
+		\label{fig:y equals x}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graph2}
+		\caption{$y=3\sin x$}
+		\label{fig:three sin x}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graph3}
+		\caption{$y=5/x$}
+		\label{fig:five over x}
+	\end{subfigure}
+		\caption{Three simple graphs}
+		\label{fig:three graphs}
+\end{figure}
+$0
+endsnippet
+
 snippet code-def "Definir propiedades de código"
 % Insert all in preambule
 \usepackage{listings}
@@ -107,6 +151,7 @@ endsnippet
 
 snippet insert-pdf "Insert page pdf"
 % \usepackage{pdfpages} % agregar en el preambulo del tex
+% Para incluir todas las páginas[pages=-]
 \includepdf[pages={${1:1,2,3}}, ${2:angle=0}]{${3:src/file.pdf}}$0
 endsnippet
 
