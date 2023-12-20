@@ -134,18 +134,43 @@ snippet code-def "Definir propiedades de código"
 $0
 endsnippet
 
-snippet code "insertar codigo y modificar listing"
+snippet code "insertar codigo listing"
 % \usepackage{listings}
 \begin{lstlisting}
 $0
 \end{lstlisting}
 endsnippet
 
-snippet code-e "insertar codigo y modificar listing"
+snippet code-e "Insertar codigo y modificar listing"
 % \usepackage{listings}, in beamer? then \begin{frame}[fragile]...
-\begin{lstlisting}[upquote=true, language=${1:Python, C, Lua, Octave, Javascript}, tabsize=${2:2}, caption=${3:}, label=code_${4:}, basicstyle=${5:\small \tiny}, ${6:columns=fullflexible}]
+% In the case Lua, this have dialects 5.1, 5.2, etc.
+\begin{lstlisting}[
+	upquote=true,
+	language=${1:Python, C, {[5.1]Lua}, Octave, Javascript},
+	tabsize=${2:2},
+	caption=${3:},
+	label=code_${4:},
+	basicstyle=${5:\small \tiny},
+	${6:columns=fullflexible}
+]
 $7
 \end{lstlisting}
+$0
+endsnippet
+
+snippet code-file "Insertar codigo desde archivo y modificar listing"
+% \usepackage{listings}, in beamer? then \begin{frame}[fragile]...
+% In the case Lua, this have dialects 5.1, 5.2, etc.
+\lstinputlisting[
+	upquote=true,
+	language=${1:Python, C, {[5.1]Lua}, Octave, Javascript},
+	tabsize=${2:2},
+	caption=${3:},
+	label=code_${4:},
+	basicstyle=${5:\small \tiny},
+	${6:columns=fullflexible}
+]
+{${7:file.ext}}
 $0
 endsnippet
 
