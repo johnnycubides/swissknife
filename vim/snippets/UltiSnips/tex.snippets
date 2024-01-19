@@ -6,6 +6,7 @@
 # bibi bibliography item
 # insert-pdf
 # ref
+# fontsize
 
 snippet tb "bold text"
 \textbf{$1}$0
@@ -206,6 +207,21 @@ endsnippet
 
 snippet ref "Insert reference"
 \ref{$1}$0
+endsnippet
+
+# url: https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
+snippet fontsize "Def font size"
+${1:\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\LARGE
+\huge
+\Huge
+}
 endsnippet
 
 ##########################
