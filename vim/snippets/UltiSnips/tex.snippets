@@ -7,6 +7,8 @@
 # insert-pdf
 # ref
 # fontsize
+# tab-pdf
+# tab-ods
 
 snippet tb "bold text"
 \textbf{$1}$0
@@ -47,6 +49,19 @@ snippet img "Insert image"
 	\caption{$3}
 	\label{fig_$4}
 \end{figure}
+$0
+endsnippet
+
+snippet img-footnote "Insert image with footnote in caption"
+\begin{figure}[H]
+	\center{}
+	\includegraphics[width=${2:9cm}]{${1:img/}}
+	\caption[]{$3\footnotemark}
+	\label{fig_$4}
+\end{figure}
+% Tener presente de la ubicación del footnote, ya que esto
+% es una técnica adapatada.
+\footnotetext{$5}
 $0
 endsnippet
 
@@ -222,6 +237,41 @@ ${1:\tiny
 \huge
 \Huge
 }
+endsnippet
+
+snippet tab-pdf "Insert table from pdf"
+%\usepackage{graphics} %insertar en el preambulo
+% options: width=<width>, height=<height or page=<page number>
+\begin{table}[H]
+	\centering
+	\caption{$3}
+	\label{$2}
+	\includegraphics[width=15cm]{${1:file.pdf}}
+\end{table}
+endsnippet
+
+snippet tab-ods "Inser table from ods"
+% \usepackage[table,xcdraw]{xcolor}
+% Considere configurar el ods desde el root del proyecto, ejemplo:
+% file=material-didactico/development-board-design/tabla-soc.ods,
+% \resizebox{} puede ser quitado si no requiere que la tabla se
+% autodimencione según ancho del documento donde se puede escribir
+\begin{table}[H]
+  \centering
+  \caption{Descripción}
+  \label{tab_}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{${4:lll}}
+      \includespread[
+        file=${1:file.ods},
+        range=${2:a:c},
+        template=booktabs,
+        escape=false,
+        sheet=${3:Sheet1}
+      ]
+    \end{tabular}
+    }
+\end{table}
 endsnippet
 
 ##########################
