@@ -139,6 +139,9 @@ let g:vim_vue_plugin_config = {
       \'debug': 0,
       \}
 " END
+"
+" Configuración plugin chatgpt
+" lua require("chatgpt").setup()
 
 "Activar ayudas de comando usados definidos por usuarios
 source ~/.config/nvim/commandHelp.vim

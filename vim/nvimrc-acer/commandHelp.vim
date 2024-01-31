@@ -15,6 +15,7 @@ function CommandHelp()
   let txt .= "\t[s, ]s \t-> Mostrar opciones de spell\n"
   let txt .= "\tvw, vb, ve \t-> Ir adelante, hacia atrás y al final de una palabra en modo VISUAL\n"
   let txt .= "\tvgc \t\t-> quitar o poner en comentario la línea bajo el cursor\n"
+  let txt .= "\tvgq \t\t-> Ajustar el contenido en diferentes línea\n"
   let txt .= "\tdd, yy, p \t-> Borrar, copiar y pegar línea, ej: 3yy, 3dd, 3p\n"
   let txt .= "\t,b \t\t-> Abrir menu de buffers abiertos\n"
   let txt .= "\t,v, ,h \t-> abrir buffer vertical y horizontal\n"
