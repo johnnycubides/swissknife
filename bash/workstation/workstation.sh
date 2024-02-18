@@ -9,4 +9,5 @@ status=$?
 
 ssh-add ~/.ssh/github_ryzen
 ssh-add ~/.ssh/gitCatalejo
+ssh-add ~/.ssh/codeberg
 cd ~/projects/ && tmux

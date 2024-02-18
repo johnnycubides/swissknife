@@ -78,7 +78,7 @@ endsnippet
 
 # graphics guide: https://linorg.usp.br/CTAN/macros/latex/required/graphics/grfguide.pdf
 snippet img-pdf "Insert pdf image"
-%\usepackage{graphics} %insertar en el preambulo
+%\usepackage{graphicx} %insertar en el preambulo
 % options: width=<width>, height=<height or page=<page number>
 \begin{figure}[H]
 	\center{}
@@ -250,6 +250,8 @@ snippet tab-pdf "Insert table from pdf"
 \end{table}
 endsnippet
 
+# Docuemntación de odsfile:
+# url: https://ctan.math.illinois.edu/macros/luatex/latex/odsfile/odsfile.pdf
 snippet tab-ods "Inser table from ods"
 % \usepackage[table,xcdraw]{xcolor}
 % Considere configurar el ods desde el root del proyecto, ejemplo:
@@ -260,19 +262,33 @@ snippet tab-ods "Inser table from ods"
   \centering
   \caption{Descripción}
   \label{tab_}
-  \resizebox{\textwidth}{!}{%
-    \begin{tabular}{${4:lll}}
-      \includespread[
-        file=${1:file.ods},
-        range=${2:a:c},
-        template=booktabs,
-				coltypes=lrr,
-        escape=false,
-        sheet=${3:Sheet1}
-      ]
-    \end{tabular}
-    }
+  % \resizebox{\textwidth}{!}{%
+	\begin{tabular}{${4:lll}}
+		\includespread[
+			file=${1:file.ods},
+			% Si activa top (para diferencias el top) en range deberá
+			% quitar la columba del top, ejemplo: a2:c6 (sin a1 ni c1)
+			% columns=top,
+			range=${2:a:c},
+			template=booktabs,
+			% Activar si trabaja con columnas de una sola línea
+			coltypes=lrr,
+			% Activar trabaja con parrafos (p) en columnas
+			% coltypes=|p{2cm}|p{2.5cm}|p{3cm}|,
+			% Seleccionar un separador entre: tableline (default), hline, newline
+			% rowseparator=hline,
+			escape=false,
+			sheet=${3:Sheet1}
+		]
+	\end{tabular}
+	% }
 \end{table}
+endsnippet
+
+snippet import "Import tex file"
+% preambulo
+% \usepackage{import}
+\import{${1:directory}}{${2:file.tex}}
 endsnippet
 
 ##########################

@@ -1,0 +1,11 @@
+snippet conda-shell "Activar el entorno para ejecutar desde make"
+.ONESHELL:
+
+SHELL=/bin/bash
+
+# Enviroment conda to activate
+ENV=${1:work}
+CONDA_ACTIVATE = source $$($$CONDA_EXE info --base)/etc/profile.d/conda.sh ; conda activate; conda activate $(ENV)
+
+endsnippet
+	
