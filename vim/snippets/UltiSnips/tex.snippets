@@ -126,6 +126,7 @@ snippet code-def "Definir propiedades de código"
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage{xcolor}
+\usepackage[T1]{fontenc} % Fix double quotes
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -154,6 +155,8 @@ snippet code-def "Definir propiedades de código"
 }
 
 \lstset{style=mystyle}
+% Renombrar los listing
+\renewcommand{\lstlistingname}{Código}
 $0
 endsnippet
 
@@ -179,7 +182,9 @@ snippet code-e "Insertar codigo y modificar listing"
 	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
 	basicstyle=${5:\small \tiny},
 	numberstyle=${6:\small \tiny},
-	${7:columns=fullflexible}
+	% numbers=none,
+	${7:columns=fullflexible},
+	frame=single
 ]
 $7
 \end{lstlisting}
@@ -189,7 +194,7 @@ endsnippet
 snippet code-file "Insertar codigo desde archivo y modificar listing"
 % \usepackage{listings} % paste in preambule
 % \usepackage{listingsutf8} % paste in preambule
-%  in beamer? then \begin{frame}[fragile]...
+%  in beamer? then \begin{frame}[fragile]...\end{frame}
 % In the case Lua, this have dialects 5.1, 5.2, etc.
 \lstinputlisting[
 	upquote=true,
@@ -201,7 +206,9 @@ snippet code-file "Insertar codigo desde archivo y modificar listing"
 	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
 	basicstyle=${5:\small \tiny},
 	numberstyle=${6:\small \tiny},
-	${7:columns=fullflexible}
+	% numbers=none,
+	${7:columns=fullflexible},
+	frame=single
 ]
 {${7:file.ext}}
 $0
@@ -289,6 +296,34 @@ snippet import "Import tex file"
 % preambulo
 % \usepackage{import}
 \import{${1:directory}}{${2:file.tex}}
+endsnippet
+
+snippet tcolorbox-def "Def colorbox"
+\usepackage[listings]{tcolorbox}
+% https://texdoc.org/serve/tcolorbox/0 pagina 21
+% \usepackage{listings} or \tcbuselibrary{listings}
+\NewTotalTCBox{\commandbox}{ s v }
+{verbatim,colupper=black,colback=white!75!white,colframe=black}
+{\IfBooleanT{#1}{\textcolor{red}{\ttfamily\bfseries \$ }}%
+\lstinline[language=bash,keywordstyle=\color{blue!35!white}\bfseries]^#2^}
+$0
+endsnippet
+
+snippet tcolorbox "Insert textbox"
+\begin{tcolorbox}[
+    colbacktitle=${1:red}!50!white,
+    coltitle=black,
+    colback=$1!5!white,
+    colframe=$1!75!black,
+    title=Título
+  ]
+	% \tcblower
+	$0
+\end{tcolorbox}
+endsnippet
+
+snippet commandbox "Insert command in tcolorbox"
+\commandbox*{$0}
 endsnippet
 
 ##########################
