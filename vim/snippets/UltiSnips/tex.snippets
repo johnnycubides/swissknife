@@ -179,11 +179,17 @@ snippet code-e "Insertar codigo y modificar listing"
 	caption=${3:},
 	label=code_${4:},
 	inputencoding=utf8,
-	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
 	basicstyle=${5:\small \tiny},
 	numberstyle=${6:\small \tiny},
 	% numbers=none,
 	${7:columns=fullflexible},
+	% showstringspaces=true,
+	literate=
+		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+		% Puedes añadir más símbolos si es necesario \char<ascci DEC>
+		{\%}{\char37}{1}
+		{-}{\char45}{1}
+		,
 	frame=single
 ]
 $7
@@ -203,11 +209,17 @@ snippet code-file "Insertar codigo desde archivo y modificar listing"
 	caption=${3:},
 	label=code_${4:},
 	inputencoding=utf8,
-	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
 	basicstyle=${5:\small \tiny},
 	numberstyle=${6:\small \tiny},
 	% numbers=none,
 	${7:columns=fullflexible},
+	% showstringspaces=true,
+	literate=
+		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+		% Puedes añadir más símbolos si es necesario \char<ascci DEC>
+		{\%}{\char37}{1}
+		{-}{\char45}{1}
+		,
 	frame=single
 ]
 {${7:file.ext}}
