@@ -14,5 +14,22 @@ install() {
 	sudo rm -rf powerline-shell
 }
 
+config_laptop() {
+	mkdir -p ~/.config/powerline-shell/
+	cp ./config_laptop.json ~/.config/powerline-shell/config.json
+}
+
+config_desktop() {
+	mkdir -p ~/.config/powerline-shell/
+	cp ./config_desktop.json ~/.config/powerline-shell/config.json
+}
+
+bash_config() {
+	cat ./bashrc_powerline_shell.bash >>~/.bashrc
+}
+
 # dependencies
-install
+# install
+# config_laptop
+config_desktop
+# bash_config # Esta configuracion se debe realizar una unica vez
