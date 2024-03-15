@@ -8,12 +8,18 @@
     "jobs",
     "set_term_title",
     "svn",
-    "newline",
     "root"
   ],
-  "mode": "flat",
-  "cwd": {
-    "mode": "plain"
+  "time":{
+    "fotmat":"%H:%M"
   },
-  "theme": "gruvbox"
+  "vcs":{
+    "show_symbol": true
+  },
+  "cwd": {
+    "mode": "plain",
+    "max_depth":3
+  },
+  "mode": "patched",
+  "theme": "default"
 }
