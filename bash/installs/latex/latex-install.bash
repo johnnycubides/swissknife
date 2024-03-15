@@ -12,4 +12,4 @@ install() {
 		-y
 }
 
-install
+# install
