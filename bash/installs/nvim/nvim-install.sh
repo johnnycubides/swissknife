@@ -5,7 +5,12 @@ APP=$PD/nvim
 
 dependencies() {
 	sudo apt update
-	sudo apt install make cmake gettext
+	sudo apt install \
+		make \
+		cmake \
+		gettext \
+		python3-pynvim \
+		-y
 	sudo apt autoremove
 }
 
@@ -26,7 +31,7 @@ autoremove() {
 	rm -rf $APP
 }
 
-# dependencies
-# download
-# build
+dependencies
+download
+build
 autoremove
