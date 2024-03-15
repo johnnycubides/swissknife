@@ -12,6 +12,7 @@ dependencies() {
 		python3-pynvim \
 		-y
 	sudo apt autoremove
+	npm install -g neovim
 }
 
 download() {
