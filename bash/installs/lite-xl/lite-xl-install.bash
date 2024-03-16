@@ -4,7 +4,7 @@ VERSION=v2.1.3
 
 DOWNLOAD=https://github.com/lite-xl/lite-xl/releases/download/$VERSION/lite-xl-$VERSION-addons-linux-x86_64-portable.tar.gz
 
-DP=~/gitPackages/
+DP=~/gitPackages
 APP=$DP/lite-xl
 LOCAL_BIN=/usr/local/bin/
 SCRIPT_PATH=$(pwd)
@@ -17,6 +17,13 @@ remove() {
 	rm -rf $APP
 	rm -rf ~/.config/lite-xl
 	removelocalbin
+}
+
+dependencies() {
+	sudo apt update
+	sudo apt install \
+		gcc \
+		-y
 }
 
 install() {
@@ -33,7 +40,6 @@ install() {
 
 lsp-install() {
 	# https://github.com/lite-xl/lite-xl-lsp
-	cd $APP
 	cd ~/.config/lite-xl/
 	git clone https://github.com/lite-xl/lite-xl-lsp plugins/lsp
 	git clone https://github.com/lite-xl/lite-xl-widgets libraries/widget
@@ -44,6 +50,13 @@ lsp-install() {
 		-O plugins/lsp_snippets.lua
 }
 
+build-install() {
+	cd $DP
+	git clone https://github.com/adamharrison/lite-xl-ide.git
+	cp -R lite-xl-ide/plugins ~/.config/lite-xl/
+	rm -rf lite-xl-ide
+}
+
 CONFIG_LITE_XL=~/.config/lite-xl
 PLUG_LITE_XL=$CONFIG_LITE_XL/plugins
 
@@ -51,11 +64,32 @@ config() {
 	cd $SCRIPT_PATH
 	cp ./myconfig.lua $CONFIG_LITE_XL/myconfig.lua
 	cp ./plugins/language_v.lua $PLUG_LITE_XL/
+}
+
+myconfig() {
+	# Ejecutar el siguiente comando una única vez.
 	echo 'local myconfig = require("myconfig")' >>$CONFIG_LITE_XL/init.lua
 }
 
-# Paso 1 remove e install
+DP=~/gitPackages
+DTERMINAL=$DP/lite-lx-terminal
+
+build_terminal() {
+	# https://github.com/adamharrison/lite-xl-terminal
+	rm -rf $DTERMINAL
+	mkdir -p $DTERMINAL
+	cd $DTERMINAL
+	git clone --depth=1 https://github.com/adamharrison/lite-xl-terminal.git \
+		--recurse-submodules --shallow-submodules && cd lite-xl-terminal &&
+		./build.sh && cp -R plugins/terminal ~/.config/lite-xl/plugins &&
+		cp libterminal.so ~/.config/lite-xl/plugins/terminal
+}
+
+dependencies
 remove
 install
 lsp-install
+# build-install # no funciona correctamente para make
 config
+myconfig # se lanza una única vez este comando
+build_terminal

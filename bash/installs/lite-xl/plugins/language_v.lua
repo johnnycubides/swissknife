@@ -36,6 +36,7 @@ syntax.add({
 		["output"] = "keyword2",
 		["wire"] = "keyword2",
 		["reg"] = "keyword2",
+		["always"] = "keyword",
 		["async"] = "keyword",
 		["await"] = "keyword",
 		["break"] = "keyword",
