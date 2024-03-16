@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Lite XL Editor
+Comment=Text editor 
+Exec=<EXEC_LOCATION>
+Icon=<ICON_LOCATION>
+Categories=Education;Electronics;
+MimeType=text/x-lite-xl;
+Terminal=false
+Keywords=edito;simulator;digital;circuits;
+

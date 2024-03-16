@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="text/x-lite-xl">
+      <comment>Editor Lite XL file</comment>
+	    <comment xml:lang="en">Lite XL Editor</comment>
+	    <comment xml:lang="es">Editor Lite XL</comment>
+      <glob pattern="*.v"/>
+    </mime-type>
+</mime-info>

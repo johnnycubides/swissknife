@@ -5,7 +5,7 @@ VERSION=v2.1.3
 DOWNLOAD=https://github.com/lite-xl/lite-xl/releases/download/$VERSION/lite-xl-$VERSION-addons-linux-x86_64-portable.tar.gz
 
 DP=~/gitPackages
-APP=$DP/lite-xl
+DAPP=$DP/lite-xl
 LOCAL_BIN=/usr/local/bin/
 SCRIPT_PATH=$(pwd)
 
@@ -14,7 +14,7 @@ removelocalbin() {
 }
 
 remove() {
-	rm -rf $APP
+	rm -rf $DAPP
 	rm -rf ~/.config/lite-xl
 	removelocalbin
 }
@@ -27,9 +27,9 @@ dependencies() {
 }
 
 install() {
-	rm -rf $APP
-	mkdir -p $APP
-	cd $APP
+	rm -rf $DAPP
+	mkdir -p $DAPP
+	cd $DAPP
 	wget -O lite-xl.tar.gz $DOWNLOAD
 	tar xvf lite-xl.tar.gz
 	rm lite-xl.tar.gz
@@ -85,6 +85,14 @@ build_terminal() {
 		cp libterminal.so ~/.config/lite-xl/plugins/terminal
 }
 
+mkdesktop() {
+	cd $SCRIPT_PATH
+	cp ./logo.svg ./install-desktop.sh $DAPP/lite-xl
+	cp -r linux $DAPP/lite-xl
+	cd $DAPP/lite-xl
+	sh install-desktop.sh
+}
+
 dependencies
 remove
 install
@@ -93,3 +101,4 @@ lsp-install
 config
 myconfig # se lanza una única vez este comando
 build_terminal
+mkdesktop
