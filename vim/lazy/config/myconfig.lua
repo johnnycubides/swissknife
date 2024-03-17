@@ -15,3 +15,6 @@ elseif file_exists("./.pro.vim") then
 	print("existe ./.pro.vim")
 	vim.cmd("source ./.pro.vim")
 end
+
+-- Configuración para el plugin de verible
+require("config.verible_lsp_config")
