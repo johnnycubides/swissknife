@@ -93,12 +93,12 @@ mkdesktop() {
 	sh install-desktop.sh
 }
 
-dependencies
-remove
-install
-lsp-install
-# build-install # no funciona correctamente para make
+# dependencies
+# remove
+# install
+# lsp-install
+# # build-install # no funciona correctamente para make
 config
-myconfig # se lanza una única vez este comando
-build_terminal
-mkdesktop
+# myconfig # se lanza una única vez este comando
+# build_terminal
+# mkdesktop
