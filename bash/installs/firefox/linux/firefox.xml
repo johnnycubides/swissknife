@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="text/x-firefox">
+      <comment>Editor Lite XL file</comment>
+	    <comment xml:lang="en">Web Brower</comment>
+	    <comment xml:lang="es">Navegador Web</comment>
+      <glob pattern="*.hml"/>
+    </mime-type>
+</mime-info>
