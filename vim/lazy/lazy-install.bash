@@ -30,13 +30,15 @@ config() {
 	cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
 	rm $PLUG_LUA/coc.lua
-	rm $PLUG_LUA/ultisnips.lua
 	rm $PLUG_LUA/verible.lua
+	rm $PLUG_LUA/snippet-converter.lua
+	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
 	cp ./plugins/coc.lua $PLUG_LUA/
-	cp ./plugins/ultisnips.lua $PLUG_LUA/
 	cp ./plugins/verible.lua $PLUG_LUA/
+	cp ./plugins/snippet-converter.lua $PLUG_LUA/
+	# cp ./plugins/ultisnips.lua $PLUG_LUA/
 	# cp ./plugins/verilog_systemverilog.lua $PLUG_LUA/
 }
 

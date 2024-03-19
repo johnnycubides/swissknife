@@ -1,0 +1,22 @@
+{
+  "dfun": {
+    "prefix": "dfun",
+    "description": "Función",
+    "body": [
+      "function ${1:var_return} = ${2:id_function}(${3:arguments})",
+      "\t$1 ${4: = }",
+      "endfunction",
+      "$0"
+    ]
+  },
+  "init": {
+    "prefix": "init",
+    "description": "Init file",
+    "body": [
+      "# FileName",
+      "# source filename.m",
+      "1;",
+      "$0"
+    ]
+  }
+}

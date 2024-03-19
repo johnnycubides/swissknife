@@ -1,0 +1,228 @@
+{
+  "begin": {
+    "prefix": "begin",
+    "description": "Inicio de simulacion",
+    "body": [
+      ".control",
+      "\t$1",
+      ".endc"
+    ]
+  },
+  "option": {
+    "prefix": "option",
+    "description": "Opciones de simulacion",
+    "body": [
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\tset color0 = rgb:0/0/0",
+      "\tset color1 = rgb:f/f/f",
+      "\tset color2 = rgb:f/0/0",
+      "\tset color3 = rgb:0/0/f",
+      "\tset color4 = rgb:0/f/0",
+      "\top",
+      "\tdisplay"
+    ]
+  },
+  "tran": {
+    "prefix": "tran",
+    "description": "Simulación transitoria",
+    "body": "tran ${1:step} ${2:stop} ${3:start}$0"
+  },
+  "dc": {
+    "prefix": "dc",
+    "description": "Simulación DC",
+    "body": "dc ${1:srcname} ${2:vstart} ${3:vstop} ${4:vincr}$0"
+  },
+  "let": {
+    "prefix": "let",
+    "description": "nueva variable",
+    "body": "let ${1:name} = ${2:value}$0"
+  },
+  "alter": {
+    "prefix": "alter",
+    "description": "Asignar el valor de una variable a un componente del circuito",
+    "body": [
+      "alter ${1:component} ${2:var}",
+      "$0"
+    ]
+  },
+  "ana_ac": {
+    "prefix": "ana_ac",
+    "description": "Análisis AC",
+    "body": [
+      "ac dec ${1:Cantidad de puntos por deca} ${2:fstart} ${3:fstop}",
+      "$0"
+    ]
+  },
+  "plot-bode": {
+    "prefix": "plot-bode",
+    "description": "Diagrama de bode",
+    "body": [
+      "plot db(${1:node}) ph(${2:node})",
+      "$0"
+    ]
+  },
+  "plotv1": {
+    "prefix": "plotv1",
+    "description": "plot de una variable en voltaje",
+    "body": [
+      "plot v(${1:n1})",
+      "hardcopy voltage.ps v($1)"
+    ]
+  },
+  "plotv2": {
+    "prefix": "plotv2",
+    "description": "Plot de 2 v(nodes)",
+    "body": [
+      "\tplot v(${1:n1}) v(${2:n2})",
+      "\thardcopy voltage.ps v($1) v($2)"
+    ]
+  },
+  "plotv": {
+    "prefix": "plotv",
+    "description": "Plot de 3 v(nodes)",
+    "body": [
+      "\tplot v(${1:n1}) v(${2:n2}) v(${3:n3})",
+      "\thardcopy voltage.ps v($1) v($2) v($3)"
+    ]
+  },
+  "plotv4": {
+    "prefix": "plotv4",
+    "description": "Plot de 4v(nodes)",
+    "body": [
+      "\tplot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4})",
+      "\thardcopy voltage.ps v($1) v($2) v($3) v($4)"
+    ]
+  },
+  "plotv5": {
+    "prefix": "plotv5",
+    "description": "Plot de 5 v(nodes)",
+    "body": [
+      "\tplot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4}) v(${5:n5})",
+      "\thardcopy voltage.ps v($1) v($2) v($3) v($4) v($5)"
+    ]
+  },
+  "plotv6": {
+    "prefix": "plotv6",
+    "description": "Plot de 6 v(nodes)",
+    "body": [
+      "\tplot v(${1:n1}) v(${2:n2}) v(${3:n3}) v(${4:n4}) v(${5:n5}) v(${6:n6})",
+      "\thardcopy voltage.ps v($1) v($2) v($3) v($4) v($5) v($6)"
+    ]
+  },
+  "sweeprv2": {
+    "prefix": "sweeprv2",
+    "description": "Varrido con un parámetro v2",
+    "body": [
+      "\tlet resistencia = ${1:Inicial del barrido}",
+      "\tlet condicion = ${2:Stop del barrido}",
+      "\tlet stepSweep = ${3:pasos Barrido}",
+      "\twhile resistencia le condicion",
+      "\t\talter r${4:resistencia a alterar} resistencia",
+      "\t\trun",
+      "\t\ttran ${5:step} ${6:stop} ${7:start}",
+      "\t\twrite simulacion.out v(${8:nodoOut})",
+      "\t\tset appendwrite",
+      "\t\tlet resistencia = resistencia + stepSweep",
+      "\tend",
+      "\tplot v(${9:nodoIn}) tran1.v($8) tran2.v($8)",
+      "\thardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8)",
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\thardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8)"
+    ]
+  },
+  "sweeprv3": {
+    "prefix": "sweeprv3",
+    "description": "barrido con 3 v(nodes)",
+    "body": [
+      "\tlet resistencia = ${1:Inicial del barrido}",
+      "\tlet condicion = ${2:Stop del barrido}",
+      "\tlet stepSweep = ${3:pasos Barrido}",
+      "\twhile resistencia le condicion",
+      "\t\talter r${4:resistencia a alterar} resistencia",
+      "\t\trun",
+      "\t\ttran ${5:step} ${6:stop} ${7:start}",
+      "\t\twrite simulacion.out v(${8:nodoOut})",
+      "\t\tset appendwrite",
+      "\t\tlet resistencia = resistencia + stepSweep",
+      "\tend",
+      "\tplot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8)",
+      "\thardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8)",
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\thardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8)"
+    ]
+  },
+  "sweeprv4": {
+    "prefix": "sweeprv4",
+    "description": "Barrido con 4 V(nodes)",
+    "body": [
+      "\tlet resistencia = ${1:Inicial del barrido}",
+      "\tlet condicion = ${2:Stop del barrido}",
+      "\tlet stepSweep = ${3:pasos Barrido}",
+      "\twhile resistencia le condicion",
+      "\t\talter r${4:resistencia a alterar} resistencia",
+      "\t\trun",
+      "\t\ttran ${5:step} ${6:stop} ${7:start}",
+      "\t\twrite simulacion.out v(${8:nodoOut})",
+      "\t\tset appendwrite",
+      "\t\tlet resistencia = resistencia + stepSweep",
+      "\tend",
+      "\tplot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)",
+      "\thardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)",
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\thardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8)"
+    ]
+  },
+  "sweeprv5": {
+    "prefix": "sweeprv5",
+    "description": "Barrido con 5 v(nodes)",
+    "body": [
+      "\tlet resistencia = ${1:Inicial del barrido}",
+      "\tlet condicion = ${2:Stop del barrido}",
+      "\tlet stepSweep = ${3:pasos Barrido}",
+      "\twhile resistencia le condicion",
+      "\t\talter r${4:resistencia a alterar} resistencia",
+      "\t\trun",
+      "\t\ttran ${5:step} ${6:stop} ${7:start}",
+      "\t\twrite simulacion.out v(${8:nodoOut})",
+      "\t\tset appendwrite",
+      "\t\tlet resistencia = resistencia + stepSweep",
+      "\tend",
+      "\tplot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8)",
+      "\thardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) trata5.v($8)",
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\thardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) trata5.v($8)"
+    ]
+  },
+  "sweeprv6": {
+    "prefix": "sweeprv6",
+    "description": "Barrido con 6 v(nodes)",
+    "body": [
+      "\tlet resistencia = ${1:Inicial del barrido}",
+      "\tlet condicion = ${2:Stop del barrido}",
+      "\tlet stepSweep = ${3:pasos Barrido}",
+      "\twhile resistencia le condicion",
+      "\t\talter r${4:resistencia a alterar} resistencia",
+      "\t\trun",
+      "\t\ttran ${5:step} ${6:stop} ${7:start}",
+      "\t\twrite simulacion.out v(${8:nodoOut})",
+      "\t\tset appendwrite",
+      "\t\tlet resistencia = resistencia + stepSweep",
+      "\tend",
+      "\tplot v(${9:nodoIn}) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8) tran6.v($8)",
+      "\thardcopy ${10:nameSim}.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v($8) tran6.v($8)",
+      "\tset hcopydevtype=postscript",
+      "\tset hcopypscolor=1",
+      "\thardcopy $10Color.ps v($9) tran1.v($8) tran2.v($8) tran3.v($8) tran4.v($8) tran5.v(\\$) tran6.v($8)"
+    ]
+  },
+  "printi": {
+    "prefix": "printi",
+    "description": "Imprimir voltaje",
+    "body": "\tprint v(${1:Obj, Fuente})"
+  }
+}

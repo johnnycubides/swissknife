@@ -1,0 +1,39 @@
+{
+  "element": {
+    "prefix": "element",
+    "description": "html element",
+    "body": [
+      "<$1>",
+      "\t$2",
+      "</$1>$0"
+    ]
+  },
+  "template_js": {
+    "prefix": "template_js",
+    "description": "Init template js",
+    "body": [
+      "<template>",
+      "  ${1:<div>",
+      "  </div>}",
+      "</template>",
+      "",
+      "<script lang='ts'>",
+      "import { Component, Prop, Vue \\} from 'vue-property-decorator'",
+      "",
+      "@Component",
+      "export default class Menu extends Vue {",
+      "  @Prop() private msg!: string;",
+      "\\}",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ]
+  },
+  "comm_css_inline": {
+    "prefix": "comm_css_inline",
+    "description": "Comentario en línea para css",
+    "body": "/* $1 */"
+  }
+}

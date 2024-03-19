@@ -1,0 +1,431 @@
+{
+  "tb": {
+    "prefix": "tb",
+    "description": "bold text",
+    "body": "\\textbf{$1\\}$0"
+  },
+  "ti": {
+    "prefix": "ti",
+    "description": "italic text",
+    "body": "\\textit{$1\\}$0"
+  },
+  "link": {
+    "prefix": "link",
+    "description": "href",
+    "body": "~\\href{${1:enlace}\\}{${2:titulo}\\} $0"
+  },
+  "bib-i": {
+    "prefix": "bib-i",
+    "description": "Init bibliography",
+    "body": [
+      "\\begin{thebibliography\\}{${1:numero de entradas}\\}",
+      "$0",
+      "\\end{thebibliography\\}"
+    ]
+  },
+  "bibi": {
+    "prefix": "bibi",
+    "description": "bibliography item",
+    "body": "\\bibitem{${1:id}\\} $0"
+  },
+  "begin": {
+    "prefix": "begin",
+    "description": "iniciar un entorno",
+    "body": [
+      "\\begin{${1:enviroment}\\}",
+      "$0",
+      "\\end{$1\\}"
+    ]
+  },
+  "t-c": {
+    "prefix": "t-c",
+    "description": "Aplica color al texto",
+    "body": "\\textcolor{${1:red,blue,yellow,cyan,green,orange,violet,purple}\\}{$2\\}$0"
+  },
+  "img": {
+    "prefix": "img",
+    "description": "Insert image",
+    "body": [
+      "\\begin{figure\\}[H]",
+      "\t\\center{\\}",
+      "\t\\includegraphics[width=${2:9cm}]{${1:img/}\\}",
+      "\t\\caption{$3\\}",
+      "\t\\label{fig_$4\\}",
+      "\\end{figure\\}",
+      "$0"
+    ]
+  },
+  "img-footnote": {
+    "prefix": "img-footnote",
+    "description": "Insert image with footnote in caption",
+    "body": [
+      "\\begin{figure\\}[H]",
+      "\t\\center{\\}",
+      "\t\\includegraphics[width=${2:9cm}]{${1:img/}\\}",
+      "\t\\caption[]{$3\\footnotemark\\}",
+      "\t\\label{fig_$4\\}",
+      "\\end{figure\\}",
+      "% Tener presente de la ubicación del footnote, ya que esto",
+      "% es una técnica adapatada.",
+      "\\footnotetext{$5\\}",
+      "$0"
+    ]
+  },
+  "img-svg": {
+    "prefix": "img-svg",
+    "description": "Insert svg image",
+    "body": [
+      "%\\usepackage{svg\\} %insertar en el preambulo",
+      "\\begin{figure\\}",
+      "\t\\center{\\}",
+      "\t\\includesvg[width=${2:9cm}]{${1:img/}\\}",
+      "\t\\caption{$3\\}",
+      "\t\\label{fig_$4\\}",
+      "\\end{figure\\}",
+      "$0"
+    ]
+  },
+  "img-pdf": {
+    "prefix": "img-pdf",
+    "description": "Insert pdf image",
+    "body": [
+      "%\\usepackage{graphicx\\} %insertar en el preambulo",
+      "% options: width=<width>, height=<height or page=<page number>",
+      "\\begin{figure\\}[H]",
+      "\t\\center{\\}",
+      "\t\\includegraphics[width=${2:15cm}]{${1:img/}\\}",
+      "\t\\caption{$3\\}",
+      "\t\\label{fig_$4\\}",
+      "\\end{figure\\}",
+      "$0"
+    ]
+  },
+  "img-multi": {
+    "prefix": "img-multi",
+    "description": "Insert multiples images",
+    "body": [
+      "% Inser in preambule",
+      "% \\usepackage{subcaption\\} %% dont use subcaption with subfigure package",
+      "",
+      "\\begin{figure\\}",
+      "\t\\centering",
+      "\t\\begin{subfigure\\}[b]{0.3\\textwidth\\}",
+      "\t\t\\centering",
+      "\t\t\\includegraphics[width=\\textwidth]{graph1\\}",
+      "\t\t\\caption{\\$y=x\\$\\}",
+      "\t\t\\label{fig:y equals x\\}",
+      "\t\\end{subfigure\\}",
+      "\t\\hfill",
+      "\t\\begin{subfigure\\}[b]{0.3\\textwidth\\}",
+      "\t\t\\centering",
+      "\t\t\\includegraphics[width=\\textwidth]{graph2\\}",
+      "\t\t\\caption{\\$y=3\\sin x\\$\\}",
+      "\t\t\\label{fig:three sin x\\}",
+      "\t\\end{subfigure\\}",
+      "\t\\hfill",
+      "\t\\begin{subfigure\\}[b]{0.3\\textwidth\\}",
+      "\t\t\\centering",
+      "\t\t\\includegraphics[width=\\textwidth]{graph3\\}",
+      "\t\t\\caption{\\$y=5/x\\$\\}",
+      "\t\t\\label{fig:five over x\\}",
+      "\t\\end{subfigure\\}",
+      "\t\t\\caption{Three simple graphs\\}",
+      "\t\t\\label{fig:three graphs\\}",
+      "\\end{figure\\}",
+      "$0"
+    ]
+  },
+  "code-def": {
+    "prefix": "code-def",
+    "description": "Definir propiedades de código",
+    "body": [
+      "% Insert all in preambule",
+      "\\usepackage{listings\\}",
+      "\\usepackage{listingsutf8\\}",
+      "\\usepackage{xcolor\\}",
+      "\\usepackage[T1]{fontenc\\} % Fix double quotes",
+      "",
+      "\\definecolor{codegreen\\}{rgb\\}{0,0.6,0\\}",
+      "\\definecolor{codegray\\}{rgb\\}{0.5,0.5,0.5\\}",
+      "\\definecolor{codepurple\\}{rgb\\}{0.58,0,0.82\\}",
+      "\\definecolor{backcolour\\}{rgb\\}{0.95,0.95,0.92\\}",
+      "",
+      "\\lstdefinestyle{mystyle\\}{",
+      "\tbackgroundcolor=\\color{backcolour\\},",
+      "\tcommentstyle=\\color{codegreen\\},",
+      "\tkeywordstyle=\\color{magenta\\},",
+      "\tnumberstyle=\\tiny\\color{codegray\\},",
+      "\tstringstyle=\\color{codepurple\\},",
+      "\tbasicstyle=\\ttfamily\\footnotesize,",
+      "\tbreakatwhitespace=false,",
+      "\tbreaklines=true,",
+      "\tcaptionpos=b,",
+      "\tkeepspaces=true,",
+      "\tnumbers=left,",
+      "\tnumbersep=5pt,",
+      "\tshowspaces=false,",
+      "\tshowstringspaces=false,",
+      "\tshowtabs=false,",
+      "\tinputencoding=utf8,",
+      "\tliterate={á\\}{{\\'a\\}\\}1 {é\\}{{\\'e\\}\\}1 {í\\}{{\\'i\\}\\}1 {ó\\}{{\\'o\\}\\}1 {ú\\}{{\\'u\\}\\}1,",
+      "\ttabsize=2",
+      "\\}",
+      "",
+      "\\lstset{style=mystyle\\}",
+      "% Renombrar los listing",
+      "\\renewcommand{\\lstlistingname\\}{Código\\}",
+      "$0"
+    ]
+  },
+  "code": {
+    "prefix": "code",
+    "description": "insertar codigo listing",
+    "body": [
+      "% \\usepackage{listings\\}",
+      "\\begin{lstlisting\\}",
+      "$0",
+      "\\end{lstlisting\\}"
+    ]
+  },
+  "code-e": {
+    "prefix": "code-e",
+    "description": "Insertar codigo y modificar listing",
+    "body": [
+      "% \\usepackage{listings\\} % paste in preambule",
+      "% \\usepackage{listingsutf8\\} % paste in preambule",
+      "%  in beamer? then \\begin{frame\\}[fragile]...",
+      "% In the case Lua, this have dialects 5.1, 5.2, etc.",
+      "\\begin{lstlisting\\}[",
+      "\tupquote=true,",
+      "\tlanguage=${1:Python, C, {[5.1]Lua\\}, Octave, Javascript},",
+      "\ttabsize=${2:2},",
+      "\tcaption=${3:},",
+      "\tlabel=code_${4:},",
+      "\tinputencoding=utf8,",
+      "\tbasicstyle=${5:\\small \\tiny},",
+      "\tnumberstyle=${6:\\small \\tiny},",
+      "\t% numbers=none,",
+      "\t${7:columns=fullflexible},",
+      "\t% showstringspaces=true,",
+      "\tliterate=",
+      "\t\t{á\\}{{\\'a\\}\\}1 {é\\}{{\\'e\\}\\}1 {í\\}{{\\'i\\}\\}1 {ó\\}{{\\'o\\}\\}1 {ú\\}{{\\'u\\}\\}1",
+      "\t\t% Puedes añadir más símbolos si es necesario \\char<ascci DEC>",
+      "\t\t{\\%\\}{\\char37\\}{1\\}",
+      "\t\t{-\\}{\\char45\\}{1\\}",
+      "\t\t,",
+      "\tframe=single",
+      "]",
+      "$7",
+      "\\end{lstlisting\\}",
+      "$0"
+    ]
+  },
+  "code-file": {
+    "prefix": "code-file",
+    "description": "Insertar codigo desde archivo y modificar listing",
+    "body": [
+      "% \\usepackage{listings\\} % paste in preambule",
+      "% \\usepackage{listingsutf8\\} % paste in preambule",
+      "%  in beamer? then \\begin{frame\\}[fragile]...\\end{frame\\}",
+      "% In the case Lua, this have dialects 5.1, 5.2, etc.",
+      "\\lstinputlisting[",
+      "\tupquote=true,",
+      "\tlanguage=${1:Python, C, {[5.1]Lua\\}, Octave, Javascript},",
+      "\ttabsize=${2:2},",
+      "\tcaption=${3:},",
+      "\tlabel=code_${4:},",
+      "\tinputencoding=utf8,",
+      "\tbasicstyle=${5:\\small \\tiny},",
+      "\tnumberstyle=${6:\\small \\tiny},",
+      "\t% numbers=none,",
+      "\t${7:columns=fullflexible},",
+      "\t% showstringspaces=true,",
+      "\tliterate=",
+      "\t\t{á\\}{{\\'a\\}\\}1 {é\\}{{\\'e\\}\\}1 {í\\}{{\\'i\\}\\}1 {ó\\}{{\\'o\\}\\}1 {ú\\}{{\\'u\\}\\}1",
+      "\t\t% Puedes añadir más símbolos si es necesario \\char<ascci DEC>",
+      "\t\t{\\%\\}{\\char37\\}{1\\}",
+      "\t\t{-\\}{\\char45\\}{1\\}",
+      "\t\t,",
+      "\tframe=single",
+      "]",
+      "{${7:file.ext}\\}",
+      "$0"
+    ]
+  },
+  "insert-pdf": {
+    "prefix": "insert-pdf",
+    "description": "Insert page pdf",
+    "body": [
+      "% \\usepackage{pdfpages\\} % agregar en el preambulo del tex",
+      "% Para incluir todas las páginas[pages=-]",
+      "\\includepdf[pages={${1:1,2,3}\\}, ${2:angle=0}]{${3:src/file.pdf}\\}$0"
+    ]
+  },
+  "align": {
+    "prefix": "align",
+    "description": "Alinear texto",
+    "body": [
+      "\\begin{${1:flushright flushleft center}\\}",
+      "$0",
+      "\\end{$1\\}"
+    ]
+  },
+  "ref": {
+    "prefix": "ref",
+    "description": "Insert reference",
+    "body": "\\ref{$1\\}$0"
+  },
+  "fontsize": {
+    "prefix": "fontsize",
+    "description": "Def font size",
+    "body": [
+      "${1:\\tiny",
+      "\\scriptsize",
+      "\\footnotesize",
+      "\\small",
+      "\\normalsize",
+      "\\large",
+      "\\Large",
+      "\\LARGE",
+      "\\huge",
+      "\\Huge",
+      "}"
+    ]
+  },
+  "tab-pdf": {
+    "prefix": "tab-pdf",
+    "description": "Insert table from pdf",
+    "body": [
+      "%\\usepackage{graphics\\} %insertar en el preambulo",
+      "% options: width=<width>, height=<height or page=<page number>",
+      "\\begin{table\\}[H]",
+      "\t\\centering",
+      "\t\\caption{$3\\}",
+      "\t\\label{$2\\}",
+      "\t\\includegraphics[width=15cm]{${1:file.pdf}\\}",
+      "\\end{table\\}"
+    ]
+  },
+  "tab-ods": {
+    "prefix": "tab-ods",
+    "description": "Inser table from ods",
+    "body": [
+      "% \\usepackage[table,xcdraw]{xcolor\\}",
+      "% Considere configurar el ods desde el root del proyecto, ejemplo:",
+      "% file=material-didactico/development-board-design/tabla-soc.ods,",
+      "% \\resizebox{\\} puede ser quitado si no requiere que la tabla se",
+      "% autodimencione según ancho del documento donde se puede escribir",
+      "\\begin{table\\}[H]",
+      "  \\centering",
+      "  \\caption{Descripción\\}",
+      "  \\label{tab_\\}",
+      "  % \\resizebox{\\textwidth\\}{!\\}{%",
+      "\t\\begin{tabular\\}{${4:lll}\\}",
+      "\t\t\\includespread[",
+      "\t\t\tfile=${1:file.ods},",
+      "\t\t\t% Si activa top (para diferencias el top) en range deberá",
+      "\t\t\t% quitar la columba del top, ejemplo: a2:c6 (sin a1 ni c1)",
+      "\t\t\t% columns=top,",
+      "\t\t\trange=${2:a:c},",
+      "\t\t\ttemplate=booktabs,",
+      "\t\t\t% Activar si trabaja con columnas de una sola línea",
+      "\t\t\tcoltypes=lrr,",
+      "\t\t\t% Activar trabaja con parrafos (p) en columnas",
+      "\t\t\t% coltypes=|p{2cm\\}|p{2.5cm\\}|p{3cm\\}|,",
+      "\t\t\t% Seleccionar un separador entre: tableline (default), hline, newline",
+      "\t\t\t% rowseparator=hline,",
+      "\t\t\tescape=false,",
+      "\t\t\tsheet=${3:Sheet1}",
+      "\t\t]",
+      "\t\\end{tabular\\}",
+      "\t% \\}",
+      "\\end{table\\}"
+    ]
+  },
+  "import": {
+    "prefix": "import",
+    "description": "Import tex file",
+    "body": [
+      "% preambulo",
+      "% \\usepackage{import\\}",
+      "\\import{${1:directory}\\}{${2:file.tex}\\}"
+    ]
+  },
+  "tcolorbox-def": {
+    "prefix": "tcolorbox-def",
+    "description": "Def colorbox",
+    "body": [
+      "\\usepackage[listings]{tcolorbox\\}",
+      "% https://texdoc.org/serve/tcolorbox/0 pagina 21",
+      "% \\usepackage{listings\\} or \\tcbuselibrary{listings\\}",
+      "\\NewTotalTCBox{\\commandbox\\}{ s v \\}",
+      "{verbatim,colupper=black,colback=white!75!white,colframe=black\\}",
+      "{\\IfBooleanT{#1\\}{\\textcolor{red\\}{\\ttfamily\\bfseries \\$ \\}\\}%",
+      "\\lstinline[language=bash,keywordstyle=\\color{blue!35!white\\}\\bfseries]^#2^\\}",
+      "$0"
+    ]
+  },
+  "tcolorbox": {
+    "prefix": "tcolorbox",
+    "description": "Insert textbox",
+    "body": [
+      "\\begin{tcolorbox\\}[",
+      "    colbacktitle=${1:red}!50!white,",
+      "    coltitle=black,",
+      "    colback=$1!5!white,",
+      "    colframe=$1!75!black,",
+      "    title=Título",
+      "  ]",
+      "\t% \\tcblower",
+      "\t$0",
+      "\\end{tcolorbox\\}"
+    ]
+  },
+  "commandbox": {
+    "prefix": "commandbox",
+    "description": "Insert command in tcolorbox",
+    "body": "\\commandbox*{$0\\}"
+  },
+  "b-frame": {
+    "prefix": "b-frame",
+    "description": "Iniciar un frame",
+    "body": [
+      "\\begin{frame\\}{${1:Título}\\}",
+      "$0",
+      "\\end{frame\\}"
+    ]
+  },
+  "b-col-2": {
+    "prefix": "b-col-2",
+    "description": "Iniciar dos columnas en beamer",
+    "body": [
+      "\\begin{columns\\}",
+      "\\begin{column\\}{0.5\\textwidth\\}",
+      "\t$0",
+      "\\end{column\\}",
+      "\\begin{column\\}{0.5\\textwidth\\}",
+      "\t",
+      "\\end{column\\}",
+      "\\end{columns\\}"
+    ]
+  },
+  "b-image": {
+    "prefix": "b-image",
+    "description": "Imagene en beamer",
+    "body": [
+      "\\begin{figure\\}",
+      "\t\\center{\\}",
+      "\t\\includegraphics[scale=${2:0.2}]{${1:img/}\\}",
+      "\t\\caption{\\}\\label{fig_\\}",
+      "\\end{figure\\}"
+    ]
+  },
+  "b-href": {
+    "prefix": "b-href",
+    "description": "Palabra con link de referencia",
+    "body": [
+      "\\fbox{\\textcolor{${3:blue}\\}{\\href{${2:url}\\}{${1:text}\\}\\}\\}",
+      "$0"
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "img": {
+    "prefix": "img",
+    "description": "Uso de imagenes",
+    "body": [
+      "![${1:Texto Alternativo}](img/${2:image.png})",
+      "$0"
+    ]
+  },
+  "img-html": {
+    "prefix": "img-html",
+    "description": "uso de imagenes html",
+    "body": "<img src=\"${1:image.png}\" alt=\"$1\" style=\"width:100%;\">"
+  },
+  "img-grav": {
+    "prefix": "img-grav",
+    "description": "Uso de imagenes grav",
+    "body": [
+      "![${1:Texto Alternativo}](img/${2:image.png})?resize=200,200)",
+      "$0"
+    ]
+  },
+  "img-html-url": {
+    "prefix": "img-html-url",
+    "description": "Imagen html con url",
+    "body": [
+      "<a href=\"${2:url}\">",
+      "<img src=\"${1:img.png}\" alt=\"$1\" style=\"width:20%;\">",
+      "</a>",
+      "$0"
+    ]
+  },
+  "audio-html": {
+    "prefix": "audio-html",
+    "description": "insert audio html",
+    "body": [
+      "<audio controls ${1:autoplay loop} style=\"width: 100%\">",
+      "\t<source src=\"${3:audio.mp3/.ogg}\" type=\"audio/${2:ogg mpeg}\">",
+      "\tYour browser does not support the audio element.",
+      "</audio>",
+      "$0"
+    ]
+  },
+  "video-html": {
+    "prefix": "video-html",
+    "description": "insert video html",
+    "body": [
+      "<video style=\"max-width: 100%; height: auto;\" controls ${1:autoplay loop}>",
+      "\t<source src=\"${2:video}\" type=\"video/${3:mp4 ogg}\">",
+      "</video> "
+    ]
+  },
+  "link": {
+    "prefix": "link",
+    "description": "Links",
+    "body": "[${1:Name_link}](${2:url})$0"
+  },
+  "list": {
+    "prefix": "list",
+    "description": "create list",
+    "body": "${1:a. 1. *.} ${2:item}"
+  },
+  "sublist": {
+    "prefix": "sublist",
+    "description": "create sublist",
+    "body": "\t\t${1:a. 1. *.} ${2:item}"
+  },
+  "note": {
+    "prefix": "note",
+    "description": "Admonition note",
+    "body": [
+      "!!! ${1:Warning Note Info Danger Error} \"$2\"",
+      "\t\t$3",
+      "$0"
+    ]
+  },
+  "tables3c": {
+    "prefix": "tables3c",
+    "description": "Tabla 3 columnas",
+    "body": [
+      "|${1:          }|${2:          }|${3:  }|",
+      "|:-------------:|:-------------:|:-----:|",
+      "$0"
+    ]
+  },
+  "code": {
+    "prefix": "code",
+    "description": "Insert code text",
+    "body": [
+      "```${1:bash}",
+      "$0",
+      "```"
+    ]
+  },
+  "img-mkd": {
+    "prefix": "img-mkd",
+    "description": "Uso de imagenes mkdocs",
+    "body": [
+      "![${1:Texto Alternativo}](img/${2:image.png}){: style=\"${3:width:100%; margin-left: auto; margin-right: auto; display: block}\"\\}",
+      "$0"
+    ]
+  },
+  "video-mkd": {
+    "prefix": "video-mkd",
+    "description": "Insert video object in mkdocs-material",
+    "body": [
+      "<video style=\"max-width: 100%; height: auto; border: 2px solid gray;\" poster=\"\" controls autoplay loop>",
+      "\t<source src=\"../${1:path/file.pdf}\" type=\"video/mp4\">",
+      "</video> "
+    ]
+  },
+  "pdf-mkd": {
+    "prefix": "pdf-mkd",
+    "description": "Insert pdf object in mkdocs",
+    "body": [
+      "<!-- Debe insertar un ../ extra en el path si el archivo no es un index.md, el cual ya se ha incorporado en el path del data -->",
+      "<object",
+      "\twidth=\"100%\"",
+      "\theight=\"600\"",
+      "\ttype=\"application/pdf\"",
+      "\tdata=\"../${1:path/file.pdf}\">",
+      "</object>"
+    ]
+  },
+  "pdf-emb-mkd": {
+    "prefix": "pdf-emb-mkd",
+    "description": "Insert pdf object in mkdocs",
+    "body": [
+      "<!-- Alternaita al object -->",
+      "<!-- Debe insertar un ../ extra en el path para que funcione, el cual ya se ha incorporado en el path del data -->",
+      "<embed src=\"../${1:path/file.pdf}\" type=\"application/pdf\" width=\"100%\" height=\"600\">"
+    ]
+  },
+  "tree-c-html": {
+    "prefix": "tree-c-html",
+    "description": "Formato comentario para Tree",
+    "body": "<b class=\"COMMIT\">$1</b>$0"
+  },
+  "label": {
+    "prefix": "label",
+    "description": "etiqueta html, p, br, kdb",
+    "body": "<${1:kbd, p}>$2</$1>$0"
+  },
+  "t-a": {
+    "prefix": "t-a",
+    "description": "align text",
+    "body": "<div align=\"${1:center left right}\">$2</div>$0"
+  },
+  "img-pandoc": {
+    "prefix": "img-pandoc",
+    "description": "image in pandoc",
+    "body": "![${1:imageName}](./img/${2:img.png}){ width=${3:width}\\}$0"
+  },
+  "r-img": {
+    "prefix": "r-img",
+    "description": "insert image reveal, size automatic",
+    "body": [
+      "<img class=\"stretch\" data-src=\"${1:img/}${2:image.png}\"/>",
+      "$0"
+    ]
+  },
+  "r-img-s": {
+    "prefix": "r-img-s",
+    "description": "insert image reveal, size manual",
+    "body": [
+      "<img data-src=\"${1:img/}${2:image.png}\" width=\"${3:100%}\" height=\"${4:auto}\"/>",
+      "$0"
+    ]
+  },
+  "r-img-bg": {
+    "prefix": "r-img-bg",
+    "description": "inser image how background",
+    "body": "<section data-background-image=\"${1:img/}${2:image.png}\" data-background-size=\"${3:100}%\" data-background-opacity=\"${4:1.0}\">$0</section>"
+  },
+  "r-slide-2columns": {
+    "prefix": "r-slide-2columns",
+    "description": "Slide de dos columnas",
+    "body": [
+      "<style>",
+      "\t.container{",
+      "\t\tdisplay: flex;",
+      "\t\\}",
+      "\t.col{",
+      "\t\tflex: 1;",
+      "\t\\}",
+      "</style>",
+      "<section> <${1:h4}>${2:Título}</$1>",
+      "\t<div class=\"container\">",
+      "\t\t<div class=\"col\">",
+      "\t\t\t${3:Elements}",
+      "\t\t</div>",
+      "\t\t<div class=\"col\">",
+      "\t\t\t${4:Elements}",
+      "\t\t</div>",
+      "\t</div>",
+      "</section>$0"
+    ]
+  },
+  "h-youtube": {
+    "prefix": "h-youtube",
+    "description": "Insertar vídeo de youtube",
+    "body": [
+      "{{< youtube id=\"${1:blMAa8wEhME}\" title=\"${2:Titulo del vídeo}\"\\}\\}",
+      "$0"
+    ]
+  },
+  "h-img": {
+    "prefix": "h-img",
+    "description": "Insertar images",
+    "body": [
+      "{{< figure src=\"${1:./imagen.png}\" title=\"${2:Título de la imagen}\"\\}\\}",
+      "$0"
+    ]
+  },
+  "video-lia-youtube": {
+    "prefix": "video-lia-youtube",
+    "description": "Insert youtube vide",
+    "body": [
+      "!?[${1:Título vídeo}](${2:Enlace vídeo})",
+      "$0"
+    ]
+  },
+  "video-github": {
+    "prefix": "video-github",
+    "description": "Insert youtube video on github",
+    "body": [
+      "[![${1:IMAGE ALT TEXT HERE}](https://img.youtube.com/vi/${2:YOUTUBE_VIDEO_ID_HERE}/0.jpg)](https://www.youtube.com/watch?v=$2 \"$1\")",
+      "$0"
+    ]
+  }
+}

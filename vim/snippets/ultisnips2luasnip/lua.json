@@ -1,0 +1,7 @@
+{
+  "if-oneline": {
+    "prefix": "if-oneline",
+    "description": "If en una sola linea",
+    "body": "${1:condition} and ${2:true} or ${3:false}$0"
+  }
+}

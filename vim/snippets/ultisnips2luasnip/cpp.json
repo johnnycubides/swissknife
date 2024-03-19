@@ -1,0 +1,144 @@
+{
+  "c2cpp": {
+    "prefix": "c2cpp",
+    "description": "Compatibilidad de C en C++ compiladores",
+    "body": [
+      "#ifdef __cplusplus",
+      "extern \"C\" {",
+      "#endif",
+      "$0",
+      "#ifdef __cplusplus",
+      "\\}",
+      "#endif"
+    ]
+  },
+  "d-def": {
+    "prefix": "d-def",
+    "description": "Definiciones de preprocesador",
+    "body": "#define ${1:nameDef} ${2:value} /*!< ${3:Detailed description} */"
+  },
+  "d-var": {
+    "prefix": "d-var",
+    "description": "var",
+    "body": "${1:int float char} ${2:nameVar}; /*!< ${3:Detailed description} */"
+  },
+  "d-uint": {
+    "prefix": "d-uint",
+    "description": "var entera sin signo",
+    "body": "${1:uint8_t uint16_t uint32_t} ${2:nameVar}; /*!< ${3:Detailed description} */"
+  },
+  "struct": {
+    "prefix": "struct",
+    "description": "struture",
+    "body": [
+      "struct ${1:nameStruct}",
+      "\t$0",
+      "\\};"
+    ]
+  },
+  "d-struct": {
+    "prefix": "d-struct",
+    "description": "struture",
+    "body": [
+      "/**",
+      " *\t${2:Brief}",
+      " */",
+      "struct ${1:nameStruct}",
+      "{",
+      "\t$0",
+      "\\};"
+    ]
+  },
+  "d-enum": {
+    "prefix": "d-enum",
+    "description": "enumeradores",
+    "body": [
+      "/**",
+      " *\t${2:Brief}",
+      " */",
+      "enum ${1:nameEnum}",
+      "{",
+      "\t$3",
+      "\\}",
+      "$0"
+    ]
+  },
+  "d-enum-item": {
+    "prefix": "d-enum-item",
+    "description": "items de enumeradores",
+    "body": [
+      "${1:nameItem = 0}, /*!< ${2:Detailed description} */",
+      "$0"
+    ]
+  },
+  "d-fun0": {
+    "prefix": "d-fun0",
+    "description": "def var sin parametros",
+    "body": [
+      "/**",
+      " * @brief ${3:Breve descripción de la función}",
+      " * @return ${4:¿qué retorna la función?}",
+      " **/",
+      "${2:void bool int float other} ${1:nameFuntion}(void);",
+      "$0"
+    ]
+  },
+  "d-fun1": {
+    "prefix": "d-fun1",
+    "description": "def var sin parametros",
+    "body": [
+      "/**",
+      " * @brief ${5:Breve descripción de la función}",
+      " * @param $4 ${6:Caracteristicas del parámetro}",
+      " * @return ${7:¿qué retorna la función?}",
+      " **/",
+      "${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam});",
+      "$0"
+    ]
+  },
+  "d-fun2": {
+    "prefix": "d-fun2",
+    "description": "def var sin parametros",
+    "body": [
+      "/**",
+      " * @brief ${7:Breve descripción de la función}",
+      " * @param $4 ${8:Caracteristicas del parámetro}",
+      " * @param $6 ${9:Caracteristicas del parámetro}",
+      " * @return ${10:¿qué retorna la función?}",
+      " **/",
+      "${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam});",
+      "$0"
+    ]
+  },
+  "d-fun3": {
+    "prefix": "d-fun3",
+    "description": "def var sin parametros",
+    "body": [
+      "/**",
+      " * @brief ${9:Breve descripción de la función}",
+      " * @param $4 ${10:Caracteristicas del parámetro}",
+      " * @param $6 ${11:Caracteristicas del parámetro}",
+      " * @param $8 ${12:Caracteristicas del parámetro}",
+      " * @return ${13:¿qué retorna la función?}",
+      " **/",
+      "${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam});",
+      "$0"
+    ]
+  },
+  "d-fun4": {
+    "prefix": "d-fun4",
+    "description": "def var sin parametros",
+    "body": [
+      "/**",
+      " * @brief ${11:Breve descripción de la función}",
+      " * @param $4 ${12:Caracteristicas del parámetro}",
+      " * @param $6 ${13:Caracteristicas del parámetro}",
+      " * @param $8 ${14:Caracteristicas del parámetro}",
+      " * @param $10 ${15:Caracteristicas del parámetro}",
+      " * @return ${16:¿qué retorna la función?}",
+      " **/",
+      "${2:void bool int float other} ${1:nameFuntion}(${3:type} ${4:nameParam}, ${5:type} ${6:nameParam}, ${7:type} ${8:nameParam}, ${9:type} ${10:nameParam});",
+      "$0"
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "r-init": {
+    "prefix": "r-init",
+    "description": "start presentation with reveal offline",
+    "body": [
+      "<!doctype html>",
+      "<html>",
+      "\t<head>",
+      "\t\t<meta charset=\"utf-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "",
+      "\t\t<title>${1:Reveal.js}</title>",
+      "",
+      "\t\t<link rel=\"stylesheet\" href=\"reveal.js/css/reveal.css\">",
+      "\t\t<link rel=\"stylesheet\" href=\"reveal.js/css/theme/${2:black}.css\"> <!--themes: beige, black, blood, langue, moom, night, serif, simple, sky, solarized, white -->",
+      "",
+      "\t\t<!-- Theme used for syntax highlighting of code -->",
+      "\t\t<link rel=\"stylesheet\" href=\"reveal.js/lib/css/zenburn.css\">",
+      "",
+      "\t\t<!-- Printing and PDF exports -->",
+      "\t\t<script>",
+      "\t\t\tvar link = document.createElement( 'link' );",
+      "\t\t\tlink.rel = 'stylesheet';",
+      "\t\t\tlink.type = 'text/css';",
+      "\t\t\tlink.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';",
+      "\t\t\tdocument.getElementsByTagName( 'head' )[0].appendChild( link );",
+      "\t\t</script>",
+      "\t</head>",
+      "\t<style>",
+      "\t\t.container{",
+      "\t\t\tdisplay: flex;",
+      "\t\t\\}",
+      "\t\t.col{",
+      "\t\t\tflex: 1;",
+      "\t\t\\}",
+      "\t</style>",
+      "\t<body>",
+      "\t\t<div class=\"reveal\">",
+      "\t\t\t<div class=\"slides\">",
+      "\t\t\t\t<!-- LA PRESENTACIÓN EMPIEZA AQUI -->",
+      "\t\t\t\t$0",
+      "\t\t\t\t<!-- LA PRESENTACIÓN TERMINA ACA -->",
+      "\t\t\t</div>",
+      "\t\t</div>",
+      "",
+      "\t\t<script src=\"reveal.js/lib/js/head.min.js\"></script>",
+      "\t\t<script src=\"reveal.js/js/reveal.js\"></script>",
+      "",
+      "\t\t<script>",
+      "\t\t\t// More info about config & dependencies:",
+      "\t\t\t// - https://github.com/hakimel/reveal.js#configuration",
+      "\t\t\t// - https://github.com/hakimel/reveal.js#dependencies",
+      "\t\t\tReveal.initialize({",
+      "\t\ttransition: '${3:convex}', // none/fade/slide/convex/concave/zoom",
+      "\t\tautoPlayMedia: ${4:null},  //null, true, false",
+      "\t\tcontrols:true,",
+      "\t\t\t\tdependencies: [",
+      "\t\t\t\t\t{ src: 'reveal.js/plugin/markdown/marked.js' \\},",
+      "\t\t\t\t\t{ src: 'reveal.js/plugin/markdown/markdown.js' \\},",
+      "\t\t\t\t\t{ src: 'reveal.js/plugin/notes/notes.js', async: true \\},",
+      "\t\t\t\t\t{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); \\} \\}",
+      "\t\t\t\t]",
+      "\t\t\t\\});",
+      "\t\t\tReveal.configure({",
+      "\t\tslideNumber: \"c/t\", // \"h.v\" \"h/v\" \"c\" \"c/t\"",
+      "\t\tshowSlideNumber: \"all\" // \"all\" \"speaker\" \"print\"",
+      "\t\t\\});",
+      "\t\t</script>",
+      "\t</body>",
+      "</html>"
+    ]
+  },
+  "r-init-online": {
+    "prefix": "r-init-online",
+    "description": "start presentation with revealjs online",
+    "body": [
+      "<!doctype html>",
+      "<html>",
+      "\t<head>",
+      "\t\t<meta charset=\"utf-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "",
+      "\t\t<title>${1:Reveal.js}</title>",
+      "",
+      "\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/reveal.css\">",
+      "\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/theme/${2:black}.css\"> <!--themes: beige, black, blood, langue, moom, night, serif, simple, sky, solarized, white -->",
+      "",
+      "\t\t<!-- Theme used for syntax highlighting of code -->",
+      "\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/lib/css/zenburn.css\">",
+      "",
+      "\t\t<!-- Printing and PDF exports -->",
+      "\t\t<script>",
+      "\t\t\tvar link = document.createElement( 'link' );",
+      "\t\t\tlink.rel = 'stylesheet';",
+      "\t\t\tlink.type = 'text/css';",
+      "\t\t\tlink.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/css/print/paper.css';",
+      "\t\t\tdocument.getElementsByTagName( 'head' )[0].appendChild( link );",
+      "\t\t</script>",
+      "\t</head>",
+      "\t<style>",
+      "\t\t.container{",
+      "\t\t\tdisplay: flex;",
+      "\t\t\\}",
+      "\t\t.col{",
+      "\t\t\tflex: 1;",
+      "\t\t\\}",
+      "\t</style>",
+      "\t<body>",
+      "\t\t<div class=\"reveal\">",
+      "\t\t\t<div class=\"slides\">",
+      "\t\t\t\t<!-- LA PRESENTACIÓN EMPIEZA AQUI -->",
+      "\t\t\t\t$0",
+      "\t\t\t\t<!-- LA PRESENTACIÓN TERMINA ACA -->",
+      "\t\t\t</div>",
+      "\t\t</div>",
+      "",
+      "\t\t<script src=\"https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/lib/js/head.min.js\"></script>",
+      "\t\t<script src=\"https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/js/reveal.js\"></script>",
+      "",
+      "\t\t<script>",
+      "\t\t\t// More info about config & dependencies:",
+      "\t\t\t// - https://github.com/hakimel/reveal.js#configuration",
+      "\t\t\t// - https://github.com/hakimel/reveal.js#dependencies",
+      "\t\t\tReveal.initialize({",
+      "\t\ttransition: '${3:convex}', // none/fade/slide/convex/concave/zoom",
+      "\t\tautoPlayMedia: ${4:null},  //null, true, false",
+      "\t\tcontrols:true,",
+      "\t\t\t\tdependencies: [",
+      "\t\t\t\t\t{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/markdown/marked.js' \\},",
+      "\t\t\t\t\t{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/markdown/markdown.js' \\},",
+      "\t\t\t\t\t{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/notes/notes.js', async: true \\},",
+      "\t\t\t\t\t{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); \\} \\}",
+      "\t\t\t\t]",
+      "\t\t\t\\});",
+      "\t\t\tReveal.configure({",
+      "\t\tslideNumber: \"c/t\", // true \"h.v\" \"h/v\" \"c\" \"c/t\"",
+      "\t\tshowSlideNumber: \"all\" // \"all\" \"speaker\" \"print\"",
+      "\t\t\\});",
+      "\t\t</script>",
+      "\t</body>",
+      "</html>"
+    ]
+  },
+  "r-img": {
+    "prefix": "r-img",
+    "description": "insert image reveal, size automatic",
+    "body": [
+      "<img class=\"stretch\" data-src=\"${1:img/}${2:image.png}\"/>",
+      "$0"
+    ]
+  },
+  "r-img-s": {
+    "prefix": "r-img-s",
+    "description": "insert image reveal, size manual",
+    "body": [
+      "<img data-src=\"${1:img/}${2:image.png}\" width=\"${3:100%}\" height=\"${4:auto}\"/>",
+      "$0"
+    ]
+  },
+  "r-img-bg": {
+    "prefix": "r-img-bg",
+    "description": "inser image how background",
+    "body": "<section data-background-image=\"${1:img/}${2:image.png}\" data-background-size=\"${3:100}%\" data-background-opacity=\"${4:1.0}\">$0</section>"
+  },
+  "r-video-bg": {
+    "prefix": "r-video-bg",
+    "description": "vídeo como background",
+    "body": [
+      "<section data-background-video=\"${1:video.mp4}\" data-background-video-loop ${2:data-background-video-muted} data-background-size=\"${3:cover}\" data-background-opacity=\"${4:1.0}\">$1",
+      "</section>"
+    ]
+  },
+  "r-video": {
+    "prefix": "r-video",
+    "description": "insert video reveal",
+    "body": [
+      "<video data-autoplay loop controls class=\"stretch\" data-src=\"${1:videos/}${2:video.mp4}\" type=\"video/mp4\"></video>",
+      "$0"
+    ]
+  },
+  "r-video-s": {
+    "prefix": "r-video-s",
+    "description": "insert video reveal, size manual",
+    "body": [
+      "<video ${1: data-autoplay} ${2:loop} ${3:controls} class=\"stretch\" data-src=\"${4:videos/}${5:video.mp4}\" width=\"${6:100%}\" height=\"${7:auto}\" type=\"video/mp4\"></video>",
+      "$0"
+    ]
+  },
+  "r-slide": {
+    "prefix": "r-slide",
+    "description": "insert slide reveal",
+    "body": [
+      "<section> <${1:h4}>${2:Título}</$1>",
+      "\t$0",
+      "</section>"
+    ]
+  },
+  "r-slide-bg-color": {
+    "prefix": "r-slide-bg-color",
+    "description": "insert background color",
+    "body": [
+      "<section data-background-color=\"#ff0000\"><${1:h4}>${2:Título}</$1>",
+      "\t$0",
+      "</section>"
+    ]
+  },
+  "r-md-txt": {
+    "prefix": "r-md-txt",
+    "description": "Insert text markdown reveal",
+    "body": [
+      "<section data-markdown>",
+      "\t<textarea data-template>",
+      "\t\t# ${1:Título}",
+      "\t\t\t$0",
+      "\t</textarea>",
+      "</section>"
+    ]
+  },
+  "r-p-txt": {
+    "prefix": "r-p-txt",
+    "description": "Insertar parrafo",
+    "body": "<p style=\"text-align: justify; margin-left:10px; font-size:30px;\">$0</p>"
+  },
+  "r-fragment": {
+    "prefix": "r-fragment",
+    "description": "Insertar fragmento",
+    "body": "<p class=\"fragment\">$0</p>"
+  },
+  "r-fragment-o": {
+    "prefix": "r-fragment-o",
+    "description": "Insertar fragmento más opciones",
+    "body": "<p class=\"fragment fade-${1:out up down left right in-then-out in-then-semi-out} highlight-${2:red green blue current-red current-green current-blue}\">$0</p>"
+  },
+  "r-f-size": {
+    "prefix": "r-f-size",
+    "description": "Tamaño de las fuente del texto",
+    "body": "style=\"font-size:${1:20px};\"$0"
+  },
+  "r-f-color": {
+    "prefix": "r-f-color",
+    "description": "Color de las fuentes",
+    "body": "style=\"color:${1:blue, red, yellow, green, cyan, pink};\"$0"
+  },
+  "r-f-align": {
+    "prefix": "r-f-align",
+    "description": "Alinear texto",
+    "body": "style=\"text-align: ${1:justify};\"$0"
+  },
+  "r-slide-2columns": {
+    "prefix": "r-slide-2columns",
+    "description": "Slide de dos columnas",
+    "body": [
+      "<section> <${1:h4}>${2:Título}</$1>",
+      "\t<div class=\"container\">",
+      "\t\t<div class=\"col\">",
+      "\t\t\t${3:Elements}",
+      "\t\t</div>",
+      "\t\t<div class=\"col\">",
+      "\t\t\t${4:Elements}",
+      "\t\t</div>",
+      "\t</div>",
+      "</section>$0"
+    ]
+  },
+  "r-link-nt": {
+    "prefix": "r-link-nt",
+    "description": "link in new tab",
+    "body": "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"${1:url}\">${2:text}</a>$0"
+  },
+  "r-list-no-ord": {
+    "prefix": "r-list-no-ord",
+    "description": "Crear lista no ordenada",
+    "body": [
+      "<ul type=\"${1:circle, squarei, disc}\">",
+      "\t<li>$0</li>",
+      "</ul>"
+    ]
+  },
+  "r-list-ord": {
+    "prefix": "r-list-ord",
+    "description": "Crear lista ordenada",
+    "body": [
+      "<ol type=\"${1:A,I,i,1}\">",
+      "\t<li>$0</li>",
+      "</ol>"
+    ]
+  }
+}

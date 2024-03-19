@@ -1,0 +1,346 @@
+{
+  "search_file": {
+    "prefix": "search_file",
+    "description": "Buscar archivo",
+    "body": [
+      "if [[ ! -${2:L d f x e} ${1:Archivo} ]]; then",
+      "\techo \"ERROR: Could not locate $1.\" 1>&2",
+      "\texit 1 # terminate and indicate error",
+      "fi",
+      "$0"
+    ]
+  },
+  "menu-create": {
+    "prefix": "menu-create",
+    "description": "Crear menú de inicio",
+    "body": [
+      "# Permite guardar información acerca de comandos usados",
+      "if [ \"\\$1\" = \"-h\" ] || [ \"\\$1\" = \"\" ] || [ \"\\$1\" = \"--help\" ];",
+      "then",
+      "\tprintf \"Help for this command ${1:FILE_NAME}\\n\"",
+      "\tprintf \"\\t$1 Command options\\n\"",
+      "\tprintf \"\\t[Commands]\\n\"",
+      "\tprintf \"\\t\\t${2:command1}\\t${3:brief1}\\n\"",
+      "\tprintf \"\\t\\t${4:command2}\\t${5:brief2}\\n\"",
+      "\tprintf \"\\t\\t${6:command3}\\t${7:brief3}\\n\"",
+      "\tprintf \"\\t\\t-h,--help\\tHelp\\n\"",
+      "\tprintf \"\\nRegards Johnny.\\n\"",
+      "elif [ \"\\$1\" = \"$2\" ];",
+      "then",
+      "\techo \"pass\"",
+      "elif [ \"\\$1\" = \"$4\" ];",
+      "then",
+      "\techo \"pass\"",
+      "elif [ \"\\$1\" = \"$6\" ];",
+      "then",
+      "\techo \"pass\"",
+      "fi",
+      "$0"
+    ]
+  },
+  "read_keyboard": {
+    "prefix": "read_keyboard",
+    "description": "Leer del teclado y almacenar en variable",
+    "body": [
+      "read -p \"${1:Text in promt}: \" -r ${2:variable}",
+      "$0"
+    ]
+  },
+  "read_keyboard_s": {
+    "prefix": "read_keyboard_s",
+    "description": "Leer del teclado de manera oculta y almacenar en variable",
+    "body": [
+      "read -s ${1:variable}",
+      "$0"
+    ]
+  },
+  "create_simbolic_link": {
+    "prefix": "create_simbolic_link",
+    "description": "Crear enlace simbólico",
+    "body": [
+      "if [ ! -L $2 ]; then",
+      "\tln -s ${1:TARGET} ${2:LINK_NAME}",
+      "else",
+      "\techo `ls -l $2`\" simbolic link exist\"",
+      "fi",
+      "$0"
+    ]
+  },
+  "$?": {
+    "prefix": "$?",
+    "description": "test status error",
+    "body": [
+      "if [ \\$? == ${1:0} ];",
+      "then",
+      "\t${2:echo \"pass\"}",
+      "fi",
+      "$0"
+    ]
+  },
+  "ifs": {
+    "prefix": "ifs",
+    "description": "if string",
+    "body": [
+      "if [ \"${1:\\$variable}\" = \"${2:string}\" ];",
+      "then",
+      "\t${3:echo \"pass\"}",
+      "fi",
+      "$0"
+    ]
+  },
+  "ifs_or2": {
+    "prefix": "ifs_or2",
+    "description": "if string OR2",
+    "body": [
+      "if [ \"${1:\\$variable}\" = \"${2:string1}\" ] || [ \"$1\" = \"${3:string2}\" ];",
+      "then",
+      "\t${4:echo \"pass\"}",
+      "fi",
+      "$0"
+    ]
+  },
+  "ifs_or3": {
+    "prefix": "ifs_or3",
+    "description": "if string OR3",
+    "body": [
+      "if [ \"${1:\\$variable}\" = \"${2:string1}\" ] || [ \"$1\" = \"${3:string2}\" ] || [ \"$1\" = \"${4:string3}\" ];",
+      "then",
+      "\t${5:echo \"pass\"}",
+      "fi",
+      "$0"
+    ]
+  },
+  "tupla": {
+    "prefix": "tupla",
+    "description": "Create new tupla array",
+    "body": [
+      "declare -a ${1:tuplas}=(",
+      "\t\"${2:string1} ${3:string2}\"",
+      ")",
+      "$0"
+    ]
+  },
+  "tupla_for": {
+    "prefix": "tupla_for",
+    "description": "Rercorrer una tupla",
+    "body": [
+      "for ${1:elemento} in \"\\${$1s[@]\\}\"; do",
+      "\tread -a starr <<< \"\\$$1\"",
+      "\techo \\${starr[0]\\} \\${starr[1]\\}",
+      "done"
+    ]
+  },
+  "array_string": {
+    "prefix": "array_string",
+    "description": "new array string",
+    "body": [
+      "${1:array}=( \"${2:elemento1}\" \"${3:elemento2}\" )",
+      "$0"
+    ]
+  },
+  "for_array": {
+    "prefix": "for_array",
+    "description": "create_for_array",
+    "body": [
+      "for (( ${1:i} = 0; $1 < \\${#${2:array}[@]\\} ; $1++ )); do",
+      "\tprintf \"\\${$2[$1]\\}\"",
+      "done",
+      "$0"
+    ]
+  },
+  "replace_word": {
+    "prefix": "replace_word",
+    "description": "Encontrar y remplazar palabra en string",
+    "body": "\\${${1:variable}/${2:palabra}/${3:sustituto}\\}$0"
+  },
+  "replace_words": {
+    "prefix": "replace_words",
+    "description": "Encontrar y remplazar palabra en string (todas conincidencias)",
+    "body": "\\${${1:variable}//${2:palabra}/${3:sustituto}\\}$0"
+  },
+  "replace_words_range": {
+    "prefix": "replace_words_range",
+    "description": "Encontrar y remplazar rango de palabra en string (todas conincidencias)",
+    "body": "\\${${1:variable}//[${2:xyz*}]/${3:sustituto}\\}$0"
+  },
+  "del_be_ch_String": {
+    "prefix": "del_be_ch_String",
+    "description": "Elimina todo hasta la última aparición del caracter indicado",
+    "body": "\\${${1:variable}##*${2:character}\\}"
+  },
+  "del_af_ch_String": {
+    "prefix": "del_af_ch_String",
+    "description": "Elimina todo desde la última aparición del caracter indicado",
+    "body": "\\${${1:variable}%${2:character}*\\}"
+  },
+  "eval_string": {
+    "prefix": "eval_string",
+    "description": "evaluate string",
+    "body": "eval \"echo \\\"hello\\\"\""
+  },
+  "rp_words_all_in_f": {
+    "prefix": "rp_words_all_in_f",
+    "description": "remplazar palabras en un archivo",
+    "body": "sed 's/${1:word2replace}/${2:newword}/g' ${3:filename}"
+  },
+  "rp_words_range_in_f": {
+    "prefix": "rp_words_range_in_f",
+    "description": "remplazar palabras en un rago de archivo",
+    "body": "sed '${4:1},${5:2} s/${1:word2replace}/${2:newword}/g' ${3:filename}"
+  },
+  "get_dir_script": {
+    "prefix": "get_dir_script",
+    "description": "Obtener el path de este script a ejecutar",
+    "body": "${1:SCRIPTPATH}=\\$(dirname \"\\$0\")$0"
+  },
+  "get_dir_ln_script": {
+    "prefix": "get_dir_ln_script",
+    "description": "Obtener el path del objeto al que apuntan este enlace simbólico",
+    "body": "${1:SCRIPTPATH}=\\$( dirname \"\\$(readlink -f -- \"\\$0\")\" )"
+  },
+  "init-colors-prompt": {
+    "prefix": "init-colors-prompt",
+    "description": "Colors for echo and prompt",
+    "body": [
+      "# foreground",
+      "BLACK=`tput setaf 0`",
+      "RED=`tput setaf 1`",
+      "GREEN=`tput setaf 2`",
+      "YELLOW=`tput setaf 3`",
+      "BLUE=`tput setaf 4`",
+      "MAGENTA=`tput setaf 5`",
+      "CYAN=`tput setaf 6`",
+      "WHITE=`tput setaf 7`",
+      "NC=`tput setaf 7`",
+      "# background",
+      "BLACKB=`tput setab 0`",
+      "REDB=`tput setab 1`",
+      "GREENB=`tput setab 2`",
+      "YELLOWB=`tput setab 3`",
+      "BLUEB=`tput setab 4`",
+      "MAGENTAB=`tput setab 5`",
+      "CYANB=`tput setab 6`",
+      "WHITEB=`tput setab 7`",
+      "NCB=`tput setab 0`",
+      "$0"
+    ]
+  },
+  "fg_black": {
+    "prefix": "fg_black",
+    "description": "text foreground color black",
+    "body": "\\${BLACK\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_red": {
+    "prefix": "fg_red",
+    "description": "text foreground color red",
+    "body": "\\${RED\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_green": {
+    "prefix": "fg_green",
+    "description": "text foreground color green",
+    "body": "\\${GREEN\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_yellow": {
+    "prefix": "fg_yellow",
+    "description": "text foreground color yellow",
+    "body": "\\${YELLOW\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_blue": {
+    "prefix": "fg_blue",
+    "description": "text foreground color blue",
+    "body": "\\${BLUE\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_magenta": {
+    "prefix": "fg_magenta",
+    "description": "text foreground color magenta",
+    "body": "\\${MAGENTA\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_cyan": {
+    "prefix": "fg_cyan",
+    "description": "text foreground color cyan",
+    "body": "\\${CYAN\\}${1:text}\\${NC\\}$0"
+  },
+  "fg_white": {
+    "prefix": "fg_white",
+    "description": "text foreground color white",
+    "body": "\\${WHITE\\}${1:text}\\${NC\\}$0"
+  },
+  "bg_black": {
+    "prefix": "bg_black",
+    "description": "text background color black",
+    "body": "\\${BLACKB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_red": {
+    "prefix": "bg_red",
+    "description": "text background color red",
+    "body": "\\${REDB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_green": {
+    "prefix": "bg_green",
+    "description": "text background color green",
+    "body": "\\${GREENB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_yellow": {
+    "prefix": "bg_yellow",
+    "description": "text background color yellow",
+    "body": "\\${YELLOWB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_blue": {
+    "prefix": "bg_blue",
+    "description": "text background color blue",
+    "body": "\\${BLUEB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_magenta": {
+    "prefix": "bg_magenta",
+    "description": "text background color magenta",
+    "body": "\\${MAGENTAB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_cyan": {
+    "prefix": "bg_cyan",
+    "description": "text background color cyan",
+    "body": "\\${CYANB\\}${1:text}\\${NCB\\}$0"
+  },
+  "bg_white": {
+    "prefix": "bg_white",
+    "description": "text background color white",
+    "body": "\\${WHITEB\\}${1:text}\\${NCB\\}$0"
+  },
+  "msg-warning": {
+    "prefix": "msg-warning",
+    "description": "print message warning theme",
+    "body": "printf \"\\${YELLOW\\}${1:warning message}\\${NC\\}\\n\"$0"
+  },
+  "msg-ok": {
+    "prefix": "msg-ok",
+    "description": "print message ok theme",
+    "body": "printf \"\\${GREEN\\}${1:ok message}\\${NC\\}\\n\"$0"
+  },
+  "msg-info": {
+    "prefix": "msg-info",
+    "description": "print message info theme",
+    "body": "printf \"\\${CYAN\\}${1:info message}\\${NC\\}\\n\"$0"
+  },
+  "msg-error": {
+    "prefix": "msg-error",
+    "description": "print message error theme",
+    "body": "printf \"\\${RED\\}${1:error message}\\${NC\\}\\n\"$0"
+  },
+  "unzip_in_directory": {
+    "prefix": "unzip_in_directory",
+    "description": "Decompress in other directory",
+    "body": "unzip ${1:...path/file.zip} -d ${2:...path/directory/}$0"
+  },
+  "unzip_in_directory_no_messages": {
+    "prefix": "unzip_in_directory_no_messages",
+    "description": "Decompress in other directory and no messages",
+    "body": "unzip -p ${1:...path/file.zip} -d ${2:...path/directory/}$0"
+  },
+  "wget": {
+    "prefix": "wget",
+    "description": "get file from url and change its name",
+    "body": [
+      "wget -O ${1:name} \"${2:url}\"",
+      "$0"
+    ]
+  }
+}

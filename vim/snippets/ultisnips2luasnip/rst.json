@@ -1,0 +1,13 @@
+{
+  "file_code": {
+    "prefix": "file_code",
+    "description": "Insert code from file",
+    "body": [
+      ".. literalinclude:: ${1:filename}",
+      "   :language: $2${3:.. python, c, lua, javascrip, html}",
+      "   :emphasize-lines: $4 ${5: .. 12,15-18}",
+      "   :linenos:",
+      "$0"
+    ]
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "dinit": {
+    "prefix": "dinit",
+    "description": "init file",
+    "body": [
+      "/**",
+      " * @file ${1:\"file description\"}",
+      " * @author ${2:Name} <${3:e-mail}>",
+      " */",
+      "$0"
+    ]
+  },
+  "dlet": {
+    "prefix": "dlet",
+    "description": "variable local",
+    "body": [
+      "/**",
+      " * ${2:brief}",
+      " * @var {${3:Type}\\} $1${4:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "let ${1:nameVariable}"
+    ]
+  },
+  "dvar": {
+    "prefix": "dvar",
+    "description": "variable global",
+    "body": [
+      "/**",
+      " * ${2:brief}",
+      " * @var {${3:Type}\\} $1${4:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "var ${1:nameVariable}"
+    ]
+  },
+  "dmodule": {
+    "prefix": "dmodule",
+    "body": [
+      "/**",
+      " * ${2:Description}",
+      " * @module ${1:path/file}",
+      " */"
+    ]
+  },
+  "dmain": {
+    "prefix": "dmain",
+    "body": [
+      "/**",
+      " * Provides more features for the widget module...",
+      " *",
+      " * @module ${2:main}",
+      " * @submodule ${3:submodule}",
+      " * @main ${1:main}",
+      " */"
+    ]
+  },
+  "anon": {
+    "prefix": "anon",
+    "description": "anonymous",
+    "body": [
+      "function($1){",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "=>": {
+    "prefix": "=>",
+    "description": "anonymous",
+    "body": [
+      "($1)=>{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "dfun0": {
+    "prefix": "dfun0",
+    "description": "function withowt params",
+    "body": [
+      "/**",
+      " * ${3:Description of function}",
+      " * @function $1",
+      " * @return {${4:Type}\\} $2 ${5:description return}${6:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "function ${1:name_function}(){",
+      "\t$0",
+      "\treturn ${2:null}",
+      "\\}"
+    ]
+  },
+  "dfun1": {
+    "prefix": "dfun1",
+    "description": "function with one param",
+    "body": [
+      "/**",
+      " * ${4:Description of function}",
+      " * @function $1",
+      " * @param {${5:Type}\\} $2 ${6:Description param}",
+      " * @return {${7:Type}\\} $3 ${8:description return}${9:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "function ${1:name_function}(${2:param1}){",
+      "\t$0",
+      "\treturn ${3:null}",
+      "\\}"
+    ]
+  },
+  "dfun2": {
+    "prefix": "dfun2",
+    "description": "function literal doc two param",
+    "body": [
+      "/**",
+      " * ${5:Description of function}",
+      " * @function $1",
+      " * @param {${6:Type}\\} $2 ${7:Description param}",
+      " * @param {${8:Type}\\} $3 ${9:Description param}",
+      " * @return {${10:Type}\\} $4 ${11:description return}${12:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object, Function\\}}",
+      " */",
+      "function ${1:name_function}(${2:param1}, ${3:param2}){",
+      "\t$0",
+      "\treturn ${4:null}",
+      "\\}"
+    ]
+  },
+  "dfun3": {
+    "prefix": "dfun3",
+    "description": "function with three params",
+    "body": [
+      "/**",
+      " * ${6:Description of function}",
+      " * @function $1",
+      " * @param {${7:Type}\\} $2 ${8:Description param}",
+      " * @param {${9:Type}\\} $3 ${10:Description param}",
+      " * @param {${11:Type}\\} $4 ${12:Description param}",
+      " * @return {${13:Type}\\} $5 ${14:description return}${15:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}){",
+      "\t$0",
+      "\treturn ${5:null}",
+      "\\}"
+    ]
+  },
+  "dfun4": {
+    "prefix": "dfun4",
+    "description": "function with four params",
+    "body": [
+      "/**",
+      " * ${7:Description of function}",
+      " * @function $1",
+      " * @param {${8:Type}\\} $2 ${9:Description param}",
+      " * @param {${10:Type}\\} $3 ${11:Description param}",
+      " * @param {${12:Type}\\} $4 ${13:Description param}",
+      " * @param {${14:Type}\\} $5 ${15:Description param}",
+      " * @return {${16:Type}\\} $6 ${17:description return}${18:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}){",
+      "\t$0",
+      "\treturn ${6:null}",
+      "\\}"
+    ]
+  },
+  "dfun5": {
+    "prefix": "dfun5",
+    "description": "function with five params",
+    "body": [
+      "/**",
+      " * ${8:Description of function}",
+      " * @function $1",
+      " * @param {${9:Type}\\} $2 ${10:Description param}",
+      " * @param {${11:Type}\\} $3 ${12:Description param}",
+      " * @param {${13:Type}\\} $4 ${14:Description param}",
+      " * @param {${15:Type}\\} $5 ${16:Description param}",
+      " * @param {${17:Type}\\} $6 ${18:Description param}",
+      " * @return {${19:Type}\\} $7 ${20:description return}${21:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array, Function, Object\\}}",
+      " */",
+      "function ${1:name_function}(${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}, ${6:param5}){",
+      "\t$0",
+      "\treturn ${7:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit0": {
+    "prefix": "dfunlit0",
+    "description": "function literal doc withowt arguments",
+    "body": [
+      "/**",
+      " * ${3:Description of function}",
+      " * @function $1",
+      " * @return {${4:Type}\\} $2 ${5:description return}${6:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = () =>{",
+      "\t$0",
+      "\treturn ${2:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit1": {
+    "prefix": "dfunlit1",
+    "description": "function literal doc one param",
+    "body": [
+      "/**",
+      " * ${4:Description of function}",
+      " * @function $1",
+      " * @param {${5:Type}\\} $2 ${6:Description param}",
+      " * @return {${7:Type}\\} $3 ${8:description return}${9:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = (${2:param1}) =>{",
+      "\t$0",
+      "\treturn ${3:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit2": {
+    "prefix": "dfunlit2",
+    "description": "function literal doc two param",
+    "body": [
+      "/**",
+      " * ${5:Description of function}",
+      " * @function $1",
+      " * @param {${6:Type}\\} $2 ${7:Description param}",
+      " * @param {${8:Type}\\} $3 ${9:Description param}",
+      " * @return {${10:Type}\\} $4 ${11:description return}${12:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = (${2:param1}, ${3:param2}) =>{",
+      "\t$0",
+      "\treturn ${4:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit3": {
+    "prefix": "dfunlit3",
+    "description": "function literal doc three param",
+    "body": [
+      "/**",
+      " * ${6:Description of function}",
+      " * @function $1",
+      " * @param {${7:Type}\\} $2 ${8:Description param}",
+      " * @param {${9:Type}\\} $3 ${10:Description param}",
+      " * @param {${11:Type}\\} $4 ${12:Description param}",
+      " * @return {${13:Type}\\} $5 ${14:description return}${15:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}) =>{",
+      "\t$0",
+      "\treturn ${5:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit4": {
+    "prefix": "dfunlit4",
+    "description": "function literal doc three param",
+    "body": [
+      "/**",
+      " * ${7:Description of function}",
+      " * @function $1",
+      " * @param {${8:Type}\\} $2 ${9:Description param}",
+      " * @param {${10:Type}\\} $3 ${11:Description param}",
+      " * @param {${12:Type}\\} $4 ${13:Description param}",
+      " * @param {${14:Type}\\} $5 ${15:Description param}",
+      " * @return {${16:Type}\\} $6 ${17:description return}${18:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}) =>{",
+      "\t$0",
+      "\treturn ${6:null}",
+      "\\}"
+    ]
+  },
+  "dfunlit5": {
+    "prefix": "dfunlit5",
+    "description": "function literal doc three param",
+    "body": [
+      "/**",
+      " * ${8:Description of function}",
+      " * @function $1",
+      " * @param {${9:Type}\\} $2 ${10:Description param}",
+      " * @param {${11:Type}\\} $3 ${12:Description param}",
+      " * @param {${13:Type}\\} $4 ${14:Description param}",
+      " * @param {${15:Type}\\} $5 ${16:Description param}",
+      " * @param {${17:Type}\\} $6 ${18:Description param}",
+      " * @return {${19:Type}\\} $7 ${20:description return}${21:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}",
+      " */",
+      "var ${1:name_function} = (${2:param1}, ${3:param2}, ${4:param3}, ${5:param4}, ${6:param5}) =>{",
+      "\t$0",
+      "\treturn ${7:null}",
+      "\\}"
+    ]
+  },
+  "dreturn_type": {
+    "prefix": "dreturn_type",
+    "description": "type of return",
+    "body": "* @return {${1:Type}\\} ${2:Description return}${3:{Types: Number, String, Boolean, Null, Undefined, Symbol, Array\\}}"
+  },
+  "forin": {
+    "prefix": "forin",
+    "description": "for (var in object)",
+    "body": [
+      "for ( var ${1:var} in ${2:Object}){",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "promise": {
+    "prefix": "promise",
+    "description": "promesas",
+    "body": [
+      "new Promise( (resolve, reject)=>{",
+      "\t$0",
+      "\\})"
+    ]
+  },
+  "create-copy-array": {
+    "prefix": "create-copy-array",
+    "description": "Create copy from old array",
+    "body": [
+      "var ${1:newArray} = ${2:oldArray}.slice()",
+      "$0"
+    ]
+  },
+  "index-array": {
+    "prefix": "index-array",
+    "description": "Search for index",
+    "body": "${1:array}.indexOf(${2:element})$0"
+  },
+  "con": {
+    "prefix": "con",
+    "description": "console.log",
+    "body": "console.log($0)"
+  },
+  "array_alphanumeric": {
+    "prefix": "array_alphanumeric",
+    "description": "Arrays alphanumerics",
+    "body": [
+      "var ${1:array} = {\\}",
+      "$1[${2:index_alphanumeric}] = $0"
+    ]
+  }
+}

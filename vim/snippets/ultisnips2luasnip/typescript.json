@@ -1,0 +1,100 @@
+{
+  "declaration": {
+    "prefix": "declaration",
+    "description": "declaracion de variables",
+    "body": "${1:let var const}"
+  },
+  "let": {
+    "prefix": "let",
+    "description": "create variable",
+    "body": "let ${1:nameVar}: type$0"
+  },
+  "var": {
+    "prefix": "var",
+    "description": "create variable",
+    "body": "var ${1:nameVar}: type$0"
+  },
+  "con": {
+    "prefix": "con",
+    "description": "create variable",
+    "body": "const ${1:nameVar}: type$0"
+  },
+  "type": {
+    "prefix": "type",
+    "description": "tipos posibles",
+    "body": "${1:number string boolean Array Tuple Any Void} $0"
+  },
+  "number": {
+    "prefix": "number",
+    "description": "tipo numérico",
+    "body": "number = ${1:dec hex bin oct}"
+  },
+  "dec": {
+    "prefix": "dec",
+    "description": "Número decimal",
+    "body": "${1:0}"
+  },
+  "hex": {
+    "prefix": "hex",
+    "description": "Número decimal",
+    "body": "0x${1:0}"
+  },
+  "bin": {
+    "prefix": "bin",
+    "description": "Número binario",
+    "body": "0b${1:0}"
+  },
+  "oct": {
+    "prefix": "oct",
+    "description": "Número octal",
+    "body": "0o${1:0}"
+  },
+  "string": {
+    "prefix": "string",
+    "description": "Creación de cadenas",
+    "body": "string = \"${1:}\""
+  },
+  "boolean": {
+    "prefix": "boolean",
+    "description": "Creación de booleano",
+    "body": "boolean = ${1:true false}"
+  },
+  "Array": {
+    "prefix": "Array",
+    "description": "Arreglos<>",
+    "body": "Array< type$0> = [${1:element1, elemnet2, ...}]"
+  },
+  "Tuple": {
+    "prefix": "Tuple",
+    "description": "Crear tuplas",
+    "body": "[ type$2, type$4] = [$5, $6]"
+  },
+  "enum": {
+    "prefix": "enum",
+    "description": "enum",
+    "body": [
+      "/** @enum {type\\} */",
+      "const ${1:Name} = {",
+      "\tenumMember$0",
+      "\\};"
+    ]
+  },
+  "enumMember": {
+    "prefix": "enumMember",
+    "description": " enum member, ej, Name = 1, Saludo = 'Hola'",
+    "body": "${1:Name} = ${2:0, 1 or String},"
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "Functions",
+    "body": [
+      "/**",
+      " * @function $1",
+      " * ${3:Brief ...}",
+      " */",
+      "function ${1:name} (${2:arguments...}) {",
+      "\t$0",
+      "\\}"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "init": {
+    "prefix": "init",
+    "description": "init graph with plantuml",
+    "body": [
+      "@startuml",
+      "title ${1:MyActivity}",
+      "$0",
+      "@enduml"
+    ]
+  },
+  "-->": {
+    "prefix": "-->",
+    "description": "Change arrow direction",
+    "body": "-${1:down right left up}-> $0"
+  },
+  "ac-init": {
+    "prefix": "ac-init",
+    "description": "Init activity graph",
+    "body": [
+      "(*) --> $0",
+      "-->(*)"
+    ]
+  },
+  "ac-arrow-lab": {
+    "prefix": "ac-arrow-lab",
+    "description": "Label on Arrows",
+    "body": [
+      "-> ${1:My Label};",
+      "$0"
+    ]
+  },
+  "ac-if": {
+    "prefix": "ac-if",
+    "description": "Branches",
+    "body": [
+      "if \\\"${1:condition}\\\"  then",
+      "-->[${2:Value1}] \\\"${3:MyActivity}\\\"",
+      "else",
+      "-->[${4:Value2}] \\\"${5:MyActivity}\\\"",
+      "endif"
+    ]
+  },
+  "ac-note-oneline": {
+    "prefix": "ac-note-oneline",
+    "description": "Notes",
+    "body": "${1:floating} note ${2:left right}: $3"
+  },
+  "ac-note-several": {
+    "prefix": "ac-note-several",
+    "description": "Notes",
+    "body": [
+      "${1:floating} note ${2:left right}:",
+      "\t${3:This note is on several",
+      "\t//lines// and can",
+      "\tcontain <b>HTML</b>",
+      "\t====",
+      "\t* Calling the method \"\"foo()\"\" is prohibited}",
+      "end note"
+    ]
+  },
+  "st-init": {
+    "prefix": "st-init",
+    "description": "Init state graph",
+    "body": "[*] --> ${1:init-state}"
+  },
+  "st-end": {
+    "prefix": "st-end",
+    "description": "End state graph",
+    "body": "${1:finish-state} --> [*]"
+  },
+  "st-def": {
+    "prefix": "st-def",
+    "description": "Declare state",
+    "body": "${1:this-state} : ${2:Activities}"
+  }
+}
