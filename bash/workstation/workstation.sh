@@ -7,7 +7,15 @@
 # date: Thursday 12 October 2023
 status=$?
 
-ssh-add ~/.ssh/github_ryzen
-ssh-add ~/.ssh/gitCatalejo
-ssh-add ~/.ssh/codeberg
-cd ~/projects/ && tmux
+add-ssh-key() {
+	ssh-add ~/.ssh/github
+	ssh-add ~/.ssh/codeberg
+	ssh-add ~/.ssh/gitlab
+}
+
+start-tmux() {
+	cd ~/projects/ && tmux
+}
+
+add-ssh-key
+start-tmux
