@@ -27,14 +27,11 @@ local ms = ls.multi_snippet
 local k = require("luasnip.nodes.key_indexer").new_key
 
 return {
-	s("trig", {
-		i(1),
-		t(" "),
-		sn(2, {
-			t(" "),
-			i(1),
-			t(" "),
-			i(2),
-		}),
+	s("parameter", {
+		t("parameter "),
+		i(1, "ID"),
+		t(" = "),
+		i(2, "value"),
+		t(";"),
 	}),
 }
