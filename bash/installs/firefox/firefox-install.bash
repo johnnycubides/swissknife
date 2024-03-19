@@ -6,11 +6,6 @@ remove-firefox-esr() {
 	sudo apt remove firefox-esr -y
 }
 
-DOWNLOAD=https://download.mozilla.org/?product=firefox-latest-ssl &
-os=linux64 &
-lang=en-US &
-_gl=1*oj7wrq*_ga*MTMwNTcxODcwNC4xNzEwNzk4NDc5*_ga_MQ7767QQQW*MTcxMDc5ODQ3OC4xLjEuMTcxMDc5ODQ4My4wLjAuMA..
-
 DP=~/gitPackages
 DAPP=$DP/firefox
 DOWNLOAD="https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
