@@ -25,8 +25,10 @@ PLUG_LUA=$CONFIG_PATCH/lua/plugins
 
 config() {
 	rm $CONFIG_LUA/myconfig.lua
+	rm $CONFIG_LUA/autocmd.lua
 	rm $CONFIG_LUA/verible_lsp_config.lua
 	cp ./config/myconfig.lua $CONFIG_LUA/
+	cp ./config/autocmd.lua $CONFIG_LUA/
 	cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
 	rm $PLUG_LUA/coc.lua
