@@ -4,6 +4,7 @@ PD=~/gitPackages
 APP=$PD/nvim
 
 dependencies() {
+  sudo apt remove neovim
 	sudo apt update
 	sudo apt install \
 		make \
@@ -25,11 +26,25 @@ build() {
 	# Docs: https://github.com/neovim/neovim/blob/master/BUILD.md
 	cd $APP
 	cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-	cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+  check
+	cd build && cpack -G DEB
+  check
+}
+
+install(){
+  cd $APP/neovim/build/
+  sudo dpkg -i nvim-linux64.deb
+  check
 }
 
 autoremove() {
 	rm -rf $APP
+}
+
+check(){
+  if [[ $? -ne 0 ]] ; then
+    exit $?
+  fi
 }
 
 all() {
