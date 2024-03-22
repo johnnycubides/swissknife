@@ -65,6 +65,14 @@ echoconfig() {
 	echo 'require("config.myconfig")' >>$CONFIG_PATCH/init.lua
 }
 
+all() {
+	fonts
+	dependencies
+	install
+	config
+	echoconfig
+}
+
 help() {
 	echo "Arguments:"
 	echo "dependencies"
