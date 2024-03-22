@@ -5,9 +5,27 @@
     "snippets": [
       {
         "language": [
-          "v"
+          "c"
         ],
-        "path": "./v.json"
+        "path": "./c.json"
+      },
+      {
+        "language": [
+          "ngsim"
+        ],
+        "path": "./ngsim.json"
+      },
+      {
+        "language": [
+          "plantuml"
+        ],
+        "path": "./plantuml.json"
+      },
+      {
+        "language": [
+          "verilog"
+        ],
+        "path": "./verilog.json"
       },
       {
         "language": [
@@ -23,15 +41,9 @@
       },
       {
         "language": [
-          "sh"
+          "v"
         ],
-        "path": "./sh.json"
-      },
-      {
-        "language": [
-          "matlab"
-        ],
-        "path": "./matlab.json"
+        "path": "./v.json"
       },
       {
         "language": [
@@ -47,15 +59,9 @@
       },
       {
         "language": [
-          "plantuml"
+          "matlab"
         ],
-        "path": "./plantuml.json"
-      },
-      {
-        "language": [
-          "make"
-        ],
-        "path": "./make.json"
+        "path": "./matlab.json"
       },
       {
         "language": [
@@ -71,15 +77,15 @@
       },
       {
         "language": [
-          "tex"
+          "lua"
         ],
-        "path": "./tex.json"
+        "path": "./lua.json"
       },
       {
         "language": [
-          "c"
+          "sh"
         ],
-        "path": "./c.json"
+        "path": "./sh.json"
       },
       {
         "language": [
@@ -89,21 +95,15 @@
       },
       {
         "language": [
-          "ngsim"
+          "tex"
         ],
-        "path": "./ngsim.json"
+        "path": "./tex.json"
       },
       {
         "language": [
-          "lua"
+          "make"
         ],
-        "path": "./lua.json"
-      },
-      {
-        "language": [
-          "verilog"
-        ],
-        "path": "./verilog.json"
+        "path": "./make.json"
       }
     ]
   }

@@ -11,7 +11,10 @@ fonts() {
 }
 
 dependencies() {
-	sudo apt install g++
+	sudo apt install \
+		g++ \
+		plantuml \
+		-y
 }
 
 install() {
@@ -34,12 +37,14 @@ config() {
 	rm $PLUG_LUA/coc.lua
 	rm $PLUG_LUA/verible.lua
 	rm $PLUG_LUA/snippet-converter.lua
+	rm $PLUG_LUA/plantuml.lua
 	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
 	cp ./plugins/coc.lua $PLUG_LUA/
 	cp ./plugins/verible.lua $PLUG_LUA/
 	cp ./plugins/snippet-converter.lua $PLUG_LUA/
+	cp ./plugins/plantuml.lua $PLUG_LUA/
 	# cp ./plugins/ultisnips.lua $PLUG_LUA/
 	# cp ./plugins/verilog_systemverilog.lua $PLUG_LUA/
 }
@@ -48,8 +53,17 @@ echoconfig() {
 	echo 'require("config.myconfig")' >>$CONFIG_PATCH/init.lua
 }
 
-# dependencies
-# fonts
-# install
-config
-# echoconfig # se lanza una única vez
+help() {
+	echo "Arguments:"
+	echo "dependencies"
+	echo "fonts"
+	echo "install"
+	echo "config"
+	echo "echoconfig # se debe lanzar una única vez"
+}
+
+if [[ -v 1 ]]; then
+	$1
+# else
+# 	help
+fi
