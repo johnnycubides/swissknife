@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 DP=~/gitPackages
-GITUI_VERSION=v0.25.1
+GITUI_VERSION=v0.25.2
 DGUI=$DP/gitui
 
 dependencies() {
@@ -19,3 +19,7 @@ install() {
 	sudo rm /usr/local/bin/gitui
 	sudo ln -sr gitui /usr/local/bin
 }
+
+if [[ -v 1 ]]; then
+	$1
+fi
