@@ -10,11 +10,21 @@ fonts() {
 	rm -rf fonts.zip
 }
 
+ripgrep() {
+	echo "Instalación de ripgrep"
+	VERSION=14.1.0
+	DOWNLOAD=https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_$VERSION-1_amd64.deb
+	wget -O ripgrep.deb $DOWNLOAD
+	sudo dpkg -i ripgrep.deb
+	rm -r ripgrep.deb
+}
+
 dependencies() {
 	sudo apt install \
 		g++ \
 		plantuml \
 		-y
+	ripgrep
 }
 
 install() {
