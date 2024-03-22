@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Repositorio: https://github.com/plantuml/plantuml/releases
 LBIN=/usr/local/bin
 APP=plantuml
 DAPP=~/gitPackages/$APP
