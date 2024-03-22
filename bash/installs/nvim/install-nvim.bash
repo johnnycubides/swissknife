@@ -32,7 +32,13 @@ autoremove() {
 	rm -rf $APP
 }
 
-dependencies
-download
-build
-autoremove
+all() {
+	dependencies
+	download
+	build
+	autoremove
+}
+
+if [[ -v 1 ]]; then
+	$1
+fi

@@ -98,7 +98,11 @@ mkdesktop() {
 # install
 # lsp-install
 # # build-install # no funciona correctamente para make
-config
+# config
 # myconfig # se lanza una única vez este comando
 # build_terminal
 # mkdesktop
+
+if [[ -v 1 ]]; then
+	$1
+fi
