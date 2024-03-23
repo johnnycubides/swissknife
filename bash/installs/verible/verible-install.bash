@@ -49,4 +49,7 @@ install() {
 	sudo ln -sr ./$SYNTAX $BIN
 }
 
+if [[ -v 1 ]]; then
+	$1
+fi
 # install

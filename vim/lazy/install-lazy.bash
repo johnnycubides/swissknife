@@ -3,8 +3,10 @@
 SIMBOLS=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
 
 fonts() {
-	cd ~/.local/share/fonts/
-	wget -o fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
+	DIRFONTS=~/.local/share/fonts/
+	mkdir -p $DIRFONTS
+	cd $DIRFONTS
+	wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
 	unzip fonts.zip
 	fc-cache -f -v
 	rm -rf fonts.zip
@@ -22,12 +24,13 @@ ripgrep() {
 dependencies() {
 	sudo apt install \
 		g++ \
-		plantuml \
 		-y
 	ripgrep
 }
 
 install() {
+	rm -rf ~/.config/nvim
+	rm -rf ~/.local/share/nvim
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
 	rm -rf ~/.config/nvim/.git
 }
@@ -65,6 +68,12 @@ echoconfig() {
 	echo 'require("config.myconfig")' >>$CONFIG_PATCH/init.lua
 }
 
+check() {
+	if [[ $? -ne 0 ]]; then
+		exit $?
+	fi
+}
+
 all() {
 	fonts
 	dependencies
@@ -80,10 +89,11 @@ help() {
 	echo "install"
 	echo "config"
 	echo "echoconfig # se debe lanzar una única vez"
+	echo "Instalar manualmente Verible, plantuml"
 }
 
 if [[ -v 1 ]]; then
 	$1
-# else
-# 	help
+else
+	help
 fi
