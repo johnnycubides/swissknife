@@ -1,0 +1,85 @@
+<mxfile host="Electron" modified="2024-03-24T00:31:35.115Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="1MwkbEISe-F6yOkgNt33" version="24.0.4" type="device">
+  <diagram name="Page-1" id="3DGSBHhlIWPSL8uAaT07">
+    <mxGraphModel dx="1434" dy="958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-1" target="PwJg4YzEeoAnsZOpgg2c-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-1" value=": props" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-2" target="PwJg4YzEeoAnsZOpgg2c-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-2" target="PwJg4YzEeoAnsZOpgg2c-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-2" target="PwJg4YzEeoAnsZOpgg2c-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-2" value="&lt;b&gt;File:ComponentA.vue&lt;/b&gt;&lt;br&gt;&amp;lt;template&amp;gt;&lt;br&gt;&amp;lt;ComponentB&lt;br&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;:nameProVar=&quot;nameVarParent&quot;&lt;br&gt;@nameEmitFunction=&quot;nameFunctionParent&quot;&lt;br&gt;v-if=&quot;condition&quot;&lt;br&gt;v-show=&quot;condition&quot;&lt;br&gt;class=&quot; &quot;&lt;/blockquote&gt;&amp;gt;&amp;lt;/ComponentB&amp;gt;&lt;br&gt;&amp;lt;/template&amp;gt;&lt;br&gt;&amp;lt;script&amp;gt;&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;&lt;br&gt;&amp;lt;style&amp;gt;&lt;br&gt;&lt;br&gt;&amp;lt;style&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="255" y="90" width="300" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-3" value="@emits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="600" y="150" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-10" target="PwJg4YzEeoAnsZOpgg2c-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-10" target="PwJg4YzEeoAnsZOpgg2c-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-10" target="PwJg4YzEeoAnsZOpgg2c-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-10" target="PwJg4YzEeoAnsZOpgg2c-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-10" value="&lt;div&gt;&amp;lt;script&amp;gt;&lt;br&gt;import {&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;defineComponent, ref, onMounted, watch&lt;br&gt;} from &quot;vue&quot;;&lt;br&gt;import { othersComponents } from &quot;component&quot;;&lt;br&gt;import &quot;othersImports&quot;;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;export default defineComponent({&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;components: { },&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;props: [ &quot;namePropVar&quot;, ... ],&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;emits: [ &quot; nameEmitFunction&quot;, ... ],&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;setup(props, context) {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;const var = ref( );&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;const aFunction;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;onMounted();&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;watch();&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;return { };&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;},&lt;/span&gt;&lt;/div&gt;&lt;div&gt;});&lt;br&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="270" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-11" target="PwJg4YzEeoAnsZOpgg2c-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-11" target="PwJg4YzEeoAnsZOpgg2c-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-11" value="&lt;b&gt;File: ComponenteB.vue&lt;/b&gt;&lt;br&gt;&amp;lt;template&amp;gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&amp;lt;/template&amp;gt;&lt;br&gt;&amp;lt;script&amp;gt;&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="400" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-12" value="setup( ) {&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;return {&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;vars,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;aFunctions,&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;};&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=7;" vertex="1" parent="1">
+          <mxGeometry x="400" y="750" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-13" value="// Mulltiples watch&lt;br&gt;watch( &lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;() =&amp;gt; props.namePropVar,&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(renamePropVar) =&amp;gt; { }&lt;br&gt;)&lt;span style=&quot;background-color: initial;&quot;&gt;;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=7;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="900" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-15" value="&lt;div&gt;const aFunction = async ( ) =&amp;gt; {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;await ...;&lt;br&gt;};&lt;/div&gt;const aFunction = ( ) =&amp;gt; { };" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="900" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-16" value="// const aFunction = () =&amp;gt; { }, onMounted(() =&amp;gt; {});&lt;br&gt;&lt;br&gt;( ) =&amp;gt; {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;context.emit(&quot;nameEmitFunction&quot;, arguments... );&lt;br&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=7;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="400" y="626.25" width="300" height="87.5" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-27" target="PwJg4YzEeoAnsZOpgg2c-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-27" value="&lt;div&gt;&amp;lt;script&amp;gt;&lt;br&gt;import {&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;defineComponent, ref, onMounted, watch&lt;br&gt;} from &quot;vue&quot;;&lt;br&gt;import { ComponentB } from &quot;ComponentB&quot;;&lt;br&gt;import { OthersComponents } from &quot;Components&quot;;&lt;br&gt;import &quot;othersImports&quot;;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;export default defineComponent({&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;components: {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;C&lt;/span&gt;omponentB,&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;setup( ) {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;const nameVarParent = ref( );&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;const nameFunctionParent&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;return {&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;nameVarParent,&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;nameFunctionParent,&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;};&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;},&lt;/span&gt;&lt;/div&gt;&lt;div&gt;});&lt;br&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="52.5" width="280" height="325" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-29" value="const nameFunctionParent = (Arguments...) =&amp;gt; { };" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=7;" vertex="1" parent="1">
+          <mxGeometry x="690" y="440" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwJg4YzEeoAnsZOpgg2c-31" target="PwJg4YzEeoAnsZOpgg2c-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-31" value=": props" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="150" y="150" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PwJg4YzEeoAnsZOpgg2c-34" value="@emits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="520" y="420" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

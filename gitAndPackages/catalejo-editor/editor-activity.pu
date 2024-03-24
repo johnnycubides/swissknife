@@ -1,0 +1,48 @@
+@startuml
+start
+
+:Cargar todos los
+componentes;
+
+fork
+  if (Clic en treeView) then (yes)
+    if (Archivo valido) then (yes)
+      :Enviar contexto
+      a tagFile;
+      if (Archivo existe en el tagFile) then (yes)
+        (T)
+      else (no)
+        :Agregar archivo
+        al tagFile;
+      endif
+      (T)
+      detach
+    else (no)
+      stop
+    endif
+  else (no)
+    stop
+  endif
+
+fork again
+  if (Clic en tagFile) then (yes)
+    (T)
+    :Según contexto enviar
+    subcontexto a:
+    - comandline
+    - menubar
+    - workspace;
+  else (no) 
+    stop
+  endif
+
+fork again
+  if (Clic en remover del tagFile) then (yes)
+    :Remover ese archivo
+    del tagFile;
+  endif
+
+end fork
+
+stop
+@enduml

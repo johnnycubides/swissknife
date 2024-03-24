@@ -1,0 +1,88 @@
+@startuml
+"Editor" *-- "TreeView"
+"Editor" *-- "TagFile"
+"Editor" *-- "Workspace"
+"Editor" *-- "Log"
+"Editor" *-- "Commandline"
+"Editor" *-- "Menubar"
+"Editor" o-- "Context"
+
+"Workspace" *-- "Codemirror"
+"Workspace" *-- "Blockly"
+
+class "Editor" {
+  #path: string
+  #contentFile: string
+  #context: Context
+  #generatedCode: string
+  #log: object
+  #setPath()
+  #setContentFile()
+  #setGeneratedCode()
+}
+class "Context" {
+  -path: string
+  -extension: [
+  lua, ck, py,
+  json
+  ]
+  -plataforma: [
+  nodemcu, chuck,
+  micropython
+  ]
+}
+class "TreeView" {
+  -listFiles: string[]
+  +emit.setPath()
+  -click.validateFile()
+}
+class "TagFile" {
+  +prop.path
+  -file2Adder: []
+  +emit.setContext()
+  -watch.getPath()
+  -getContent()
+}
+class "Workspace" {
+  +prop.contentFile
+  +prop.context
+  #context
+  #contentFile
+  #blocklyXml
+  #generatedCode
+  +emit.setContentFile()
+  +emit.setGeneratedCode()
+  #setContentFile()
+  #setBlocklyXml()
+  -setContentFileFromBlockly()
+}
+class "Blockly" {
+  +prop.context
+  +prop.blocklyXml
+  +emit.setGeneratedCode()
+  +emit.setBlocklyXml()
+  -watch.getContext()
+  -watch.getBlocklyXml()
+}
+class "Codemirror" {
+  +prop.context
+  +prop.contentFile
+  +emit.setContentFile()
+  -watch.getContext()
+  -watch.getContentFile()
+}
+class "Log" {
+  #prop.log
+}
+class "Commandline" {
+  +prop.context
+  +prop.contentFile
+  +prop.generatedCode
+}
+class "Menubar" {
+  +prop.context
+  +prop.contentFile
+  +prop.generatedCode
+}
+
+@enduml
