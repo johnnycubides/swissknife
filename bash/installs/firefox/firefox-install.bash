@@ -66,4 +66,19 @@ desktop-file() {
 # remove-firefox-esr
 # install
 # desktop-file
+# update-firefox
+
+help() {
+	echo "
+remove-firefox-esr
+install
+desktop-file
 update-firefox
+  "
+}
+
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi

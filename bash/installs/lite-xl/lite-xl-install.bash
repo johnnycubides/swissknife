@@ -27,6 +27,7 @@ dependencies() {
 }
 
 install() {
+	sudo ln -i $LOCAL_BIN/lite-xl
 	rm -rf $DAPP
 	mkdir -p $DAPP
 	cd $DAPP
@@ -93,16 +94,22 @@ mkdesktop() {
 	sh install-desktop.sh
 }
 
-# dependencies
-# remove
-# install
-# lsp-install
-# # build-install # no funciona correctamente para make
-# config
-# myconfig # se lanza una única vez este comando
-# build_terminal
-# mkdesktop
+help() {
+	echo "
+dependencies
+remove
+install
+lsp-install
+build-install # no funciona correctamente para make
+config
+myconfig # se lanza una única vez este comando
+build_terminal
+mkdesktop
+"
+}
 
 if [[ -v 1 ]]; then
 	$1
+else
+	help
 fi

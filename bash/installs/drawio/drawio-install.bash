@@ -1,7 +1,9 @@
 !# /bin/bash
 
+LBIN=/usr/local/bin
 DP=~/gitPackages/
-APP=$DP/drawio
+APP=drawio
+DAPP=$DP/$APP
 VERSION=24.0.4
 DOWNLOAD=https://github.com/jgraph/drawio-desktop/releases/download/v$VERSION/drawio-x86_64-$VERSION.AppImage
 
@@ -10,12 +12,23 @@ dependencies() {
 }
 
 install() {
-	mkdir -p $APP
-	cd $APP
+	sudo rm -i $LBIN/$APP
+	mkdir -p $DAPP
+	cd $DAPP
 	wget -O drawio $DOWNLOAD
-	chmod +x drawio
-	sudo ln -sr drawio /usr/local/bin/drawio
+	chmod +x $APP
+	sudo ln -sr $APP $LBIN/$APP
 }
 
-# install
-# dependencies
+help() {
+	echo "
+dependencies
+install
+  "
+}
+
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi

@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 DP=~/gitPackages
 GITUI_VERSION=v0.25.2
@@ -20,6 +20,15 @@ install() {
 	sudo ln -sr gitui /usr/local/bin
 }
 
+help() {
+	echo "
+dependencies
+install
+  "
+}
+
 if [[ -v 1 ]]; then
 	$1
+else
+	help
 fi

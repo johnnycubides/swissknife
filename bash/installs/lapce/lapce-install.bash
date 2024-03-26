@@ -5,6 +5,7 @@ APP=$DP/lapce
 DOWNLOAD=https://github.com/lapce/lapce/releases/latest/download/Lapce-linux.tar.gz
 
 install() {
+	sudo rm -i /usr/local/bin/lapce
 	rm -rf $APP
 	mkdir -p $APP
 	cd $APP
@@ -15,4 +16,14 @@ install() {
 	sudo ln -sr lapce /usr/local/bin/lapce
 }
 
-# install
+help() {
+	echo "
+install
+"
+}
+
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi

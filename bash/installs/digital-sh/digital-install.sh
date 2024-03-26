@@ -25,5 +25,14 @@ install() {
 	rm digital.zip
 }
 
+help() {
+	echo "
 dependencies
 install
+  "
+}
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi

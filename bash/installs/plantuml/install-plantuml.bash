@@ -24,6 +24,14 @@ install() {
 	sudo ln -sr plantuml.bash /usr/local/bin/$APP
 }
 
+help() {
+	echo "
+install
+  "
+}
+
 if [[ -v 1 ]]; then
 	$1
+else
+	help
 fi
