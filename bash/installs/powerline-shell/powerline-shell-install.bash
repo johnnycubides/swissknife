@@ -31,5 +31,21 @@ bash_config() {
 # dependencies
 # install
 # config_laptop
-config_desktop
+# config_desktop
 # bash_config # Esta configuracion se debe realizar una unica vez
+
+help() {
+	echo "
+dependencies
+install
+config_laptop
+config_desktop
+bash_config # Esta configuracion se debe realizar una unica vez
+  "
+}
+
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi

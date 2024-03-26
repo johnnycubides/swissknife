@@ -20,5 +20,15 @@ config() {
 	cp .tmux.conf.local ~/.config/tmux/tmux.conf.local
 }
 
-# install
-# config
+help() {
+	echo "
+install
+config
+"
+}
+
+if [[ -v 1 ]]; then
+	$1
+else
+	help
+fi
