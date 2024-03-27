@@ -39,6 +39,7 @@ class "TreeView" {
 class "TagFile" {
   +prop.path
   -file2Adder: []
+  -bufferFiles: []
   +emit.setContext()
   -watch.getPath()
   -getContent()
