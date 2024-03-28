@@ -1,6 +1,8 @@
 return {
 	{
-		"https://gitlab.com/itaranto/plantuml.nvim",
+		-- "https://gitlab.com/itaranto/plantuml.nvim",
+		"https://gitlab.com/johnnycubides/plantuml.nvim.git",
+		branch = "master",
 		version = "*",
 		config = function()
 			require("plantuml").setup({
@@ -8,7 +10,8 @@ return {
 					type = "image",
 					options = {
 						prog = "eog",
-						dark_mode = false,
+						dark_mode = true,
+						svg = true,
 					},
 				},
 				render_on_write = true,
