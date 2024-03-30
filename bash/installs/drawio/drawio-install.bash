@@ -1,10 +1,10 @@
-!# /bin/bash
+#!/bin/bash
 
 LBIN=/usr/local/bin
 DP=~/gitPackages/
 APP=drawio
 DAPP=$DP/$APP
-VERSION=24.0.4
+VERSION=24.1.0
 DOWNLOAD=https://github.com/jgraph/drawio-desktop/releases/download/v$VERSION/drawio-x86_64-$VERSION.AppImage
 
 dependencies() {
