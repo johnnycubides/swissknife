@@ -1,7 +1,11 @@
 #!/bin/bash
 
-install() {
+update() {
 	sudo apt update
+	install
+}
+
+install() {
 	sudo apt install \
 		picocom \
 		minicom \
@@ -10,6 +14,7 @@ install() {
 
 help() {
 	echo "
+update
 install
   "
 }
