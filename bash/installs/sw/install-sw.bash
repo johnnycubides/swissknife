@@ -11,11 +11,11 @@ LOCAL_BIN=/usr/local/bin
 BIN=sw.sh
 
 install() {
-	sudo ln -sr $BIN /usr/local/bin/$BIN
+	sudo ln -sr $BIN /usr/local/bin/sw
 }
 
 remove() {
-	sudo rm -i $LOCAL_BIN/$BIN
+	sudo rm -i $LOCAL_BIN/sw
 }
 
 help() {
