@@ -2,15 +2,10 @@
 
 update() {
 	sudo apt update
-	install
 }
 
 install() {
-	sudo apt install \
-		picocom \
-		minicom \
-		-y
-	sudo usermod -a -G dialout $(whoami)
+	sudo apt install gnote
 }
 
 help() {
