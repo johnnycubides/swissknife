@@ -10,7 +10,7 @@ status=$?
 add-ssh-key() {
 	ssh-add ~/.ssh/github
 	ssh-add ~/.ssh/codeberg
-	ssh-add ~/.ssh/gitlab_ryzen7
+	ssh-add ~/.ssh/gitlab
 }
 
 start-tmux() {
