@@ -1,5 +1,12 @@
 #!/bin/bash
 
+dependencies() {
+	sudo apt install \
+		fish \
+		-y
+	mkdir -p /home/johnny/.config/fish/conf.d/
+}
+
 install() {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
