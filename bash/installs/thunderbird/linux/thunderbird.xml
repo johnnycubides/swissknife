@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="text/x-thunderbird">
+      <comment>Thunderbird</comment>
+	    <comment xml:lang="en">Thunderbird</comment>
+	    <comment xml:lang="es">Thunderbird</comment>
+    </mime-type>
+</mime-info>
