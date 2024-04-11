@@ -53,6 +53,7 @@ config() {
 	rm $PLUG_LUA/plantuml.lua
 	rm $PLUG_LUA/plantuml-syntax.lua
 	rm $PLUG_LUA/markdown-preview.lua
+	rm $PLUG_LUA/aerial.lua
 	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
@@ -62,6 +63,7 @@ config() {
 	cp ./plugins/plantuml.lua $PLUG_LUA/
 	cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
 	cp ./plugins/markdown-preview.lua $PLUG_LUA/
+	cp ./plugins/aerial.lua $PLUG_LUA/
 	# cp ./plugins/ultisnips.lua $PLUG_LUA/
 	# cp ./plugins/verilog_systemverilog.lua $PLUG_LUA/
 }
