@@ -42,10 +42,10 @@ PLUG_LUA=$CONFIG_PATCH/lua/plugins
 config() {
 	rm $CONFIG_LUA/myconfig.lua
 	rm $CONFIG_LUA/autocmd.lua
-	rm $CONFIG_LUA/verible_lsp_config.lua
+	# rm $CONFIG_LUA/verible_lsp_config.lua
 	cp ./config/myconfig.lua $CONFIG_LUA/
 	cp ./config/autocmd.lua $CONFIG_LUA/
-	cp ./config/verible_lsp_config.lua $CONFIG_LUA/
+	# cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
 	rm $PLUG_LUA/coc.lua
 	rm $PLUG_LUA/verible.lua
@@ -54,6 +54,9 @@ config() {
 	rm $PLUG_LUA/plantuml-syntax.lua
 	rm $PLUG_LUA/markdown-preview.lua
 	rm $PLUG_LUA/aerial.lua
+	rm $PLUG_LUA/gentags.lua
+	# rm $PLUG_LUA/typescript-tools.lua
+	rm $PLUG_LUA/vue-language-tools.lua
 	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
@@ -64,6 +67,9 @@ config() {
 	cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
 	cp ./plugins/markdown-preview.lua $PLUG_LUA/
 	cp ./plugins/aerial.lua $PLUG_LUA/
+	cp ./plugins/gentags.lua $PLUG_LUA/
+	# cp ./plugins/typescript-tools.lua $PLUG_LUA/
+	cp ./plugins/vue-language-tools.lua $PLUG_LUA/
 	# cp ./plugins/ultisnips.lua $PLUG_LUA/
 	# cp ./plugins/verilog_systemverilog.lua $PLUG_LUA/
 }

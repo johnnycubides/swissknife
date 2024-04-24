@@ -1,9 +1,6 @@
 -- Iniciar algunas funciones automáticamente en función del filetype
 require("config.autocmd")
 
--- Configuración para el plugin de verible
-require("config.verible_lsp_config")
-
 -- Config snippets plugin
 -- https://github.com/smjonas/snippet-converter.nvim/blob/main/doc/documentation.md#luasnip
 -- plugin from_vscode

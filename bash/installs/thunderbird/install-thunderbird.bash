@@ -17,6 +17,13 @@ install() {
 	sudo ln -sr $APP /usr/local/bin/$APP
 }
 
+update-thunderbird() {
+	cd $DAPP
+	wget -O $APP.tar.bz2 $DOWNLOAD
+	tar xvjf $APP.tar.bz2
+	rm -f $APP.tar.bz2
+}
+
 desktop-file() {
 
 	PATH_LOGO=$DAPP/thunderbird/chrome/icons/default/default128.png
@@ -56,7 +63,7 @@ help() {
 remove-firefox-esr
 install
 desktop-file
-update-firefox
+update-thunderbird
   "
 }
 
