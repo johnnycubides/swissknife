@@ -69,7 +69,7 @@ config() {
 	# cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
 	rm $PLUG_LUA/typescript-tools.lua
-	rm $PLUG_LUA/vue-language-tools.lua
+	# rm $PLUG_LUA/vue-language-tools.lua
 	# cp $PLUG_LUA/example.lua ./plugins/
 	# rm $PLUG_LUA/example.lua
 	# rm $PLUG_LUA/coc.lua
@@ -85,8 +85,8 @@ config() {
 	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
-	cp ./plugins/typescript-tools.lua $PLUG_LUA/   # Este es el plugin adecuado
-	cp ./plugins/vue-language-tools.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
+	cp ./plugins/typescript-tools.lua $PLUG_LUA/ # Este es el plugin adecuado
+	# cp ./plugins/vue-language-tools.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
 	# cp ./plugins/coc.lua $PLUG_LUA/
 	# cp ./plugins/verible.lua $PLUG_LUA/
 	# cp ./plugins/snippet-converter.lua $PLUG_LUA/
