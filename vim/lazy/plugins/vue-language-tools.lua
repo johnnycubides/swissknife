@@ -5,11 +5,11 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- local mason_registry = require("mason-registry")
-			-- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-			-- 	.. "/node_modules/@vue/language-server"
-			local vue_language_server_path =
-				"/home/johnny/.nvm/versions/node/v21.7.3/lib/node_modules/@vue/language-server"
+			local mason_registry = require("mason-registry")
+			local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+				.. "/node_modules/@vue/language-server"
+			-- local vue_language_server_path =
+			-- 	"/home/johnny/.nvm/versions/node/v21.7.3/lib/node_modules/@vue/language-server"
 
 			local lspconfig = require("lspconfig")
 

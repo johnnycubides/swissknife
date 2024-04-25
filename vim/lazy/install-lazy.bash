@@ -28,6 +28,7 @@ cargo_dependencies() {
 
 npm_dependencies() {
 	npm install -g neovim
+	npm install -g tree-sitter
 }
 
 dependencies() {
@@ -38,6 +39,7 @@ dependencies() {
 		python3-venv \
 		golang \
 		python-is-python3 \
+		fswatch \
 		-y
 	ripgrep
 	npm_dependencies
@@ -66,6 +68,8 @@ config() {
 	cp ./config/autocmd.lua $CONFIG_LUA/
 	# cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
+	rm $PLUG_LUA/typescript-tools.lua
+	rm $PLUG_LUA/vue-language-tools.lua
 	# cp $PLUG_LUA/example.lua ./plugins/
 	# rm $PLUG_LUA/example.lua
 	# rm $PLUG_LUA/coc.lua
@@ -76,13 +80,13 @@ config() {
 	# rm $PLUG_LUA/markdown-preview.lua
 	# rm $PLUG_LUA/aerial.lua
 	# rm $PLUG_LUA/gentags.lua
-	# rm $PLUG_LUA/typescript-tools.lua
 	# rm $PLUG_LUA/treesitter.lua
 	# rm $PLUG_LUA/mason.lua
-	# rm $PLUG_LUA/vue-language-tools.lua
 	# rm $PLUG_LUA/ultisnips.lua
 	# rm $PLUG_LUA/verilog_systemverilog.lua
 
+	cp ./plugins/typescript-tools.lua $PLUG_LUA/   # Este es el plugin adecuado
+	cp ./plugins/vue-language-tools.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
 	# cp ./plugins/coc.lua $PLUG_LUA/
 	# cp ./plugins/verible.lua $PLUG_LUA/
 	# cp ./plugins/snippet-converter.lua $PLUG_LUA/
@@ -92,8 +96,6 @@ config() {
 	# cp ./plugins/markdown-preview.lua $PLUG_LUA/
 	# cp ./plugins/aerial.lua $PLUG_LUA/
 	# cp ./plugins/gentags.lua $PLUG_LUA/
-	# cp ./plugins/typescript-tools.lua $PLUG_LUA/
-	# cp ./plugins/vue-language-tools.lua $PLUG_LUA/
 	# cp ./plugins/ultisnips.lua $PLUG_LUA/
 	# cp ./plugins/verilog_systemverilog.lua $PLUG_LUA/
 	# cp ./plugins/mason.lua $PLUG_LUA/
