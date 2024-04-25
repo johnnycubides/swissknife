@@ -49,7 +49,16 @@ install() {
 	sudo ln -sr ./$SYNTAX $BIN
 }
 
+help() {
+	echo "
+  removebin
+  install
+  "
+}
+
 if [[ -v 1 ]]; then
 	$1
+else
+	help
 fi
 # install

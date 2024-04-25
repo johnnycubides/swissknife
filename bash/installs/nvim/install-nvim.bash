@@ -26,7 +26,9 @@ download() {
 
 build() {
 	# Docs: https://github.com/neovim/neovim/blob/master/BUILD.md
+	COMMIT="af8500af64571f787579b60bf0064cd05655fd51"
 	cd $APP
+	git checkout $COMMIT
 	cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 	check
 	cd build && cpack -G DEB
@@ -63,6 +65,9 @@ download
 build
 install
 autoremove
+
+Observación: Antes de realizar actualización modifique el commit,
+como es el cason de mason y las funciones puede fallar.
   "
 }
 
