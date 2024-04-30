@@ -1,34 +1,22 @@
--- Este plugin sirve tanto para vue, javascript y typescript. Se recomienda no hacer uso
--- del script ./typescript-tools.lua pues este ya lo contiene
--- npm install -g @vue/language-server @vue/typescript-plugin typescript-language-server typescript
+-- npm install -g @vue/language-server @vue/typescript-plugin typescript
 return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local mason_registry = require("mason-registry")
-			local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-				.. "/node_modules/@vue/language-server"
-			-- local vue_language_server_path =
-			-- 	"/home/johnny/.nvm/versions/node/v21.7.3/lib/node_modules/@vue/language-server"
-
+			-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
+			-- https://github.com/Jarmos-san/dotfiles/blob/5cd6aa506d9888e4437340741def5833148cfba5/dotfiles/.config/nvim/lua/plugins/lspconfig.lua#L70
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 			local lspconfig = require("lspconfig")
-
-			lspconfig.tsserver.setup({
+			lspconfig.volar.setup({
+				filetypes = { "vue" },
 				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = vue_language_server_path,
-							languages = { "vue" },
-						},
+					vue = {
+						hybridMode = false,
 					},
 				},
-				-- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-				filetypes = { "vue" },
+				capabilities = capabilities,
 			})
-
-			-- No need to set `hybridMode` to `true` as it's the default value
-			lspconfig.volar.setup({})
 		end,
 	},
 }
