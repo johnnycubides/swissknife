@@ -73,7 +73,6 @@ config() {
 	rm $PLUG_LUA/plantuml-syntax.lua
 	rm $PLUG_LUA/plantuml.lua
 	rm $PLUG_LUA/vue-language-tools.lua
-	# rm $PLUG_LUA/vue-typescript-plugin.lua
 	# cp $PLUG_LUA/example.lua ./plugins/
 	# rm $PLUG_LUA/example.lua
 	# rm $PLUG_LUA/coc.lua
@@ -91,7 +90,6 @@ config() {
 	cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
 	cp ./plugins/plantuml.lua $PLUG_LUA/
 	cp ./plugins/vue-language-tools.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
-	# cp ./plugins/vue-typescript-plugin.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
 	# cp ./plugins/coc.lua $PLUG_LUA/
 	# cp ./plugins/verible.lua $PLUG_LUA/
 	# cp ./plugins/snippet-converter.lua $PLUG_LUA/
