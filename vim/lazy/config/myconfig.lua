@@ -1,5 +1,6 @@
 -- Iniciar algunas funciones automáticamente en función del filetype
 require("config.autocmd")
+require("config.lsp-config")
 
 -- Config snippets plugin
 -- https://github.com/smjonas/snippet-converter.nvim/blob/main/doc/documentation.md#luasnip

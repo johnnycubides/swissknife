@@ -15,7 +15,7 @@ PRE=$APPS-preprocessor
 PRJ=$APPS-project
 SYNTAX=$APPS-syntax
 
-VERSION=v0.0-3622-g07b310a3
+VERSION=v0.0-3644-g6882622d
 DOWNLOAD=https://github.com/chipsalliance/verible/releases/download/$VERSION/verible-$VERSION-linux-static-x86_64.tar.gz
 
 removebin() {
