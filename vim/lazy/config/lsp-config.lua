@@ -7,7 +7,7 @@ local handlers = {
 	function(server_name) -- default handler (optional)
 		lspconfig[server_name].setup({})
 	end,
-	-- VOLAR
+	-- VOLAR: no activar esta opción, en cambio hacer uso de (1)
 	["volar"] = function()
 		lspconfig.volar.setup({
 			filetypes = { "vue" },
@@ -28,6 +28,7 @@ local handlers = {
 			-- },
 		})
 	end,
+	-- tsserver con soporte vue, no funciona correctamente
 	["tsserver"] = function()
 		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vue-support
 		lspconfig.tsserver.setup({
@@ -45,11 +46,24 @@ local handlers = {
 			},
 		})
 	end,
+	["lua_ls"] = function() end,
 }
 mason_lspconfig.setup({
-	ensure_installed = { "volar" },
+	ensure_installed = { "lua_ls" },
 	handlers = handlers,
 	automatic_installation = false,
+})
+
+-- (1) VOLAR CONFIGURACIÓN
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+lspconfig.volar.setup({
+	filetypes = { "vue" },
+	init_options = {
+		vue = {
+			hybridMode = false,
+		},
+	},
+	capabilities = capabilities,
 })
 -- local capabilities =
 -- 	require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
