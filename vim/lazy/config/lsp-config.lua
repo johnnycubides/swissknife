@@ -15,17 +15,7 @@ local handlers = {
 				vue = {
 					hybridMode = true,
 				},
-				-- typescript = {
-				-- 	tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-				-- },
 			},
-			-- settings = {
-			-- 	vue = {
-			-- 		diagnostics = {
-			-- 			globals = { "vim" },
-			-- 		},
-			-- 	},
-			-- },
 		})
 	end,
 	-- tsserver con soporte vue, no funciona correctamente
@@ -55,6 +45,8 @@ mason_lspconfig.setup({
 })
 
 -- (1) VOLAR CONFIGURACIÓN
+-- Se requiere instalar manualmente:
+-- -- npm install -g @vue/language-server @vue/typescript-plugin typescript
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 lspconfig.volar.setup({
 	filetypes = { "vue" },
@@ -65,15 +57,3 @@ lspconfig.volar.setup({
 	},
 	capabilities = capabilities,
 })
--- local capabilities =
--- 	require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- local lspconfig = require("lspconfig")
--- lspconfig.volar.setup({
--- 	filetypes = { "vue" },
--- 	init_options = {
--- 		vue = {
--- 			hybridMode = false,
--- 		},
--- 	},
--- 	capabilities = capabilities,
--- })
