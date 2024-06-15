@@ -63,6 +63,7 @@ CONFIG_LUA=$CONFIG_PATCH/lua/config
 PLUG_LUA=$CONFIG_PATCH/lua/plugins
 
 config() {
+	## CONFIGURACIONES ##
 	rm $CONFIG_LUA/myconfig.lua
 	rm $CONFIG_LUA/autocmd.lua
 	rm $CONFIG_LUA/lsp-config.lua
@@ -72,6 +73,7 @@ config() {
 	cp ./config/lsp-config.lua $CONFIG_LUA/
 	# cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
+	## PLUGINS ##
 	rm $PLUG_LUA/example.lua
 	rm $PLUG_LUA/aerial.lua
 	rm $PLUG_LUA/plantuml-syntax.lua
@@ -83,7 +85,7 @@ config() {
 	# rm $PLUG_LUA/verible.lua
 	# cp $PLUG_LUA/example.lua ./plugins/
 	# rm $PLUG_LUA/coc.lua
-	# rm $PLUG_LUA/snippet-converter.lua
+	rm $PLUG_LUA/snippet-converter.lua
 	# rm $PLUG_LUA/markdown-preview.lua
 	# rm $PLUG_LUA/gentags.lua
 	# rm $PLUG_LUA/mason.lua
@@ -99,7 +101,7 @@ config() {
 	# cp ./plugins/vue-language-tools.lua $PLUG_LUA/ # este requiere tsserver, se requiere buscar mejoras para que funcione con typescript-tools
 	# cp ./plugins/verible.lua $PLUG_LUA/
 	# cp ./plugins/coc.lua $PLUG_LUA/
-	# cp ./plugins/snippet-converter.lua $PLUG_LUA/
+	cp ./plugins/snippet-converter.lua $PLUG_LUA/
 	# cp ./plugins/plantuml.lua $PLUG_LUA/
 	# cp ./plugins/markdown-preview.lua $PLUG_LUA/
 	# cp ./plugins/gentags.lua $PLUG_LUA/
@@ -135,6 +137,7 @@ help() {
 	echo "config"
 	echo "myconfig # se debe lanzar una única vez"
 	echo "Instalar manualmente Verible, plantuml"
+	echo " Antes de agregar más plugin manualmente, verifique la documentación de lazyvim ya que desde EXTAS puede estar listo para cargar, como por ejemplo LuaSnips"
 }
 
 if [[ -v 1 ]]; then
