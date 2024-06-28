@@ -1,3 +1,4 @@
+-- TODO: uso incompleto, de hecho no se está cargando 2024-05-04
 local Path = require("plenary.path")
 
 return {
