@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DP=~/gitPackages
-GITUI_VERSION=v0.25.2
+GITUI_VERSION=v0.26.2
 DGUI=$DP/gitui
 
 dependencies() {
@@ -12,7 +12,7 @@ dependencies() {
 install() {
 	mkdir -p $DGUI
 	cd $DGUI
-	wget -O "gitui.tar.gz" "https://github.com/extrawurst/gitui/releases/download/$GITUI_VERSION/gitui-linux-musl.tar.gz"
+	wget -O "gitui.tar.gz" "https://github.com/extrawurst/gitui/releases/download/$GITUI_VERSION/gitui-linux-x86_64.tar.gz"
 	tar xvf gitui.tar.gz
 	rm gitui.tar.gz
 	chmod +x gitui
