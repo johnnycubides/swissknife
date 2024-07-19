@@ -1,26 +1,25 @@
 {
   "segments": [
-    "virtual_env", 
-    "ssh", 
-    "cwd", 
-    "git", 
-    "hg", 
-    "jobs", 
+    "virtual_env",
+    "ssh",
+    "cwd",
+    "git",
+    "git_stash",
+    "jobs",
+    "set_term_title",
+    "svn",
     "root"
   ],
-  "cwd":{
-      "mode":"plain",
-      "max_depth":3
-  },
-  "hostname":{
-      "colorize": false
+  "time":{
+    "fotmat":"%H:%M"
   },
   "vcs":{
     "show_symbol": true
   },
-  "time":{
-    "fotmat":"%H:%M"
+  "cwd": {
+    "mode": "plain",
+    "max_depth":3
   },
-  "mode":"patched",
-  "theme":"default"
+  "mode": "patched",
+  "theme": "default"
 }
