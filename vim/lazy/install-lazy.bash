@@ -76,8 +76,8 @@ config() {
 	## PLUGINS ##
 	# rm $PLUG_LUA/example.lua
 	# rm $PLUG_LUA/aerial.lua
-	# rm $PLUG_LUA/plantuml-syntax.lua
-	# rm $PLUG_LUA/plantuml.lua
+	rm $PLUG_LUA/plantuml-syntax.lua
+	rm $PLUG_LUA/plantuml.lua
 	# LSP
 	rm $PLUG_LUA/typescript-tools.lua
 	# rm $PLUG_LUA/mason-lsp-config.lua
@@ -93,8 +93,8 @@ config() {
 
 	# cp $PLUG_LUA/example.lua ./plugins/
 	# cp ./plugins/aerial.lua $PLUG_LUA/
-	# cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
-	# cp ./plugins/plantuml.lua $PLUG_LUA/
+	cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
+	cp ./plugins/plantuml.lua $PLUG_LUA/
 	# LSP
 	cp ./plugins/typescript-tools.lua $PLUG_LUA/ # Este es el plugin adecuado
 	# cp ./plugins/mason-lsp-config.lua $PLUG_LUA/
@@ -102,7 +102,6 @@ config() {
 	# cp ./plugins/verible.lua $PLUG_LUA/
 	# cp ./plugins/coc.lua $PLUG_LUA/
 	cp ./plugins/snippet-converter.lua $PLUG_LUA/
-	# cp ./plugins/plantuml.lua $PLUG_LUA/
 	# cp ./plugins/markdown-preview.lua $PLUG_LUA/
 	# cp ./plugins/gentags.lua $PLUG_LUA/
 	# cp ./plugins/ultisnips.lua $PLUG_LUA/

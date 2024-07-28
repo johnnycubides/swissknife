@@ -4,8 +4,11 @@ DP=~/gitPackages
 DAPP=$DP/digital
 LBIN=/usr/local/bin
 
-dependencies() {
+update() {
 	sudo apt update
+}
+
+dependencies() {
 	sudo apt install \
 		openjdk-11-jdk \
 		-y
@@ -27,6 +30,7 @@ install() {
 
 help() {
 	echo "
+update
 dependencies
 install
   "

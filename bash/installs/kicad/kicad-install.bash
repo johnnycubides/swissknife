@@ -4,8 +4,11 @@
 # 	sudo add-apt-repository ppa:kicad/kicad-8.0-releases
 # }
 
-install() {
+update() {
 	sudo apt update
+}
+
+install() {
 	sudo apt install \
 		kicad \
 		kicad-packages3d \

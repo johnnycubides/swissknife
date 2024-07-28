@@ -7,8 +7,11 @@ DAPP=~/gitPackages/$APP
 VERSION=1.2024.3
 DOWNLOAD=https://github.com/plantuml/plantuml/releases/download/v1.2024.3/plantuml-$VERSION.jar
 
-dependencies() {
+update() {
 	sudo apt update
+}
+
+dependencies() {
 	sudo apt install \
 		graphviz \
 		-y
