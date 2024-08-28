@@ -45,7 +45,7 @@ endsnippet
 snippet img "Insert image"
 \begin{figure}[H]
 	\center{}
-	\includegraphics[width=${2:9cm}]{${1:img/}}
+	\includegraphics[width=${2:\textwidth}]{${1:img/}}
 	\caption{$3}
 	\label{fig_$4}
 \end{figure}
@@ -55,7 +55,7 @@ endsnippet
 snippet img-footnote "Insert image with footnote in caption"
 \begin{figure}[H]
 	\center{}
-	\includegraphics[width=${2:9cm}]{${1:img/}}
+	\includegraphics[width=${2:1\textwidth}]{${1:img/}}
 	\caption[]{$3\footnotemark}
 	\label{fig_$4}
 \end{figure}
@@ -69,7 +69,7 @@ snippet img-svg "Insert svg image"
 %\usepackage{svg} %insertar en el preambulo
 \begin{figure}
 	\center{}
-	\includesvg[width=${2:9cm}]{${1:img/}}
+	\includesvg[width=${2:1\textwidth}]{${1:img/}}
 	\caption{$3}
 	\label{fig_$4}
 \end{figure}
@@ -82,7 +82,7 @@ snippet img-pdf "Insert pdf image"
 % options: width=<width>, height=<height or page=<page number>
 \begin{figure}[H]
 	\center{}
-	\includegraphics[width=${2:15cm}]{${1:img/}}
+	\includegraphics[width=${2:1\textwidth}]{${1:img/}}
 	\caption{$3}
 	\label{fig_$4}
 \end{figure}
