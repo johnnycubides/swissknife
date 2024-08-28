@@ -75,7 +75,7 @@
       "  // end",
       "",
       "  // // RESULT FOR DEVICE/DESIGN UNDER TEST",
-      "  // wire [OUTPUT_SIZE-1:0] value;",
+      "  // wire [OUTPUT_SIZE-1:0] probe;",
       "",
       "  // // DEVICE/DESIGN UNDER TEST",
       "  // top dut (.a(inputs[1]), .b(inputs[0]), .c(value[0]));",
