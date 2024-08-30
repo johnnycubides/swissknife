@@ -5,75 +5,9 @@
     "snippets": [
       {
         "language": [
-          "markdown"
-        ],
-        "path": "./markdown.json"
-      },
-      {
-        "language": [
-          "sh"
-        ],
-        "path": "./sh.json"
-      },
-      {
-        "language": [
-          "tex"
-        ],
-        "path": "./tex.json"
-      },
-      {
-        "language": [
-          "typescript"
-        ],
-        "path": "./typescript.json"
-      },
-      {
-        "language": [
-          "plantuml"
-        ],
-        "path": "./plantuml.json"
-      },
-      {
-        "language": [
-          "matlab"
-        ],
-        "path": "./matlab.json"
-      },
-      {
-        "language": [
-          "c"
-        ],
-        "path": "./c.json"
-      },
-      {
-        "language": [
-          "vue"
-        ],
-        "path": "./vue.json"
-      },
-      {
-        "language": [
-          "verilog"
-        ],
-        "path": "./verilog.json"
-      },
-      {
-        "language": [
-          "cpp"
-        ],
-        "path": "./cpp.json"
-      },
-      {
-        "language": [
           "make"
         ],
         "path": "./make.json"
-      },
-      {
-        "language": [
-          "v"
-        ],
-        "path": "./v.json"
       },
       {
         "language": [
@@ -83,15 +17,63 @@
       },
       {
         "language": [
-          "javascript"
+          "verilog"
         ],
-        "path": "./javascript.json"
+        "path": "./verilog.json"
       },
       {
         "language": [
-          "lua"
+          "sh"
         ],
-        "path": "./lua.json"
+        "path": "./sh.json"
+      },
+      {
+        "language": [
+          "plantuml"
+        ],
+        "path": "./plantuml.json"
+      },
+      {
+        "language": [
+          "c"
+        ],
+        "path": "./c.json"
+      },
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      },
+      {
+        "language": [
+          "typescript"
+        ],
+        "path": "./typescript.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./tex.json"
+      },
+      {
+        "language": [
+          "matlab"
+        ],
+        "path": "./matlab.json"
+      },
+      {
+        "language": [
+          "ngsim"
+        ],
+        "path": "./ngsim.json"
       },
       {
         "language": [
@@ -101,9 +83,27 @@
       },
       {
         "language": [
-          "ngsim"
+          "lua"
         ],
-        "path": "./ngsim.json"
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "javascript"
+        ],
+        "path": "./javascript.json"
+      },
+      {
+        "language": [
+          "v"
+        ],
+        "path": "./v.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue.json"
       }
     ]
   }

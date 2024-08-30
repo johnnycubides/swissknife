@@ -61,6 +61,6 @@ lspconfig.volar.setup({
 -- 27-08-2024
 -- https://chipsalliance.github.io/verible/lint.html
 lspconfig.verible.setup({
+	cmd = { "verible-verilog-ls" },
 	-- cmd = { "verible-verilog-ls", "--ruleset=all" },
-	cmd = { "verible-verilog-ls", "--ruleset=all" },
 })
