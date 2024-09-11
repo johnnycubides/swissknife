@@ -83,14 +83,15 @@ config() {
 
 # Agregar la configuración
 myconfig() {
-  archivo=$CONFIG_LITE_XL/init.lua
-  palabra="local myconfig"
-  if grep -q "$palabra" "$archivo"; then
-    # Ejecutar el siguiente comando una única vez.
-    echo 'local myconfig = require("myconfig")' >>$CONFIG_LITE_XL/init.lua
-  else
-    echo "Ya había sido configurado"
-  fi
+  echo 'local myconfig = require("myconfig")' >>$CONFIG_LITE_XL/init.lua
+  # archivo=$CONFIG_LITE_XL/init.lua
+  # palabra="myconfig"
+  # if grep -q "$palabra" "$archivo"; then
+  #   # Ejecutar el siguiente comando una única vez.
+  #   echo 'local myconfig = require("myconfig")' >>$CONFIG_LITE_XL/init.lua
+  # else
+  #   echo "Ya había sido configurado"
+  # fi
   check
 }
 
@@ -98,7 +99,7 @@ DP=~/gitPackages
 DTERMINAL=$DP/lite-lx-terminal
 
 # Plugin para embeber la terminal en el editor
-build_terminal() {
+build-terminal() {
   # https://github.com/adamharrison/lite-xl-terminal
   rm -rf $DTERMINAL
   mkdir -p $DTERMINAL
@@ -136,7 +137,7 @@ lsp-install
 build-install # no funciona correctamente para make
 config
 myconfig # se lanza una única vez este comando
-build_terminal
+build-terminal
 mkdesktop
 "
 }

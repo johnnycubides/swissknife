@@ -14,19 +14,29 @@ download() {
 
 install-lite() {
   cd $TMP_LITE
-  bash lite-xl-install.bash dependencies
-  check
+  # bash lite-xl-install.bash dependencies
+  # check
+  echo "==> CONFIGURAR remove"
   bash lite-xl-install.bash remove
+  echo "CONFIGURAR install"
   bash lite-xl-install.bash install
   check
+  echo "==> CONFIGURAR lsp-install"
   bash lite-xl-install.bash lsp-install
   check
-  bash lite-xl-install.bash build-install
+  # echo "==> CONFIGURAR build-install"
+  # bash lite-xl-install.bash build-install
+  # check
+  echo "==> CONFIGURAR build-terminal"
+  bash lite-xl-install.bash build-terminal
   check
+  echo "==> CONFIGURAR config"
   bash lite-xl-install.bash config
   check
+  echo "==> CONFIGURAR myconfig"
   bash lite-xl-install.bash myconfig
   check
+  echo "==> CONFIGURAR mkdesktop"
   bash lite-xl-install.bash mkdesktop
   check
 }
@@ -41,6 +51,7 @@ pack() {
 
 check() {
   if [[ $? -ne 0 ]]; then
+    echo "failed"
     exit $?
   fi
 }
