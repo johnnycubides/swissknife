@@ -13,9 +13,12 @@ download() {
 }
 
 install-lite() {
-  cd $TMP_LITE
+  # echo "==> CONFIGURAR dependencies"
   # bash lite-xl-install.bash dependencies
   # check
+  echo "==> CONFIGURAR download"
+  bash lite-xl-install.bash remove
+  cd $TMP_LITE
   echo "==> CONFIGURAR remove"
   bash lite-xl-install.bash remove
   echo "CONFIGURAR install"
