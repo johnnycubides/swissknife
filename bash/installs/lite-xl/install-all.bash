@@ -41,6 +41,7 @@ install-lite() {
   echo "==> CONFIGURAR mkdesktop"
   bash lite-xl-install.bash mkdesktop
   check
+  update-menus
 }
 
 all() {
