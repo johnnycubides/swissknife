@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMP=/tmp/
-URL_CONFIG=https://github.com/johnnycubides/swissknife/blob/master/bash/installs/lite-xl
+URL_CONFIG=https://github.com/johnnycubides/swissknife/raw/master/bash/installs/lite-xl
 LITEX_CONFIG=lite-xl-config
 
 download() {
