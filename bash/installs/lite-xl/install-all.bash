@@ -49,10 +49,10 @@ help() {
   echo "all"
 }
 
-if [[ -v 1 ]]; then
-  $1
-else
-  help
-fi
+# if [[ -v 1 ]]; then
+#   $1
+# else
+#   help
+# fi
 
 all
