@@ -4,6 +4,6 @@
       <comment>Editor Lite XL file</comment>
 	    <comment xml:lang="en">Lite XL Editor</comment>
 	    <comment xml:lang="es">Editor Lite XL</comment>
-      <glob pattern="*"/>
+      <glob pattern="*.v, *.json, *.pcf, *.txt, Makefile, *.mk, *.md, *"/>
     </mime-type>
 </mime-info>
