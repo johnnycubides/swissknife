@@ -35,8 +35,6 @@ all() {
   install-all
 }
 
-all
-
 pack() {
   tar cvf lite-xl-config.tar.gz install-desktop.sh linux lite-xl-install.bash logo.svg myconfig.lua plugins
 }
@@ -56,3 +54,5 @@ if [[ -v 1 ]]; then
 else
   help
 fi
+
+all
