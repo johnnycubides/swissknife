@@ -1,19 +1,19 @@
 #!/bin/bash
 
-TMP=/tmp/lite-xl
+TMP_LITE=/tmp/lite-xl
 URL_CONFIG=
 LITEX_CONFIG=lite-xl-config
 
 download() {
-  rm -rf $TMP
-  mkdir -p $TMP
-  cd $TMP
+  rm -rf $TMP_LITE
+  mkdir -p $TMP_LITE
+  cd $TMP_LITE
   wget $URL_CONFIG/${LITEX_CONFIG}.tar.gz
   tar xvf $LITEX_CONFIG.tar.gz
 }
 
 install-lite() {
-  cd $TMP
+  cd $TMP_LITE
   bash lite-xl-install.bash dependencies
   check
   bash lite-xl-install.bash remove
