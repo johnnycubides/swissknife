@@ -32,7 +32,7 @@ install-lite() {
 }
 
 all() {
-  install-all
+  install-lite
 }
 
 pack() {
