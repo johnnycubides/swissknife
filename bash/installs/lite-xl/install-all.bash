@@ -26,9 +26,9 @@ install-lite() {
   echo "==> CONFIGURAR lsp-install"
   bash lite-xl-install.bash lsp-install
   check
-  # echo "==> CONFIGURAR build-install"
-  # bash lite-xl-install.bash build-install
-  # check
+  echo "==> CONFIGURAR build-install"
+  bash lite-xl-install.bash build-install
+  check
   echo "==> CONFIGURAR build-terminal"
   bash lite-xl-install.bash build-terminal
   check
