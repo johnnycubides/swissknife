@@ -61,6 +61,11 @@ lspconfig.volar.setup({
 -- 27-08-2024
 -- https://chipsalliance.github.io/verible/lint.html
 lspconfig.verible.setup({
-	cmd = { "verible-verilog-ls" },
+	filetypes = { "verilog", "systemverilog" },
+	cmd = { "/home/johnny/miniconda3/envs/digital/bin/verible-verilog-ls" },
 	-- cmd = { "verible-verilog-ls", "--ruleset=all" },
+	-- cmd = { "verible-verilog-ls" },
+	root_dir = function()
+		return vim.loop.cwd()
+	end,
 })
