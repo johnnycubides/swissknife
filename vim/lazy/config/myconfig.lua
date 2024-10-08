@@ -34,3 +34,7 @@ elseif file_exists("./.pro.lua") then
 	print("existe ./.pro.lua")
 	require("./.pro")
 end
+
+-- Cambio del color de la línea cuando se hace uso de Tokyo
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "LightGreen" })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "LightGreen" })
