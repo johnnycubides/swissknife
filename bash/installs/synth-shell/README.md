@@ -4,7 +4,7 @@ lang: es
 
 # Synth Shell
 
-Lo primero que hay que aclarar es que está en esperimientación por mi cuenta y que requiere algunas intervenciones para su uso
+Lo primero que hay que aclarar es que está en experimentación por mi cuenta y que requiere algunas intervenciones para su uso
 
 * [Página principal](https://github.com/andresgongora/synth-shell)
 
@@ -63,6 +63,19 @@ Archivo a afectar:
     ## GENERATE TEXT
     printf "${text_format}${segment_padding}${text}${segment_padding}${separator_padding_left}${separator_format}${separator_char}${separator_padding_right}${no_color}"
 
+```
+
+Para el efecto de mostrar el error cuando el último comando falla, se requiere agregar las siguientes líneas al final de mismo archivo en la función indicada:
+
+```bash
+prompt_command_hook() {
+  # ... al final de esta función agregar:
+  if [ $ERROR -ne 0 ]; then
+    RED='\e[31m'
+    RESET='\e[0m'
+    printf "${RED} Error: $ERROR !!! ${RESET}\n"
+  fi
+}
 ```
 
 Como lo indiqué es una prueba, aún uso powerline-shell, pero hay que revisar la versión de python compatible ya que las fuentes generar errores de sintaxis con la versión
