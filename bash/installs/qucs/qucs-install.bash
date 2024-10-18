@@ -4,37 +4,38 @@ LBIN=/usr/local/bin
 APP=qucs
 DAPP=~/gitPackages/$APP
 IMAGE=Qucs-S-x86_64-Linux.AppImage
-VERSION=24.1.0
-DOWNLOAD="https://github.com/ra3xdh/qucs_s/releases/download/$VERSION/Qucs-S-x86_64-Linux.AppImage.zip"
+VERSION=24.3.2
+#DOWNLOAD="https://github.com/ra3xdh/qucs_s/releases/download/$VERSION/Qucs-S-x86_64-Linux.AppImage.zip"
+DOWNLOAD="https://github.com/ra3xdh/qucs_s/releases/download/$VERSION/Qucs-S-$VERSION-linux-x86_64.AppImage"
 
 dependencies() {
-	sudo apt update
-	sudo apt install \
-		unzip \
-		ngspice \
-		-y
+  # sudo apt update
+  sudo apt install \
+    unzip \
+    ngspice \
+    -y
 }
 
 install() {
-	sudo rm -rf $LBIN/$APP
-	rm -r -i $DAPP
-	mkdir -p $DAPP
-	cd $DAPP
-	wget -O qucs.zip $DOWNLOAD
-	unzip qucs.zip
-	chmod +x $IMAGE
-	sudo ln -sr $IMAGE $LBIN/$APP
+  sudo rm -rf $LBIN/$APP
+  rm -rf $DAPP
+  mkdir -p $DAPP
+  cd $DAPP
+  wget -O $IMAGE $DOWNLOAD
+  # unzip qucs.zip
+  chmod +x $IMAGE
+  sudo ln -sr $IMAGE $LBIN/$APP
 }
 
 help() {
-	echo "
+  echo "
 dependencies
 install
   "
 }
 
 if [[ -v 1 ]]; then
-	$1
+  $1
 else
-	help
+  help
 fi
