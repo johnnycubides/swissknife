@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Qucs
+Comment=Circuit Simulator
+Exec=<EXEC_LOCATION>
+Icon=<ICON_LOCATION>
+Categories=Education;Electronics;
+MimeType=text/Qucs;
+Terminal=false
+Keywords=editor;simulator;digital;circuits;
+

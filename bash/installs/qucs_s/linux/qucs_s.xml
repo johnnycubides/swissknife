@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="text/Qucs">
+      <comment>Circuit Simulator</comment>
+	    <comment xml:lang="en">Qucs_s</comment>
+	    <comment xml:lang="es">Qucs_s</comment>
+      <glob pattern="*.sch"/>
+    </mime-type>
+</mime-info>
