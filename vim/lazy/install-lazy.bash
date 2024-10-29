@@ -63,17 +63,24 @@ CONFIG_LUA=$CONFIG_PATCH/lua/config
 PLUG_LUA=$CONFIG_PATCH/lua/plugins
 
 config() {
+  #############################
+  ## CONFIG
+  #############################
   ## CONFIGURACIONES REMOVE ##
   rm $CONFIG_LUA/myconfig.lua
   rm $CONFIG_LUA/autocmd.lua
   rm $CONFIG_LUA/lsp-config.lua
   # rm $CONFIG_LUA/verible_lsp_config.lua
+
   ## CONFIGURACIONES INSTAll ##
   cp ./config/myconfig.lua $CONFIG_LUA/
   cp ./config/autocmd.lua $CONFIG_LUA/
   cp ./config/lsp-config.lua $CONFIG_LUA/
   # cp ./config/verible_lsp_config.lua $CONFIG_LUA/
 
+  #############################
+  ## PLUGINS
+  #############################
   ## PLUGINS REMOVE ##
   # rm $PLUG_LUA/example.lua
   # rm $PLUG_LUA/aerial.lua
@@ -92,6 +99,7 @@ config() {
   # rm $PLUG_LUA/ultisnips.lua
   # rm $PLUG_LUA/verilog_systemverilog.lua
   rm $PLUG_LUA/nvim-cmp.lua
+  rm $PLUG_LUA/miscellaneous.lua
 
   ## PLUGINS INSTALL ##
   # cp $PLUG_LUA/example.lua ./plugins/
@@ -112,6 +120,7 @@ config() {
   # cp ./plugins/mason.lua $PLUG_LUA/
   # cp ./plugins/example.lua $PLUG_LUA/
   cp ./plugins/nvim-cmp.lua $PLUG_LUA/
+  cp ./plugins/miscellaneous.lua $PLUG_LUA/
 }
 
 myconfig() {
