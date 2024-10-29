@@ -6,7 +6,7 @@ URL_CONFIG=https://github.com/johnnycubides/swissknife/raw/master/bash/installs/
 
 download() {
   cd $TMP
-  rm -rf $QUCS_CONFIG
+  rm -rf $QUCS_CONFIG.tar.gz
   wget $URL_CONFIG/${QUCS_CONFIG}.tar.gz
   tar xvf $QUCS_CONFIG.tar.gz
 }
