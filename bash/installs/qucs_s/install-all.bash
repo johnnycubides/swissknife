@@ -43,7 +43,8 @@ check() {
 }
 
 help() {
-  echo "all"
+  echo "all
+pack"
 }
 
 if [[ -v 1 ]]; then
