@@ -100,6 +100,7 @@ config() {
   # rm $PLUG_LUA/verilog_systemverilog.lua
   rm $PLUG_LUA/nvim-cmp.lua
   rm $PLUG_LUA/miscellaneous.lua
+  rm $PLUG_LUA/luasnip.lua
 
   ## PLUGINS INSTALL ##
   # cp $PLUG_LUA/example.lua ./plugins/
@@ -121,6 +122,7 @@ config() {
   # cp ./plugins/example.lua $PLUG_LUA/
   cp ./plugins/nvim-cmp.lua $PLUG_LUA/
   cp ./plugins/miscellaneous.lua $PLUG_LUA/
+  cp ./plugins/luasnip.lua $PLUG_LUA/
 }
 
 myconfig() {

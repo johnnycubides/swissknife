@@ -11,9 +11,9 @@
       },
       {
         "language": [
-          "html"
+          "sh"
         ],
-        "path": "./html.json"
+        "path": "./sh.json"
       },
       {
         "language": [
@@ -23,63 +23,9 @@
       },
       {
         "language": [
-          "sh"
-        ],
-        "path": "./sh.json"
-      },
-      {
-        "language": [
-          "plantuml"
-        ],
-        "path": "./plantuml.json"
-      },
-      {
-        "language": [
-          "c"
-        ],
-        "path": "./c.json"
-      },
-      {
-        "language": [
-          "cpp"
-        ],
-        "path": "./cpp.json"
-      },
-      {
-        "language": [
-          "typescript"
-        ],
-        "path": "./typescript.json"
-      },
-      {
-        "language": [
-          "markdown"
-        ],
-        "path": "./markdown.json"
-      },
-      {
-        "language": [
-          "tex"
-        ],
-        "path": "./tex.json"
-      },
-      {
-        "language": [
-          "matlab"
-        ],
-        "path": "./matlab.json"
-      },
-      {
-        "language": [
           "ngsim"
         ],
         "path": "./ngsim.json"
-      },
-      {
-        "language": [
-          "rst"
-        ],
-        "path": "./rst.json"
       },
       {
         "language": [
@@ -89,9 +35,57 @@
       },
       {
         "language": [
+          "html"
+        ],
+        "path": "./html.json"
+      },
+      {
+        "language": [
           "javascript"
         ],
         "path": "./javascript.json"
+      },
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue.json"
+      },
+      {
+        "language": [
+          "plantuml"
+        ],
+        "path": "./plantuml.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "matlab"
+        ],
+        "path": "./matlab.json"
+      },
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./tex.json"
+      },
+      {
+        "language": [
+          "typescript"
+        ],
+        "path": "./typescript.json"
       },
       {
         "language": [
@@ -101,9 +95,15 @@
       },
       {
         "language": [
-          "vue"
+          "rst"
         ],
-        "path": "./vue.json"
+        "path": "./rst.json"
+      },
+      {
+        "language": [
+          "c"
+        ],
+        "path": "./c.json"
       }
     ]
   }
