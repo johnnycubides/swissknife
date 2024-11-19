@@ -49,4 +49,6 @@ let g:UltiSnipsSnippetsDir=$HOME.'/.vim/my-snippets/UltiSnips'
 "let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets', $HOME.'/proyectos/swissknife/vim/UltiSnips']
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/my-snippets/UltiSnips']
 ```
+## Luasnipet docs
 
+https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
