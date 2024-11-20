@@ -45,7 +45,7 @@ local tb = s({ trig = "tb" }, {
 		"// s, ms, us, ns, ps, fs.",
 		"// Para el time_unit se hará uso de 10 nS, en vista del perido del clock. el",
 		"// time_precision, se pone según interés",
-		"`timescale 1ns / 1ns  // <time_unit>/<time_precision",
+		"`timescale 10ns / 10ns  // <time_unit>/<time_precision",
 		"",
 		"// CONFIGURACIÓN DE LOS PARÁMETROS DEL RELOJ",
 		"// Cada estado de reloj debe durar medio periodo, para este caso sería 20 nS,",
