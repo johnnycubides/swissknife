@@ -19,9 +19,9 @@ local handlers = {
 		})
 	end,
 	-- tsserver con soporte vue, no funciona correctamente
-	["tsserver"] = function()
+	["ts_ls"] = function()
 		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vue-support
-		lspconfig.tsserver.setup({
+		lspconfig.ts_ls.setup({
 			init_options = {
 				plugins = {
 					{

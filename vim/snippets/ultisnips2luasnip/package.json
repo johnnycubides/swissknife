@@ -5,9 +5,15 @@
     "snippets": [
       {
         "language": [
-          "make"
+          "tex"
         ],
-        "path": "./make.json"
+        "path": "./tex.json"
+      },
+      {
+        "language": [
+          "typescript"
+        ],
+        "path": "./typescript.json"
       },
       {
         "language": [
@@ -17,9 +23,15 @@
       },
       {
         "language": [
-          "verilog"
+          "matlab"
         ],
-        "path": "./verilog.json"
+        "path": "./matlab.json"
+      },
+      {
+        "language": [
+          "rst"
+        ],
+        "path": "./rst.json"
       },
       {
         "language": [
@@ -29,9 +41,39 @@
       },
       {
         "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      },
+      {
+        "language": [
+          "plantuml"
+        ],
+        "path": "./plantuml.json"
+      },
+      {
+        "language": [
+          "verilog"
+        ],
+        "path": "./verilog.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue.json"
+      },
+      {
+        "language": [
           "lua"
         ],
         "path": "./lua.json"
+      },
+      {
+        "language": [
+          "c"
+        ],
+        "path": "./c.json"
       },
       {
         "language": [
@@ -47,63 +89,15 @@
       },
       {
         "language": [
-          "cpp"
-        ],
-        "path": "./cpp.json"
-      },
-      {
-        "language": [
-          "vue"
-        ],
-        "path": "./vue.json"
-      },
-      {
-        "language": [
-          "plantuml"
-        ],
-        "path": "./plantuml.json"
-      },
-      {
-        "language": [
           "markdown"
         ],
         "path": "./markdown.json"
       },
       {
         "language": [
-          "matlab"
+          "make"
         ],
-        "path": "./matlab.json"
-      },
-      {
-        "language": [
-          "tex"
-        ],
-        "path": "./tex.json"
-      },
-      {
-        "language": [
-          "typescript"
-        ],
-        "path": "./typescript.json"
-      },
-      {
-        "language": [
-          "v"
-        ],
-        "path": "./v.json"
-      },
-      {
-        "language": [
-          "rst"
-        ],
-        "path": "./rst.json"
-      },
-      {
-        "language": [
-          "c"
-        ],
-        "path": "./c.json"
+        "path": "./make.json"
       }
     ]
   }
