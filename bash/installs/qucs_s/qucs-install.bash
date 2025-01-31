@@ -5,7 +5,7 @@ LBIN=/usr/local/bin
 APP=qucs
 DAPP=~/gitPackages/$APP
 IMAGE=Qucs-S-x86_64-Linux.AppImage
-VERSION=24.4.0
+VERSION=24.4.1
 #DOWNLOAD="https://github.com/ra3xdh/qucs_s/releases/download/$VERSION/Qucs-S-x86_64-Linux.AppImage.zip"
 DOWNLOAD="https://github.com/ra3xdh/qucs_s/releases/download/$VERSION/Qucs-S-$VERSION-linux-x86_64.AppImage"
 
