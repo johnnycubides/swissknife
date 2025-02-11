@@ -34,6 +34,7 @@ dependencies() {
 install() {
   # sudo ln -i $LOCAL_BIN/lite-xl
   rm -rf $DAPP
+  sync
   mkdir -p $DAPP
   cd $DAPP
   wget -O lite-xl.tar.gz $DOWNLOAD
