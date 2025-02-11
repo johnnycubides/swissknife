@@ -49,6 +49,7 @@ install() {
   echo "==> CIERRE LA APLICACIÓN LITE-XL QUE SE ACABÓ DE ABRIR Y"
   echo "==> PERMITA QUE CONTINUE EL PROCESO DE INSTALACIÓN DE LOS PLUGINS DE LITE-XL EN ESTA TERMINAL"
   lite-xl # lanzar una prueba de lite-xl
+  echo "lite-xl cerrado"
 }
 
 # Instalación del lsp plugin
