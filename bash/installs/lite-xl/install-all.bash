@@ -12,6 +12,12 @@ download() {
   tar xvf $LITEX_CONFIG.tar.gz
 }
 
+finish() {
+  cd $TMP
+  echo "Remover los archivos de configuración descargados en el $TMP"
+  rm -rf $LITEX_CONFIG*
+}
+
 install-lite() {
   # echo "==> CONFIGURAR dependencies"
   # bash lite-xl-install.bash dependencies
@@ -44,6 +50,7 @@ install-lite() {
   bash lite-xl-install.bash mkdesktop
   check
   update-menus
+  finish
 }
 
 all() {
