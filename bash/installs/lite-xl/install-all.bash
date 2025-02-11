@@ -6,6 +6,7 @@ LITEX_CONFIG=lite-xl-config
 
 download() {
   cd $TMP
+  echo "Remover anteriores configuracions en $TMP"
   rm -rf $LITEX_CONFIG
   wget $URL_CONFIG/${LITEX_CONFIG}.tar.gz
   tar xvf $LITEX_CONFIG.tar.gz
@@ -49,6 +50,8 @@ all() {
 }
 
 pack() {
+  echo "Packages"
+  rm -rf lite-xl-config.tar.gz
   tar -czvf lite-xl-config.tar.gz install-desktop.sh linux lite-xl-install.bash logo.svg myconfig.lua plugins
 }
 
@@ -61,12 +64,13 @@ check() {
 
 help() {
   echo "all"
+  echo "pack"
 }
 
-# if [[ -v 1 ]]; then
-#   $1
-# else
-#   help
-# fi
+if [[ -v 1 ]]; then
+  $1
+else
+  help
+fi
 
-all
+# all
