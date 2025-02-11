@@ -33,13 +33,13 @@ install-lite() {
   echo "==> CONFIGURAR lsp-install"
   bash lite-xl-install.bash lsp-install
   check
-  echo "==> CONFIGURAR build-install"
-  bash lite-xl-install.bash build-install
-  check
   # Aunque este plugin opera correctamente, se requiere algunas adaptaciones para su implementación.
-  # echo "==> CONFIGURAR build-terminal"
-  # bash lite-xl-install.bash build-terminal
+  # echo "==> CONFIGURAR build-install"
+  # bash lite-xl-install.bash build-install
   # check
+  echo "==> CONFIGURAR build-terminal"
+  bash lite-xl-install.bash build-terminal
+  check
   echo "==> CONFIGURAR config"
   bash lite-xl-install.bash config
   check
