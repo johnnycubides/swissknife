@@ -46,9 +46,9 @@ install() {
   sudo ln -sr ./lite-xl $LOCAL_BIN/lite-xl
   check
   read -p "==> ATENCIÓN: A continuación se lanzará el editor de Lite-XL, esto preparará la configuración de plugins, CIÉRRELO y permita que contienúe el proceso de instalación sin cerrar esta terminal. Para continuar oprima ENTER" -r variable
-  echo "==> ATENCIÓN: AÚN NO HA TERMINADO EL PROCESO DE INSTLACIÓN"
+  echo "==> ATENCIÓN: AÚN NO HA TERMINADO EL PROCESO DE INSTALACIÓN."
   echo "==> CIERRE LA APLICACIÓN LITE-XL QUE SE ACABÓ DE ABRIR Y"
-  echo "==> PERMITA QUE CONTINUE EL PROCESO DE INSTALACIÓN DE LOS PLUGINS DE LITE-XL EN ESTA TERMINAL"
+  echo "==> PERMITA QUE CONTINUE EL PROCESO DE INSTALACIÓN DE LOS PLUGINS DE LITE-XL EN ESTA TERMINAL."
   lite-xl # lanzar una prueba de lite-xl
   echo "lite-xl cerrado"
 }
