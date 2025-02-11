@@ -35,10 +35,6 @@ install() {
   # sudo ln -i $LOCAL_BIN/lite-xl
   rm -rf $DAPP
   mkdir -p $DAPP
-  mkdir -p $HOME/.config/lite-xl
-  echo "####  here 111"
-  ls -l ~/.config/lite-xl
-  echo "####  here 111"
   cd $DAPP
   wget -O lite-xl.tar.gz $DOWNLOAD
   check
@@ -49,6 +45,9 @@ install() {
   sudo ln -sr ./lite-xl $LOCAL_BIN/lite-xl
   check
   lite-xl # lanzar una prueba de lite-xl
+  echo "==> ATENCIÓN: AÚN NO HA TERMINADO EL PROCESO DE INSTLACIÓN"
+  echo "==> CIERRE LA APLICACIÓN LITE-XL QUE SE ACABÓ DE ABRIR Y"
+  echo "==> PERMITA QUE CONTINUE EL PROCESO DE INSTALACIÓN DE LOS PLUGINS DE LITE-XL"
 }
 
 # Instalación del lsp plugin
