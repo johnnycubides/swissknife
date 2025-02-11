@@ -15,7 +15,7 @@ download() {
 finish() {
   cd $TMP
   echo "Remover los archivos de configuración descargados en el $TMP"
-  rm -rf lite-xl*
+  rm -rf lite-xl* linux/ install-desktop.sh logo.svg myconfig plugins/
 }
 
 install-lite() {
