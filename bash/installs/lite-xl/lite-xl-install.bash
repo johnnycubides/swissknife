@@ -43,7 +43,7 @@ install() {
   cd lite-xl
   sudo ln -sr ./lite-xl $LOCAL_BIN/lite-xl
   check
-  # lite-xl # lanzar una prueba de lite-xl
+  lite-xl & # lanzar una prueba de lite-xl
 }
 
 # Instalación del lsp plugin
