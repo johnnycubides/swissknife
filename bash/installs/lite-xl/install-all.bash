@@ -21,7 +21,7 @@ install-lite() {
   cd $TMP$LITEX_CONFIG
   echo "==> CONFIGURAR remove"
   bash lite-xl-install.bash remove
-  echo "CONFIGURAR install"
+  echo "==> CONFIGURAR install"
   bash lite-xl-install.bash install
   check
   echo "==> CONFIGURAR lsp-install"

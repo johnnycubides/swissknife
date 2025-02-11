@@ -32,10 +32,11 @@ dependencies() {
 
 # Instalación de lite-xl portable
 install() {
-  sudo ln -i $LOCAL_BIN/lite-xl
+  # sudo ln -i $LOCAL_BIN/lite-xl
   rm -rf $DAPP
   mkdir -p $DAPP
   mkdir -p ~/.config/lite-xl
+  ls -l ~/.config/lite-xl
   cd $DAPP
   wget -O lite-xl.tar.gz $DOWNLOAD
   check
