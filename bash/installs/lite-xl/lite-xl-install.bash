@@ -19,6 +19,7 @@ remove() {
   rm -rf $DAPP
   rm -rf ~/.config/lite-xl
   removelocalbin
+  sync
 }
 
 # Instalación de dependencias
