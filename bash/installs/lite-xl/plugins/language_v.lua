@@ -13,7 +13,7 @@ syntax.add({
 		{ pattern = { '"', '"', "\\" }, type = "string" },
 		{ pattern = { "'", "'", "\\" }, type = "string" },
 		{ pattern = { "`", "", "\\" }, type = "string" },
-		{ pattern = "[%d|%x]+'[b|d|o|h][%d|%x]", type = "number" }, --%x -> hexadecimal se puede mejorar con expresiones anidadas
+		{ pattern = "[%d|%x]+'[b|d|o|h][%d|%x|z|x]+", type = "number" }, --%x -> hexadecimal se puede mejorar con expresiones anidadas
 		{ pattern = "0x[%da-fA-F]+", type = "number" },
 		{ pattern = "-?%d+[%d%.eE]*", type = "number" },
 		{ pattern = "-?%.?%d+", type = "number" },
@@ -36,6 +36,7 @@ syntax.add({
 		["assign"] = "keyword2",
 		["input"] = "keyword2",
 		["output"] = "keyword2",
+		["inout"] = "keyword2",
 		["wire"] = "keyword2",
 		["reg"] = "keyword2",
 		["integer"] = "keyword2",

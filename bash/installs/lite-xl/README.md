@@ -11,5 +11,6 @@ curl https://raw.githubusercontent.com/johnnycubides/swissknife/master/bash/inst
 Solo se usa el siguiente comando en el caso de hacer actualizaciones de estas fuentes.
 
 ```bash
+rm -rf lite-xl-config.tar.gz
 tar -czvf lite-xl-config.tar.gz install-desktop.sh linux lite-xl-install.bash logo.svg myconfig.lua plugins
 ```
