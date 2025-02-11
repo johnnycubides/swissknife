@@ -17,7 +17,7 @@ removelocalbin() {
 # Remover lite-xl y su configuración
 remove() {
   rm -rf $DAPP
-  rm -rf ~/.config/lite-xl
+  rm -rf $HOME/.config/lite-xl
   removelocalbin
   sync
 }
@@ -35,7 +35,7 @@ install() {
   # sudo ln -i $LOCAL_BIN/lite-xl
   rm -rf $DAPP
   mkdir -p $DAPP
-  mkdir -p ~/.config/lite-xl
+  mkdir -p $HOME/.config/lite-xl
   ls -l ~/.config/lite-xl
   cd $DAPP
   wget -O lite-xl.tar.gz $DOWNLOAD
@@ -46,13 +46,13 @@ install() {
   cd lite-xl
   sudo ln -sr ./lite-xl $LOCAL_BIN/lite-xl
   check
-  lite-xl & # lanzar una prueba de lite-xl
+  lite-xl # lanzar una prueba de lite-xl
 }
 
 # Instalación del lsp plugin
 lsp-install() {
   # https://github.com/lite-xl/lite-xl-lsp
-  cd ~/.config/lite-xl/
+  cd $HOME/.config/lite-xl/
   git clone https://github.com/lite-xl/lite-xl-lsp plugins/lsp
   git clone https://github.com/lite-xl/lite-xl-widgets libraries/widget
   git clone https://github.com/liquidev/lintplus plugins/lintplus
