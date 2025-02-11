@@ -18,7 +18,7 @@ install-lite() {
   # check
   echo "==> CONFIGURAR download"
   download
-  cd $TMP/$LITEX_CONFIG
+  cd $TMP$LITEX_CONFIG
   echo "==> CONFIGURAR remove"
   bash lite-xl-install.bash remove
   echo "CONFIGURAR install"
