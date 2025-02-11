@@ -6,7 +6,7 @@ DOWNLOAD=https://github.com/lite-xl/lite-xl/releases/download/$VERSION/lite-xl-$
 
 DP=~/gitPackages
 DAPP=$DP/lite-xl
-LOCAL_BIN=/usr/local/bin/
+LOCAL_BIN=/usr/local/bin
 SCRIPT_PATH=$(pwd)
 
 # Remover enlace simbólico de lite-xl
