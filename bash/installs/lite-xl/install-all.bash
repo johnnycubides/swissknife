@@ -7,7 +7,7 @@ LITEX_CONFIG=lite-xl-config
 download() {
   cd $TMP
   echo "Remover anteriores configuracions en $TMP"
-  rm -rf $LITEX_CONFIG
+  rm -rf $LITEX_CONFIG*
   wget $URL_CONFIG/${LITEX_CONFIG}.tar.gz
   tar xvf $LITEX_CONFIG.tar.gz
 }
