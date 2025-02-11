@@ -15,7 +15,7 @@ download() {
 finish() {
   cd $TMP
   echo "Remover los archivos de configuración descargados en el $TMP"
-  rm -rf $LITEX_CONFIG*
+  rm -rf lite-xl*
 }
 
 install-lite() {
