@@ -36,7 +36,9 @@ install() {
   rm -rf $DAPP
   mkdir -p $DAPP
   mkdir -p $HOME/.config/lite-xl
+  echo "####  here 111"
   ls -l ~/.config/lite-xl
+  echo "####  here 111"
   cd $DAPP
   wget -O lite-xl.tar.gz $DOWNLOAD
   check
