@@ -11,7 +11,7 @@ return {
 					type = "image",
 					options = {
 						prog = "eog",
-						dark_mode = true,
+						dark_mode = false,
 						format = "svg",
 					},
 				},
