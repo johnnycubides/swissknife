@@ -1,5 +1,5 @@
 -- Se requiere poner la configuración en este
--- mismo archivo. 2024-04-24 la configuración
+-- mismo archivo. 2025-02-18 la configuración
 -- actualmente se encuentra en ../config/verible_lsp_config.lua
 return {
 	{
