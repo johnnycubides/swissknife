@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DP=~/gitPackages
-GITUI_VERSION=v0.26.3
+GITUI_VERSION=v0.27.0
 DGUI=$DP/gitui
 
 dependencies() {
