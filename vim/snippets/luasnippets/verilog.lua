@@ -32,6 +32,52 @@ local function repeat_node(
 	return ret
 end
 
+-- DOCS: https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
+
+-- `ifdef DEF
+--   // statements
+-- `else
+--   // statements
+-- `endif
+local ifdef = s({ trig = "ifdef" }, {
+	t({ "`ifdef " }),
+	i(1, "DEF"),
+	t({ "", "" }),
+	i(2, "// statements"),
+	t({ "", "`else", "" }),
+	i(3, "// statements"),
+	t({ "", "`endif", "" }),
+})
+
+local initial = s({ trig = "initial" }, {
+	t({ "initial begin", "" }),
+	i(1, "// statements"),
+	t({ "", "end", "" }),
+})
+
+local always = s({ trig = "always" }, {
+	t({ "always @( " }),
+	i(1, "posedge clk or negedge clk"),
+	t({ " ) begin", "" }),
+	i(2, "// statements"),
+	t({ "", "end" }),
+})
+
+local v_if = s({ trig = "if" }, {
+	t({ "if ( " }),
+	i(1, "condition"),
+	t({ ") begin", "" }),
+	i(2, "// statements"),
+	t({ "", "end" }),
+})
+
+local counter = s({ trig = "cnt" }, {
+	i(1, "cnt"),
+	t({ " <= " }),
+	f(repeat_node, { 1 }),
+	t({ " + 1;" }),
+})
+
 local tb = s({ trig = "tb" }, {
 	t({ "// filename: " }),
 	i(1, "top"),
@@ -156,3 +202,8 @@ local tb = s({ trig = "tb" }, {
 })
 
 ls.add_snippets("verilog", { tb })
+ls.add_snippets("verilog", { ifdef })
+ls.add_snippets("verilog", { initial })
+ls.add_snippets("verilog", { always })
+ls.add_snippets("verilog", { v_if })
+ls.add_snippets("verilog", { counter })
