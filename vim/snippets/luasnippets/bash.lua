@@ -45,7 +45,7 @@ local array_for = s({ trig = "bash_array_for" }, {
 	i(3, "runner"),
 	f(repeat_node, { 1 }, { user_args = { '[@]}" ; do', ' in "${' } }),
 	t({ "", "" }),
-	f(repeat_node, { 3 }, { user_args = { '"', "echo $" } }),
+	f(repeat_node, { 3 }, { user_args = { '"', 'echo "$' } }),
 	t({ "", "done", "" }),
 })
 
