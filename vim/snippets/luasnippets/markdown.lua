@@ -37,7 +37,7 @@ end
 -- DOCS: https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 -- Set language for document
 local ltex_lang = s({ trig = "ltex_lang" }, {
-	t({ "<!-- LTeX: enabled=true language=" }),
+	t({ "<!-- LTeX: enabled=true language= -->" }),
 	-- language: https://valentjn.github.io/ltex/settings.html#ltexlanguage
 	i(1, "es, en-US"),
 })
