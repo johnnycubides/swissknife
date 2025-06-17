@@ -10,4 +10,5 @@ alias v="nvim"
 alias g="gitui"
 alias p="gnome-screenshot -i"
 alias sw='setxkbmap us; setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_switch us,es'
-alias scrot2clip='scrot -s - | xclip -selection clipboard -t image/png'
+alias clipimage='scrot -s - | xclip -selection clipboard -t image/png'
+alias clip='xsel --clipboard'
