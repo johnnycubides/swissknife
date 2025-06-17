@@ -48,6 +48,14 @@ local comm_add = s({ trig = "comm_add" }, {
 	t({ " -->" }),
 })
 
+local init_md = s({ trig = "init_md" }, {
+	t({ "<!-- LTeX: enabled=true language= -->", "" }),
+	t({ "<!-- :set spell! -->", "" }),
+	t({ "<!-- :MarkdownPreview -->", "" }),
+	t({ "<!-- :GenTocMarked -->", "" }),
+})
+
 -- agregar a sh, sin embargo es bash
 ls.add_snippets("markdown", { ltex_lang })
 ls.add_snippets("markdown", { comm_add })
+ls.add_snippets("markdown", { init_md })
