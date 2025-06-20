@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=v2.1.5
+VERSION=v2.1.8
 
 DOWNLOAD=https://github.com/lite-xl/lite-xl/releases/download/$VERSION/lite-xl-$VERSION-addons-linux-x86_64-portable.tar.gz
 
