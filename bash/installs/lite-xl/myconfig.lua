@@ -1,11 +1,22 @@
 local lsp = require("plugins.lsp")
 
+local function get_verible_path()
+	local verible_path = "/home/" .. os.getenv("USER") .. "/miniconda3/envs/digital/bin/verible-verilog-ls"
+	local file = io.open(verible_path, "r")
+	if file then
+		file:close()
+		return verible_path
+	else
+		return "verible-verilog-ls"
+	end
+end
+
 -- https://github.com/lite-xl/lite-xl-lsp
 lsp.add_server({
 	name = "verible",
 	language = "Verilog",
 	file_patterns = { "%.v$" },
-	command = { "verible-verilog-ls", "--rules=-unpacked-dimensions-range-ordering,-always-comb" },
+	command = { get_verible_path(), "--rules=-unpacked-dimensions-range-ordering,-always-comb" },
 	incremental_changes = false,
 	verbose = false,
 })
