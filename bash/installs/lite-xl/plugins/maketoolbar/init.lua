@@ -62,8 +62,8 @@ end
 
 local commandList = {
 	{ label = "synthesis", command = "make clean syn" },
-	{ label = "firmware", command = "make clean c-build" },
-	{ label = "config", command = "make config" },
+	{ label = "build_firmware", command = "make clean c-build" },
+	{ label = "config_sram", command = "make config-sram" },
 	{ label = "Simulation", command = "make sym" },
 	{ label = "diagram", command = "make rtl" },
 	{ label = "help", command = "make help" },
