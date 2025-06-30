@@ -151,6 +151,7 @@ lsp-install
 build-install # no funciona correctamente para make
 config
 myconfig # se lanza una única vez este comando
+maketoolbar
 build-terminal
 mkdesktop
 "
