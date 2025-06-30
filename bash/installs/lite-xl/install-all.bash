@@ -37,6 +37,9 @@ install-lite() {
   # echo "==> CONFIGURAR build-install"
   # bash lite-xl-install.bash build-install
   # check
+  echo "==> CONFIGURAR maketoolbar"
+  bash lite-xl-install.bash maketoolbar
+  check
   echo "==> CONFIGURAR build-terminal"
   bash lite-xl-install.bash build-terminal
   check

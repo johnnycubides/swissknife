@@ -118,6 +118,13 @@ build-terminal() {
   check
 }
 
+# Plugin maketoolbar
+maketoolbar() {
+  cd $SCRIPT_PATH
+  cp -R plugins/maketoolbar ~/.config/lite-xl/plugins/
+  check
+}
+
 # Agrgar el ejecutable al menu gráfico
 mkdesktop() {
   cd $SCRIPT_PATH
