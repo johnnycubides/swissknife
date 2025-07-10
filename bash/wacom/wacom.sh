@@ -91,8 +91,8 @@ mapping() {
   # for get ID exec xsetwacom --list devices
   #ID="11"
   # DEVICENAME="HUION Huion Tablet_HS64 stylus"
-  # DEVICENAME="HUION Huion Tablet_HS64 Pen stylus"
-  DEVICENAME="HUION Huion Tablet_HS64 Stylus stylus"
+  DEVICENAME="HUION Huion Tablet_HS64 Pen stylus"
+  # DEVICENAME="HUION Huion Tablet_HS64 Stylus stylus"
 
   xsetwacom --set "$DEVICENAME" MapToOutput $OUTPUT
   if [[ $? == 0 ]]; then
