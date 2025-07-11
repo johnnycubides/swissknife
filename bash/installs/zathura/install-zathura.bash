@@ -30,6 +30,15 @@ dependencies() {
     -y
 }
 
+rm_zathura_old() {
+  sudo apt remove zathura -y
+  sudo rm -rf /usr/bin/zathura
+  sudo rm -rf /usr/lib/x86_64-linux-gnu/zathura
+  sudo rm -rf /usr/local/lib/x86_64-linux-gnu/zathura
+  sudo rm -rf /usr/local/bin/zathura
+  sudo rm -rf /usr/share/man/man1/zathura.1.gz
+}
+
 download() {
   mkdir -p $DAPP
   cd $DAPP
@@ -54,6 +63,7 @@ remove() {
 }
 
 all() {
+  rm_zathura_old
   dependencies
   download
   build
