@@ -20,10 +20,15 @@ install() {
   sudo ln -sr gitui /usr/local/bin
 }
 
+update() {
+  rustup update
+}
+
 help() {
   echo "
 dependencies
 install
+update
   "
 }
 
