@@ -47,7 +47,7 @@ mason_lspconfig.setup({
 -- (1) VOLAR CONFIGURACIÓN
 -- Se requiere instalar manualmente:
 -- -- npm install -g @vue/language-server @vue/typescript-plugin typescript
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 lspconfig.volar.setup({
 	filetypes = { "vue" },
 	init_options = {
