@@ -13,3 +13,4 @@ alias sw='setxkbmap us; setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_sw
 alias clipimage='scrot -s - | xclip -selection clipboard -t image/png'
 alias clip='xsel --clipboard'
 alias wdir='. wdir' # exec from out script context
+alias lfind='find ./ -iname' # find local
