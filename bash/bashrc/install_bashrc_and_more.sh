@@ -12,17 +12,16 @@ if [[ -e ~/.bashrc ]]; then
   mv ~/.bashrc ~/.bashrc_old
 fi
 #ln -s `pwd`/bashrc ~/.bashrc
-ln -s `pwd`/bashrc_acer_swift ~/.bashrc
-
+ln -s $(pwd)/bashrc_acer_swift ~/.bashrc
 
 echo "Instalación de reglas para alias"
 if [[ -e ~/.bash_aliases ]]; then
   mv ~/.bash_aliases ~/.bash_aliases_old
 fi
-ln -s `pwd`/bash_aliases ~/.bash_aliases
+ln -s $(pwd)/bash_aliases ~/.bash_aliases
 
 echo "Asignación de colores para ls"
 if [[ -e ~/.dicolors ]]; then
   mv ~/.dicolors ~/.dicolors_old
 fi
-ln -s `pwd`/dircolors ~/.dircolors
+ln -s $(pwd)/dircolors ~/.dircolors
