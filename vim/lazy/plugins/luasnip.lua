@@ -36,5 +36,7 @@ return {
 			end, { silent = true })
 			-- end
 		end,
+		build = "make install_jsregexp",
+		tag = "v2.*4.0",
 	},
 }

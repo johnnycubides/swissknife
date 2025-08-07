@@ -2,13 +2,21 @@
 lang: es
 ---
 
+
 # Mi configuración lazy-nvim
+
+## Lazy plugins
 
 Tenga presente que hay varias herramientas que se pueden instalar manualmente desde lazyvim, sin tener que pasar
 por una configuración manual, en este caso he instalado:
 
 * LuaSnip "Plug"
 * catppuccin "Colorscheme"
+
+## LazyExtras
+
+Activar con X:
+* LuaSnip
 
 ## Mason plugins
 
@@ -21,7 +29,7 @@ por una configuración manual, en este caso he instalado:
 * lua-language-server lua_ls, lua_ls
 * shfmt
 * stylua
-* verible
+* verible # Instalable desde conda, verificar antes de instalar
 
 ## Others
 
