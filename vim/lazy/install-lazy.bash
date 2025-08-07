@@ -3,10 +3,11 @@
 SIMBOLS=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
 
 fonts() {
+  VERSION=v3.4.0
   DIRFONTS=~/.local/share/fonts/
   mkdir -p $DIRFONTS
   cd $DIRFONTS
-  wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
+  wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/$VERSION/NerdFontsSymbolsOnly.zip
   unzip fonts.zip
   fc-cache -f -v
   rm -rf fonts.zip
@@ -14,8 +15,8 @@ fonts() {
 
 ripgrep() {
   echo "Instalación de ripgrep"
-  VERSION=14.1.0
-  DOWNLOAD=https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_$VERSION-1_amd64.deb
+  VERSION=14.1.1
+  DOWNLOAD=https://github.com/BurntSushi/ripgrep/releases/download/$VERSION/ripgrep_$VERSION-1_amd64.deb
   wget -O ripgrep.deb $DOWNLOAD
   sudo dpkg -i ripgrep.deb
   rm -r ripgrep.deb

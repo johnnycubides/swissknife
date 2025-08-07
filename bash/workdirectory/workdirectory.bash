@@ -4,6 +4,9 @@ LISTPATH=~/projects/swissknife/bash/workdirectory/mypaths
 CLIP='xsel --clipboard'
 
 function listpaths() {
+  echo "==> Path config mypaths:"
+  echo "$LISTPATH"
+  echo "==> LISTPATH:"
   if [[ -f $LISTPATH ]]; then
     nl -ba $LISTPATH
   else
@@ -15,8 +18,11 @@ function gotopath() {
   if [[ -f $LISTPATH ]]; then
     local path=$(sed -n "${1}p" $LISTPATH)
     if [[ -n $path ]]; then
-      echo "Exec: cd $path to change path"
+      echo "==> Path selected:"
+      echo "$path"
       echo "cd $path" | $CLIP
+      echo "Save command in clip ^V"
+      eval "cd $path"
     else
       echo "Índice no válido."
       listpaths
