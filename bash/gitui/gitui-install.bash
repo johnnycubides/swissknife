@@ -28,7 +28,7 @@ help() {
   echo "
 dependencies
 install
-update
+update # rustup
   "
 }
 

@@ -22,7 +22,7 @@ function gotopath() {
       echo "$path"
       echo "cd $path" | $CLIP
       echo "Save command in clip ^V"
-      eval "cd $path"
+      eval "cd $path && ls"
     else
       echo "Índice no válido."
       listpaths
