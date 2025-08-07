@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-LISTPATH=~/projects/swissknife/bash/workdirectory/mypaths
+LISTPATH=~/projects/swissknife/bash/workdirectory/mypaths.txt
 CLIP='xsel --clipboard'
 
 function listpaths() {
