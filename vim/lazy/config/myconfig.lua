@@ -30,6 +30,9 @@ end
 if file_exists("./pro.lua") then
 	print("existe ./pro.lua")
 	require("./pro")
+elseif file_exists("./vim.lua") then
+	print("existe ./vim.lua")
+	require("./vim")
 elseif file_exists("./.pro.lua") then
 	print("existe ./.pro.lua")
 	require("./.pro")
