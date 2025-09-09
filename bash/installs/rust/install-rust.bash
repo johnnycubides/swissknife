@@ -3,8 +3,9 @@
 dependencies() {
 	sudo apt install \
 		fish \
+		curl \
 		-y
-	mkdir -p /home/johnny/.config/fish/conf.d/
+	mkdir -p $HOME/.config/fish/conf.d/
 }
 
 install() {
@@ -26,6 +27,7 @@ info() {
 
 help() {
 	echo "
+install
 info
 uninstall
 version
