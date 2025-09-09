@@ -31,7 +31,7 @@ download() {
 build() {
   # Docs: https://github.com/neovim/neovim/blob/master/BUILD.md
   #https://github.com/neovim/neovim/commit/27fb62988e922c2739035f477f93cc052a4fee1e
-  COMMIT="af8500af64571f787579b60bf0064cd05655fd51"
+  COMMIT="af8499af64571f787579b60bf0064cd05655fd51"
   COMMIT="27fb62988e922c2739035f477f93cc052a4fee1e"
   COMMIT="8b98642002d0506d20628683958cb5c97a0dad80"
   COMMIT="b2684d9f6658544d75e2431a06bcf21fe80673f8" # version 0.11.3
