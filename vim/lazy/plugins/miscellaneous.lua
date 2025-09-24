@@ -3,4 +3,9 @@ return {
 	{
 		"mzlogin/vim-markdown-toc",
 	},
+	-- Vim jusr syntax
+	{
+		"NoahTheDuke/vim-just",
+		ft = { "just" },
+	},
 }

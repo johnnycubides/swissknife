@@ -27,6 +27,7 @@ Activar con X:
 * clangd
 * ltex-ls-plus
 * lua-language-server lua_ls, lua_ls
+* just-lsp just, just
 * shfmt
 * stylua
 * verible # Instalable desde conda, verificar antes de instalar
