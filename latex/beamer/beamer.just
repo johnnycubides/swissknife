@@ -1,12 +1,15 @@
 # Manual:
 # https://just.systems/man/en/
+# https://github.com/casey/just/tree/master/examples
+# https://just.systems/man/en/functions.html?highlight=without#functions
 
 BUILD_DIR := "build"
 SRC := "template.tex"
 BASE_NAME := without_extension(SRC)
 COMPILER := "lualatex"
-VIEWER := "zathura"
+VIEWER := "pdfpc"
 
+# VIEWER := "zathura"
 # VIEWER := "evince"
 
 pdf:
