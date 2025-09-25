@@ -1,0 +1,29 @@
+# Manual:
+# https://just.systems/man/en/
+# https://github.com/casey/just/tree/master/examples
+# https://just.systems/man/en/functions.html?highlight=without#functions
+
+BUILD_DIR := "build"
+SRC := "./main.tex"
+BASE_NAME := without_extension(SRC)
+COMPILER := "lualatex"
+VIEWER := "zathura"
+
+# VIEWER := "pdfpc"
+# VIEWER := "evince"
+
+# Make a pdf from SRC
+pdf:
+    mkdir -p {{ BUILD_DIR }}
+    {{ COMPILER }} -output-directory={{ BUILD_DIR }} -shell-escape {{ SRC }}
+
+# View pdf in VIEWER
+view:
+    {{ VIEWER }} {{ BUILD_DIR }}/{{ BASE_NAME }}.pdf
+
+clean:
+    rm -f {{ BUILD_DIR }}/*
+
+# Add BUILD_DIR into .gitignore file
+gitignore:
+    echo "build/" >> .gitignore
