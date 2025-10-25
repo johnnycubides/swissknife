@@ -13,9 +13,9 @@ init:
 	touch src/section1.tex
 	cp ~/basededatos/LaTeX/tareas/plantilla.tex $(doc).tex
 
-clear:
+clean:
 	rm build/*
-		
+
 latex-v:
 	evince ~/basededatos/libros/LaTeX/LaTeX_2014.pdf &
 
