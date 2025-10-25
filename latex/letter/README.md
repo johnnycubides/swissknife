@@ -1,4 +1,4 @@
 # Letter
 
-![Example letter](img/image.png)
+![Example letter](./letter-example.png)
 
