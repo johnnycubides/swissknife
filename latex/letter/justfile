@@ -2,7 +2,6 @@
 # https://just.systems/man/en/
 # https://github.com/casey/just/tree/master/examples
 # https://just.systems/man/en/functions.html?highlight=without#functions
-
 # juts -l # Show rules commented
 
 BUILD_DIR := "build"
@@ -31,4 +30,4 @@ gitignore:
     echo "build/" >> .gitignore
 
 compress:
-  tar czvf {{ BASE_NAME }}.tar.gz ./img ./src ./README.md {{ BASE_NAME }}.tex ./justfile
+    tar czvf {{ BASE_NAME }}.tar.gz ./img ./src ./README.md {{ BASE_NAME }}.tex ./justfile
