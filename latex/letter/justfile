@@ -15,7 +15,7 @@ VIEWER := "zathura"
 # VIEWER := "evince"
 
 # Make a pdf from SRC
-pdf:
+build:
     mkdir -p {{ BUILD_DIR }}
     {{ COMPILER }} -output-directory={{ BUILD_DIR }} -shell-escape {{ SRC }}
 
@@ -30,5 +30,5 @@ clean:
 gitignore:
     echo "build/" >> .gitignore
 
-tar:
-  tar czvf {{ BASE_NAME }}.tar.gz ./img ./src ./README.md {{ BASE_NAME }}.tex
+compress:
+  tar czvf {{ BASE_NAME }}.tar.gz ./img ./src ./README.md {{ BASE_NAME }}.tex ./justfile
