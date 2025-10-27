@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% START ENCABEZADO Y PIE DE PAGINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Estilo de los encabezados y pies de página
+\usepackage{fancyhdr}
+\fancyhf{}%
+\pagestyle{fancyplain}
+\textheight22.5cm \topmargin0cm \textwidth16.5cm \headheight22pt
+\oddsidemargin0.5cm \evensidemargin-0.5cm%
+\fancypagestyle{plain}{
+\fancyhead[RO,LE]{}
+\fancyhead[RE,LO]{\small \textbf{\thesisname}}
+\fancyfoot[CO,CE]{\thepage}
+}
+\pagestyle{fancy}
+\fancyhf{}%
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\; #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\; #1}{}}
+\fancyhead[LO,RE]{\leftmark}
+\fancyhead[RO,LE]{\rightmark}
+\fancyfoot[CO,CE]{\thepage}
+\thispagestyle{fancy}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END ENCABEZADO Y PIE DE PAGINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% START NATBIB CONFIG
+%%%%%%%%%%%%%%%%%%%%%%%
+% Información para el uso de natbib
+% url: https://es.overleaf.com/learn/latex/Bibliography_management_with_natbib#Basic_usage
+\usepackage[square,numbers]{natbib}
+% Fuentes bibliography: https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib
+% \bibliographystyle{abbrvnat}
+% \bibliographystyle{unsrt}
+\bibliographystyle{unsrtnat}
+\def\bibfont{ \normalsize}
+%%%%%%%%%%%%%%%%%%%%%%%
+%% END NATBIB CONFIG
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% START LISTINGS
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{listingsutf8}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstset{style=mystyle}
+%%%%%%%%%%%%%%%%%%%%%%%
+%% END LISTINGS
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% START LANGUAGE
+%%%%%%%%%%%%%%%%%%%%%%%
+%Idioma del documento
+%Use main para el idioma principal del documento
+% \usepackage[main=spanish,english,german,french,portuguese]{babel}
+\usepackage[main=spanish,english]{babel}
+\usepackage{polyglossia}
+% \setdefaultlanguage{spanish}
+%%%%%%%%%%%%%%%%%%%%%%%
+%% END LANGUAGE
+%%%%%%%%%%%%%%%%%%%%%%%
+
