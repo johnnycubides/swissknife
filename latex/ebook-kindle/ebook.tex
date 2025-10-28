@@ -8,6 +8,14 @@
 \dominitoc{}
 \tableofcontents{}
 
+% Allows the imported file to use its own directory as the base path for relative
+% file references. For example, a file imported from sub/folder can correctly
+% reference images/pic.png from its own directory
 % \subimport{../src/}{content.tex}
+
+% All relative paths are interpreted relative to the main .tex file. This causes
+% issues with nested folder structures if an imported file has its own internal
+% relative file references. 
+\input{./src/content.tex}
 
 \end{document}
