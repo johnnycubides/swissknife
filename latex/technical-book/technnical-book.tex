@@ -1,0 +1,25 @@
+\documentclass[10pt]{book}
+\input{./config/packages}
+\input{./config/metadata}
+\input{./config/formatting}
+\input{./config/listing}
+
+
+\begin{document}
+% \maketitle{}
+% \dominitoc{}
+\tableofcontents{}
+
+% Allows the imported file to use its own directory as the base path for relative
+% file references. For example, a file imported from sub/folder can correctly
+% reference images/pic.png from its own directory
+\subimport{src/}{content.tex}
+% Use \import when using \usbimport in othres files
+
+
+% All relative paths are interpreted relative to the main .tex file. This causes
+% issues with nested folder structures if an imported file has its own internal
+% relative file references. 
+% \input{src/content}
+
+\end{document}

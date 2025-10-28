@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% START INSERT CODE %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} % paste in preambule
+\usepackage{listingsutf8} % paste in preambule
+\usepackage{xcolor}
+\usepackage[T1]{fontenc} % Fix double quotes
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=true,
+  % tab=\rightarrowfill,
+  inputencoding=utf8,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {\%}{\char37}{1}
+		{-}{\char45}{1},
+  tabsize=2,
+  showstringspaces=false
+}
+
+% Estilo verilog para cajas de código
+\lstdefinestyle{verilogStyle}{
+  upquote=true,
+  language=Verilog,
+  tabsize=2,
+  inputencoding=utf8,
+  basicstyle=\small,
+  numberstyle=\small,
+  numbers=none,
+  columns=fullflexible,
+  % showstringspaces=true,
+  literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    % Puedes añadir más símbolos si es necesario \char<ascci DEC>
+    {\%}{\char37}{1}
+    {-}{\char45}{1}
+    {*}{*}{1}
+    ,
+  frame=single
+  }
+\lstset{style=mystyle}
+\renewcommand{\lstlistingname}{Código}
+%%% END Insertar código %%%
+
+% Estilo verilog para cajas de código
+\lstdefinestyle{MakefileStyle}{
+  upquote=true,
+  language=Bash,
+  tabsize=2,
+  inputencoding=utf8,
+  basicstyle=\small,
+  numberstyle=\small,
+  numbers=none,
+  columns=fullflexible,
+  % showstringspaces=true,
+  literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    % Puedes añadir más símbolos si es necesario \char<ascci DEC>
+    {\%}{\char37}{1}
+    {-}{\char45}{1}
+    {*}{*}{1}
+    ,
+  frame=single
+  }
+%\lstset{style=mystyle}
+%\renewcommand{\lstlistingname}{Código}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% END INSERT CODE %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO: What does this do?
+\usepackage[listings]{tcolorbox}
+
+% https://texdoc.org/serve/tcolorbox/0 pagina 21
+% \usepackage{listings} or \tcbuselibrary{listings}
+\NewTotalTCBox{\commandbox}{ s v }
+{verbatim,colupper=black,colback=white!75!white,colframe=black}
+{\IfBooleanT{#1}{\textcolor{red}{\ttfamily\bfseries \$ }}%
+\lstinline[language=bash,keywordstyle=\color{blue!35!white}\bfseries]^#2^}
+
