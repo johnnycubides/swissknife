@@ -35,4 +35,4 @@ gitignore:
     echo "build/" >> .gitignore
 
 compress:
-    tar czvf {{ BASE_NAME }}.tar.gz ./img ./src ./README.md {{ BASE_NAME }}.tex ./justfile
+    tar czvf {{ BASE_NAME }}.tar.gz ./src ./README.md {{ BASE_NAME }}.tex ./justfile
