@@ -15,3 +15,11 @@ disabled = true
 # Prompot in the same line
 [line_break]
 disabled = true
+
+# Memory used
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = '🧠 '
+format = "$symbol$ram_pct"
+style = 'bold dimmed green'
