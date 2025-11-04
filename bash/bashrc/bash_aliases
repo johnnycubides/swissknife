@@ -16,3 +16,4 @@ alias wdir='. wdir' # exec from out script context
 alias lfind='find ./ -iname' # find local
 alias dir-size='du -hs * | sort -hr | head -n 10'
 alias dir-size-h='du -hs -- * .[!.]* | sort -hr | head -n 10'
+alias lgrep='grep -lr'
