@@ -103,7 +103,7 @@ myconfig() {
 }
 
 DP=~/gitPackages
-DTERMINAL=$DP/lite-lx-terminal
+DTERMINAL=$DP/lite-xl-terminal
 
 # Plugin para embeber la terminal en el editor
 build-terminal() {
