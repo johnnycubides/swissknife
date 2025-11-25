@@ -54,6 +54,7 @@ syntax.add({
 		["await"] = "keyword",
 		["break"] = "keyword",
 		["case"] = "keyword",
+		["endcase"] = "keyword",
 		["catch"] = "keyword",
 		["class"] = "keyword",
 		["const"] = "keyword",
