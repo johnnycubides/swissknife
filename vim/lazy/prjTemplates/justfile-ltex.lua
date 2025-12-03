@@ -25,7 +25,6 @@ vim.keymap.set("n", "<F7>", help, { desc = "Help project" })
 -- archivo de configuración que se encuentra en ./.vim/coc-settings.json
 local lspconfig = require("lspconfig")
 lspconfig.ltex.setup({
-	autostart = false,
 	settings = {
 		ltex = {
 			language = "es",
