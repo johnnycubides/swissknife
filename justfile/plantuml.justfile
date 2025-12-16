@@ -1,6 +1,5 @@
 f := "file.pu"
-# Variable auxiliar: nombre base sin extensión
-BASENAME := `basename {{ f }}`
+BASENAME := file_stem(f)
 
 # Target por defecto
 default: help
