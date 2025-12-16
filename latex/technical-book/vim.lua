@@ -4,6 +4,7 @@ end
 local function view()
 	vim.cmd("mak! view &")
 end
+
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- local opts = { noremap = true, silent = true }
 local opts_prj = { makeprg = "just" }
@@ -11,6 +12,7 @@ local opts_prj = { makeprg = "just" }
 for key, value in pairs(opts_prj) do
 	vim.opt[key] = value
 end
+
 -- vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<F5>", build, { desc = "Build project", noremap = true, silent = true })
 vim.keymap.set("n", "<F6>", view, { desc = "View object" })
