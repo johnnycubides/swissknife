@@ -2,17 +2,17 @@
 
 DIRPACKAGE=~/gitPackages/
 APP=civetweb
-DIRAPP=$DPACKAGE$APP
+DIRAPP=$DIRPACKAGE$APP
 GITURL="git@github.com:civetweb/civetweb.git"
 
 remove() {
-  cd $DPACKAGE
+  cd $DIRPACKAGE
   rm -rf $APP
 }
 
 download() {
   mkdir -p $DIRPACKAGE
-  cd $DPACKAGE
+  cd $DIRPACKAGE
   git clone $GITURL
 }
 
