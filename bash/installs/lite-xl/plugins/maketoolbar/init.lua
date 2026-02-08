@@ -65,7 +65,7 @@ local commandList = {
 	{ label = "build_firmware", command = "make c-clean c-build" },
 	{ label = "config", command = "make config" },
 	{ label = "Simulation", command = "make sim" },
-	{ label = "diagram", command = "make rtl" },
+	{ label = "RTL", command = "make rtl" },
 	{ label = "help", command = "make help" },
 }
 
