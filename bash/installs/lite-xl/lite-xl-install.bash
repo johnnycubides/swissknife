@@ -105,6 +105,7 @@ myconfig() {
 DP=~/gitPackages
 DTERMINAL=$DP/lite-xl-terminal
 
+LITE_XL_TERMINAL_CHECKOUT=db51af9b4e599242782589c531fe842323f6d7ee
 # Plugin para embeber la terminal en el editor
 build-terminal() {
   # https://github.com/adamharrison/lite-xl-terminal
@@ -113,8 +114,13 @@ build-terminal() {
   cd $DTERMINAL
   git clone --depth=1 https://github.com/adamharrison/lite-xl-terminal.git \
     --recurse-submodules --shallow-submodules && cd lite-xl-terminal &&
+    git checkout $LITE_XL_TERMINAL_CHECKOUT &&
     ./build.sh && cp -R plugins/terminal ~/.config/lite-xl/plugins &&
     cp libterminal.so ~/.config/lite-xl/plugins/terminal
+  check
+  # TODO: RCuando se resuleva el bug del root_dir() podría quitarse estas 3 líneas
+  cd $SCRIPT_PATH
+  cp -R plugins/terminal/init.lua ~/.config/lite-xl/plugins/terminal/
   check
 }
 
