@@ -16,6 +16,8 @@ config() {
   mkdir -p $DDATA
   cd $DDATA
   git clone git@gitlab.com:johnnycubides/my-gnote.git $DATA
+  cd $DATA
+  ./gnote-install.bash config
 }
 
 help() {
