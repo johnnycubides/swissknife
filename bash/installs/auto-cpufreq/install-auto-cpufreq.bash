@@ -4,6 +4,7 @@ DAPP=~/gitPackages/
 
 install() {
 	rm -rf $DAPP/auto-cpufreq
+	mkdir -p $DAPP
 	cd $DAPP
 	git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 	cd auto-cpufreq
