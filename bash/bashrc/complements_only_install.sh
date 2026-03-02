@@ -15,8 +15,6 @@ install() {
   git clone https://github.com/seebi/dircolors-solarized.git
 }
 
-install
-
 echo "Instalación de reglas para alias"
 if [[ -e ~/.bash_aliases ]]; then
   mv ~/.bash_aliases ~/.bash_aliases_old
@@ -28,3 +26,5 @@ if [[ -e ~/.dicolors ]]; then
   mv ~/.dicolors ~/.dicolors_old
 fi
 ln -s `pwd`/dircolors ~/.dircolors
+
+install
