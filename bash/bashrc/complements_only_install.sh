@@ -7,6 +7,16 @@
 # date: Thursday 26 September 2019
 status=$?
 
+
+install() {
+  mkdir -p ~/gitPackages/
+  cd ~/gitPackages/
+  rm -rf dircolors-solarized
+  git clone https://github.com/seebi/dircolors-solarized.git
+}
+
+install
+
 echo "Instalación de reglas para alias"
 if [[ -e ~/.bash_aliases ]]; then
   mv ~/.bash_aliases ~/.bash_aliases_old
