@@ -12,8 +12,10 @@ update() {
 }
 
 dependencies() {
+  update
   sudo apt install \
     graphviz \
+    default-jdk \
     -y
 }
 
@@ -30,6 +32,7 @@ install() {
 help() {
   echo "
 install
+dependencies
   "
 }
 

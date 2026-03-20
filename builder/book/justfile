@@ -16,6 +16,9 @@ VIEWER := "zathura"
 # VIEWER := "pdfpc"
 # VIEWER := "evince"
 
+default:
+    just --choose
+
 all: build view
 
 # Make a pdf from SRC
