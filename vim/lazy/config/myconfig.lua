@@ -39,5 +39,25 @@ elseif file_exists("./.pro.lua") then
 end
 
 -- Cambio del color de la línea cuando se hace uso de Tokyo
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "LightGreen" })
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "LightGreen" })
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "LightGreen" })
+-- 		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "LightGreen" })
+-- 		vim.api.nvim_set_hl(0, "SpellBad", {
+-- 			fg = "white",
+-- 			bg = "#5f0000",
+-- 			bold = true,
+-- 		})
+-- 	end,
+-- })
+
+vim.api.nvim_create_user_command("SpellHighlight", function()
+	vim.api.nvim_set_hl(0, "SpellBad", {
+		underline = true,
+		-- sp = "red",
+		fg = "red",
+		-- fg = "white",
+		-- bg = "#5f0000",
+		-- bold = true,
+	})
+end, {})

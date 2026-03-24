@@ -4,31 +4,31 @@ DP=~/gitPackages
 APP=$DP/tmux
 
 install() {
-	sudo apt update
-	sudo apt install tmux -y
+  sudo apt update
+  sudo apt install tmux -y
 }
 
 config() {
-	rm -rf ~/.config/tmux
-	rm -rf $APP
-	mkdir -p $DP
-	cd $DP
-	git clone https://github.com/gpakosz/.tmux.git tmux
-	cd $APP
-	mkdir -p ~/.config/tmux
-	ln -s $APP/.tmux.conf ~/.config/tmux/tmux.conf
-	cp .tmux.conf.local ~/.config/tmux/tmux.conf.local
+  rm -rf ~/.config/tmux
+  rm -rf $APP
+  mkdir -p $DP
+  cd $DP
+  git clone https://github.com/gpakosz/.tmux.git tmux
+  cd $APP
+  mkdir -p ~/.config/tmux
+  ln -s $APP/.tmux.conf ~/.config/tmux/tmux.conf
+  ln .tmux.conf.local ~/.config/tmux/tmux.conf.local
 }
 
 help() {
-	echo "
+  echo "
 install
 config
 "
 }
 
 if [[ -v 1 ]]; then
-	$1
+  $1
 else
-	help
+  help
 fi
