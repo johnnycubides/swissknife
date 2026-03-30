@@ -13,7 +13,34 @@ alias sw='setxkbmap us; setxkbmap -option grp:switch,grp_led:scroll,grp:rctrl_sw
 alias clipimage='scrot -s - | xclip -selection clipboard -t image/png'
 alias clip='xsel --clipboard'
 alias wdir='. wdir' # exec from out script context
-alias lfind='find ./ -iname' # find local
+# alias lfind='find ./ -iname' # find local
 alias dir-size='du -hs * | sort -hr | head -n 10'
 alias dir-size-h='du -hs -- * .[!.]* | sort -hr | head -n 10'
 alias lgrep='grep -lr'
+
+# Dentro de fzf puedes hacer:
+# TAB → seleccionar múltiples archivos
+# Shift+TAB → deseleccionar
+# Ctrl+D → scroll preview
+# Ctrl+U → subir preview
+
+# MORE FUNCTIONS
+lfind() {
+  fdfind -t f . \
+    --exclude tmp \
+    | fzf -i -q "$1" \
+    --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}'
+    # --exclude node_modules \
+    # --exclude build \
+}
+
+vlfind() {
+    local files
+    files=$(fdfind -t f . \
+        --exclude tmp \
+    | fzf -m -i -q "$1" \
+        --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
+    [ -n "$files" ] && v -o $files
+        # --exclude node_modules \
+        # --exclude build \
+}
