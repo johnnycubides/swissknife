@@ -28,7 +28,7 @@ alias lgrep='grep -lr'
 lfind() {
   fdfind -t f . \
     --exclude tmp \
-    | fzf -i -q "$1" \
+    | fzf -m -i -q "$1" \
     --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}'
     # --exclude node_modules \
     # --exclude build \
@@ -40,7 +40,7 @@ vlfind() {
         --exclude tmp \
     | fzf -m -i -q "$1" \
         --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
-    [ -n "$files" ] && v -o $files
+    [ -n "$files" ] && v -O $files
         # --exclude node_modules \
         # --exclude build \
 }
