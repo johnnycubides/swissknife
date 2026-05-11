@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="Application">
+      <comment>Create diagrams and flowcharts</comment>
+	    <comment xml:lang="en">Drawio</comment>
+	    <comment xml:lang="es">Drawio</comment>
+      <glob pattern="*.drawio, *.xml"/>
+    </mime-type>
+</mime-info>

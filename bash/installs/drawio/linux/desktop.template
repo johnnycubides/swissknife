@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Drawio
+GenericName=Diagram Editor
+Comment=Create diagrams and flowcharts
+Exec=<EXEC_LOCATION>
+Icon=<ICON_LOCATION>
+Categories=Office;Graphics;Development;
+MimeType=application/vnd.jgraph.mxfile;
+Terminal=false
+Keywords=editor;simulator;digital;circuits;
+StartupNotify=true
+

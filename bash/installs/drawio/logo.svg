@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="700"
+   height="700"
+   viewBox="0 0 28 28"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.10375"
+     inkscape:cx="350.16988"
+     inkscape:cy="350.16988"
+     inkscape:window-width="1920"
+     inkscape:window-height="1134"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title1">file_type_drawio</title>
+  <rect
+     x="0"
+     y="0"
+     width="28"
+     height="28"
+     rx="1.12"
+     style="fill:#f08705"
+     id="rect1" />
+  <path
+     d="M 14.861,7.168 17.881,3.981 28,14.094 V 26.88 A 1.119,1.119 0 0 1 26.88,28 H 9.316 L 3.931,22.593 Z"
+     style="fill:#df6c0c;fill-rule:evenodd"
+     id="path1" />
+  <path
+     d="m 23.24,15.96 h -3.294 l -3.071,-5.32 h 0.2 a 1.119,1.119 0 0 0 1.12,-1.12 V 4.76 A 1.119,1.119 0 0 0 17.075,3.64 H 10.92 A 1.119,1.119 0 0 0 9.8,4.76 v 4.76 a 1.119,1.119 0 0 0 1.12,1.12 h 0.205 L 8.054,15.96 H 4.76 a 1.119,1.119 0 0 0 -1.12,1.12 v 4.76 a 1.119,1.119 0 0 0 1.12,1.12 h 6.16 a 1.119,1.119 0 0 0 1.12,-1.12 V 17.08 A 1.119,1.119 0 0 0 10.92,15.96 H 9.993 l 3.072,-5.32 h 1.87 l 3.071,5.32 H 17.08 a 1.119,1.119 0 0 0 -1.12,1.12 v 4.76 a 1.119,1.119 0 0 0 1.12,1.12 h 6.16 a 1.119,1.119 0 0 0 1.12,-1.12 v -4.76 a 1.119,1.119 0 0 0 -1.12,-1.12 z"
+     style="fill:#ffffff"
+     id="path2" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>file_type_drawio</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
