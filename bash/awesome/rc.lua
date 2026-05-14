@@ -425,10 +425,10 @@ globalkeys = gears.table.join(
 		-- )
 		awful.spawn.with_shell("scrot -s - | xclip -selection clipboard -t image/png")
 	end, { description = "Clipimage", group = "launcher" }),
-	awful.key({ modkey }, "l", function()
+	awful.key({ modkey }, "h", function()
 		move_focused_client_left_half()
 	end, { description = "Move window to left half", group = "client" }),
-	awful.key({ modkey }, "h", function()
+	awful.key({ modkey }, "l", function()
 		move_focused_client_right_half()
 	end, { description = "Move window to right half", group = "client" })
 )
