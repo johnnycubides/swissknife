@@ -10,7 +10,7 @@ function listpaths() {
   if [[ -f $LISTPATH ]]; then
     nl -ba $LISTPATH
   else
-    echo "El archivo $LISTPATH no existe."
+    echo "El archivo $LISTPATH no existe, debe crearlo o agregarlo"
   fi
 }
 
