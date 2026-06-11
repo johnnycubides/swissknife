@@ -105,7 +105,8 @@ myconfig() {
 DP=~/gitPackages
 DTERMINAL=$DP/lite-xl-terminal
 
-LITE_XL_TERMINAL_CHECKOUT=db51af9b4e599242782589c531fe842323f6d7ee
+# LITE_XL_TERMINAL_CHECKOUT=db51af9b4e599242782589c531fe842323f6d7ee
+LITE_XL_TERMINAL_CHECKOUT=b04097d2ee5affb86198001a82410fb68c94d907
 # Plugin para embeber la terminal en el editor
 build-terminal() {
   # https://github.com/adamharrison/lite-xl-terminal
