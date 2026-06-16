@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Option 1
 # conda activate work
 # yt-dlp --extract-audio --audio-format opus $1
 
+# Option 2
 # conda activate work
 yt-dlp \
   --remote-components ejs:github \
@@ -11,6 +13,7 @@ yt-dlp \
   --extract-audio --audio-format opus \
   "$1"
 
+# Option 3
 # conda activate work
 # # Exactly
 # yt-dlp \
