@@ -1,5 +1,11 @@
 # Instalación de lite-xl
 
+1. Verificar que tenga las siguientes dependencias instaladas:
+
+```sh
+sudo apt install gcc build-essential
+```
+
 Solo se requiere ejecutar el siguiente comando:
 
 ```
