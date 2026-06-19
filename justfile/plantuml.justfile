@@ -4,30 +4,30 @@ BASENAME := file_stem(f)
 # Target por defecto
 default: help
 
-help: ## Prints help for recipes with comments
+help:
     @just --list
 
-plantumlSVG: ## Make svg
+plantumlSVG:
     @echo "Generar svg desde código plantuml"
     @echo "usar f=file sin la extensión .pu"
-    plantuml -tsvg {{BASENAME}}.pu
+    plantuml -tsvg {{ BASENAME }}.pu
 
-bgWhite: ## convert2SvgwithWhiteBackground
-    sed -i '0,/<defs/s/<defs/<rect width="100%" height="100%" fill="#ffffff" stroke="none"\/><defs/' {{BASENAME}}.svg
+bgWhite:
+    sed -i '0,/<defs/s/<defs/<rect width="100%" height="100%" fill="#ffffff" stroke="none"\/><defs/' {{ BASENAME }}.svg
 
 svgtopdf:
-    inkscape {{BASENAME}}.svg --export-filename={{BASENAME}}.pdf || \
-    inkscape {{f}} --export-filename={{BASENAME}}.pdf
+    inkscape {{ BASENAME }}.svg --export-filename={{ BASENAME }}.pdf || \
+    inkscape {{ f }} --export-filename={{ BASENAME }}.pdf
 
 rmsvg:
-    @echo "remover {{BASENAME}}.svg"
-    rm -f {{BASENAME}}.svg
+    @echo "remover {{ BASENAME }}.svg"
+    rm -f {{ BASENAME }}.svg
 
-plantumlPDF: plantumlSVG && svgtopdf && rmsvg ## Crear un PDF desde el f=plantuml.pu
+plantumlPDF: plantumlSVG svgtopdf rmsvg
 
-rmpdf: ## Remover el pdf seleccionado con f=
-    @echo "remover {{BASENAME}}.pdf"
-    rm -i {{BASENAME}}.pdf || rm -i {{f}}
+rmpdf:
+    @echo "remover {{ BASENAME }}.pdf"
+    rm -i {{ BASENAME }}.pdf || rm -i {{ f }}
 
 view:
-    eog {{BASENAME}}.svg
+    eog {{ BASENAME }}.sv

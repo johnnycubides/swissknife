@@ -4,7 +4,8 @@
 LBIN=/usr/local/bin
 APP=plantuml
 DAPP=~/gitPackages/$APP
-VERSION=1.2025.10
+# VERSION=1.2025.10
+VERSION=1.2026.6
 DOWNLOAD=https://github.com/plantuml/plantuml/releases/download/v$VERSION/plantuml-$VERSION.jar
 
 update() {
