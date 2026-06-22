@@ -61,3 +61,9 @@ vim.api.nvim_create_user_command("SpellHighlight", function()
 		-- bold = true,
 	})
 end, {})
+
+-- Poner en verde el marcador de número de línea
+vim.api.nvim_create_user_command("HighlightLineNumber", function()
+	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "LightGreen" })
+	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "LightGreen" })
+end, {})
