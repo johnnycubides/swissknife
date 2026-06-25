@@ -9,9 +9,10 @@
 yt-dlp \
   --remote-components ejs:github \
   --js-runtimes node \
-  --cookies-from-browser firefox \
+  --extractor-args "youtube:player_client=android" \
   --extract-audio --audio-format opus \
   "$1"
+# --cookies-from-browser firefox \
 
 # Option 3
 # conda activate work
