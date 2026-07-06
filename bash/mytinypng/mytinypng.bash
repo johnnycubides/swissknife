@@ -1,8 +1,8 @@
 #!/bin/bash
 
 FILE=$1
-BASENAME="${file%.*}"
-OUTPUT=$BASENAME.png
+BASENAME="${FILE%.*}"
+OUTPUT=$BASENAME-opti.png
 
 function mytinypng() {
   echo "==> START OPTIMAZE PNG"
