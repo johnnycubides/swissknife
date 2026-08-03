@@ -38,6 +38,12 @@ crea un respaldo en:
 Durante la instalación Lite XL se abre una vez para crear `~/.config/lite-xl`.
 Se debe cerrar el editor para permitir que continúe la instalación de plugins.
 
+La configuración local agrega sintaxis y Verible LSP por separado para Verilog
+(`.v`, `.vh`) y SystemVerilog (`.sv`, `.svh`). Verilog desactiva las reglas
+`always-comb` y `unpacked-dimensions-range-ordering`, que requieren construcciones
+propias de SystemVerilog. SystemVerilog conserva las reglas predeterminadas de
+Verible.
+
 Las operaciones también se pueden ejecutar individualmente:
 
 ```bash

@@ -202,6 +202,8 @@ config() {
   check
   cp "$SCRIPT_PATH/plugins/language_v.lua" "$PLUG_LITE_XL/"
   check
+  cp "$SCRIPT_PATH/plugins/language_sv.lua" "$PLUG_LITE_XL/"
+  check
 }
 
 myconfig() {

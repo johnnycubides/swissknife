@@ -30,10 +30,19 @@ end
 
 -- https://github.com/lite-xl/lite-xl-lsp
 lsp.add_server({
-	name = "verible",
-	language = "Verilog",
-	file_patterns = { "%.v$" },
+	name = "verible-verilog",
+	language = "verilog",
+	file_patterns = { "%.v$", "%.vh$" },
 	command = { get_verible_path(), "--rules=-unpacked-dimensions-range-ordering,-always-comb" },
+	incremental_changes = false,
+	verbose = false,
+})
+
+lsp.add_server({
+	name = "verible-systemverilog",
+	language = "systemverilog",
+	file_patterns = { "%.sv$", "%.svh$" },
+	command = { get_verible_path() },
 	incremental_changes = false,
 	verbose = false,
 })
