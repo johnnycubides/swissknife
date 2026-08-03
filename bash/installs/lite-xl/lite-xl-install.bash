@@ -4,10 +4,14 @@ VERSION=v2.1.8
 DOWNLOAD=https://github.com/lite-xl/lite-xl/releases/download/$VERSION/lite-xl-$VERSION-addons-linux-x86_64-portable.tar.gz
 LITE_XL_SHA256=64b8ddf77cb8762c3a274b37db98f3af0859d64cbab86ab47dc9ddbcb2a8cf04
 
-DP=${LITE_XL_PACKAGES_PATH:-$HOME/gitPackages}
+DP=${LITE_XL_PACKAGES_PATH:-$HOME/gitPackages/digital-logic-design-tools}
 DAPP=$DP/lite-xl
 DTERMINAL=$DP/lite-xl-terminal
 LOCAL_BIN=${LITE_XL_LOCAL_BIN:-/usr/local/bin}
+
+LEGACY_DP=$HOME/gitPackages
+LEGACY_DAPP=$LEGACY_DP/lite-xl
+LEGACY_DTERMINAL=$LEGACY_DP/lite-xl-terminal
 
 CONFIG_LITE_XL=${LITE_XL_CONFIG_PATH:-$HOME/.config/lite-xl}
 PLUG_LITE_XL=$CONFIG_LITE_XL/plugins
@@ -42,6 +46,23 @@ removelocalbin() {
   fi
 }
 
+removelegacy() {
+  local LITE_XL_TARGET
+
+  if [[ "$DAPP" == "$LEGACY_DAPP" || ! -L "$LOCAL_BIN/lite-xl" ]]; then
+    return 0
+  fi
+
+  LITE_XL_TARGET=$(readlink -f "$LOCAL_BIN/lite-xl") || return 0
+
+  if [[ "$LITE_XL_TARGET" != "$LEGACY_DAPP/"* ]]; then
+    return 0
+  fi
+
+  echo "Remove legacy Lite XL installation from $LEGACY_DP"
+  rm -rf "$LEGACY_DAPP" "$LEGACY_DTERMINAL"
+}
+
 backup() {
   local BACKUP_PATH
 
@@ -65,9 +86,11 @@ remove() {
   backup
   check
 
-  rm -rf "$DAPP"
+  rm -rf "$DAPP" "$DTERMINAL"
   check
   rm -rf "$CONFIG_LITE_XL"
+  check
+  removelegacy
   check
   removelocalbin
   check
@@ -292,7 +315,7 @@ help() {
   echo "  install        Install the Lite XL portable release"
   echo "  lsp-install    Install the LSP and lint plugins"
   echo "  build-install  Install the experimental build plugin"
-  echo "  config         Install the local Verilog configuration"
+  echo "  config         Install the local HDL configuration"
   echo "  myconfig       Enable myconfig.lua once"
   echo "  maketoolbar    Install the Make toolbar"
   echo "  build-terminal Build and install the terminal plugin"

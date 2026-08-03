@@ -35,6 +35,17 @@ crea un respaldo en:
 ~/.local/share/lite-xl-backups/
 ```
 
+Lite XL y las fuentes necesarias para el plugin de terminal se instalan en:
+
+```text
+~/gitPackages/digital-logic-design-tools/lite-xl/
+~/gitPackages/digital-logic-design-tools/lite-xl-terminal/
+```
+
+Una instalación anterior ubicada directamente en `~/gitPackages/lite-xl` se
+elimina durante la migración cuando el enlace `lite-xl` apunta a esa ubicación.
+La raíz puede cambiarse mediante `LITE_XL_PACKAGES_PATH`.
+
 Durante la instalación Lite XL se abre una vez para crear `~/.config/lite-xl`.
 Se debe cerrar el editor para permitir que continúe la instalación de plugins.
 
