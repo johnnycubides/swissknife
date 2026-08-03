@@ -87,3 +87,12 @@ lspconfig.verible.setup({
 	end,
 })
 -- END VERIBLE LSP CONFIG
+----- START ESBONIO CONFIG --
+lspconfig.esbonio.setup({
+	cmd = { "esbonio", "server" }, -- Si solo "esbonio" funciona, usa { "esbonio" }
+	filetypes = { "rst" },
+	-- root_dir se define con root_pattern (no root_markers)
+	root_dir = lspconfig.util.root_pattern(".git", "conf.py"),
+	capabilities = capabilities, -- (opcional, para tener completado avanzado)
+})
+-- END ESBONIO CONFIG --

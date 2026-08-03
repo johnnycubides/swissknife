@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# This script adds a menu item, icons and mime type for Digital for the current
-# user. Based on Arduino install script.
+# This script adds a menu item, an icon and file associations for Lite XL for
+# the current user. Based on the Arduino install script.
 
 RESOURCE_NAME=lite-xl-editor
 
 SCRIPT_PATH=$(
-	cd $(dirname $0)
+	cd "$(dirname "$0")"
 	pwd
 )
 cd "${SCRIPT_PATH}"
@@ -20,7 +20,9 @@ mkdir -p "${HOME}/.local/share/applications"
 cp "${TMP_DIR}/${RESOURCE_NAME}.desktop" "${HOME}/.local/share/applications/"
 
 mkdir -p "${HOME}/.local/share/mime/packages"
-cp "${SCRIPT_PATH}/linux/${RESOURCE_NAME}.xml" "${HOME}/.local/share/mime/packages"
+cp \
+	"${SCRIPT_PATH}/linux/${RESOURCE_NAME}.xml" \
+	"${HOME}/.local/share/mime/packages/"
 
 rm "${TMP_DIR}/${RESOURCE_NAME}.desktop"
 rmdir "${TMP_DIR}"

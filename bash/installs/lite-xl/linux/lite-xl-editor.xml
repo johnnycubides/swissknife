@@ -1,9 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-    <mime-type type="text/x-lite-xl">
-      <comment>Editor Lite XL file</comment>
-	    <comment xml:lang="en">Lite XL Editor</comment>
-	    <comment xml:lang="es">Editor Lite XL</comment>
-      <glob pattern="*.v, *.json, *.pcf, *.txt, Makefile, *.mk, *.md, *"/>
-    </mime-type>
+  <mime-type type="text/x-pcf">
+    <comment>FPGA physical constraints file</comment>
+    <comment xml:lang="es">Archivo de restricciones físicas para FPGA</comment>
+    <glob pattern="*.pcf" weight="80"/>
+  </mime-type>
 </mime-info>

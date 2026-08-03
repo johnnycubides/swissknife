@@ -1,22 +1,65 @@
-# Instalación de lite-xl
+# Instalación de Lite XL
 
 1. Verificar que tenga las siguientes dependencias instaladas:
 
 ```sh
-sudo apt install gcc build-essential
+sudo apt install \
+  build-essential \
+  coreutils \
+  desktop-file-utils \
+  gcc \
+  git \
+  shared-mime-info \
+  wget
 ```
 
-Solo se requiere ejecutar el siguiente comando:
+También se pueden instalar mediante el script:
 
+```bash
+bash lite-xl-install.bash dependencies
 ```
+
+## Instalar
+
+Para instalar Lite XL y toda la configuración:
+
+```bash
 curl https://raw.githubusercontent.com/johnnycubides/swissknife/master/bash/installs/lite-xl/install-all.bash | bash -s all
 ```
 
-## Empaquetar
+La instalación utiliza Lite XL v2.1.8, verifica el SHA256 de la release y fija
+las revisiones de los plugins. Antes de eliminar una configuración existente,
+crea un respaldo en:
 
-Solo se usa el siguiente comando en el caso de hacer actualizaciones de estas fuentes.
+```text
+~/.local/share/lite-xl-backups/
+```
+
+Durante la instalación Lite XL se abre una vez para crear `~/.config/lite-xl`.
+Se debe cerrar el editor para permitir que continúe la instalación de plugins.
+
+Las operaciones también se pueden ejecutar individualmente:
 
 ```bash
-rm -rf lite-xl-config.tar.gz
-tar -czvf lite-xl-config.tar.gz install-desktop.sh linux lite-xl-install.bash logo.svg myconfig.lua plugins
+bash lite-xl-install.bash help
+bash lite-xl-install.bash backup
+bash lite-xl-install.bash install
+bash lite-xl-install.bash lsp-install
+bash lite-xl-install.bash build-terminal
+bash lite-xl-install.bash config
+bash lite-xl-install.bash myconfig
+bash lite-xl-install.bash maketoolbar
+bash lite-xl-install.bash mkdesktop
+```
+
+Las versiones, checksums y revisiones están declaradas al comienzo de
+`lite-xl-install.bash` para facilitar futuras actualizaciones.
+
+## Empaquetar
+
+Después de actualizar los scripts, configuraciones o plugins locales, se debe
+reconstruir el archivo utilizado por la instalación remota:
+
+```bash
+bash install-all.bash pack
 ```

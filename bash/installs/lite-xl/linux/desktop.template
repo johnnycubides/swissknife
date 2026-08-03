@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
 Name=Lite XL Editor
-Comment=Text editor 
-Exec=<EXEC_LOCATION>
+Comment=Lightweight text editor
+TryExec=<EXEC_LOCATION>
+Exec=<EXEC_LOCATION> %F
 Icon=<ICON_LOCATION>
-Categories=Education;Electronics;
-MimeType=text/x-lite-xl;
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/x-verilog;text/x-svsrc;text/x-svhdr;text/x-makefile;text/markdown;application/json;text/x-pcf;
 Terminal=false
-Keywords=editor;simulator;digital;circuits;
-
+Keywords=editor;Verilog;SystemVerilog;FPGA;code;

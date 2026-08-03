@@ -1,59 +1,89 @@
 #!/bin/bash
 
-TMP=/tmp/
+TMP=${TMPDIR:-/tmp}
 URL_CONFIG=https://github.com/johnnycubides/swissknife/raw/master/bash/installs/lite-xl
 LITEX_CONFIG=lite-xl-config
+SCRIPT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 download() {
-  cd $TMP
-  echo "Remover anteriores configuracions en $TMP"
-  rm -rf $LITEX_CONFIG*
-  wget $URL_CONFIG/${LITEX_CONFIG}.tar.gz
-  tar xvf $LITEX_CONFIG.tar.gz
+  echo "Remove previous configuration from $TMP"
+  rm -rf "$TMP/$LITEX_CONFIG"
+  rm -f "$TMP/$LITEX_CONFIG.tar.gz" "$TMP/$LITEX_CONFIG.tar.gz.part"
+
+  mkdir -p "$TMP/$LITEX_CONFIG" || return 1
+
+  wget \
+    -O "$TMP/$LITEX_CONFIG.tar.gz.part" \
+    "$URL_CONFIG/$LITEX_CONFIG.tar.gz" || return 1
+
+  mv \
+    "$TMP/$LITEX_CONFIG.tar.gz.part" \
+    "$TMP/$LITEX_CONFIG.tar.gz" || return 1
+
+  tar \
+    -xzf "$TMP/$LITEX_CONFIG.tar.gz" \
+    -C "$TMP/$LITEX_CONFIG" || return 1
 }
 
 finish() {
-  cd $TMP
-  echo "Remover los archivos de configuración descargados en el $TMP"
-  rm -rf lite-xl* linux/ install-desktop.sh logo.svg myconfig plugins/
+  echo "Remove downloaded configuration from $TMP"
+  rm -rf "$TMP/$LITEX_CONFIG"
+  rm -f "$TMP/$LITEX_CONFIG.tar.gz" "$TMP/$LITEX_CONFIG.tar.gz.part"
 }
 
 install-lite() {
-  # echo "==> CONFIGURAR dependencies"
-  # bash lite-xl-install.bash dependencies
-  # check
-  echo "==> CONFIGURAR download"
+  echo "==> CONFIGURE download"
   download
-  cd $TMP$LITEX_CONFIG
-  echo "==> CONFIGURAR remove"
+  check
+
+  trap finish EXIT
+  cd "$TMP/$LITEX_CONFIG"
+  check
+
+  echo "==> CONFIGURE remove"
   bash lite-xl-install.bash remove
-  echo "==> CONFIGURAR install"
+  check
+
+  echo "==> CONFIGURE install"
   bash lite-xl-install.bash install
   check
-  echo "==> CONFIGURAR lsp-install"
+
+  echo "==> CONFIGURE lsp-install"
   bash lite-xl-install.bash lsp-install
   check
-  # Aunque este plugin opera correctamente, se requiere algunas adaptaciones para su implementación.
-  # echo "==> CONFIGURAR build-install"
+
+  # This plugin still requires adaptations before it can be enabled.
+  # echo "==> CONFIGURE build-install"
   # bash lite-xl-install.bash build-install
   # check
-  echo "==> CONFIGURAR maketoolbar"
+
+  echo "==> CONFIGURE maketoolbar"
   bash lite-xl-install.bash maketoolbar
   check
-  echo "==> CONFIGURAR build-terminal"
+
+  echo "==> CONFIGURE build-terminal"
   bash lite-xl-install.bash build-terminal
   check
-  echo "==> CONFIGURAR config"
+
+  echo "==> CONFIGURE config"
   bash lite-xl-install.bash config
   check
-  echo "==> CONFIGURAR myconfig"
+
+  echo "==> CONFIGURE myconfig"
   bash lite-xl-install.bash myconfig
   check
-  echo "==> CONFIGURAR mkdesktop"
+
+  echo "==> CONFIGURE mkdesktop"
   bash lite-xl-install.bash mkdesktop
   check
-  update-menus
+
+  if command -v update-menus >/dev/null 2>&1; then
+    update-menus
+    check
+  fi
+
   finish
+  trap - EXIT
 }
 
 all() {
@@ -61,27 +91,50 @@ all() {
 }
 
 pack() {
-  echo "Packages"
-  rm -rf lite-xl-config.tar.gz
-  tar -czvf lite-xl-config.tar.gz install-desktop.sh linux lite-xl-install.bash logo.svg myconfig.lua plugins
+  cd "$SCRIPT_PATH"
+  check
+
+  echo "Package Lite XL configuration"
+  rm -f lite-xl-config.tar.gz
+  tar \
+    -czvf lite-xl-config.tar.gz \
+    install-desktop.sh \
+    linux \
+    lite-xl-install.bash \
+    logo.svg \
+    myconfig.lua \
+    plugins
+  check
 }
 
 check() {
-  if [[ $? -ne 0 ]]; then
-    echo "failed"
-    exit $?
+  local STATUS=$?
+
+  if [[ $STATUS -ne 0 ]]; then
+    echo "failed" >&2
+    exit "$STATUS"
   fi
 }
 
 help() {
-  echo "all"
-  echo "pack"
+  echo "Arguments:"
+  echo "  all   Install Lite XL and its configuration"
+  echo "  pack  Rebuild lite-xl-config.tar.gz"
 }
 
-if [[ -v 1 ]]; then
-  $1
-else
-  help
-fi
-
-# all
+case "${1:-help}" in
+  all)
+    all
+    ;;
+  pack)
+    pack
+    ;;
+  help)
+    help
+    ;;
+  *)
+    echo "Unknown argument: $1" >&2
+    help
+    exit 1
+    ;;
+esac
