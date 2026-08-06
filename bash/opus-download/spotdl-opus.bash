@@ -1,6 +1,6 @@
 #!/bin/bash
 
-spotify-dlp \
+spotdl \
   download \
   "$1" \
   --format opus \
