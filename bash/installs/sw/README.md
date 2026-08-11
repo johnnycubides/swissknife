@@ -1,62 +1,75 @@
 # sw
 
-## Configuración maunal de 
+Configura dos layouts de teclado y permite cambiar temporalmente al layout secundario
+mediante la tecla `Ctrl` derecha.
 
-En el archivo `/etc/default/keyboard` ajustar la información de manera similar a la
-mostrada a continuación:
+También permite restaurar un único layout para usar el teclado sin el cambio
+temporal.
 
-```bash
-# KEYBOARD CONFIGURATION FILE
+## Entornos compatibles
 
-# Consult the keyboard(5) manual page.
+El script selecciona el método de configuración mediante `XDG_SESSION_TYPE`:
 
-XKBMODEL="pc105"
-XKBLAYOUT="us,es"
-XKBVARIANT=""
-XKBOPTIONS="grp:rctrl_switch"
+* X11: utiliza `setxkbmap`.
+* GNOME con Wayland: utiliza `gsettings`.
 
-BACKSPACE="guess"
-```
+Otros escritorios basados en Wayland no están soportados actualmente.
 
-Dada la configuración realizada se reinicia el sistema para que tome el archivo de
-configuración.
+## Cambio temporal
+
+Ejecutar sin argumentos o con el comando `switch`:
 
 ```bash
-sudo udevadm trigger --subsystem-match=input --action=change
+./sw.sh
+./sw.sh switch
 ```
 
-O esta otra función
+El layout principal permanece activo normalmente. Al mantener presionada la tecla
+`Ctrl` derecha se activa el layout secundario. Al soltarla se regresa al principal.
+Esta tecla deja de funcionar como `Ctrl` derecha o como tecla Compose.
+
+## Layout predeterminado
+
+Para utilizar únicamente el layout definido en `PC_LAYOUT`:
 
 ```bash
-sudo service keyboard-setup restart
+./sw.sh default
 ```
 
-Si desea ver posibles configuraciones del XKBOPTIONS puede ejecitar el
-siguiente comando:
+Este comando elimina el cambio temporal y restaura el funcionamiento normal de la
+tecla `Ctrl` derecha.
+
+En GNOME, la configuración permanece después de reiniciar. En X11 puede ser
+necesario ejecutar nuevamente el script al iniciar la sesión.
+
+## Instalación opcional
+
+Para instalar el comando `sw`:
 
 ```bash
-man xkeyboard-config
+./install-sw.bash install
+sw
+sw default
 ```
 
-### Referencias
+Para eliminarlo:
 
-[Lista de opciones xkeyboard](https://unix.stackexchange.com/questions/45447/other-than-alt-shift-to-switch-keyboard-layout-any-other-xorg-key-combination)
+```bash
+./install-sw.bash remove
+```
 
-[Guia de XKB](https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450)
+## Configuración
 
-[debian keyboard](https://wiki.debian.org/Keyboard)
+Los layouts se pueden cambiar en el archivo `sw.conf`, ubicado junto a `sw.sh`:
 
-## Configuración con reset indeseado (no funciona bien) 
+```bash
+PC_LAYOUT="latam"
+PRIMARY_LAYOUT="es"
+SECONDARY_LAYOUT="us"
+```
 
-Se trata de un pequeño script para habilitar el cambio de configuración de teclado
-entre el teclado inglés y el español.
+`PC_LAYOUT` se utiliza con `sw default`. `PRIMARY_LAYOUT` y `SECONDARY_LAYOUT` se
+utilizan con `sw` o `sw switch`.
 
-- Instalación:
-`./install-sw.sh`
-
-- Uso:
-Solo se requiere ejecutar en una terminal el comando `sw` y con la tecla configurada **CTRL Izq**
-al mantenerla presionada habilita la configuración del teclado en español, al soltarl la tecla
-el teclado permanece en configuración inglesa.
-
-Johnny
+Si `sw.conf` no existe, el script utiliza `latam` como layout del equipo, `us` como
+layout principal y `latam` como layout secundario.
