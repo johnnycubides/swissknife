@@ -1,0 +1,78 @@
+#!/bin/bash
+
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+SCRIPT_DIR=$(cd "$(dirname "$SCRIPT_PATH")" && pwd)
+STYLESHEET="$SCRIPT_DIR/technical-report.css"
+
+help() {
+  cat <<'EOF'
+Convert a reStructuredText document to a standalone HTML report.
+
+Usage:
+  rst2html INPUT_FILE [OUTPUT_FILE]
+  rst2html help
+
+Arguments:
+  INPUT_FILE   Source reStructuredText file.
+  OUTPUT_FILE  Optional HTML destination.
+
+If OUTPUT_FILE is omitted, the generated file uses the same directory and
+base name as INPUT_FILE, replacing its extension with .html.
+
+Examples:
+  rst2html report.rst
+  rst2html report.rst build/report.html
+  rst2html docs/technical-report.rst
+EOF
+}
+
+convert() {
+  local INPUT_FILE=$1
+  local OUTPUT_FILE=${2:-}
+  local INPUT_DIRECTORY
+  local INPUT_NAME
+  local INPUT_STEM
+  local OUTPUT_DIRECTORY
+
+  if [[ ! -f "$INPUT_FILE" ]]; then
+    echo "Input file not found: $INPUT_FILE" >&2
+    exit 1
+  fi
+
+  if [[ -z "$OUTPUT_FILE" ]]; then
+    INPUT_DIRECTORY=$(dirname -- "$INPUT_FILE")
+    INPUT_NAME=$(basename -- "$INPUT_FILE")
+    INPUT_STEM=${INPUT_NAME%.*}
+    OUTPUT_FILE="$INPUT_DIRECTORY/$INPUT_STEM.html"
+  fi
+
+  OUTPUT_DIRECTORY=$(dirname -- "$OUTPUT_FILE")
+  mkdir -p "$OUTPUT_DIRECTORY"
+
+  pandoc "$INPUT_FILE" \
+    --from=rst \
+    --to=html5 \
+    --standalone \
+    --toc \
+    --number-sections \
+    --resource-path="$(dirname -- "$INPUT_FILE")" \
+    --css="$STYLESHEET" \
+    --embed-resources \
+    --output="$OUTPUT_FILE"
+
+  echo "Generated: $OUTPUT_FILE"
+}
+
+case "${1:-help}" in
+help | -h | --help)
+  help
+  ;;
+*)
+  if [[ $# -gt 2 ]]; then
+    echo "Too many arguments." >&2
+    help >&2
+    exit 1
+  fi
+  convert "$1" "${2:-}"
+  ;;
+esac
