@@ -5,9 +5,13 @@ SCRIPT_DIR=$(cd "$(dirname "$SCRIPT_PATH")" && pwd)
 INSTALL_DIRECTORY="/usr/local/bin"
 
 install() {
+  sudo ln -srf "$SCRIPT_DIR/md2html" "$INSTALL_DIRECTORY/md2html"
+  sudo ln -srf "$SCRIPT_DIR/md2pdf" "$INSTALL_DIRECTORY/md2pdf"
   sudo ln -srf "$SCRIPT_DIR/rst2html" "$INSTALL_DIRECTORY/rst2html"
   sudo ln -srf "$SCRIPT_DIR/rst2pdf" "$INSTALL_DIRECTORY/rst2pdf"
 
+  echo "Installed: $INSTALL_DIRECTORY/md2html"
+  echo "Installed: $INSTALL_DIRECTORY/md2pdf"
   echo "Installed: $INSTALL_DIRECTORY/rst2html"
   echo "Installed: $INSTALL_DIRECTORY/rst2pdf"
 }

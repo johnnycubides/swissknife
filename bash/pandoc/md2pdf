@@ -1,0 +1,142 @@
+#!/bin/bash
+
+PDF_ENGINE=${PDF_ENGINE:-lualatex}
+PDF_MARGINS=${PDF_MARGINS:-standard}
+
+help() {
+  cat <<'EOF'
+Convert a Markdown document to a PDF report.
+
+Usage:
+  md2pdf [OPTIONS] INPUT_FILE [OUTPUT_FILE]
+  md2pdf help
+
+Options:
+  -m, --margins PRESET  Select a margin preset:
+                          standard  1 inch on every side (default)
+                          narrow    0.5 inch on every side
+                          wide      1.5 inches on every side
+  -h, --help            Show this help.
+
+Arguments:
+  INPUT_FILE   Source Markdown file.
+  OUTPUT_FILE  Optional PDF destination.
+
+If OUTPUT_FILE is omitted, the generated file uses the same directory and
+base name as INPUT_FILE, replacing its extension with .pdf.
+
+The PDF engine defaults to lualatex. Set PDF_ENGINE to use another Pandoc PDF
+engine. Set PDF_MARGINS to select the default margin preset.
+
+Examples:
+  md2pdf report.md
+  md2pdf --margins narrow report.md build/report.pdf
+  md2pdf -m wide docs/technical-report.md
+  PDF_ENGINE=pdflatex md2pdf docs/technical-report.md
+  PDF_MARGINS=narrow md2pdf report.md
+EOF
+}
+
+select_geometry() {
+  case "$PDF_MARGINS" in
+  standard)
+    PDF_GEOMETRY="margin=1in"
+    ;;
+  narrow)
+    PDF_GEOMETRY="margin=0.5in"
+    ;;
+  wide)
+    PDF_GEOMETRY="margin=1.5in"
+    ;;
+  *)
+    echo "Unknown margin preset: $PDF_MARGINS" >&2
+    echo "Available presets: standard, narrow, wide" >&2
+    exit 1
+    ;;
+  esac
+}
+
+generate_pdf() {
+  local INPUT_FILE=$1
+  local OUTPUT_FILE=${2:-}
+  local INPUT_DIRECTORY
+  local INPUT_NAME
+  local INPUT_STEM
+  local OUTPUT_DIRECTORY
+
+  if [[ ! -f "$INPUT_FILE" ]]; then
+    echo "Input file not found: $INPUT_FILE" >&2
+    exit 1
+  fi
+
+  if [[ -z "$OUTPUT_FILE" ]]; then
+    INPUT_DIRECTORY=$(dirname -- "$INPUT_FILE")
+    INPUT_NAME=$(basename -- "$INPUT_FILE")
+    INPUT_STEM=${INPUT_NAME%.*}
+    OUTPUT_FILE="$INPUT_DIRECTORY/$INPUT_STEM.pdf"
+  fi
+
+  OUTPUT_DIRECTORY=$(dirname -- "$OUTPUT_FILE")
+  mkdir -p "$OUTPUT_DIRECTORY"
+
+  pandoc "$INPUT_FILE" \
+    --from=markdown \
+    --standalone \
+    --toc \
+    --number-sections \
+    --resource-path="$(dirname -- "$INPUT_FILE")" \
+    --pdf-engine="$PDF_ENGINE" \
+    --variable="geometry:$PDF_GEOMETRY" \
+    --output="$OUTPUT_FILE"
+
+  echo "Generated: $OUTPUT_FILE"
+}
+
+INPUT_FILE=""
+OUTPUT_FILE=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  help | -h | --help)
+    help
+    exit 0
+    ;;
+  -m | --margins)
+    if [[ -z "${2:-}" ]]; then
+      echo "Missing value for $1." >&2
+      exit 1
+    fi
+    PDF_MARGINS=$2
+    shift 2
+    ;;
+  --margins=*)
+    PDF_MARGINS=${1#*=}
+    shift
+    ;;
+  -*)
+    echo "Unknown option: $1" >&2
+    help >&2
+    exit 1
+    ;;
+  *)
+    if [[ -z "$INPUT_FILE" ]]; then
+      INPUT_FILE=$1
+    elif [[ -z "$OUTPUT_FILE" ]]; then
+      OUTPUT_FILE=$1
+    else
+      echo "Too many arguments." >&2
+      help >&2
+      exit 1
+    fi
+    shift
+    ;;
+  esac
+done
+
+if [[ -z "$INPUT_FILE" ]]; then
+  help
+  exit 0
+fi
+
+select_geometry
+generate_pdf "$INPUT_FILE" "$OUTPUT_FILE"
