@@ -58,35 +58,41 @@ lspconfig.volar.setup({
 	capabilities = capabilities,
 })
 
--- START VERIBLE LSP CONFIG
--- 2025-02-18
-local function get_verible_cmd()
-	-- Intenta encontrar 'verible-verilog-ls' en el PATH
-	local handle = io.popen("which verible-verilog-ls")
-	local result = handle:read("*a")
-	handle:close()
-	-- Si se encuentra en el PATH, usa ese comando
-	if result ~= "" then
-		return { "verible-verilog-ls" }
-	else
-		local user = os.getenv("USER")
-		-- Si no se encuentra, usa la ruta absoluta
-		return { "/home/" .. user .. "/miniconda3/envs/digital/bin/verible-verilog-ls" }
-	end
-end
--- 27-08-2024
--- https://chipsalliance.github.io/verible/lint.html
-lspconfig.verible.setup({
-	filetypes = { "verilog", "systemverilog" },
-	cmd = get_verible_cmd(),
-	-- cmd = { "/home/johnny/miniconda3/envs/digital/bin/verible-verilog-ls" },
-	-- cmd = { "verible-verilog-ls", "--ruleset=all" },
-	-- cmd = { "verible-verilog-ls" },
-	root_dir = function()
-		return vim.loop.cwd()
-	end,
-})
--- END VERIBLE LSP CONFIG
+-- -- START VERIBLE LSP CONFIG
+-- -- 2026-09-13
+-- local function get_verible_cmd()
+-- 	-- Intenta encontrar 'verible-verilog-ls' en el PATH
+-- 	local handle = io.popen("which verible-verilog-ls")
+-- 	local result = handle:read("*a")
+-- 	handle:close()
+-- 	-- Si se encuentra en el PATH, usa ese comando
+-- 	if result ~= "" then
+-- 		return { "verible-verilog-ls" }
+-- 	else
+-- 		local user = os.getenv("USER")
+-- 		-- Si no se encuentra, usa la ruta absoluta
+-- 		return {
+-- 			"/home/"
+-- 				.. user
+-- 				.. "/gitPackages/digital-logic-design-tools/verible-v0.0-4084-gf3e4d98b/bin/verible-verilog-ls",
+-- 		} -- Actual ruta local, remplazar según cambie path
+-- 		-- return { "/home/" .. user .. "/miniconda3/envs/digital/bin/verible-verilog-ls" } -- cuando usaba conda
+-- 	end
+-- end
+-- -- 27-08-2024
+-- -- https://chipsalliance.github.io/verible/lint.html
+-- lspconfig.verible.setup({
+-- 	filetypes = { "verilog", "systemverilog" },
+-- 	cmd = get_verible_cmd(),
+-- 	-- cmd = { "/home/johnny/miniconda3/envs/digital/bin/verible-verilog-ls" },
+-- 	-- cmd = { "verible-verilog-ls", "--ruleset=all" },
+-- 	-- cmd = { "verible-verilog-ls" },
+-- 	root_dir = function()
+-- 		return vim.loop.cwd()
+-- 	end,
+-- })
+-- -- END VERIBLE LSP CONFIG
+
 ----- START ESBONIO CONFIG --
 lspconfig.esbonio.setup({
 	cmd = { "esbonio", "server" }, -- Si solo "esbonio" funciona, usa { "esbonio" }

@@ -67,3 +67,60 @@ vim.api.nvim_create_user_command("HighlightLineNumber", function()
 	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "LightGreen" })
 	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "LightGreen" })
 end, {})
+
+-- #######################################################
+-- START VERIBLE CONFIG TO VERILOG AND SYSTEMVERILOG FILES
+-- #######################################################-
+local function get_verible_bin()
+	-- Intenta encontrar 'verible-verilog-ls' en el PATH
+	local handle = io.popen("which verible-verilog-ls")
+	local result = handle:read("*a")
+	handle:close()
+	-- Si se encuentra en el PATH, usa ese comando
+	if result ~= "" then
+		return "verible-verilog-ls"
+	else
+		local user = os.getenv("USER")
+		-- Si no se encuentra, usa la ruta absoluta
+		return "/home/"
+			.. user
+			.. "/gitPackages/digital-logic-design-tools/verible-v0.0-4084-gf3e4d98b/bin/verible-verilog-ls"
+		-- Actual ruta local, remplazar según cambie path
+		-- return { "/home/" .. user .. "/miniconda3/envs/digital/bin/verible-verilog-ls" } -- cuando usaba conda
+	end
+end
+-- Cliente para archivos .v (Verilog puro)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "verilog",
+	callback = function()
+		vim.lsp.start({
+			name = "verible-verilog",
+			cmd = {
+				get_verible_bin(),
+				-- añade aquí las reglas que quieras desactivar para .v
+				"--rules=-unpacked-dimensions-range-ordering,-always-comb",
+				-- "--rules=-always-comb",
+				-- "--rules=-explicit-parameter-storage-type",
+			},
+			root_dir = vim.fn.getcwd(),
+		})
+	end,
+})
+
+-- Cliente para archivos .sv (SystemVerilog)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "systemverilog",
+	callback = function()
+		vim.lsp.start({
+			name = "verible-systemverilog",
+			cmd = {
+				get_verible_bin(),
+				-- aquí puedes dejar las reglas por defecto o activar otras
+			},
+			root_dir = vim.fn.getcwd(),
+		})
+	end,
+})
+-- #####################################################
+-- END VERIBLE CONFIG TO VERILOG AND SYSTEMVERILOG FILES
+-- #####################################################
