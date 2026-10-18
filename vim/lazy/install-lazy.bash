@@ -87,6 +87,7 @@ config() {
   # rm $PLUG_LUA/aerial.lua
   rm $PLUG_LUA/plantuml-syntax.lua
   rm $PLUG_LUA/plantuml.lua
+  rm $PLUG_LUA/blink-luasnip.lua
   # LSP
   rm $PLUG_LUA/typescript-tools.lua
   # rm $PLUG_LUA/mason-lsp-config.lua
@@ -108,6 +109,7 @@ config() {
   # cp ./plugins/aerial.lua $PLUG_LUA/
   cp ./plugins/plantuml-syntax.lua $PLUG_LUA/
   cp ./plugins/plantuml.lua $PLUG_LUA/
+  cp ./plugins/blink-luasnip.lua $PLUG_LUA/
   # LSP
   cp ./plugins/typescript-tools.lua $PLUG_LUA/ # Este es el plugin adecuado
   # cp ./plugins/mason-lsp-config.lua $PLUG_LUA/
