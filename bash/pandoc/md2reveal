@@ -12,6 +12,7 @@ REVEAL_CDN_URL="https://unpkg.com/reveal.js@$REVEAL_VERSION"
 REVEAL_THEME=${REVEAL_THEME:-white}
 REVEAL_WIDTH=${REVEAL_WIDTH:-1280}
 REVEAL_HEIGHT=${REVEAL_HEIGHT:-720}
+REVEAL_CENTER=${REVEAL_CENTER:-true}
 SHARED_ASSETS=false
 TEMP_DIRECTORY=""
 trap 'if [[ -n "$TEMP_DIRECTORY" ]]; then rm -rf -- "$TEMP_DIRECTORY"; fi' EXIT
@@ -44,8 +45,9 @@ Use # headings and --- separators. Speaker notes use Pandoc syntax:
 Press S in the presentation to open the speaker view. Serve the output folder
 over localhost and allow popups. This is not reveal-md syntax.
 
-Defaults: white theme, 1280 x 720 canvas, 28px text, no transition.
-Override with REVEAL_THEME, REVEAL_WIDTH or REVEAL_HEIGHT.
+Defaults: white theme, 1280 x 720 canvas, vertically centered, 28px text,
+no transition. Override with REVEAL_THEME, REVEAL_WIDTH, REVEAL_HEIGHT or
+REVEAL_CENTER (true/false).
 The common stylesheet overrides the input's css metadata.
 First use needs Internet; --assets can reuse its existing local runtime offline.
 No packages are installed globally. No local server is started automatically.
@@ -115,7 +117,7 @@ generate_reveal() {
     --resource-path="$INPUT_DIRECTORY"
     --variable="theme:$REVEAL_THEME"
     --variable="width:$REVEAL_WIDTH" --variable="height:$REVEAL_HEIGHT"
-    --variable=margin:0.06 --variable=center:false --variable=transition:none
+    --variable=margin:0.06 --variable="center:$REVEAL_CENTER" --variable=transition:none
   )
   if [[ "$SHARED_ASSETS" == true ]]; then
     prepare_assets

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PDF_ENGINE=${PDF_ENGINE:-lualatex}
 PDF_MARGINS=${PDF_MARGINS:-standard}
 

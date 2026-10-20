@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 SCRIPT_DIR=$(cd "$(dirname "$SCRIPT_PATH")" && pwd)
 INSTALL_DIRECTORY="/usr/local/bin"

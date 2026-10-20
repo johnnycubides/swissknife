@@ -58,8 +58,15 @@ class Md2RevealTests(unittest.TestCase):
         self.assertIn("--embed-resources", args)
         self.assertIn("--to=revealjs", args)
         self.assertIn("--slide-level=1", args)
+        self.assertIn("--variable=center:true", args)
         self.assertTrue(self.input.with_suffix(".html").exists())
         self.assertFalse((self.input.parent / "assets").exists())
+
+    def test_vertical_alignment_can_be_overridden(self):
+        self.env["REVEAL_CENTER"] = "false"
+        result = self.run_script(self.input)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("--variable=center:false", json.loads(self.capture.read_text()))
 
     def test_assets_reused_for_two_presentations_without_network(self):
         output = self.root / "output with spaces"

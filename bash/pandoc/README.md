@@ -7,6 +7,8 @@ ruta de entrada y una ruta de salida opcional.
 
 ## Instalación
 
+Dependencias y comandos para Debian/Ubuntu: [INSTALL.md](INSTALL.md).
+
 ```bash
 ./install-docs2any
 ```
@@ -31,6 +33,11 @@ md2pdf --help
 rst2html --help
 rst2pdf --help
 ```
+
+Si Pandoc o el motor PDF fallan, los conversores terminan con error y no
+muestran `Generated`. Ese mensaje solo se imprime después de una conversión
+exitosa; un archivo anterior en la ruta de salida no prueba que la última
+conversión haya funcionado.
 
 ## `md2html`
 
@@ -102,8 +109,9 @@ para probarlo.
 ```
 
 Sin salida explícita utiliza el directorio y nombre de la entrada con extensión
-`.html`. El lienzo predeterminado es 1280×720, tema blanco y texto base de 28 px.
-Para cambiarlo: `REVEAL_THEME`, `REVEAL_WIDTH` y `REVEAL_HEIGHT`. Estos valores
+`.html`. El lienzo predeterminado es 1280×720, centrado verticalmente,
+tema blanco y texto base de 28 px. Para cambiarlo: `REVEAL_THEME`,
+`REVEAL_WIDTH`, `REVEAL_HEIGHT` y `REVEAL_CENTER` (`true` o `false`). Estos valores
 y el estilo común tienen prioridad sobre la configuración equivalente del
 Markdown. No aplica índice ni numeración de secciones de informe. El estilo
 compartido está en `reveal-slides.css`; sigue siendo necesario dividir una
