@@ -1,0 +1,179 @@
+#!/bin/bash
+
+set -e
+
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+SCRIPT_DIR=$(cd "$(dirname "$SCRIPT_PATH")" && pwd)
+STYLESHEET="$SCRIPT_DIR/reveal-slides.css"
+REVEAL_VERSION="5.2.1"
+REVEAL_ARCHIVE_URL="https://registry.npmjs.org/reveal.js/-/reveal.js-$REVEAL_VERSION.tgz"
+REVEAL_SHA256="359b575dd51bbda32f89b2fd4c7dc46ad7389a805572158916c29252f7a27333"
+REVEAL_CDN_URL="https://unpkg.com/reveal.js@$REVEAL_VERSION"
+REVEAL_THEME=${REVEAL_THEME:-white}
+REVEAL_WIDTH=${REVEAL_WIDTH:-1280}
+REVEAL_HEIGHT=${REVEAL_HEIGHT:-720}
+SHARED_ASSETS=false
+TEMP_DIRECTORY=""
+trap 'if [[ -n "$TEMP_DIRECTORY" ]]; then rm -rf -- "$TEMP_DIRECTORY"; fi' EXIT
+
+help() {
+  cat <<'EOF'
+Convert Pandoc Markdown to a Reveal.js presentation.
+
+Usage:
+  md2reveal [--assets] INPUT_FILE [OUTPUT_FILE]
+  md2reveal help
+
+Options:
+  --assets       Use shared local assets next to the output HTML instead of
+                 embedding resources. Reveal.js is downloaded once per folder.
+  -h, --help     Show this help.
+
+The default output is INPUT_FILE with its extension replaced by .html.
+By default, scripts, styles and Markdown images are embedded in the HTML.
+With --assets, presentations in the same output directory share:
+  assets/reveal.js-5.2.1/         Reveal.js runtime, themes and plugins
+  assets/md2reveal.css           Common presentation style
+  assets/media/OUTPUT_STEM/      Images belonging to each presentation
+
+Use # headings and --- separators. Speaker notes use Pandoc syntax:
+  ::: notes
+  Text for the presenter, hidden from the audience.
+  :::
+
+Press S in the presentation to open the speaker view. Serve the output folder
+over localhost and allow popups. This is not reveal-md syntax.
+
+Defaults: white theme, 1280 x 720 canvas, 28px text, no transition.
+Override with REVEAL_THEME, REVEAL_WIDTH or REVEAL_HEIGHT.
+The common stylesheet overrides the input's css metadata.
+First use needs Internet; --assets can reuse its existing local runtime offline.
+No packages are installed globally. No local server is started automatically.
+
+Examples:
+  md2reveal talk.md
+  md2reveal --assets talk.md
+  md2reveal --assets docs/talk.md build/talk.html
+  md2reveal --assets docs/another.md build/another.html
+  REVEAL_THEME=black md2reveal talk.md
+EOF
+}
+
+prepare_assets() {
+  local REVEAL_DIRECTORY="$OUTPUT_DIRECTORY/assets/reveal.js-$REVEAL_VERSION"
+
+  mkdir -p "$OUTPUT_DIRECTORY/assets"
+  if [[ -d "$REVEAL_DIRECTORY" ]]; then
+    if [[ ! -f "$REVEAL_DIRECTORY/dist/reveal.js" ||
+          ! -f "$REVEAL_DIRECTORY/dist/reveal.css" ||
+          ! -f "$REVEAL_DIRECTORY/plugin/notes/notes.js" ||
+          ! -f "$REVEAL_DIRECTORY/.md2reveal-sha256" ]] ||
+       [[ "$(cat "$REVEAL_DIRECTORY/.md2reveal-sha256" 2>/dev/null)" != "$REVEAL_SHA256" ]]; then
+      echo "Existing Reveal.js assets are incomplete or not managed by md2reveal: $REVEAL_DIRECTORY" >&2
+      exit 1
+    fi
+    echo "Reusing: $REVEAL_DIRECTORY"
+  else
+    TEMP_DIRECTORY=$(mktemp -d)
+    echo "Downloading Reveal.js $REVEAL_VERSION..."
+    curl --fail --location --silent --show-error \
+      "$REVEAL_ARCHIVE_URL" --output "$TEMP_DIRECTORY/reveal.tgz"
+    printf '%s  %s\n' "$REVEAL_SHA256" "$TEMP_DIRECTORY/reveal.tgz" | sha256sum --check --status
+    mkdir "$TEMP_DIRECTORY/reveal"
+    tar -xzf "$TEMP_DIRECTORY/reveal.tgz" --strip-components=1 \
+      -C "$TEMP_DIRECTORY/reveal" package/dist package/plugin package/LICENSE
+    printf '%s\n' "$REVEAL_SHA256" > "$TEMP_DIRECTORY/reveal/.md2reveal-sha256"
+    mv "$TEMP_DIRECTORY/reveal" "$REVEAL_DIRECTORY"
+  fi
+  cp "$STYLESHEET" "$OUTPUT_DIRECTORY/assets/md2reveal.css"
+}
+
+generate_reveal() {
+  local INPUT_DIRECTORY
+  local OUTPUT_NAME
+  local OUTPUT_STEM
+
+  if [[ ! -f "$INPUT_FILE" ]]; then
+    echo "Input file not found: $INPUT_FILE" >&2
+    exit 1
+  fi
+  INPUT_FILE=$(realpath -- "$INPUT_FILE")
+  INPUT_DIRECTORY=$(dirname -- "$INPUT_FILE")
+  OUTPUT_FILE=${OUTPUT_FILE:-${INPUT_FILE%.*}.html}
+  mkdir -p "$(dirname -- "$OUTPUT_FILE")"
+  OUTPUT_FILE=$(realpath -- "$OUTPUT_FILE")
+  if [[ "$INPUT_FILE" == "$OUTPUT_FILE" ]]; then
+    echo "Output must not overwrite the input Markdown." >&2
+    exit 1
+  fi
+  OUTPUT_DIRECTORY=$(dirname -- "$OUTPUT_FILE")
+  OUTPUT_NAME=$(basename -- "$OUTPUT_FILE")
+  OUTPUT_STEM=${OUTPUT_NAME%.*}
+
+  local OPTIONS=(
+    --from=markdown --to=revealjs --standalone --slide-level=1
+    --resource-path="$INPUT_DIRECTORY"
+    --variable="theme:$REVEAL_THEME"
+    --variable="width:$REVEAL_WIDTH" --variable="height:$REVEAL_HEIGHT"
+    --variable=margin:0.06 --variable=center:false --variable=transition:none
+  )
+  if [[ "$SHARED_ASSETS" == true ]]; then
+    prepare_assets
+    OPTIONS+=(
+      --variable="revealjs-url:assets/reveal.js-$REVEAL_VERSION"
+      --css=assets/md2reveal.css
+      --extract-media="assets/media/$OUTPUT_STEM"
+    )
+  else
+    OPTIONS+=(--variable="revealjs-url:$REVEAL_CDN_URL" --css="$STYLESHEET" --embed-resources)
+  fi
+
+  # Relative asset URLs must be calculated from the output, not the caller's cwd.
+  (cd "$OUTPUT_DIRECTORY" && pandoc "$INPUT_FILE" "${OPTIONS[@]}" --output="$OUTPUT_NAME")
+  echo "Generated: $OUTPUT_FILE"
+}
+
+INPUT_FILE=""
+OUTPUT_FILE=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    help | -h | --help)
+      help
+      exit 0
+      ;;
+    --assets)
+      SHARED_ASSETS=true
+      ;;
+    --)
+      shift
+      if [[ $# -lt 1 || $# -gt 2 || -n "$INPUT_FILE" ]]; then
+        echo "Expected INPUT_FILE and optional OUTPUT_FILE after --." >&2
+        exit 1
+      fi
+      INPUT_FILE=$1
+      OUTPUT_FILE=${2:-}
+      break
+      ;;
+    -*)
+      echo "Unknown option: $1" >&2
+      exit 1
+      ;;
+    *)
+      if [[ -z "$INPUT_FILE" ]]; then
+        INPUT_FILE=$1
+      elif [[ -z "$OUTPUT_FILE" ]]; then
+        OUTPUT_FILE=$1
+      else
+        echo "Too many arguments." >&2
+        exit 1
+      fi
+      ;;
+  esac
+  shift
+done
+
+if [[ -z "$INPUT_FILE" ]]; then
+  help
+  exit 0
+fi
+generate_reveal
