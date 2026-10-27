@@ -3,6 +3,7 @@
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import tempfile
 import unittest
@@ -59,6 +60,8 @@ class Md2RevealTests(unittest.TestCase):
         self.assertIn("--to=revealjs", args)
         self.assertIn("--slide-level=1", args)
         self.assertIn("--variable=center:true", args)
+        self.assertIn("--variable=slideNumber:true", args)
+        self.assertIn("--variable=showSlideNumber:all", args)
         self.assertTrue(self.input.with_suffix(".html").exists())
         self.assertFalse((self.input.parent / "assets").exists())
 
@@ -84,6 +87,8 @@ class Md2RevealTests(unittest.TestCase):
             self.assertNotIn("--embed-resources", args)
             self.assertIn(f"--extract-media=assets/media/{name}", args)
             self.assertIn("--variable=revealjs-url:assets/reveal.js-5.2.1", args)
+            self.assertIn("--variable=slideNumber:true", args)
+            self.assertIn("--variable=showSlideNumber:all", args)
             self.assertTrue((output / f"{name}.html").exists())
         self.assertTrue((output / "assets/md2reveal.css").exists())
 
@@ -102,6 +107,20 @@ class Md2RevealTests(unittest.TestCase):
         result = self.run_script(self.input)
         self.assertEqual(result.returncode, 2)
         self.assertNotIn("Generated:", result.stdout)
+
+
+    @unittest.skipUnless(shutil.which("pandoc"), "Pandoc is required for the template check")
+    def test_real_pandoc_emits_visible_slide_numbers(self):
+        # No embedding: the HTML goes to stdout without downloading resources.
+        result = subprocess.run(
+            [shutil.which("pandoc"), "--from=markdown", "--to=revealjs", "--standalone",
+             "--variable=slideNumber:true", "--variable=showSlideNumber:all"],
+            input="---\ntitle: Test\nslideNumber: false\n---\n\n# First\n\nText.\n\n# Second\n\nText.\n",
+            text=True, capture_output=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertRegex(result.stdout, r"slideNumber:\s*true\s*,")
+        self.assertRegex(result.stdout, r"showSlideNumber:\s*['\"]all['\"]")
 
 
 if __name__ == "__main__":

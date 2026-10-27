@@ -87,7 +87,8 @@ md2html docs/technical-report.md
 
 Presentación de ejemplo lista para adaptar:
 [ejemplo-presentacion.md](ejemplo-presentacion.md). Incluye separadores,
-notas del presentador, tabla, código y sintaxis para añadir imágenes locales.
+notas del presentador, tabla, código, numeración nativa de diapositivas y
+sintaxis para añadir imágenes locales.
 Desde esta carpeta:
 
 ```bash
@@ -110,7 +111,11 @@ para probarlo.
 
 Sin salida explícita utiliza el directorio y nombre de la entrada con extensión
 `.html`. El lienzo predeterminado es 1280×720, centrado verticalmente,
-tema blanco y texto base de 28 px. Para cambiarlo: `REVEAL_THEME`,
+tema blanco y texto base de 28 px. Las diapositivas muestran su número
+en la esquina inferior derecha, tanto en el HTML autocontenido como con
+`--assets`. La numeración se activa desde el conversor y tiene prioridad
+sobre los metadatos equivalentes del Markdown.
+Para cambiar la apariencia: `REVEAL_THEME`,
 `REVEAL_WIDTH`, `REVEAL_HEIGHT` y `REVEAL_CENTER` (`true` o `false`). Estos valores
 y el estilo común tienen prioridad sobre la configuración equivalente del
 Markdown. No aplica índice ni numeración de secciones de informe. El estilo

@@ -94,6 +94,27 @@ La primera conversión requiere Internet para obtener Reveal.js.
 
 ---
 
+# Navegar y consultar el número
+
+* Usa las flechas izquierda y derecha para cambiar de diapositiva.
+* Consulta el número en la esquina inferior derecha.
+* Reveal.js actualiza la numeración al navegar.
+
+::: notes
+md2reveal activa la numeración nativa de Reveal.js mediante estas opciones:
+
+```javascript
+slideNumber: true,
+showSlideNumber: 'all',
+```
+
+Pandoc incorpora los valores en Reveal.initialize. El número corresponde
+a la posición de la diapositiva, no a la numeración de sus encabezados.
+Los modos autocontenido y --assets utilizan las mismas opciones.
+:::
+
+---
+
 # Incorporar una imagen
 
 Cuando tengas una imagen local, utiliza esta sintaxis:

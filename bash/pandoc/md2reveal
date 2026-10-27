@@ -46,7 +46,8 @@ Press S in the presentation to open the speaker view. Serve the output folder
 over localhost and allow popups. This is not reveal-md syntax.
 
 Defaults: white theme, 1280 x 720 canvas, vertically centered, 28px text,
-no transition. Override with REVEAL_THEME, REVEAL_WIDTH, REVEAL_HEIGHT or
+visible slide numbers, no transition.
+Override with REVEAL_THEME, REVEAL_WIDTH, REVEAL_HEIGHT or
 REVEAL_CENTER (true/false).
 The common stylesheet overrides the input's css metadata.
 First use needs Internet; --assets can reuse its existing local runtime offline.
@@ -118,6 +119,7 @@ generate_reveal() {
     --variable="theme:$REVEAL_THEME"
     --variable="width:$REVEAL_WIDTH" --variable="height:$REVEAL_HEIGHT"
     --variable=margin:0.06 --variable="center:$REVEAL_CENTER" --variable=transition:none
+    --variable=slideNumber:true --variable=showSlideNumber:all
   )
   if [[ "$SHARED_ASSETS" == true ]]; then
     prepare_assets
