@@ -1,0 +1,17 @@
+\begin{tikzpicture}[
+    block/.style={draw, thick, minimum width=25mm, minimum height=20mm},
+    signal/.style={thick, -{Latex}}
+]
+    \node[block] (A) at (0,0) {A};
+    \node[block] (B) at (4,-3) {B};
+    \node[block] (C) at (8,0) {C};
+
+    \draw[signal] ([xshift=-15mm,yshift=5mm]A.west)
+        -- ([yshift=5mm]A.west);
+    \draw[signal] ([xshift=-15mm,yshift=-5mm]A.west)
+        -- ([yshift=-5mm]A.west);
+    \draw[signal] (A.east) -- ++(8mm,0) |- ([yshift=5mm]C.west);
+    \draw[signal] (A.south) |- (B.west);
+    \draw[signal] (B.east) -- ++(8mm,0) |- ([yshift=-5mm]C.west);
+    \draw[signal] (C.east) -- ++(15mm,0);
+\end{tikzpicture}
