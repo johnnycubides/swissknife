@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+skinparam linetype ortho
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+rectangle "Input" as A
+rectangle "Control" as B
+rectangle "Output" as C
+
+A --> C
+A -down-> B
+B --> C
+@enduml
